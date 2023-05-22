@@ -268,10 +268,9 @@ whole_dat %<>%
       adherence_yr1_mctree = "Empirical"
     )
   )
+
+write.csv(whole_dat,file=file.path(path_to_dir,"results","cpap_yr1_adh_all_results.csv"),row.names = F)
 ```
-
-
-
 
 ```{r, viz_whole_dat_adh_effect, fig.width=12, include = TRUE}
 # ggplot(whole_dat %>% filter(endpt %in% c("surv","mace")),
@@ -476,30 +475,221 @@ ggsave(file.path(path_to_dir,"results","cpap_yr1_raw_on_surv_mace.pdf"),
 
 ```{r, strat_dat_adh_effect}
 strat_dat<-c()
+# stratefied model
 for(endpt_i in endpts){
   for(adh_i in adh_metrics){
     if(endpt_i=="surv"&grepl("mctree",adh_i)) next
     if(endpt_i!="surv"&grepl("mttree",adh_i)) next
-    endpt_i<-endpts[1]
-    adh_i<-adh_metrics[1]
-    boot_i<-1
+    # endpt_i<-endpts[1]
+    adh_i<-"adherence_yr1_qt"
+    # boot_i<-1
     for(boot_i in 1:nboots){
+      # non-stratified model
+      adh_boot<-readRDS(
+        file.path(path_to_dir,"results",paste0("adh_",endpt_i),adh_i,paste0("boot",boot_i),
+                  "coxph_iptw_main_acm.rda")
+      )
+      strat_dat %<>%
+        bind_rows(
+          data.frame(summary(adh_boot)$coefficients) %>%
+            filter(!is.na(coef)) %>%
+            mutate(across(everything(), as.character)) %>%
+            rownames_to_column(var = "fit_var") %>%
+            mutate(stratum_var = "None",
+                   stratum_val = " ",
+                   endpt = endpt_i,
+                   boot = boot_i)
+        )
+      # stratified model
       adh_boot<-readRDS(
         file.path(path_to_dir,"results",paste0("adh_",endpt_i),adh_i,paste0("boot",boot_i),
                   "coxph_strata_main_acm.rda"))
       for(s in names(adh_boot)){
         strat_dat %<>%
           bind_rows(
-            adh_boot[[s]]$summ %>% filter(!is.na(coef))
+            data.frame(adh_boot[[s]]$summ) %>% 
+              filter(!is.na(coef)) %>%
+              mutate(endpt = endpt_i,
+                     boot = boot_i)
           )
       }
-    
     }
   }
 }
+strat_dat %<>%
+  # filter(stratum_var != "MACE_HISTORY") %>%
+  group_by(stratum_var,stratum_val,fit_var,endpt) %>%
+  summarize(
+    mean = mean(as.numeric(coef),na.rm=T),
+    sd = mean(as.numeric(`se.coef.`),na.rm=T),
+    pval = mean(as.numeric(`Pr...z..`),na.rm=T),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    lower = mean - 1.96*sd,
+    upper = mean + 1.96*sd) %>%
+  mutate(
+    mean = exp(mean),
+    lower = exp(lower),
+    upper = exp(upper)
+  )
+
+write.csv(strat_dat,file=file.path(path_to_dir,"results","cpap_yr1_adh_strata_qt.csv"),row.names = F)
 ```
 
 
-```{r}
-write.csv(whole_dat,file=file.path(path_to_dir,"results","cpap_yr1_adh_all_results.csv"))
+```{r, viz_str, fig.width=12, include = TRUE}
+strat_dat2<-strat_dat %>%
+  filter(grepl("adherence_yr1_qtqt",fit_var)) %>%
+  mutate(
+    stratum_var_lbl = recode(
+      stratum_var,
+      "AGEGRP" = "02.Age",
+      "HTN_HISTORY" = "08.Hypertension History",
+      "LIS_DUAL_IND" = "05.Low-income-subsidy/Dual Eligibility",
+      "MACE_HISTORY" = "10.MACE History",
+      "None" = "01.None",
+      "OBESITY_HISTORY" = "06.Obesity",
+      "RACE_LABEL" = "04.Race",
+      "SEX" = "03.Sex",
+      "T2DM_HISTORY" = "09.T2DM History",  
+      "chronic_obstructive_pulmonary_disease" = "07.COPD History",
+      "hypersomnia" = "11.Hypersomnia",
+      "insomina" = "12.Insomina"
+    ),
+    stratum_val_lbl = recode(
+      stratum_val,
+      "agegrp1" = "65-69 years",
+      "agegrp2" = "70-74 years",
+      "agegrp3" = "75-79 years",
+      "agegrp4" = "80+ years",
+      "0" = "No",
+      "1" = "Yes",
+      " " = " ",
+      "AA" = "Black",
+      "AI" = "Native American",
+      "Asian" = "Asian",
+      "Other" = "Other",
+      "Unknown" = "Unknown",
+      "White" = "White",
+      "F" = "Female",
+      "M" = "Male"
+    ),
+    fit_var_lbl = recode(
+      fit_var,
+      "adherence_yr1_qtqt_2" = "Q2 (12 - 14)",
+      "adherence_yr1_qtqt_3" = "Q3 (15 - 16)",
+      "adherence_yr1_qtqt_4" = "Q4 (> 16)"
+    )
+  ) %>%
+    mutate(
+    stratum_combine = paste0(stratum_var_lbl,":",stratum_val_lbl)
+  )
+
+fplt1<-forestplot.HR(
+  df = strat_dat2 %>% 
+    filter(endpt %in% c("surv","mace") & grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
+  x_idx1="stratum_combine", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list( # manual adjustment
+    xlim = rep(list(c(0, 1.5)),2),
+    vert_line = rep(list(c(0.3, 1.2)),2),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),2)
+  ), 
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# fplt1
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_adh_on_surv_mace_p1.pdf"),
+       plot = fplt1,
+       dpi = 300,
+       width = 12, height = 18, units = "in")
+
+
+fplt2<-forestplot.HR(
+  df = strat_dat2 %>% 
+    filter(endpt %in% c("surv","mace") & !grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
+  x_idx1="stratum_combine", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.5)),2),
+    vert_line = rep(list(c(0.3, 1.2)),2),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),2)
+  ), 
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# fplt2
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_adh_on_surv_mace_p2.pdf"),
+       plot = fplt2,
+       dpi = 300,
+       width = 12, height = 18, units = "in")
+```
+
+
+```{r, fig.width=12, include = TRUE}
+fplt1<-forestplot.HR(
+  df = strat_dat2 %>% 
+    filter(stratum_var != "MACE_HISTORY") %>%
+    filter(!endpt %in% c("surv","mace") & grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
+  x_idx1="stratum_combine", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list( # manual adjustment
+    xlim = rep(list(c(0, 1.5)),4),
+    vert_line = rep(list(c(0.3, 1.2)),4),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),4)
+  ), 
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# fplt1
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_adh_on_mace_event_p1.pdf"),
+       plot = fplt1,
+       dpi = 300,
+       width = 18, height = 18, units = "in")
+
+
+fplt2<-forestplot.HR(
+  df = strat_dat2 %>% 
+    filter(stratum_var != "MACE_HISTORY") %>%
+    filter(!endpt %in% c("surv","mace") & !grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
+  x_idx1="stratum_combine", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.5)),4),
+    vert_line = rep(list(c(0.3, 1.2)),4),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),4)
+  ), 
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# fplt2
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_adh_on_mace_event_p2.pdf"),
+       plot = fplt2,
+       dpi = 300,
+       width = 18, height = 18, units = "in")
 ```
