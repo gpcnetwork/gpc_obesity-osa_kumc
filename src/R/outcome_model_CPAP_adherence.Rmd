@@ -1,0 +1,505 @@
+---
+title: "organize adherence analysis results into publishabled format"
+author: "Xing Song"
+date: "05/13/2022"
+output: 
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include=FALSE}
+rm(list=ls())
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  include=FALSE,
+  fig.height=10,
+  fig.width = 6
+)
+
+pacman::p_load(
+  survival,
+  tidyverse,
+  magrittr,
+  kableExtra,
+  ggridges,
+  gridExtra,
+  devtools,
+  # forestplot,
+  grid,
+  forestploter
+)
+
+source_url("https://raw.githubusercontent.com/sxinger/utils/master/plot_util.R")
+
+path_to_dir<-file.path(
+  gsub("/src/R","",getwd()),
+  "data"
+)
+
+endpts<-c(
+  "surv",
+  "mace",
+  "mi",
+  "hf",
+  "stroke",
+  "revasc"
+)
+
+adh_metrics<-c(
+  "cpap_yr1",
+  "adherence_yr1_med",
+  "adherence_yr1_tt",
+  "adherence_yr1_qt",
+  "adherence_yr1_ww",
+  "adherence_yr1_inc4",
+  "adherence_yr1_inc8",
+  "adherence_yr1_mttree",
+  "adherence_yr1_mctree"
+)
+
+nboots<-2
+
+cpap_yr1_use<-readRDS(file.path(path_to_dir,"cpap_dose_response_aset.rda")) %>%
+  select(all_of(c("PATID",adh_metrics)))
+N<-nrow(cpap_yr1_use)
+```
+
+# visualize adherence discretization coverage
+
+```{r, viz_cpap_1yr_all, fig.width=12, include=TRUE}
+ggplot(cpap_yr1_use,aes(x=cpap_yr1))+
+  geom_histogram(
+    aes(y=..density..),
+    binwidth = 1,
+    fill="grey",
+    color="blue")+
+  geom_density(
+    aes(y = ..density..),
+    color = "red",
+    stat = 'density',
+    bw = 2,
+    size = 1.5) +
+  stat_bin(
+    aes(y = ..density..,
+        label=scales::percent(round(..density..,2))),
+    geom='text',
+    binwidth=1,
+    vjust = 1.5)+
+  scale_x_continuous(
+    name = "CPAP Total Charges in Year 1",
+    breaks = 1:37,labels = 1:37)+
+  scale_y_continuous(
+    name = "Percentage (%)",
+    breaks = seq(0,0.2,by=0.02), labels = seq(0,0.2,by=0.02),
+    sec.axis = sec_axis(trans = ~ . * N,
+                        name = "Count",
+                        breaks = seq(0,15000,by=1000),labels = seq(0,15000,by=1000)))+
+  theme(
+    panel.background = element_rect(fill = "white", colour = "grey50"),
+    panel.grid.major.y = element_line(colour = "grey"),
+    text = element_text(face="bold")
+  )
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_dist.pdf"))
+```
+
+
+
+
+```{r, viz_cpap_1yr_disc,fig.height=6, fig.width=12, include=TRUE}
+adh_metrics_label<-c(
+  "Raw",
+  "Quantile_Median",
+  "Quantile_Tertile",
+  "Quantile_Quartile",
+  "Rule_Based",
+  "EqualSpaced_By4",
+  "EqualSpaced_By8",
+  "Empirical_All-cause-Mortality",
+  "Empirical_MACE-composite"
+)
+
+plot_lst<-list()
+# https://stackoverflow.com/questions/48212824/shaded-area-under-density-curve-in-ggplot2
+for(i in seq_along(adh_metrics[-1])){
+  adh_m<-adh_metrics[-1][i]
+  adh_m_lbl<-adh_metrics_label[-1][i]
+  bound<-cpap_yr1_use %>%
+    group_by_(adh_m) %>%
+    summarise(lb=min(cpap_yr1),
+              ub=max(cpap_yr1),
+              .groups = "drop")
+  xlabs <- c(bound$lb[1],bound$ub)
+  ncut <- length(xlabs)
+  annot <- paste0("lev",seq_along(xlabs)[-ncut])
+  annot_x <- (xlabs[-ncut] + xlabs[-1])/2
+  density_df <- density(cpap_yr1_use$cpap_yr1,bw=2) %$% 
+    data.frame(x = x, y = y) %>% 
+    cross_join(bound) %>%
+    filter(x<=ub & x>=lb-1) %>%
+    rename("adh_cat"=adh_m)
+  
+  plot_lst[[adh_m]]<-ggplot(density_df,
+                            aes(x = x, ymin = 0, ymax = y, fill = adh_cat))+
+    geom_ribbon() +
+    geom_line(aes(y = y)) +
+    geom_vline(
+        xintercept = xlabs,
+        color="red", size=1,linetype=2) +
+    annotate(
+      geom = "text",
+      label = xlabs,
+      x = xlabs, 
+      y = seq(0.01,0.08,length.out = ncut)
+    ) +
+    annotate(
+      geom = "label",
+      label = annot,
+      x = annot_x, 
+      y = rep(0.1,length(annot_x))
+    ) +
+    theme(
+      panel.background = element_rect(fill = "white", colour = "grey50"),
+      panel.grid.major.y = element_line(colour = "grey"),
+      legend.position = "none",
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank()
+    )+
+  ggtitle(adh_m_lbl)
+}
+grid.arrange(grobs = plot_lst, ncol = 3)
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_discrete.pdf"),
+       arrangeGrob(grobs = plot_lst, ncol = 3))
+```
+
+# visualize adherence effects on discretized charges
+
+```{r, whole_dat_adh_effect, include = TRUE}
+whole_dat<-c()
+for(endpt_i in endpts){
+  for(adh_i in adh_metrics){
+    if(endpt_i=="surv"&grepl("mctree",adh_i)) next
+    if(endpt_i!="surv"&grepl("mttree",adh_i)) next
+    # endpt_i<-endpts[1]
+    # adh_i<-adh_metrics[1]
+    # boot_i<-1
+    adh_df<-c()
+    for(boot_i in 1:nboots){
+      adh_boot<-readRDS(
+        file.path(path_to_dir,"results",paste0("adh_",endpt_i),adh_i,paste0("boot",boot_i),
+                  "coxph_iptw_main_acm.rda")
+      )
+      
+      if(adh_i=="cpap_yr1"){
+        adh_df %<>%
+          bind_rows(
+            data.frame(summary(adh_boot)$coefficients) %>%
+              filter(!is.na(coef)) %>%
+              mutate(`X2.5..`= coef-1.96*`se.coef.`,
+                     `X97.5..`= coef+1.96*`se.coef.`,
+                     `Pr...z..`= p) %>%
+              rownames_to_column(var = "vari") %>%
+              filter(grepl(adh_i,vari)) %>%
+              gather(summ_var,summ_val,-vari)
+        )
+      }else{
+        adh_df %<>%
+          bind_rows(
+          data.frame(summary(adh_boot)$coefficients) %>%
+            cbind(data.frame(confint(adh_boot))) %>%
+            rownames_to_column(var = "vari") %>%
+            filter(grepl(adh_i,vari)) %>%
+            gather(summ_var,summ_val,-vari)
+        )
+      }
+    }
+    whole_dat %<>%
+      dplyr::bind_rows(
+            adh_df %>%
+              dplyr::group_by(vari,summ_var) %>%
+              dplyr::summarize(summ_val_mu=mean(summ_val),
+                               summ_val_sd=sd(summ_val),
+                               .groups = "drop") %>%
+              dplyr::filter(summ_var %in% c("coef","X2.5..","X97.5..","Pr...z..")) %>%
+              dplyr::mutate(vari_cat = gsub(adh_i,"",vari),
+                            vari = adh_i,
+                            endpt = endpt_i)
+      )
+  }
+}
+
+whole_dat %<>%
+  pivot_wider(
+          id_cols = c("endpt","vari","vari_cat"),
+          names_from = "summ_var",
+          values_from = "summ_val_mu"
+        )
+colnames(whole_dat)<-c("endpt","vari","vari_cat","pval","ci_lb","ci_ub","coef")
+
+whole_dat %<>%
+  # fixed labels
+  dplyr::mutate(
+    vari_cat = case_when(grepl("med",vari) ~ "med_2",
+                         TRUE ~ vari_cat)
+  ) %>%
+  # fit forestplot default keys
+  dplyr::mutate(
+    pvallabel = case_when(pval < 0.001 ~ "<0.001",
+                          TRUE ~ as.character(round(pval,3))),
+    mean = exp(coef),
+    lower = exp(ci_lb),
+    upper = exp(ci_ub),
+    group =  case_when(grepl("pspline",vari_cat) ~ "cnt",
+                       TRUE ~ gsub(".*_","lev",vari_cat)),
+    proxy = recode(
+      vari,
+      cpap_yr1 = "Charges_Raw",             
+      adherence_yr1_med = "Quantile_Median",
+      adherence_yr1_tt = "Quantile_Tertile",
+      adherence_yr1_qt = "Quantile_Quartile",
+      adherence_yr1_ww = "Rule_Based",
+      adherence_yr1_inc4 = "EqualSpaced_By4",
+      adherence_yr1_inc8 = "EqualSpaced_By8",
+      adherence_yr1_mttree = "Empirical",
+      adherence_yr1_mctree = "Empirical"
+    )
+  )
+```
+
+
+
+
+```{r, viz_whole_dat_adh_effect, fig.width=12, include = TRUE}
+# ggplot(whole_dat %>% filter(endpt %in% c("surv","mace")),
+#        aes(color=vari,y=vari_cat))+
+#   geom_point(aes(x=coef))+
+#   geom_errorbar(aes(xmin=ci_lb,xmax=ci_ub))+
+#   geom_vline(xintercept=1,linetype=2,color = "red") +
+#   theme(
+#         panel.background = element_rect(fill = "white", colour = "grey50"),
+#         panel.grid.major.y = element_line(colour = "grey"),
+#         legend.position = "none",
+#         axis.title.x = element_blank(),
+#         axis.title.y = element_blank()
+#       )+
+#   facet_wrap(~ endpt, ncol = 2)
+
+fplt<-forestplot.HR(
+  df = whole_dat %>% filter(endpt %in% c("surv","mace")),  # long table
+  x_idx1="proxy", # 1st layer index
+  x_idx2="group", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(), # other plotting parameters passed in forest function
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "AdherenceProxy",
+)
+fplt
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_discrete_on_surv_mace.pdf"),
+       plot = fplt,
+       dpi = 300,
+       width = 12, height = 8, units = "in")
+```
+
+```{r, viz_whole_dat_adh_effect_quart, fig.width=12, include = TRUE}
+# ggplot(whole_dat %>% filter(endpt %in% c("surv","mace")),
+#        aes(color=vari,y=vari_cat))+
+#   geom_point(aes(x=coef))+
+#   geom_errorbar(aes(xmin=ci_lb,xmax=ci_ub))+
+#   geom_vline(xintercept=1,linetype=2,color = "red") +
+#   theme(
+#         panel.background = element_rect(fill = "white", colour = "grey50"),
+#         panel.grid.major.y = element_line(colour = "grey"),
+#         legend.position = "none",
+#         axis.title.x = element_blank(),
+#         axis.title.y = element_blank()
+#       )+
+#   facet_wrap(~ endpt, ncol = 2)
+
+fplt<-forestplot.HR(
+  df = whole_dat %>% filter(endpt %in% c("surv","mace") & proxy=="Quantile_Quartile"),  # long table
+  x_idx1="proxy", # 1st layer index
+  x_idx2="group", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(), # other plotting parameters passed in forest function
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "AdherenceProxy",
+)
+fplt
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_quartile_on_surv_mace.pdf"),
+       plot = fplt,
+       dpi = 300,
+       width = 12, height = 8, units = "in")
+```
+
+
+```{r, viz_whole_dat_adh_effect_mace, fig.width=12, include = TRUE}
+fplt<-forestplot.HR(
+  df = whole_dat %>% filter(!endpt %in% c("surv","mace")),  # long table
+  x_idx1="proxy", # 1st layer index
+  x_idx2="group", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(), # other plotting parameters passed in forest function
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "AdherenceProxy",
+)
+fplt
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_discrete_on_mace_events.pdf"),
+       plot = fplt,
+       dpi = 300,
+       width = 20, height = 8, units = "in")
+```
+
+
+```{r, viz_whole_dat_adh_effect_mace_quart, fig.width=12, include = TRUE}
+fplt<-forestplot.HR(
+  df = whole_dat %>% filter(!endpt %in% c("surv","mace") & proxy=="Quantile_Quartile"),  # long table
+  x_idx1="proxy", # 1st layer index
+  x_idx2="group", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(), # other plotting parameters passed in forest function
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "AdherenceProxy",
+)
+fplt
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_quartile_on_mace_events.pdf"),
+       plot = fplt,
+       dpi = 300,
+       width = 20, height = 8, units = "in")
+```
+
+# visualize adherence effects on raw charge counts
+
+```{r, viz_raw_adh_effect_mace, fig.height=8,fig.width=10, include = TRUE}
+endpt_lbl<-c(
+  "1.All Cause Mortality",
+  "2.MACE Composite",
+  "3.Myocardial Infarction",
+  "4.Heart Failure",
+  "5.Stroke",
+  "6.Revascularization"
+)
+raw_plt_lst<-list()
+for(i in seq_along(endpts)){
+  # i<-1
+  endpt_i<-endpts[i]
+  whole_dat_raw<-c()
+  turnpt<-c()
+  altpt<-c()
+  for(boot_i in 1:nboots){
+    # spline plot
+    tp<-readRDS(
+          file.path(path_to_dir,"results",paste0("adh_",endpt_i),"cpap_yr1",paste0("boot",boot_i),
+                    "pspline_termplot.rda"))$cpap_yr1     
+    whole_dat_raw %<>%
+      bind_rows(tp %>% mutate(boot = boot_i,endpt = endpt_i))
+    
+    # turning points
+    delta_y<-diff(tp$y)
+    turns_ind <- which(delta_y[-1] * delta_y[-length(delta_y)] < 0) + 1
+    x_turns <- tp$x[turns_ind]
+    turnpt<-unique(c(turnpt,x_turns))
+    # sign-altering point
+    signalt_ind<-which(tp$y[-1] * tp$y[-length(tp$y)] < 0) + 1
+    x_alts <- tp$x[signalt_ind]
+    altpt<-unique(c(altpt,x_alts))
+  }
+  # plot
+  whole_dat_raw %<>%
+    group_by(x) %>% summarise(y=mean(y),se=mean(se),.groups="drop")
+  raw_plt_lst[[endpt_lbl[i]]]<-ggplot(whole_dat_raw,aes(x=x,y=exp(y))) +
+    geom_ribbon(
+      aes(ymin = exp(y - 1.96*se),ymax = exp(y + 1.96*se)),
+      size = 1.5,fill = "grey70") +
+    geom_line(size = 1.5) +
+    geom_vline(
+      data=data.frame(x=altpt),
+      aes(xintercept=x),
+      color = "blue",linetype=2,size=1
+    ) + 
+    annotate(
+      geom = "label",
+      label = turnpt,
+      x = turnpt, 
+      y = rep(2,length(turnpt)),
+      size=5,
+      face="bold"
+    ) +
+    geom_hline(aes(yintercept=1),
+               color = "red",linetype=2,size=1) + 
+    labs(x = "Raw Year-1 Total Charges",
+         y = "HR") +
+    scale_y_continuous(
+      limits = c(0,3),
+      breaks = seq(0,3,0.5),
+      labels = seq(0,3,0.5)) + 
+    theme(
+      panel.background = element_rect(fill = "white", colour = "grey50"),
+      panel.grid.major.y = element_line(colour = "grey"),
+      legend.position = "none",
+      text = element_text(face ="bold")
+    ) +
+    ggtitle(endpt_lbl[[i]])
+}
+
+grid.arrange(grobs = raw_plt_lst, ncol = 2)
+# save figure
+ggsave(file.path(path_to_dir,"results","cpap_yr1_raw_on_surv_mace.pdf"),
+       arrangeGrob(grobs = raw_plt_lst, ncol = 2))
+```
+
+
+# visualize adherence effects for stratified analysis
+
+```{r, strat_dat_adh_effect}
+strat_dat<-c()
+for(endpt_i in endpts){
+  for(adh_i in adh_metrics){
+    if(endpt_i=="surv"&grepl("mctree",adh_i)) next
+    if(endpt_i!="surv"&grepl("mttree",adh_i)) next
+    endpt_i<-endpts[1]
+    adh_i<-adh_metrics[1]
+    boot_i<-1
+    for(boot_i in 1:nboots){
+      adh_boot<-readRDS(
+        file.path(path_to_dir,"results",paste0("adh_",endpt_i),adh_i,paste0("boot",boot_i),
+                  "coxph_strata_main_acm.rda"))
+      for(s in names(adh_boot)){
+        strat_dat %<>%
+          bind_rows(
+            adh_boot[[s]]$summ %>% filter(!is.na(coef))
+          )
+      }
+    
+    }
+  }
+}
+```
+
+
+```{r}
+write.csv(whole_dat,file=file.path(path_to_dir,"results","cpap_yr1_adh_all_results.csv"))
+```

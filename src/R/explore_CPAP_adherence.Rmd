@@ -1,0 +1,117 @@
+---
+title: "explore CPAP adherence"
+author: "Xing Song"
+date: "03/01/2022"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      fig.height=5)
+
+pacman::p_load(tidyverse,
+               magrittr,
+               broom,
+               survival,
+               survminer,
+               kableExtra,
+               plotly,
+               # threejs,
+               # rgl,
+               ggpubr)
+source("./util.R")
+```
+
+
+```{r, load_data}
+dat<-readRDS("./data/analytic_set.rda") %>%
+  mutate(DAYS_CPAP_TO_SUPPLY = DAYS_ENR_START_TO_SUPPLY - DAYS_ENR_START_TO_CPAP,
+         MTHS_CPAP_TO_SUPPLY = round(DAYS_CPAP_TO_SUPPLY/30))
+# take out unique patient list
+pat_uni<-dat %>% select(PATID_DEID) %>% unique
+```
+
+Let's first inspect some timeline examples: 
+
+```{r, plot_sample}
+sample<-dat %>%
+  semi_join(pat_uni %>% sample_n(10),by="PATID_DEID")
+
+ggplot(data=sample, aes(group = PATID_DEID)) +
+  geom_line(aes(x=DAYS_ENR_START_TO_SUPPLY,y=as.factor(PATID_DEID)))+
+  geom_point(aes(x=DAYS_ENR_START_TO_SUPPLY,y=as.factor(PATID_DEID)))+
+  geom_point(aes(x=DAYS_ENR_START_TO_OSA,y=as.factor(PATID_DEID)),color='red')+
+  geom_point(aes(x=DAYS_ENR_START_TO_CPAP,y=as.factor(PATID_DEID)),color='green')+
+  geom_point(aes(x=DAYS_ENR_START_TO_END,y=as.factor(PATID_DEID)),color='blue')+
+  labs(x="Days since enrollment start",y="Random Patient ID")
+```
+
+Let's then switch view to an Area Under the Curve Measurement of cumulative CPAP charge vs. Days from CPAP initiation (so that time origins are aligned at CPAP initiation): 
+
+```{r, sample_auc}
+ggplot(data=sample, aes(x=DAYS_CPAP_TO_SUPPLY, y = CPAP_CUM_DOSE)) +
+  geom_line()+ geom_point() +
+  geom_vline(xintercept = 365, color = "red", linetype = 2) +
+  geom_vline(xintercept = 365*2, color = "red", linetype = 2) +
+  geom_vline(xintercept = 365*3, color = "red", linetype = 2) +
+  facet_wrap(~ PATID_DEID, ncol = 5, scale = "free") +
+  labs(x="Days since enrollment start",y="Cumulative CPAP charges (number of claims)")
+
+```
+
+```{r, surface_plot, webgl=TRUE}
+cpap_freq<-dat %>%
+  group_by(CPAP_CUM_DOSE, MTHS_CPAP_TO_SUPPLY) %>%
+  summarize(freq = length(unique(PATID_DEID)),.groups = "drop") %>%
+  filter(freq >= 5)
+
+p<-plot_ly() %>%
+  add_trace(data = cpap_freq,
+            x = cpap_freq$CPAP_CUM_DOSE,
+            y = cpap_freq$MTHS_CPAP_TO_SUPPLY,
+            z = cpap_freq$freq, type = "mesh3d") %>%
+  layout(scene = list(xaxis = list(title = "Cumulative CPAP charges"),
+                      yaxis = list(title = "Months since CPAP initiation"),
+                      zaxis = list(title = "Patient frequencies")))
+htmlwidgets::saveWidget(as_widget(p), "surface_plot.html")
+
+# plot3d(cpap_freq$CPAP_CUM_DOSE,cpap_freq$MTHS_CPAP_TO_SUPPLY,cpap_freq$freq,
+#           col=rainbow(length(cpap_freq$freq)))
+
+```
+
+Based on both the sample and the surface plot, it is obvious that the usage pattern is often a lot more intense in CPAP initiation year compared to subsequent years. However, not all patients get to be followed up for more than a year before censored (e.g., last data available year in 2017).   
+
+```{r}
+N<-pat_uni %>% nrow()
+n1<-pat_uni %>% semi_join(dat %>% filter(DAYS_CPAP_TO_SUPPLY>365),by="PATID_DEID") %>% nrow()
+p1<-round(n1/N,2)
+n2<-pat_uni %>% semi_join(dat %>% filter(DAYS_CPAP_TO_SUPPLY>365*2),by="PATID_DEID") %>% nrow()
+p2<-round(n2/N,2)
+gc()
+```
+
+Among `r N` eligible patients, about `r n1`(`r p1`) patients is followed for at least 1 complete year post CPAP initiation, about `r n2`(`r p2`) is followed up for at least 2 complete years post CPAP initiation. Following Wickwire's definition, i.e., total number of CPAP charges, the following figure shows what the frequency distribution looks like: 
+
+```{r}
+dat2<-readRDS("./data/analytic_set2.rda") 
+
+p1<-ggplot(dat2,aes(x = adherence_ww)) + 
+  geom_bar(aes(y =  (..count..)/sum(..count..), text = ..count..),fill = "red") + 
+  scale_y_continuous(labels=scales::percent)
+
+p2<-ggplot(dat2 %>% semi_join(dat %>% filter(DAYS_CPAP_TO_SUPPLY>365),by="PATID_DEID"),
+           aes(x = adherence_ww)) + 
+  geom_bar(aes(y =  (..count..)/sum(..count..), text = ..count..), fill = "blue") + 
+  scale_y_continuous(labels=scales::percent)
+
+ggarrange(p1, p2, ncol = 2, nrow = 1)
+
+```
+
+A significant amount of "low" adherence is removed as a result of non-sufficient follow-up period (less than 1 year). For those been followed up for more than 1 year, more than 90% are high-compliance based on Wickwire's definition. It might be more interesting to further breakdown the "high adherence" group into finer groups using empirical metrics such as percentil rank. 
+
+
