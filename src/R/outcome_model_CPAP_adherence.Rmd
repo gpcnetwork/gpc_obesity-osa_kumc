@@ -266,6 +266,15 @@ whole_dat %<>%
       adherence_yr1_inc8 = "EqualSpaced_By8",
       adherence_yr1_mttree = "Empirical",
       adherence_yr1_mctree = "Empirical"
+    ),
+    endpt_lbl = recode(
+      endpt, 
+      "surv" = "ACM",
+      "mace" = "MACE",
+      "mi"= "MI",
+      "hf" = "HF",
+      "revasc" = "REV",
+      "stroke" = "STROKE"
     )
   )
 
@@ -291,7 +300,7 @@ fplt<-forestplot.HR(
   df = whole_dat %>% filter(endpt %in% c("surv","mace")),  # long table
   x_idx1="proxy", # 1st layer index
   x_idx2="group", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -327,7 +336,7 @@ fplt<-forestplot.HR(
   df = whole_dat %>% filter(endpt %in% c("surv","mace") & proxy=="Quantile_Quartile"),  # long table
   x_idx1="proxy", # 1st layer index
   x_idx2="group", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -350,7 +359,7 @@ fplt<-forestplot.HR(
   df = whole_dat %>% filter(!endpt %in% c("surv","mace")),  # long table
   x_idx1="proxy", # 1st layer index
   x_idx2="group", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -373,7 +382,7 @@ fplt<-forestplot.HR(
   df = whole_dat %>% filter(!endpt %in% c("surv","mace") & proxy=="Quantile_Quartile"),  # long table
   x_idx1="proxy", # 1st layer index
   x_idx2="group", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -534,6 +543,9 @@ strat_dat %<>%
     upper = exp(upper)
   )
 
+strat_dat$endpt<-factor(strat_dat$endpt, levels=c("surv","mace","mi","hf","stroke","revasc"))
+strat_dat %<>% arrange(endpt)
+
 write.csv(strat_dat,file=file.path(path_to_dir,"results","cpap_yr1_adh_strata_qt.csv"),row.names = F)
 ```
 
@@ -580,6 +592,15 @@ strat_dat2<-strat_dat %>%
       "adherence_yr1_qtqt_2" = "Q2 (12 - 14)",
       "adherence_yr1_qtqt_3" = "Q3 (15 - 16)",
       "adherence_yr1_qtqt_4" = "Q4 (> 16)"
+    ),
+    endpt_lbl = recode(
+      endpt, 
+      "surv" = "ACM",
+      "mace" = "MACE",
+      "mi"= "MI",
+      "hf" = "HF",
+      "revasc" = "REV",
+      "stroke" = "STROKE"
     )
   ) %>%
     mutate(
@@ -591,7 +612,7 @@ fplt1<-forestplot.HR(
     filter(endpt %in% c("surv","mace") & grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -617,7 +638,7 @@ fplt2<-forestplot.HR(
     filter(endpt %in% c("surv","mace") & !grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -646,7 +667,7 @@ fplt1<-forestplot.HR(
     filter(!endpt %in% c("surv","mace") & grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
@@ -673,7 +694,7 @@ fplt2<-forestplot.HR(
     filter(!endpt %in% c("surv","mace") & !grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
-  y_idx="endpt", # 1st layer y index
+  y_idx="endpt_lbl", # 1st layer y index
   est="mean", # estimates
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
