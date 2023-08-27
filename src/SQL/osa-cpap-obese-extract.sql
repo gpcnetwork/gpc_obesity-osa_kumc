@@ -102,8 +102,20 @@ where DAYS_ENR_START_TO_OSA >= 365 -- 1-full year observation window preceding f
 select count(distinct patid) from PAT_OSA_ELIG;
 -- 442,273
 
+create or replace table PAT_OSA_OBESE_ELIG as
+select osa.* from PAT_OSA_ELIG osa
+where exists (
+      select 1 from PAT_OBESE_INIT obe
+      where obe.PATID = osa.PATID and 
+            obe.DX_DATE <= osa.OSA_DX1_DATE
+)
+;
+select count(distinct patid) from PAT_OSA_OBESE_ELIG;
+-- 146,249
+
 /*adverse outcome identification, pre-post: MACE, All-cause mortality*/
-set pat_elig = 'PAT_OSA_ELIG';
+-- set pat_elig = 'PAT_OSA_ELIG';
+set pat_elig = 'PAT_OSA_OBESE_ELIG';
 create or replace table PAT_OSA_ENDPT as
 with mace_event as (
     select dx.PATID
@@ -174,6 +186,48 @@ left join identifier($DEATH) d on p.PATID = d.PATID
 select count(distinct patid) from PAT_OSA_ENDPT
 where MACE_BEF is not null
 ;
+-- N_excld = 71,432
+
+-- with denom as (
+-- select count(distinct patid) as N from PAT_OSA_ELIG
+-- )
+-- select 'Eligible' as EVENT, count(distinct patid) as PAT_CNT, round(count(distinct patid)/denom.N,3) as PAT_PROP 
+-- from PAT_OSA_ELIG cross join denom group by denom.N
+-- union
+-- select 'MACE_recurrent', count(distinct patid), round(count(distinct patid)/denom.N,3) 
+-- from PAT_OSA_ENDPT cross join denom where MACE_BEF is not null and MACE_AFT is not null group by denom.N
+-- union
+-- select 'MACE_new', count(distinct patid), round(count(distinct patid)/denom.N,3) 
+-- from PAT_OSA_ENDPT cross join denom where MACE_BEF is null and MACE_AFT is not null group by denom.N
+-- union
+-- select 'Death', count(distinct patid), round(count(distinct patid)/denom.N,3) 
+-- from PAT_OSA_ENDPT cross join denom where DEATH_DATE is not null group by denom.N
+-- union 
+-- select 'CPAP initialization', count(distinct patid), round(count(distinct patid)/denom.N,3) as PAT_CNT 
+-- from PAT_OSA_CPAP_DEVICE cross join denom group by denom.N
+-- order by PAT_CNT desc
+-- ;
+
+/*
+Eligible	212,445	1
+CPAP initialization	107,994	0.508
+MACE_recurrent	66,111	0.311
+MACE_new	40,236	0.189
+Death	23,815	0.112
+*/
+
+// excluding patients with pre-existing MACE
+create or replace table PAT_OSA_OBESE_ELIG2 as
+select e.* from PAT_OSA_OBESE_ELIG e 
+where not exists (
+      select 1 from PAT_OSA_ENDPT excld
+      where excld.PATID = e.PATID and
+            excld.MACE_BEF is not null
+)
+;
+
+select count(distinct patid) from PAT_OSA_OBESE_ELIG2;
+-- 74,817
 
 /*exposure: OSA diagnostics*/
 -- create or replace table PAT_OSA_TEST as
@@ -268,6 +322,103 @@ order by d.PATID, px.PX_DATE
 -- order by PATID, YEAR_CPAP_INIT_TO_SUPPLY
 -- ;
 
+/*exposure: BLIWL*/
+create or replace table PAT_OSA_BLIWL as
+with bliwl_first_date as (
+      select p.PATID
+            ,p.OSA_DX1_DATE
+            ,min(px.PX_DATE) as BLIWL_INIT_DATE
+            ,datediff('day',p.OSA_DX1_DATE,min(px.PX_DATE)) as DAYS_OSA_TO_BLIWL_INIT
+      from PAT_OSA_OBESE_ELIG2 p
+      join identifier($procedures) px
+      on p.PATID = px.PATID
+      where px.PX in ('G0270', 'G0271', 'G0447', '97802', '97803', '97804') and px.PX_TYPE = 'CH'
+      group by p.PATID,p.OSA_DX1_DATE
+)
+select * from bliwl_first_date
+where DAYS_OSA_TO_BLIWL_INIT > 0
+;
+select count(distinct patid) from PAT_OSA_BLIWL;
+-- 3,255
+
+
+create or replace table PAT_OSA_TX_WIDE as
+select p.PATID
+      ,p.OSA_DX1_DATE
+      ,c.CPAP_INIT_DATE
+      ,c.DAYS_OSA_TO_CPAP_INIT
+      ,b.BLIWL_INIT_DATE
+      ,b.DAYS_OSA_TO_BLIWL_INIT
+      ,case when c.DAYS_OSA_TO_CPAP_INIT is not null and b.DAYS_OSA_TO_BLIWL_INIT is null then 'CPAP-Only'
+            when c.DAYS_OSA_TO_CPAP_INIT is null and b.DAYS_OSA_TO_BLIWL_INIT is not null then 'BLIWL-Only'
+            when c.DAYS_OSA_TO_CPAP_INIT is not null and b.DAYS_OSA_TO_BLIWL_INIT is not null then 'Both'
+            else 'Neither'
+       end as TX_TYPE
+      ,b.DAYS_OSA_TO_BLIWL_INIT - c.DAYS_OSA_TO_CPAP_INIT AS DAYS_PAP_TO_BLIWL -- >0 -> PAP first
+      ,case when c.DAYS_OSA_TO_CPAP_INIT is null or b.DAYS_OSA_TO_BLIWL_INIT is null then 'single'
+            when b.DAYS_OSA_TO_BLIWL_INIT > c.DAYS_OSA_TO_CPAP_INIT then 'pap_first'
+            when b.DAYS_OSA_TO_BLIWL_INIT < c.DAYS_OSA_TO_CPAP_INIT then 'bliwl_first'
+            when b.DAYS_OSA_TO_BLIWL_INIT = c.DAYS_OSA_TO_CPAP_INIT then 'simul'
+            else 'other'
+       end as PAP_BLIWL_ORDER
+from PAT_OSA_OBESE_ELIG2 p
+left join PAT_OSA_CPAP_DEVICE c on p.PATID = c.PATID
+left join PAT_OSA_BLIWL b on p.PATID = b.PATID
+; 
+
+select TX_TYPE, count(distinct patid)
+from PAT_OSA_TX_WIDE
+group by TX_TYPE
+;
+
+-- Neither	      41324
+-- Both	      1827
+-- BLIWL-Only	1428
+-- CPAP-Only	30238
+
+select PAP_BLIWL_ORDER, 
+       count(distinct patid), 
+       avg(abs(DAYS_PAP_TO_BLIWL)),
+       stddev(abs(DAYS_PAP_TO_BLIWL)),
+       median(abs(DAYS_PAP_TO_BLIWL)),
+       percentile_disc(0.25) within group (order by abs(DAYS_PAP_TO_BLIWL)),
+       percentile_disc(0.75) within group (order by abs(DAYS_PAP_TO_BLIWL))
+from PAT_OSA_TX_WIDE
+where TX_TYPE=  'Both'
+group by PAP_BLIWL_ORDER;
+
+
+create or replace table PAT_OSA_OBESE_TX_WIDE_ST as 
+with addr_sort as (
+      select e.PATID
+            ,e.TX_TYPE
+            ,a.ADDRESS_STATE
+            -- ,e.osa_dx1_date
+            -- ,a.ADDRESS_PERIOD_START
+            -- ,a.ADDRESS_PERIOD_END
+            ,row_number() over (partition by e.PATID order by least(abs(datediff('day',e.osa_dx1_date,a.ADDRESS_PERIOD_START)),abs(datediff('day',e.osa_dx1_date,a.ADDRESS_PERIOD_END)))) AS rn
+      from PAT_OSA_TX_WIDE e 
+      join identifier($address) a 
+      on e.PATID = a.PATID
+)
+select * from addr_sort 
+where rn = 1
+;
+
+select ADDRESS_STATE, TX_TYPE, count(distinct patid) AS pat_cnt
+from PAT_OSA_OBESE_TX_WIDE_ST
+group by ADDRESS_STATE, TX_TYPE
+pivot
+      (sum(pat_cnt) for 
+            TX_TYPE in (
+                  'CPAP-Only' AS PAP_ONLY, 
+                  'BLIWL-Only' AS BLIWL_ONLY, 
+                  'Both' AS BOTH, 
+                  'Neither' AS NEITHER
+            ))
+order by ADDRESS_STATE
+;
+
 /*covariates: demographics, hypertension, obesity, T2DM, ...*/
 -- Obesity: ICD9 (278.00, 278.01, 278.03) or ICD10 (E66.0,E66.01, E66.09, E66.1, E66.2, E66.8, E66.9, Z68.30-Z68.45)
 -- T2DM: ICD9 (250,357.2,362.0[1-7]) or ICD10 (E10, E11, E08.42, E13.42)
@@ -338,7 +489,7 @@ select p.PATID
       ,cov2.HTN_BEF as HTN_BEF_max
       ,cov.HTN_AFT as HTN_AFT_min
       ,cov2.HTN_AFT as HTN_AFT_max
-from identifier($pat_elig) p
+from PAT_OSA_ELIG p
 left join cov_ses on p.PATID = cov_ses.PATID
 left join cov_pivot cov on p.PATID = cov.PATID
 left join cov_pivot2 cov2 on p.PATID = cov2.PATID
@@ -369,7 +520,7 @@ select p.PATID
       ,case when cov.Obesity_BEF_min < 0 then 1 else 0 end as Obesity_history --obesity dx before OSA dx1
       ,case when cov.T2DM_BEF_min < 0 then 1 else 0 end as T2DM_history --T2DM dx before OSA dx1
       ,case when cov.HTN_BEF_min < 0 then 1 else 0 end as HTN_history --HTN dx before OSA dx1
-from identifier($pat_elig) p
+from PAT_OSA_ELIG p
 left join PAT_OSA_CPAP_DEVICE d on p.PATID = d.PATID
 left join PAT_OSA_ENDPT ep on p.PATID = ep.PATID
 left join PAT_OSA_COVARIATES cov on p.PATID = cov.PATID
@@ -408,7 +559,7 @@ select distinct
       ,cov.T2DM_AFT_max
       ,cov.HTN_AFT_min
       ,cov.HTN_AFT_max
-from identifier($pat_elig) p
+from PAT_OSA_ELIG p
 join PAT_OSA_CPAP_SUPPLY s on p.PATID = s.PATID -- only CPAP user group
 left join PAT_OSA_ENDPT ep on p.PATID = ep.PATID
 left join PAT_OSA_COVARIATES cov on p.PATID = cov.PATID
