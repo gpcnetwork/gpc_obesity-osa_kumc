@@ -6,13 +6,13 @@
 #              as well as a few pre-defined covariates
 */
 
-use role GROUSE_ROLE_C_ANALYTICS; 
+use role GROUSE_ROLE_C_ANALYTICS_DROC114; 
 use warehouse GROUSE_WH;
-use database GROUSE_DEID_ANALYTICS_DB;
+use database GROUSE_DEID_ANALYTICS_DB_DROC114;
 create schema if not exists OBESITY_OSA;
 use schema OBESITY_OSA;
 
-set cdm_db_schema = 'GROUSE_DEID_DB.CMS_PCORNET_CDM';
+set cdm_db_schema = 'CMS_PCORNET_CDM';
 set diagnosis = $cdm_db_schema || '.V_DEID_DIAGNOSIS';
 set procedures = $cdm_db_schema || '.V_DEID_PROCEDURES';
 set enrollment = $cdm_db_schema || '.V_DEID_ENROLLMENT';
@@ -26,7 +26,7 @@ set address = $cdm_db_schema || '.V_DEID_ADDRESS_HISTORY';
 -- all medicare
 select count(distinct PATID) pat_cnt
 from identifier($enrollment)
-; -- 13,706,965
+; -- 20,254,512
 
 /*cohort initialization: medicare enrolled above 65 yo*/
 create or replace table PAT_ENR_65UP as
@@ -42,7 +42,7 @@ from identifier($enrollment) e
 join pat65up_cte p on p.PATID = e.PATID
 ;
 select count(distinct patid) from PAT_ENR_65UP;
--- 9,361,278
+-- 14,156,442
 
 /*cohort initialization: at least 1 OSA*/
 create or replace table PAT_OSA_INIT as
@@ -52,21 +52,7 @@ where (DX_TYPE = '09' and DX in ('327.20','327.23','327.29','780.51','780.53','7
       (DX_TYPE = '10' and DX in ('G47.30','G47.33','G47.39'))
 ;
 select count(distinct PATID) from PAT_OSA_INIT;
--- 1,795,214
-
-/*cohort initialization: at least 1 OBESES*/
-create or replace table PAT_OBESE_INIT as
-select distinct PATID, DX, DX_TYPE, DX_DATE
-from identifier($diagnosis) 
-where (DX_TYPE = '09' and DX in ('278.00', '278.01', '278.03')) or
-      (DX_TYPE = '10' and (
-            split_part(DX,'.',1) in ('E66') or 
-            substr(DX,1,4) in ('Z68.3', 'Z68.4')
-            )
-      )
-;
-select count(distinct PATID) from PAT_OBESE_INIT;
--- 2,647,574
+-- 3,295,943
 
 /*cohort inclusion: 2 or more OSA codes at different dates*/
 create or replace table PAT_OSA_2DX as
@@ -78,7 +64,7 @@ group by PATID
 having DX_DISTINCT_CNT >= 2
 ;
 select count(distinct PATID) from PAT_OSA_2DX;
--- 1,368,901
+-- 2,613,147
 
 /*cohort inclusion: 1 washup period priod to OSA_DX1_DATE*/
 create or replace table PAT_OSA_ELIG as
@@ -100,7 +86,7 @@ select * from days_before_osa
 where DAYS_ENR_START_TO_OSA >= 365 -- 1-full year observation window preceding first OSA diagnosis
 ;
 select count(distinct patid) from PAT_OSA_ELIG;
--- 442,273
+-- 907,759
 
 /*adverse outcome identification, pre-post: MACE, All-cause mortality*/
 set pat_elig = 'PAT_OSA_ELIG';
@@ -172,46 +158,48 @@ left join identifier($DEATH) d on p.PATID = d.PATID
 ;
 
 select count(distinct patid) from PAT_OSA_ENDPT
-where MACE_BEF is not null
+where MACE_BEF is null
 ;
+-- 594,984
 
 /*exposure: OSA diagnostics*/
--- create or replace table PAT_OSA_TEST as
--- select distinct
---        p.PATID
---       ,p.OSA_DX1_DATE
---       ,px.PX as TEST_CODE
---       ,px.PX_DATE as TEST_DATE
---       ,datediff('day',p.OSA_DX1_DATE,px.PX_DATE) as DAYS_DIAGNOSTIC_TO_OSA
--- from identifier($pat_elig) p
--- join identifier($PROCEDURES) px
--- on p.PATID = px.PATID
--- where px.PX in ('95782','95783','95800','95801',
---                 '95803','95805','95806','95807',
---                 '95808','95810','95811') and 
---       px.PX_TYPE = 'CH'
--- ;
+create or replace table PAT_OSA_TEST as
+select distinct
+       p.PATID
+      ,p.OSA_DX1_DATE
+      ,px.PX as TEST_CODE
+      ,px.PX_DATE as TEST_DATE
+      ,datediff('day',p.OSA_DX1_DATE,px.PX_DATE) as DAYS_DIAGNOSTIC_TO_OSA
+from identifier($pat_elig) p
+join identifier($PROCEDURES) px
+on p.PATID = px.PATID
+where px.PX in ('95782','95783','95800','95801',
+                '95803','95805','95806','95807',
+                '95808','95810','95811') and 
+      px.PX_TYPE = 'CH'
+;
+select count(distinct patid) from PAT_OSA_TEST;
 
--- /*exposure: Oral device/appliance*/
--- create or replace table PAT_MAD as
--- select distinct
---        p.PATID
---       ,p.OSA_DX1_DATE
---       ,px.PX as MAD_CODE
---       ,px.PX_DATE as MAD_DATE
---       ,datediff('day',px.PX_DATE,p.OSA_DX1_DATE) as DAYS_OSA_TO_MAD_INIT
--- from identifier($pat_elig) p
--- join identifier($procedures) px
--- on p.PATID = px.PATID
--- where px.PX in ('E0485','E0486')
---       and px.PX_TYPE = 'CH' 
---       and px.PX_DATE > p.OSA_DX1_DATE
--- ;
--- select count(distinct patid) from PAT_MAD;
+/*exposure: Oral device/appliance*/
+create or replace table PAT_OSA_MAD as
+select distinct
+       p.PATID
+      ,p.OSA_DX1_DATE
+      ,px.PX as MAD_CODE
+      ,px.PX_DATE as MAD_DATE
+      ,datediff('day',px.PX_DATE,p.OSA_DX1_DATE) as DAYS_OSA_TO_MAD_INIT
+from identifier($pat_elig) p
+join identifier($procedures) px
+on p.PATID = px.PATID
+where px.PX in ('E0485','E0486')
+      and px.PX_TYPE = 'CH' 
+      -- and px.PX_DATE > p.OSA_DX1_DATE
+;
+select count(distinct patid) from PAT_OSA_MAD;
 -- 2,132
-
+DROP TABLE PAT_OSA_CPAP_DEVICE;
 /*exposure: CPAP initialization*/
-create or replace table PAT_OSA_CPAP_DEVICE as
+create or replace table PAT_OSA_PAP_DEVICE as
       with cpap_first_date as (
       select p.PATID
             ,p.OSA_DX1_DATE
@@ -227,7 +215,7 @@ select * from cpap_first_date
 where DAYS_OSA_TO_CPAP_INIT > 0
 ;
 select count(distinct patid) from PAT_OSA_CPAP_DEVICE;
--- 112,429
+-- 296,203
 
 /*exposure: CPAP adherence*/
 create or replace table PAT_OSA_CPAP_SUPPLY as
@@ -268,149 +256,58 @@ order by d.PATID, px.PX_DATE
 -- order by PATID, YEAR_CPAP_INIT_TO_SUPPLY
 -- ;
 
-/*covariates: demographics, hypertension, obesity, T2DM, ...*/
--- Obesity: ICD9 (278.00, 278.01, 278.03) or ICD10 (E66.0,E66.01, E66.09, E66.1, E66.2, E66.8, E66.9, Z68.30-Z68.45)
--- T2DM: ICD9 (250,357.2,362.0[1-7]) or ICD10 (E10, E11, E08.42, E13.42)
--- hypertension: ICD9 (401,402,403,404,405) or ICD10 (I10,I11,I12,I13,R03)
--- Smoking status
+/*covariates: demographics */
+create or replate table PAT_OSA_
 
-create or replace table PAT_OSA_COVARIATES as
-with cov_event as (
-    select dx.PATID
-          ,'Obesity' ENDPOINT
-          ,dx.DX_DATE ENDPOINT_DATE
-    from identifier($DIAGNOSIS) dx
-    where (dx.DX_TYPE = '09' and dx.DX in ('278.00', '278.01', '278.03')) OR
-          (dx.DX_TYPE = '10' and (split_part(dx.DX,'.',1) in ('E66') or substr(dx.DX,1,5) in ('Z68.3','Z68.4')))
-    union
-    select dx.PATID
-          ,'T2DM' ENDPOINT
-          ,dx.DX_DATE ENDPOINT_DATE
-    from identifier($DIAGNOSIS) dx
-    where (dx.DX_TYPE = '09' and (split_part(dx.DX,'.',1) in ('250') or substr(dx.DX,1,5) in ('357.2','362.0'))) OR
-          (dx.DX_TYPE = '10' and (split_part(dx.DX,'.',1) in ('E10','E11') or substr(dx.DX,1,6) in ('E08.42', 'E13.42')))
-    union
-    select dx.PATID
-          ,'HTN' ENDPOINT
-          ,dx.DX_DATE ENDPOINT_DATE
-    from identifier($DIAGNOSIS) dx
-    where (dx.DX_TYPE = '09' and split_part(dx.DX,'.',1) in ('401','402','403','404','405')) OR
-          (dx.DX_TYPE = '10' and split_part(dx.DX,'.',1) in ('I10','I11','I12','I13','R03'))
-), cov_occur as (
-select p.PATID
-      ,datediff('day',p.OSA_DX1_DATE,m.ENDPOINT_DATE) as DAYS_SINCE_OSA
-      ,case when datediff('day',p.OSA_DX1_DATE,m.ENDPOINT_DATE)<=0 then (m.ENDPOINT || '_BEF')
-            else (m.ENDPOINT || '_AFT') end as MACE_BEF_AFT
-from PAT_OSA_ELIG p
-left join cov_event m on p.PATID = m.PATID 
-), cov_pivot as (
-select * from cov_occur
-pivot (min(DAYS_SINCE_OSA) for MACE_BEF_AFT 
-       in ('Obesity_BEF','Obesity_AFT','T2DM_BEF','T2DM_AFT','HTN_BEF','HTN_AFT')) 
-       as p(PATID,Obesity_BEF,Obesity_AFT,T2DM_BEF,T2DM_AFT,HTN_BEF,HTN_AFT)
-), cov_pivot2 as (
-select * from cov_occur
-pivot (max(DAYS_SINCE_OSA) for MACE_BEF_AFT 
-       in ('Obesity_BEF','Obesity_AFT','T2DM_BEF','T2DM_AFT','HTN_BEF','HTN_AFT')) 
-       as p(PATID,Obesity_BEF,Obesity_AFT,T2DM_BEF,T2DM_AFT,HTN_BEF,HTN_AFT)
-), cov_ses as (
-select distinct PATID, 1 as LIS_DUAL_IND
-from identifier($enrollment)
-where raw_basis like 'LIS%' or raw_basis like 'DUAL%'
-)
-select p.PATID
-      ,p.OSA_DX1_DATE
-      ,p.AGE_AT_OSA_DX1
-      ,d.BIRTH_DATE
-      ,d.SEX
-      ,d.RACE
-      ,d.HISPANIC
-      ,coalesce(cov_ses.LIS_DUAL_IND,0) as LIS_DUAL_IND
-      ,cov.Obesity_BEF as Obesity_BEF_min
-      ,cov2.Obesity_BEF as Obesity_BEF_max
-      ,cov.Obesity_AFT as Obesity_AFT_min
-      ,cov2.Obesity_AFT as Obesity_AFT_max
-      ,cov.T2DM_BEF as T2DM_BEF_min
-      ,cov2.T2DM_BEF as T2DM_BEF_max
-      ,cov.T2DM_AFT as T2DM_AFT_min
-      ,cov2.T2DM_AFT as T2DM_AFT_max
-      ,cov.HTN_BEF as HTN_BEF_min
-      ,cov2.HTN_BEF as HTN_BEF_max
-      ,cov.HTN_AFT as HTN_AFT_min
-      ,cov2.HTN_AFT as HTN_AFT_max
-from identifier($pat_elig) p
-left join cov_ses on p.PATID = cov_ses.PATID
-left join cov_pivot cov on p.PATID = cov.PATID
-left join cov_pivot2 cov2 on p.PATID = cov2.PATID
-left join identifier($demographic) d on p.PATID = d.PATID
-;
-
-/*de-identified dataset for Aim 1: association between CPAP usage and health outcomes*/
-create or replace table PAT_OSA_CPAP_DEID as
-select p.PATID
-      ,p.DAYS_OSA_TO_CENSOR
-      ,d.DAYS_OSA_TO_CPAP_INIT
-      ,ep.MI_AFT AS DAYS_OSA_TO_MI
-      ,ep.STROKE_AFT AS DAYS_OSA_TO_STROKE
-      ,ep.HF_AFT AS DAYS_OSA_TO_HF
-      ,ep.REVASC_AFT AS DAYS_OSA_TO_REVASC
-      ,ep.MACE_AFT AS DAYS_OSA_TO_MACE
-      ,ep.DAYS_OSA_TO_DEATH
-      ,cov.AGE_AT_OSA_DX1
-      ,cov.SEX
-      ,cov.RACE
-      ,cov.HISPANIC
-      ,cov.LIS_DUAL_IND
-      ,case when ep.MI_BEF < 0 then 1 else 0 end as MI_history
-      ,case when ep.STROKE_BEF < 0 then 1 else 0 end as STROKE_history
-      ,case when ep.HF_BEF < 0 then 1 else 0 end as HF_history
-      ,case when ep.REVASC_BEF < 0 then 1 else 0 end as REVASC_history
-      ,case when ep.MACE_BEF < 0 then 1 else 0 end as MACE_history
-      ,case when cov.Obesity_BEF_min < 0 then 1 else 0 end as Obesity_history --obesity dx before OSA dx1
-      ,case when cov.T2DM_BEF_min < 0 then 1 else 0 end as T2DM_history --T2DM dx before OSA dx1
-      ,case when cov.HTN_BEF_min < 0 then 1 else 0 end as HTN_history --HTN dx before OSA dx1
-from identifier($pat_elig) p
-left join PAT_OSA_CPAP_DEVICE d on p.PATID = d.PATID
-left join PAT_OSA_ENDPT ep on p.PATID = ep.PATID
-left join PAT_OSA_COVARIATES cov on p.PATID = cov.PATID
-;
-
-/*de-id dataset for Aim 2: association between CPAP adherence and health outcomes*/
-create or replace table PAT_OSA_CPAP_SUPPLY_DEID as 
+/*covariates: diagnoses*/
+create or replace table PAT_OSA_ALL_DX as
 select distinct
-       p.PATID
-      ,s.DAYS_ENR_START_TO_OSA
-      ,s.DAYS_OSA_TO_CPAP_INIT
-      ,s.DAYS_CPAP_INIT_TO_SUPPLY
-      ,s.DAYS_SUPPLY_TO_ENR_END + s.DAYS_CPAP_INIT_TO_SUPPLY as DAYS_CPAP_INIT_TO_CENSOR
-      ,cov.AGE_AT_OSA_DX1
-      ,cov.SEX
-      ,cov.RACE
-      ,cov.HISPANIC
-      ,cov.LIS_DUAL_IND
-      ,ep.MI_AFT  - s.DAYS_OSA_TO_CPAP_INIT as DAYS_CPAP_INIT_TO_MI
-      ,ep.STROKE_AFT - s.DAYS_OSA_TO_CPAP_INIT as DAYS_CPAP_INIT_TO_STROKE
-      ,ep.HF_AFT - s.DAYS_OSA_TO_CPAP_INIT as DAYS_CPAP_INIT_TO_HF
-      ,ep.REVASC_AFT - s.DAYS_OSA_TO_CPAP_INIT as DAYS_CPAP_INIT_TO_REVASC
-      ,ep.MACE_AFT - s.DAYS_OSA_TO_CPAP_INIT as DAYS_CPAP_INIT_TO_MACE
-      ,ep.DAYS_OSA_TO_DEATH - s.DAYS_OSA_TO_CPAP_INIT as DAYS_CPAP_INIT_TO_DEATH
-      ,case when ep.MI_BEF < 0 then 1 else 0 end as MI_history
-      ,case when ep.STROKE_BEF < 0 then 1 else 0 end as STROKE_history
-      ,case when ep.HF_BEF < 0 then 1 else 0 end as HF_history
-      ,case when ep.REVASC_BEF < 0 then 1 else 0 end as REVASC_history
-      ,case when ep.MACE_BEF < 0 then 1 else 0 end as MACE_history
-      ,case when cov.Obesity_BEF_min < 0 then 1 else 0 end as Obesity_history --obesity dx before OSA dx1
-      ,case when cov.T2DM_BEF_min < 0 then 1 else 0 end as T2DM_history --T2DM dx before OSA dx1
-      ,case when cov.HTN_BEF_min < 0 then 1 else 0 end as HTN_history --HTN dx before OSA dx1
-      ,cov.Obesity_AFT_min
-      ,cov.Obesity_AFT_max
-      ,cov.T2DM_AFT_min
-      ,cov.T2DM_AFT_max
-      ,cov.HTN_AFT_min
-      ,cov.HTN_AFT_max
+       a.PATID
+      ,dx.DX
+      ,dx.DX_TYPE
+      ,dx.DX_DATE
+      ,datediff('day',p.OSA_DX1_DATE,dx.DX_DATE) as DAYS_SINCE_OSA
 from identifier($pat_elig) p
-join PAT_OSA_CPAP_SUPPLY s on p.PATID = s.PATID -- only CPAP user group
-left join PAT_OSA_ENDPT ep on p.PATID = ep.PATID
-left join PAT_OSA_COVARIATES cov on p.PATID = cov.PATID
-order by PATID,DAYS_CPAP_INIT_TO_SUPPLY
+join identifier($diagnosis) dx 
+on p.patid = dx.patid
 ;
+
+create or replace table PAT_OSA_ALL_PHECD as
+with phecd_map_cte as (
+       select distinct dx.*,
+              phe."phecode" as phecd_dxgrpcd, 
+              ref."phecode_string" as phecd_dxgrp
+       from ALS_ALL_DX dx 
+       join ONTOLOGY.GROUPER_VALUESETS.ICD10CM_PHECODEX phe on dx.DX = phe."icd10" and dx.DX_TYPE = '10'
+              and phe."phecode" not like '%.%'
+       join ONTOLOGY.GROUPER_VALUESETS.PHECODEX_REF ref on phe."phecode" = ref."phecode" 
+       union
+       select distinct dx.*,
+              phe."phecode" as phecd_dxgrpcd, 
+              ref."phecode_string" as phecd_dxgrp
+       from ALS_ALL_DX dx 
+       join ONTOLOGY.GROUPER_VALUESETS.ICD9CM_PHECODEX phe on dx.DX = phe."icd9" and dx.DX_TYPE = '09'
+              and phe."phecode" not like '%.%'
+       join ONTOLOGY.GROUPER_VALUESETS.PHECODEX_REF ref on phe."phecode" = ref."phecode"
+), phecd_fill_na as (
+       select * from phecd_map_cte
+       union 
+       select dx.*,'00000', 'NI'
+       from ALS_ALL_DX dx
+       where not exists (select 1 from phecd_map_cte cte where cte.diagnosisid = dx.diagnosisid) 
+             and dx.dx not in ('335.20','I12.21')
+)
+select distinct
+       patid,
+       dx,
+       dx_type,
+       phecd_dxgrpcd,
+       phecd_dxgrp,
+       dx_date,
+       days_since_index
+from phecd_fill_na
+;
+
+
+
+/*covariates: medications*/
