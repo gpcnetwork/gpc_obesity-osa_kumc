@@ -197,7 +197,7 @@ where px.PX in ('E0485','E0486')
 ;
 select count(distinct patid) from PAT_OSA_MAD;
 -- 2,132
-DROP TABLE PAT_OSA_CPAP_DEVICE;
+
 /*exposure: CPAP initialization*/
 create or replace table PAT_OSA_PAP_DEVICE as
       with cpap_first_date as (
@@ -214,11 +214,11 @@ create or replace table PAT_OSA_PAP_DEVICE as
 select * from cpap_first_date
 where DAYS_OSA_TO_CPAP_INIT > 0
 ;
-select count(distinct patid) from PAT_OSA_CPAP_DEVICE;
+select count(distinct patid) from PAT_OSA_PAP_DEVICE;
 -- 296,203
 
 /*exposure: CPAP adherence*/
-create or replace table PAT_OSA_CPAP_SUPPLY as
+create or replace table PAT_OSA_PAP_SUPPLY as
 select d.PATID
       ,e.ENR_START_DATE
       ,e.DAYS_ENR_START_TO_OSA
@@ -232,7 +232,7 @@ select d.PATID
       ,floor(datediff('day',d.CPAP_INIT_DATE::date,px.PX_DATE::date)/365.25) as YEAR_CPAP_INIT_TO_SUPPLY
       ,e.ENR_END_DATE
       ,datediff('day',px.PX_DATE::date,e.ENR_END_DATE::date) as DAYS_SUPPLY_TO_ENR_END
-from PAT_OSA_CPAP_DEVICE d
+from PAT_OSA_PAP_DEVICE d
 join identifier($pat_elig) e on d.PATID = e.PATID
 left join identifier($procedures) px on d.PATID = px.PATID
 where px.PX_TYPE = 'CH' and px.PX_DATE >= d.CPAP_INIT_DATE and
@@ -247,67 +247,72 @@ group by d.PATID,e.ENR_START_DATE,e.DAYS_ENR_START_TO_OSA,d.OSA_DX1_DATE,d.CPAP_
 order by d.PATID, px.PX_DATE
 ;
 
--- create or replace table PAT_OSA_CPAP_SUPPLY_YEARLY as
--- select distinct 
---        PATID, YEAR_CPAP_INIT_TO_SUPPLY,
---        max(YEAR_CPAP_INIT_TO_SUPPLY) over (partition by PATID) as MAX_SUPPLY_YEAR,
---        count(distinct CPAP_SUPPLY_DATE) over (partition by PATID,YEAR_CPAP_INIT_TO_SUPPLY) as YEARLY_SUPPLY_COUNT
--- from PAT_OSA_CPAP_SUPPLY
--- order by PATID, YEAR_CPAP_INIT_TO_SUPPLY
--- ;
-
 /*covariates: demographics */
-create or replate table PAT_OSA_
+create or replace table PAT_OSA_DEMO as
+select distinct
+       p.PATID
+      ,d.BIRTH_DATE
+      ,round(datediff('day',d.BIRTH_DATE,p.OSA_DX1_DATE)/365.25) AGE_AT_OSA_DX1
+      ,d.SEX
+      ,d.RACE
+      ,d.HISPANIC
+from identifier($pat_elig) p
+join identifier($demographic) d 
+on p.patid = d.patid
+;
 
 /*covariates: diagnoses*/
 create or replace table PAT_OSA_ALL_DX as
 select distinct
-       a.PATID
+       p.PATID
       ,dx.DX
       ,dx.DX_TYPE
       ,dx.DX_DATE
-      ,datediff('day',p.OSA_DX1_DATE,dx.DX_DATE) as DAYS_SINCE_OSA
+      ,datediff('day',p.OSA_DX1_DATE,dx.DX_DATE) as DAYS_SINCE_INDEX
+      ,dx.DIAGNOSISID
 from identifier($pat_elig) p
 join identifier($diagnosis) dx 
 on p.patid = dx.patid
 ;
+select count(distinct patid) from PAT_OSA_ALL_DX;
+-- 907,759
 
-create or replace table PAT_OSA_ALL_PHECD as
-with phecd_map_cte as (
-       select distinct dx.*,
-              phe."phecode" as phecd_dxgrpcd, 
-              ref."phecode_string" as phecd_dxgrp
-       from ALS_ALL_DX dx 
-       join ONTOLOGY.GROUPER_VALUESETS.ICD10CM_PHECODEX phe on dx.DX = phe."icd10" and dx.DX_TYPE = '10'
-              and phe."phecode" not like '%.%'
-       join ONTOLOGY.GROUPER_VALUESETS.PHECODEX_REF ref on phe."phecode" = ref."phecode" 
-       union
-       select distinct dx.*,
-              phe."phecode" as phecd_dxgrpcd, 
-              ref."phecode_string" as phecd_dxgrp
-       from ALS_ALL_DX dx 
-       join ONTOLOGY.GROUPER_VALUESETS.ICD9CM_PHECODEX phe on dx.DX = phe."icd9" and dx.DX_TYPE = '09'
-              and phe."phecode" not like '%.%'
-       join ONTOLOGY.GROUPER_VALUESETS.PHECODEX_REF ref on phe."phecode" = ref."phecode"
-), phecd_fill_na as (
-       select * from phecd_map_cte
-       union 
-       select dx.*,'00000', 'NI'
-       from ALS_ALL_DX dx
-       where not exists (select 1 from phecd_map_cte cte where cte.diagnosisid = dx.diagnosisid) 
-             and dx.dx not in ('335.20','I12.21')
+/*covariates: cci*/
+select * from CCI_MAP;
+create or replace PAT_OSA_CCI as
+with cte_cci_map as (
+      select dx.patid,
+             dx.dx_date,
+             dx.days_since_index,
+             cci.code_grp,
+             cci."full" as code_grp_lbl,
+             try_to_double(cci."score") as cci_score,
+             row_number() over (partition by dx.patid,cci.code_grp, case when dx.days_since_index <=0 then 1 else 0 end order by cci.days_since_index) as rn
+      from PAT_OSA_ALL_DX dx
+      join CCI_MAP cci 
+      on replace(dx.dx,".","") like cci.code || '%' and 
+         dx.dx_type = cci.code_type_cdm
 )
-select distinct
-       patid,
-       dx,
-       dx_type,
-       phecd_dxgrpcd,
-       phecd_dxgrp,
-       dx_date,
-       days_since_index
-from phecd_fill_na
-;
-
-
+select patid
+      ,dx_date as cci_date
+      ,days_since_index
+      ,code_grp
+      ,code_grp_lbl
+      ,cci_score
+from cte_cci_map 
+where rn = 1
+; 
 
 /*covariates: medications*/
+create or replace table PAT_OSA_ALL_RX as
+select distinct
+       p.PATID
+      ,dx.DX
+      ,dx.DX_TYPE
+      ,dx.DX_DATE
+      ,datediff('day',p.OSA_DX1_DATE,dx.DX_DATE) as DAYS_SINCE_OSA
+      ,dx.DIAGNOSISID
+from identifier($pat_elig) p
+join identifier($dispensing) rx 
+on p.patid = dx.patid
+;

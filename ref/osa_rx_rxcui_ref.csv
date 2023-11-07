@@ -1,0 +1,3142 @@
+VACLS,RXNORM,NAME,TTY
+CV400,17767,amlodipine,IN
+CV400,321064,olmesartan,IN
+CV400,5487,hydrochlorothiazide,IN
+CV400,1008801,amlodipine / hydrochlorothiazide / olmesartan,MIN
+CV400,118463,olmesartan medoxomil,PIN
+CV400,1000005,amlodipine 5 MG / hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG Oral Tablet [Tribenzor],SBD
+CV400,1000003,amlodipine 5 MG / hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG [Tribenzor],SBDC
+CV400,999970,amlodipine / hydrochlorothiazide / olmesartan Oral Tablet [Tribenzor],SBDF
+CV400,1182147,Tribenzor Pill,SBDG
+CV400,1182686,Tribenzor Oral Product,SBDG
+CV400,1000001,amlodipine 5 MG / hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,316049,hydrochlorothiazide 25 MG,SCDC
+CV400,329528,amlodipine 5 MG,SCDC
+CV400,359114,olmesartan medoxomil 40 MG,SCDC
+CV400,999966,amlodipine / hydrochlorothiazide / olmesartan Oral Tablet,SCDF
+CV400,1152277,amlodipine / hydrochlorothiazide / olmesartan Oral Product,SCDG
+CV400,1152278,amlodipine / hydrochlorothiazide / olmesartan Pill,SCDG
+CV400,325646,aliskiren,IN
+CV400,802519,aliskiren / hydrochlorothiazide,MIN
+CV400,1011712,aliskiren 150 MG / hydrochlorothiazide 12.5 MG Oral Tablet [Tekturna HCT],SBD
+CV400,1011711,aliskiren 150 MG / hydrochlorothiazide 12.5 MG [Tekturna HCT],SBDC
+CV400,758550,aliskiren / hydrochlorothiazide Oral Tablet [Tekturna HCT],SBDF
+CV400,1430140,Tekturna HCT Oral Product,SBDG
+CV400,1430141,Tekturna HCT Pill,SBDG
+CV400,1011710,aliskiren 150 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,1009217,aliskiren 150 MG,SCDC
+CV400,316047,hydrochlorothiazide 12.5 MG,SCDC
+CV400,754717,aliskiren / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1164883,aliskiren / hydrochlorothiazide Oral Product,SCDG
+CV400,1164884,aliskiren / hydrochlorothiazide Pill,SCDG
+CV400,1011715,aliskiren 150 MG / hydrochlorothiazide 25 MG Oral Tablet [Tekturna HCT],SBD
+CV400,1011714,aliskiren 150 MG / hydrochlorothiazide 25 MG [Tekturna HCT],SBDC
+CV400,1011713,aliskiren 150 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,1011752,aliskiren 300 MG / hydrochlorothiazide 12.5 MG Oral Tablet [Tekturna HCT],SBD
+CV400,1011751,aliskiren 300 MG / hydrochlorothiazide 12.5 MG [Tekturna HCT],SBDC
+CV400,1011750,aliskiren 300 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,1009314,aliskiren 300 MG,SCDC
+CV400,1011755,aliskiren 300 MG / hydrochlorothiazide 25 MG Oral Tablet [Tekturna HCT],SBD
+CV400,1011754,aliskiren 300 MG / hydrochlorothiazide 25 MG [Tekturna HCT],SBDC
+CV400,1011753,aliskiren 300 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,1091643,azilsartan,IN
+CV400,2409,chlorthalidone,IN
+CV400,1235143,azilsartan / chlorthalidone,MIN
+CV400,1091642,azilsartan medoxomil,PIN
+CV400,1235150,azilsartan medoxomil 40 MG / chlorthalidone 12.5 MG Oral Tablet [Edarbyclor],SBD
+CV400,1235146,azilsartan medoxomil 40 MG / chlorthalidone 12.5 MG [Edarbyclor],SBDC
+CV400,1235147,azilsartan / chlorthalidone Oral Tablet [Edarbyclor],SBDF
+CV400,1235148,Edarbyclor Oral Product,SBDG
+CV400,1235149,Edarbyclor Pill,SBDG
+CV400,1235144,azilsartan medoxomil 40 MG / chlorthalidone 12.5 MG Oral Tablet,SCD
+CV400,1091644,azilsartan medoxomil 40 MG,SCDC
+CV400,331132,chlorthalidone 12.5 MG,SCDC
+CV400,1235142,azilsartan / chlorthalidone Oral Tablet,SCDF
+CV400,1235140,azilsartan / chlorthalidone Oral Product,SCDG
+CV400,1235141,azilsartan / chlorthalidone Pill,SCDG
+CV400,1235157,azilsartan medoxomil 40 MG / chlorthalidone 25 MG Oral Tablet [Edarbyclor],SBD
+CV400,1235153,azilsartan medoxomil 40 MG / chlorthalidone 25 MG [Edarbyclor],SBDC
+CV400,1235151,azilsartan medoxomil 40 MG / chlorthalidone 25 MG Oral Tablet,SCD
+CV400,315655,chlorthalidone 25 MG,SCDC
+CV400,30131,moexipril,IN
+CV400,214622,hydrochlorothiazide / moexipril,MIN
+CV400,236066,moexipril hydrochloride,PIN
+CV400,1299859,hydrochlorothiazide 12.5 MG / moexipril hydrochloride 15 MG Oral Tablet,SCD
+CV400,1299858,moexipril hydrochloride 15 MG,SCDC
+CV400,372946,hydrochlorothiazide / moexipril Oral Tablet,SCDF
+CV400,1162775,hydrochlorothiazide / moexipril Oral Product,SCDG
+CV400,1162776,hydrochlorothiazide / moexipril Pill,SCDG
+CV400,1299871,hydrochlorothiazide 12.5 MG / moexipril hydrochloride 7.5 MG Oral Tablet,SCD
+CV400,1299870,moexipril hydrochloride 7.5 MG,SCDC
+CV400,1299890,hydrochlorothiazide 25 MG / moexipril hydrochloride 15 MG Oral Tablet,SCD
+CV400,54552,perindopril,IN
+CV400,1033889,amlodipine / perindopril,MIN
+CV400,1600711,perindopril arginine,PIN
+CV400,1600722,amlodipine 10 MG / perindopril arginine 14 MG Oral Tablet [Prestalia],SBD
+CV400,1600718,amlodipine 10 MG / perindopril arginine 14 MG [Prestalia],SBDC
+CV400,1600719,amlodipine / perindopril Oral Tablet [Prestalia],SBDF
+CV400,1600720,Prestalia Oral Product,SBDG
+CV400,1600721,Prestalia Pill,SBDG
+CV400,1600716,amlodipine 10 MG / perindopril arginine 14 MG Oral Tablet,SCD
+CV400,1600712,perindopril arginine 14 MG,SCDC
+CV400,329526,amlodipine 10 MG,SCDC
+CV400,1600715,amlodipine / perindopril Oral Tablet,SCDF
+CV400,1600713,amlodipine / perindopril Oral Product,SCDG
+CV400,1600714,amlodipine / perindopril Pill,SCDG
+CV400,1600726,amlodipine 2.5 MG / perindopril arginine 3.5 MG Oral Tablet [Prestalia],SBD
+CV400,1600725,amlodipine 2.5 MG / perindopril arginine 3.5 MG [Prestalia],SBDC
+CV400,1600724,amlodipine 2.5 MG / perindopril arginine 3.5 MG Oral Tablet,SCD
+CV400,1600723,perindopril arginine 3.5 MG,SCDC
+CV400,329527,amlodipine 2.5 MG,SCDC
+CV400,1600730,amlodipine 5 MG / perindopril arginine 7 MG Oral Tablet [Prestalia],SBD
+CV400,1600729,amlodipine 5 MG / perindopril arginine 7 MG [Prestalia],SBDC
+CV400,1600728,amlodipine 5 MG / perindopril arginine 7 MG Oral Tablet,SCD
+CV400,1600727,perindopril arginine 7 MG,SCDC
+CV400,1656328,sacubitril,IN
+CV400,69749,valsartan,IN
+CV400,1656339,sacubitril / valsartan,MIN
+CV400,1656346,sacubitril 24 MG / valsartan 26 MG Oral Tablet [Entresto],SBD
+CV400,1656342,sacubitril 24 MG / valsartan 26 MG [Entresto],SBDC
+CV400,1656343,sacubitril / valsartan Oral Tablet [Entresto],SBDF
+CV400,1656344,Entresto Oral Product,SBDG
+CV400,1656345,Entresto Pill,SBDG
+CV400,1656340,sacubitril 24 MG / valsartan 26 MG Oral Tablet,SCD
+CV400,1656334,sacubitril 24 MG,SCDC
+CV400,1656335,valsartan 26 MG,SCDC
+CV400,1656338,sacubitril / valsartan Oral Tablet,SCDF
+CV400,1656336,sacubitril / valsartan Oral Product,SCDG
+CV400,1656337,sacubitril / valsartan Pill,SCDG
+CV400,1656351,sacubitril 49 MG / valsartan 51 MG Oral Tablet [Entresto],SBD
+CV400,1656350,sacubitril 49 MG / valsartan 51 MG [Entresto],SBDC
+CV400,1656349,sacubitril 49 MG / valsartan 51 MG Oral Tablet,SCD
+CV400,1656347,sacubitril 49 MG,SCDC
+CV400,1656348,valsartan 51 MG,SCDC
+CV400,1656356,sacubitril 97 MG / valsartan 103 MG Oral Tablet [Entresto],SBD
+CV400,1656355,sacubitril 97 MG / valsartan 103 MG [Entresto],SBDC
+CV400,1656354,sacubitril 97 MG / valsartan 103 MG Oral Tablet,SCD
+CV400,1656352,sacubitril 97 MG,SCDC
+CV400,1656353,valsartan 103 MG,SCDC
+CV400,1202,atenolol,IN
+CV400,151195,atenolol / chlorthalidone,MIN
+CV400,746023,atenolol 100 MG / chlorthalidone 25 MG Oral Tablet [Tenoretic],SBD
+CV400,746021,atenolol 100 MG / chlorthalidone 25 MG [Tenoretic],SBDC
+CV400,746022,atenolol / chlorthalidone Oral Tablet [Tenoretic],SBDF
+CV400,1182013,Tenoretic Oral Product,SBDG
+CV400,1182014,Tenoretic Pill,SBDG
+CV400,197382,atenolol 100 MG / chlorthalidone 25 MG Oral Tablet,SCD
+CV400,315436,atenolol 100 MG,SCDC
+CV400,370620,atenolol / chlorthalidone Oral Tablet,SCDF
+CV400,1154370,atenolol / chlorthalidone Oral Product,SCDG
+CV400,1154371,atenolol / chlorthalidone Pill,SCDG
+CV400,746030,atenolol 50 MG / chlorthalidone 25 MG Oral Tablet [Tenoretic],SBD
+CV400,746028,atenolol 50 MG / chlorthalidone 25 MG [Tenoretic],SBDC
+CV400,197383,atenolol 50 MG / chlorthalidone 25 MG Oral Tablet,SCD
+CV400,315438,atenolol 50 MG,SCDC
+CV400,1998,captopril,IN
+CV400,214357,captopril / hydrochlorothiazide,MIN
+CV400,197436,captopril 25 MG / hydrochlorothiazide 15 MG Oral Tablet,SCD
+CV400,315561,captopril 25 MG,SCDC
+CV400,316048,hydrochlorothiazide 15 MG,SCDC
+CV400,371253,captopril / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1155750,captopril / hydrochlorothiazide Oral Product,SCDG
+CV400,1155751,captopril / hydrochlorothiazide Pill,SCDG
+CV400,197437,captopril 25 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,197438,captopril 50 MG / hydrochlorothiazide 15 MG Oral Tablet,SCD
+CV400,315562,captopril 50 MG,SCDC
+CV400,197439,captopril 50 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,29046,lisinopril,IN
+CV400,214618,hydrochlorothiazide / lisinopril,MIN
+CV400,823986,hydrochlorothiazide 12.5 MG / lisinopril 10 MG Oral Tablet [Zestoretic],SBD
+CV400,823984,hydrochlorothiazide 12.5 MG / lisinopril 10 MG [Zestoretic],SBDC
+CV400,823970,hydrochlorothiazide / lisinopril Oral Tablet [Zestoretic],SBDF
+CV400,1187277,Zestoretic Oral Product,SBDG
+CV400,1187278,Zestoretic Pill,SBDG
+CV400,197885,hydrochlorothiazide 12.5 MG / lisinopril 10 MG Oral Tablet,SCD
+CV400,316151,lisinopril 10 MG,SCDC
+CV400,372613,hydrochlorothiazide / lisinopril Oral Tablet,SCDF
+CV400,1162124,hydrochlorothiazide / lisinopril Oral Product,SCDG
+CV400,1162125,hydrochlorothiazide / lisinopril Pill,SCDG
+CV400,823982,hydrochlorothiazide 12.5 MG / lisinopril 20 MG Oral Tablet [Zestoretic],SBD
+CV400,823980,hydrochlorothiazide 12.5 MG / lisinopril 20 MG [Zestoretic],SBDC
+CV400,197886,hydrochlorothiazide 12.5 MG / lisinopril 20 MG Oral Tablet,SCD
+CV400,316153,lisinopril 20 MG,SCDC
+CV400,823971,hydrochlorothiazide 25 MG / lisinopril 20 MG Oral Tablet [Zestoretic],SBD
+CV400,823969,hydrochlorothiazide 25 MG / lisinopril 20 MG [Zestoretic],SBDC
+CV400,197887,hydrochlorothiazide 25 MG / lisinopril 20 MG Oral Tablet,SCD
+CV400,6876,methyldopa,IN
+CV400,214620,hydrochlorothiazide / methyldopa,MIN
+CV400,197960,hydrochlorothiazide 25 MG / methyldopa 250 MG Oral Tablet,SCD
+CV400,316283,methyldopa 250 MG,SCDC
+CV400,372853,hydrochlorothiazide / methyldopa Oral Tablet,SCDF
+CV400,1162130,hydrochlorothiazide / methyldopa Oral Product,SCDG
+CV400,1162131,hydrochlorothiazide / methyldopa Pill,SCDG
+CV400,197963,hydrochlorothiazide 15 MG / methyldopa 250 MG Oral Tablet,SCD
+CV400,1369,bendroflumethiazide,IN
+CV400,7226,nadolol,IN
+CV400,214288,bendroflumethiazide / nadolol,MIN
+CV400,208029,bendroflumethiazide 5 MG / nadolol 80 MG Oral Tablet [Corzide],SBD
+CV400,568759,bendroflumethiazide 5 MG / nadolol 80 MG [Corzide],SBDC
+CV400,369300,bendroflumethiazide / nadolol Oral Tablet [Corzide],SBDF
+CV400,1170997,Corzide Oral Product,SBDG
+CV400,1171610,Corzide Pill,SBDG
+CV400,198001,bendroflumethiazide 5 MG / nadolol 80 MG Oral Tablet,SCD
+CV400,315467,bendroflumethiazide 5 MG,SCDC
+CV400,316321,nadolol 80 MG,SCDC
+CV400,372977,bendroflumethiazide / nadolol Oral Tablet,SCDF
+CV400,1156023,bendroflumethiazide / nadolol Oral Product,SCDG
+CV400,1156024,bendroflumethiazide / nadolol Pill,SCDG
+CV400,214626,hydrochlorothiazide / valsartan,MIN
+CV400,809014,hydrochlorothiazide 12.5 MG / valsartan 80 MG Oral Tablet [Diovan HCT],SBD
+CV400,809012,hydrochlorothiazide 12.5 MG / valsartan 80 MG [Diovan HCT],SBDC
+CV400,809029,hydrochlorothiazide / valsartan Oral Tablet [Diovan HCT],SBDF
+CV400,1171082,Diovan HCT Oral Product,SBDG
+CV400,1171087,Diovan HCT Pill,SBDG
+CV400,200284,hydrochlorothiazide 12.5 MG / valsartan 80 MG Oral Tablet,SCD
+CV400,316882,valsartan 80 MG,SCDC
+CV400,374280,hydrochlorothiazide / valsartan Oral Tablet,SCDF
+CV400,1162783,hydrochlorothiazide / valsartan Oral Product,SCDG
+CV400,1162784,hydrochlorothiazide / valsartan Pill,SCDG
+CV400,809018,hydrochlorothiazide 12.5 MG / valsartan 160 MG Oral Tablet [Diovan HCT],SBD
+CV400,809016,hydrochlorothiazide 12.5 MG / valsartan 160 MG [Diovan HCT],SBDC
+CV400,200285,hydrochlorothiazide 12.5 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,316881,valsartan 160 MG,SCDC
+CV400,73494,telmisartan,IN
+CV400,284636,hydrochlorothiazide / telmisartan,MIN
+CV400,749833,hydrochlorothiazide 12.5 MG / telmisartan 40 MG Oral Tablet [Micardis-HCT],SBD
+CV400,749831,hydrochlorothiazide 12.5 MG / telmisartan 40 MG [Micardis-HCT],SBDC
+CV400,749836,hydrochlorothiazide / telmisartan Oral Tablet [Micardis-HCT],SBDF
+CV400,1178060,Micardis-HCT Oral Product,SBDG
+CV400,1178061,Micardis-HCT Pill,SBDG
+CV400,283316,hydrochlorothiazide 12.5 MG / telmisartan 40 MG Oral Tablet,SCD
+CV400,316764,telmisartan 40 MG,SCDC
+CV400,378921,hydrochlorothiazide / telmisartan Oral Tablet,SCDF
+CV400,1162781,hydrochlorothiazide / telmisartan Oral Product,SCDG
+CV400,1162782,hydrochlorothiazide / telmisartan Pill,SCDG
+CV400,749837,hydrochlorothiazide 12.5 MG / telmisartan 80 MG Oral Tablet [Micardis-HCT],SBD
+CV400,749835,hydrochlorothiazide 12.5 MG / telmisartan 80 MG [Micardis-HCT],SBDC
+CV400,283317,hydrochlorothiazide 12.5 MG / telmisartan 80 MG Oral Tablet,SCD
+CV400,316765,telmisartan 80 MG,SCDC
+CV400,83818,irbesartan,IN
+CV400,214617,hydrochlorothiazide / irbesartan,MIN
+CV400,823934,hydrochlorothiazide 12.5 MG / irbesartan 150 MG Oral Tablet [Avalide],SBD
+CV400,823932,hydrochlorothiazide 12.5 MG / irbesartan 150 MG [Avalide],SBDC
+CV400,823937,hydrochlorothiazide / irbesartan Oral Tablet [Avalide],SBDF
+CV400,1175010,Avalide Oral Product,SBDG
+CV400,1175011,Avalide Pill,SBDG
+CV400,310792,hydrochlorothiazide 12.5 MG / irbesartan 150 MG Oral Tablet,SCD
+CV400,316098,irbesartan 150 MG,SCDC
+CV400,370705,hydrochlorothiazide / irbesartan Oral Tablet,SCDF
+CV400,1162156,hydrochlorothiazide / irbesartan Oral Product,SCDG
+CV400,1162157,hydrochlorothiazide / irbesartan Pill,SCDG
+CV400,823938,hydrochlorothiazide 12.5 MG / irbesartan 300 MG Oral Tablet [Avalide],SBD
+CV400,823936,hydrochlorothiazide 12.5 MG / irbesartan 300 MG [Avalide],SBDC
+CV400,310793,hydrochlorothiazide 12.5 MG / irbesartan 300 MG Oral Tablet,SCD
+CV400,316099,irbesartan 300 MG,SCDC
+CV400,35208,quinapril,IN
+CV400,261417,hydrochlorothiazide / quinapril,MIN
+CV400,809854,hydrochlorothiazide 12.5 MG / quinapril 10 MG Oral Tablet [Accuretic],SBD
+CV400,809852,hydrochlorothiazide 12.5 MG / quinapril 10 MG [Accuretic],SBDC
+CV400,809853,hydrochlorothiazide / quinapril Oral Tablet [Accuretic],SBDF
+CV400,1168391,Accuretic Oral Product,SBDG
+CV400,1168392,Accuretic Pill,SBDG
+CV400,310796,hydrochlorothiazide 12.5 MG / quinapril 10 MG Oral Tablet,SCD
+CV400,316616,quinapril 10 MG,SCDC
+CV400,373732,hydrochlorothiazide / quinapril Oral Tablet,SCDF
+CV400,1162779,hydrochlorothiazide / quinapril Oral Product,SCDG
+CV400,1162780,hydrochlorothiazide / quinapril Pill,SCDG
+CV400,809858,hydrochlorothiazide 12.5 MG / quinapril 20 MG Oral Tablet [Accuretic],SBD
+CV400,809856,hydrochlorothiazide 12.5 MG / quinapril 20 MG [Accuretic],SBDC
+CV400,310797,hydrochlorothiazide 12.5 MG / quinapril 20 MG Oral Tablet,SCD
+CV400,316617,quinapril 20 MG,SCDC
+CV400,882559,hydrochlorothiazide 25 MG / quinapril 20 MG Oral Tablet [Accuretic],SBD
+CV400,882557,hydrochlorothiazide 25 MG / quinapril 20 MG [Accuretic],SBDC
+CV400,310809,hydrochlorothiazide 25 MG / quinapril 20 MG Oral Tablet,SCD
+CV400,809022,hydrochlorothiazide 25 MG / valsartan 160 MG Oral Tablet [Diovan HCT],SBD
+CV400,809020,hydrochlorothiazide 25 MG / valsartan 160 MG [Diovan HCT],SBDC
+CV400,349353,hydrochlorothiazide 25 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,83515,eprosartan,IN
+CV400,352375,eprosartan / hydrochlorothiazide,MIN
+CV400,351292,eprosartan 600 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,330330,eprosartan 600 MG,SCDC
+CV400,378735,eprosartan / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1161918,eprosartan / hydrochlorothiazide Oral Product,SCDG
+CV400,1161919,eprosartan / hydrochlorothiazide Pill,SCDG
+CV400,352336,eprosartan 600 MG / hydrochlorothiazide 25 MG Oral Tablet [Teveten HCT],SBD
+CV400,576025,eprosartan 600 MG / hydrochlorothiazide 25 MG [Teveten HCT],SBDC
+CV400,368561,eprosartan / hydrochlorothiazide Oral Tablet [Teveten HCT],SBDF
+CV400,1184922,Teveten HCT Oral Product,SBDG
+CV400,1184923,Teveten HCT Pill,SBDG
+CV400,351293,eprosartan 600 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,817496,hydrochlorothiazide / olmesartan,MIN
+CV400,847060,hydrochlorothiazide 12.5 MG / olmesartan medoxomil 20 MG Oral Tablet [Benicar HCT],SBD
+CV400,847058,hydrochlorothiazide 12.5 MG / olmesartan medoxomil 20 MG [Benicar HCT],SBDC
+CV400,847059,hydrochlorothiazide / olmesartan Oral Tablet [Benicar HCT],SBDF
+CV400,1170817,Benicar HCT Oral Product,SBDG
+CV400,1170818,Benicar HCT Pill,SBDG
+CV400,403853,hydrochlorothiazide 12.5 MG / olmesartan medoxomil 20 MG Oral Tablet,SCD
+CV400,358775,olmesartan medoxomil 20 MG,SCDC
+CV400,406041,hydrochlorothiazide / olmesartan Oral Tablet,SCDF
+CV400,1162777,hydrochlorothiazide / olmesartan Oral Product,SCDG
+CV400,1162778,hydrochlorothiazide / olmesartan Pill,SCDG
+CV400,847055,hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG Oral Tablet [Benicar HCT],SBD
+CV400,847053,hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG [Benicar HCT],SBDC
+CV400,403854,hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,847042,hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG Oral Tablet [Benicar HCT],SBD
+CV400,847040,hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG [Benicar HCT],SBDC
+CV400,403855,hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,749841,hydrochlorothiazide 25 MG / telmisartan 80 MG Oral Tablet [Micardis-HCT],SBD
+CV400,749839,hydrochlorothiazide 25 MG / telmisartan 80 MG [Micardis-HCT],SBDC
+CV400,477130,hydrochlorothiazide 25 MG / telmisartan 80 MG Oral Tablet,SCD
+CV400,823942,hydrochlorothiazide 25 MG / irbesartan 300 MG Oral Tablet [Avalide],SBD
+CV400,823940,hydrochlorothiazide 25 MG / irbesartan 300 MG [Avalide],SBDC
+CV400,485471,hydrochlorothiazide 25 MG / irbesartan 300 MG Oral Tablet,SCD
+CV400,214354,candesartan,IN
+CV400,284628,candesartan / hydrochlorothiazide,MIN
+CV400,135481,candesartan cilexetil,PIN
+CV400,805863,candesartan cilexetil 16 MG / hydrochlorothiazide 12.5 MG Oral Tablet [Atacand HCT],SBD
+CV400,805861,candesartan cilexetil 16 MG / hydrochlorothiazide 12.5 MG [Atacand HCT],SBDC
+CV400,805854,candesartan / hydrochlorothiazide Oral Tablet [Atacand HCT],SBDF
+CV400,1172182,Atacand HCT Pill,SBDG
+CV400,1172183,Atacand HCT Oral Product,SBDG
+CV400,578325,candesartan cilexetil 16 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,577775,candesartan cilexetil 16 MG,SCDC
+CV400,374934,candesartan / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1156609,candesartan / hydrochlorothiazide Oral Product,SCDG
+CV400,1156610,candesartan / hydrochlorothiazide Pill,SCDG
+CV400,805859,candesartan cilexetil 32 MG / hydrochlorothiazide 12.5 MG Oral Tablet [Atacand HCT],SBD
+CV400,805857,candesartan cilexetil 32 MG / hydrochlorothiazide 12.5 MG [Atacand HCT],SBDC
+CV400,578330,candesartan cilexetil 32 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,577780,candesartan cilexetil 32 MG,SCDC
+CV400,809026,hydrochlorothiazide 12.5 MG / valsartan 320 MG Oral Tablet [Diovan HCT],SBD
+CV400,809024,hydrochlorothiazide 12.5 MG / valsartan 320 MG [Diovan HCT],SBDC
+CV400,636042,hydrochlorothiazide 12.5 MG / valsartan 320 MG Oral Tablet,SCD
+CV400,350561,valsartan 320 MG,SCDC
+CV400,809030,hydrochlorothiazide 25 MG / valsartan 320 MG Oral Tablet [Diovan HCT],SBD
+CV400,809028,hydrochlorothiazide 25 MG / valsartan 320 MG [Diovan HCT],SBDC
+CV400,636045,hydrochlorothiazide 25 MG / valsartan 320 MG Oral Tablet,SCD
+CV400,729455,amlodipine / valsartan,MIN
+CV400,724879,amlodipine 10 MG / valsartan 160 MG Oral Tablet [Exforge],SBD
+CV400,724877,amlodipine 10 MG / valsartan 160 MG [Exforge],SBDC
+CV400,724894,amlodipine / valsartan Oral Tablet [Exforge],SBDF
+CV400,1173241,Exforge Oral Product,SBDG
+CV400,1173242,Exforge Pill,SBDG
+CV400,722126,amlodipine 10 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,722125,amlodipine / valsartan Oral Tablet,SCDF
+CV400,1152289,amlodipine / valsartan Oral Product,SCDG
+CV400,1152290,amlodipine / valsartan Pill,SCDG
+CV400,724887,amlodipine 10 MG / valsartan 320 MG Oral Tablet [Exforge],SBD
+CV400,724885,amlodipine 10 MG / valsartan 320 MG [Exforge],SBDC
+CV400,722131,amlodipine 10 MG / valsartan 320 MG Oral Tablet,SCD
+CV400,724891,amlodipine 5 MG / valsartan 160 MG Oral Tablet [Exforge],SBD
+CV400,724889,amlodipine 5 MG / valsartan 160 MG [Exforge],SBDC
+CV400,722134,amlodipine 5 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,724895,amlodipine 5 MG / valsartan 320 MG Oral Tablet [Exforge],SBD
+CV400,724893,amlodipine 5 MG / valsartan 320 MG [Exforge],SBDC
+CV400,722137,amlodipine 5 MG / valsartan 320 MG Oral Tablet,SCD
+CV400,1009015,amlodipine / olmesartan,MIN
+CV400,744624,amlodipine 10 MG / olmesartan medoxomil 20 MG Oral Tablet [Azor],SBD
+CV400,744622,amlodipine 10 MG / olmesartan medoxomil 20 MG [Azor],SBDC
+CV400,744623,amlodipine / olmesartan Oral Tablet [Azor],SBDF
+CV400,1166087,Azor Oral Product,SBDG
+CV400,1166088,Azor Pill,SBDG
+CV400,730861,amlodipine 10 MG / olmesartan medoxomil 20 MG Oral Tablet,SCD
+CV400,730860,amlodipine / olmesartan Oral Tablet,SCDF
+CV400,1152285,amlodipine / olmesartan Oral Product,SCDG
+CV400,1152286,amlodipine / olmesartan Pill,SCDG
+CV400,744628,amlodipine 10 MG / olmesartan medoxomil 40 MG Oral Tablet [Azor],SBD
+CV400,744626,amlodipine 10 MG / olmesartan medoxomil 40 MG [Azor],SBDC
+CV400,730866,amlodipine 10 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,744632,amlodipine 5 MG / olmesartan medoxomil 20 MG Oral Tablet [Azor],SBD
+CV400,744630,amlodipine 5 MG / olmesartan medoxomil 20 MG [Azor],SBDC
+CV400,730869,amlodipine 5 MG / olmesartan medoxomil 20 MG Oral Tablet,SCD
+CV400,744636,amlodipine 5 MG / olmesartan medoxomil 40 MG Oral Tablet [Azor],SBD
+CV400,744634,amlodipine 5 MG / olmesartan medoxomil 40 MG [Azor],SBDC
+CV400,730872,amlodipine 5 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,805855,candesartan cilexetil 32 MG / hydrochlorothiazide 25 MG Oral Tablet [Atacand HCT],SBD
+CV400,805853,candesartan cilexetil 32 MG / hydrochlorothiazide 25 MG [Atacand HCT],SBDC
+CV400,802749,candesartan cilexetil 32 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,852897,amlodipine / hydrochlorothiazide / valsartan,MIN
+CV400,848134,amlodipine 10 MG / hydrochlorothiazide 12.5 MG / valsartan 160 MG Oral Tablet [Exforge HCT],SBD
+CV400,848132,amlodipine 10 MG / hydrochlorothiazide 12.5 MG / valsartan 160 MG [Exforge HCT],SBDC
+CV400,848148,amlodipine / hydrochlorothiazide / valsartan Oral Tablet [Exforge HCT],SBDF
+CV400,1173249,Exforge HCT Oral Product,SBDG
+CV400,1173250,Exforge HCT Pill,SBDG
+CV400,848131,amlodipine 10 MG / hydrochlorothiazide 12.5 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,848130,amlodipine / hydrochlorothiazide / valsartan Oral Tablet,SCDF
+CV400,1152279,amlodipine / hydrochlorothiazide / valsartan Oral Product,SCDG
+CV400,1152280,amlodipine / hydrochlorothiazide / valsartan Pill,SCDG
+CV400,848139,amlodipine 10 MG / hydrochlorothiazide 25 MG / valsartan 320 MG Oral Tablet [Exforge HCT],SBD
+CV400,848137,amlodipine 10 MG / hydrochlorothiazide 25 MG / valsartan 320 MG [Exforge HCT],SBDC
+CV400,848135,amlodipine 10 MG / hydrochlorothiazide 25 MG / valsartan 320 MG Oral Tablet,SCD
+CV400,848144,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / valsartan 160 MG Oral Tablet [Exforge HCT],SBD
+CV400,848142,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / valsartan 160 MG [Exforge HCT],SBDC
+CV400,848140,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,848149,amlodipine 5 MG / hydrochlorothiazide 25 MG / valsartan 160 MG Oral Tablet [Exforge HCT],SBD
+CV400,848147,amlodipine 5 MG / hydrochlorothiazide 25 MG / valsartan 160 MG [Exforge HCT],SBDC
+CV400,848145,amlodipine 5 MG / hydrochlorothiazide 25 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,848155,amlodipine 10 MG / hydrochlorothiazide 25 MG / valsartan 160 MG Oral Tablet [Exforge HCT],SBD
+CV400,848153,amlodipine 10 MG / hydrochlorothiazide 25 MG / valsartan 160 MG [Exforge HCT],SBDC
+CV400,848151,amlodipine 10 MG / hydrochlorothiazide 25 MG / valsartan 160 MG Oral Tablet,SCD
+CV400,19484,bisoprolol,IN
+CV400,214317,bisoprolol / hydrochlorothiazide,MIN
+CV400,142146,bisoprolol fumarate,PIN
+CV400,854910,bisoprolol fumarate 10 MG / hydrochlorothiazide 6.25 MG Oral Tablet [Ziac],SBD
+CV400,854909,bisoprolol fumarate 10 MG / hydrochlorothiazide 6.25 MG [Ziac],SBDC
+CV400,745976,bisoprolol / hydrochlorothiazide Oral Tablet [Ziac],SBDF
+CV400,1187449,Ziac Pill,SBDG
+CV400,1187450,Ziac Oral Product,SBDG
+CV400,854908,bisoprolol fumarate 10 MG / hydrochlorothiazide 6.25 MG Oral Tablet,SCD
+CV400,316052,hydrochlorothiazide 6.25 MG,SCDC
+CV400,854900,bisoprolol fumarate 10 MG,SCDC
+CV400,371103,bisoprolol / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1154704,bisoprolol / hydrochlorothiazide Oral Product,SCDG
+CV400,1154705,bisoprolol / hydrochlorothiazide Pill,SCDG
+CV400,854918,bisoprolol fumarate 2.5 MG / hydrochlorothiazide 6.25 MG Oral Tablet [Ziac],SBD
+CV400,854917,bisoprolol fumarate 2.5 MG / hydrochlorothiazide 6.25 MG [Ziac],SBDC
+CV400,854916,bisoprolol fumarate 2.5 MG / hydrochlorothiazide 6.25 MG Oral Tablet,SCD
+CV400,854915,bisoprolol fumarate 2.5 MG,SCDC
+CV400,854921,bisoprolol fumarate 5 MG / hydrochlorothiazide 6.25 MG Oral Tablet [Ziac],SBD
+CV400,854920,bisoprolol fumarate 5 MG / hydrochlorothiazide 6.25 MG [Ziac],SBDC
+CV400,854919,bisoprolol fumarate 5 MG / hydrochlorothiazide 6.25 MG Oral Tablet,SCD
+CV400,854904,bisoprolol fumarate 5 MG,SCDC
+CV400,8787,propranolol,IN
+CV400,214623,hydrochlorothiazide / propranolol,MIN
+CV400,82084,propranolol hydrochloride,PIN
+CV400,856422,hydrochlorothiazide 25 MG / propranolol hydrochloride 40 MG Oral Tablet,SCD
+CV400,856421,propranolol hydrochloride 40 MG,SCDC
+CV400,373651,hydrochlorothiazide / propranolol Oral Tablet,SCDF
+CV400,1162138,hydrochlorothiazide / propranolol Oral Product,SCDG
+CV400,1162139,hydrochlorothiazide / propranolol Pill,SCDG
+CV400,856429,hydrochlorothiazide 25 MG / propranolol hydrochloride 80 MG Oral Tablet,SCD
+CV400,856411,propranolol hydrochloride 80 MG,SCDC
+CV400,50166,fosinopril,IN
+CV400,261415,fosinopril / hydrochlorothiazide,MIN
+CV400,227278,fosinopril sodium,PIN
+CV400,857166,fosinopril sodium 10 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,857165,fosinopril sodium 10 MG,SCDC
+CV400,372273,fosinopril / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1162674,fosinopril / hydrochlorothiazide Oral Product,SCDG
+CV400,1162675,fosinopril / hydrochlorothiazide Pill,SCDG
+CV400,857174,fosinopril sodium 20 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,857173,fosinopril sodium 20 MG,SCDC
+CV400,3827,enalapril,IN
+CV400,214536,enalapril / hydrochlorothiazide,MIN
+CV400,203123,enalapril maleate,PIN
+CV400,858824,enalapril maleate 5 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,833236,enalapril maleate 5 MG,SCDC
+CV400,372006,enalapril / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1162649,enalapril / hydrochlorothiazide Oral Product,SCDG
+CV400,1162650,enalapril / hydrochlorothiazide Pill,SCDG
+CV400,858830,enalapril maleate 10 MG / hydrochlorothiazide 25 MG Oral Tablet [Vaseretic],SBD
+CV400,858829,enalapril maleate 10 MG / hydrochlorothiazide 25 MG [Vaseretic],SBDC
+CV400,858826,enalapril / hydrochlorothiazide Oral Tablet [Vaseretic],SBDF
+CV400,1187581,Vaseretic Oral Product,SBDG
+CV400,1187582,Vaseretic Pill,SBDG
+CV400,858828,enalapril maleate 10 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,858816,enalapril maleate 10 MG,SCDC
+CV400,6918,metoprolol,IN
+CV400,214621,hydrochlorothiazide / metoprolol,MIN
+CV400,221124,metoprolol succinate,PIN
+CV400,866455,24 HR hydrochlorothiazide 12.5 MG / metoprolol succinate 100 MG Extended Release Oral Tablet [Dutoprol],SBD
+CV400,1370496,hydrochlorothiazide 12.5 MG / metoprolol succinate 100 MG [Dutoprol],SBDC
+CV400,866463,hydrochlorothiazide / metoprolol Extended Release Oral Tablet [Dutoprol],SBDF
+CV400,1169653,Dutoprol Oral Product,SBDG
+CV400,1169654,Dutoprol Pill,SBDG
+CV400,866452,24 HR hydrochlorothiazide 12.5 MG / metoprolol succinate 100 MG Extended Release Oral Tablet,SCD
+CV400,1370483,metoprolol succinate 100 MG,SCDC
+CV400,372890,hydrochlorothiazide / metoprolol Extended Release Oral Tablet,SCDF
+CV400,1162132,hydrochlorothiazide / metoprolol Oral Product,SCDG
+CV400,1162133,hydrochlorothiazide / metoprolol Pill,SCDG
+CV400,203191,metoprolol tartrate,PIN
+CV400,866498,hydrochlorothiazide 25 MG / metoprolol tartrate 100 MG Oral Tablet [Lopressor HCT],SBD
+CV400,866496,hydrochlorothiazide 25 MG / metoprolol tartrate 100 MG [Lopressor HCT],SBDC
+CV400,866497,hydrochlorothiazide / metoprolol Oral Tablet [Lopressor HCT],SBDF
+CV400,1180272,Lopressor HCT Oral Product,SBDG
+CV400,1180275,Lopressor HCT Pill,SBDG
+CV400,866479,hydrochlorothiazide 25 MG / metoprolol tartrate 100 MG Oral Tablet,SCD
+CV400,866411,metoprolol tartrate 100 MG,SCDC
+CV400,372889,hydrochlorothiazide / metoprolol Oral Tablet,SCDF
+CV400,866502,hydrochlorothiazide 25 MG / metoprolol tartrate 50 MG Oral Tablet [Lopressor HCT],SBD
+CV400,866500,hydrochlorothiazide 25 MG / metoprolol tartrate 50 MG [Lopressor HCT],SBDC
+CV400,866482,hydrochlorothiazide 25 MG / metoprolol tartrate 50 MG Oral Tablet,SCD
+CV400,866435,metoprolol tartrate 50 MG,SCDC
+CV400,866506,hydrochlorothiazide 50 MG / metoprolol tartrate 100 MG Oral Tablet [Lopressor HCT],SBD
+CV400,866504,hydrochlorothiazide 50 MG / metoprolol tartrate 100 MG [Lopressor HCT],SBDC
+CV400,866491,hydrochlorothiazide 50 MG / metoprolol tartrate 100 MG Oral Tablet,SCD
+CV400,316051,hydrochlorothiazide 50 MG,SCDC
+CV400,901212,amlodipine / telmisartan,MIN
+CV400,876518,amlodipine 10 MG / telmisartan 40 MG Oral Tablet [Twynsta],SBD
+CV400,876516,amlodipine 10 MG / telmisartan 40 MG [Twynsta],SBDC
+CV400,876517,amlodipine / telmisartan Oral Tablet [Twynsta],SBDF
+CV400,1186904,Twynsta Pill,SBDG
+CV400,1186905,Twynsta Oral Product,SBDG
+CV400,876514,amlodipine 10 MG / telmisartan 40 MG Oral Tablet,SCD
+CV400,876513,amlodipine / telmisartan Oral Tablet,SCDF
+CV400,1152287,amlodipine / telmisartan Oral Product,SCDG
+CV400,1152288,amlodipine / telmisartan Pill,SCDG
+CV400,876523,amlodipine 10 MG / telmisartan 80 MG Oral Tablet [Twynsta],SBD
+CV400,876521,amlodipine 10 MG / telmisartan 80 MG [Twynsta],SBDC
+CV400,876519,amlodipine 10 MG / telmisartan 80 MG Oral Tablet,SCD
+CV400,876528,amlodipine 5 MG / telmisartan 40 MG Oral Tablet [Twynsta],SBD
+CV400,876526,amlodipine 5 MG / telmisartan 40 MG [Twynsta],SBDC
+CV400,876524,amlodipine 5 MG / telmisartan 40 MG Oral Tablet,SCD
+CV400,876533,amlodipine 5 MG / telmisartan 80 MG Oral Tablet [Twynsta],SBD
+CV400,876531,amlodipine 5 MG / telmisartan 80 MG [Twynsta],SBDC
+CV400,876529,amlodipine 5 MG / telmisartan 80 MG Oral Tablet,SCD
+CV400,11170,verapamil,IN
+CV400,38454,trandolapril,IN
+CV400,214866,trandolapril / verapamil,MIN
+CV400,203138,verapamil hydrochloride,PIN
+CV400,897781,24 HR trandolapril 1 MG / verapamil hydrochloride 240 MG Extended Release Oral Tablet,SCD
+CV400,317522,trandolapril 1 MG,SCDC
+CV400,897623,verapamil hydrochloride 240 MG,SCDC
+CV400,374178,trandolapril / verapamil Extended Release Oral Tablet,SCDF
+CV400,1162756,trandolapril / verapamil Oral Product,SCDG
+CV400,1162757,trandolapril / verapamil Pill,SCDG
+CV400,897785,24 HR trandolapril 2 MG / verapamil hydrochloride 180 MG Extended Release Oral Tablet [Tarka],SBD
+CV400,897784,trandolapril 2 MG / verapamil hydrochloride 180 MG [Tarka],SBDC
+CV400,847657,trandolapril / verapamil Extended Release Oral Tablet [Tarka],SBDF
+CV400,1179047,Tarka Pill,SBDG
+CV400,1179052,Tarka Oral Product,SBDG
+CV400,897783,24 HR trandolapril 2 MG / verapamil hydrochloride 180 MG Extended Release Oral Tablet,SCD
+CV400,316847,trandolapril 2 MG,SCDC
+CV400,897617,verapamil hydrochloride 180 MG,SCDC
+CV400,897846,24 HR trandolapril 2 MG / verapamil hydrochloride 240 MG Extended Release Oral Tablet [Tarka],SBD
+CV400,897845,trandolapril 2 MG / verapamil hydrochloride 240 MG [Tarka],SBDC
+CV400,897844,24 HR trandolapril 2 MG / verapamil hydrochloride 240 MG Extended Release Oral Tablet,SCD
+CV400,897855,24 HR trandolapril 4 MG / verapamil hydrochloride 240 MG Extended Release Oral Tablet [Tarka],SBD
+CV400,897854,trandolapril 4 MG / verapamil hydrochloride 240 MG [Tarka],SBDC
+CV400,897853,24 HR trandolapril 4 MG / verapamil hydrochloride 240 MG Extended Release Oral Tablet,SCD
+CV400,316848,trandolapril 4 MG,SCDC
+CV400,18867,benazepril,IN
+CV400,214223,amlodipine / benazepril,MIN
+CV400,235758,benazepril hydrochloride,PIN
+CV400,898344,amlodipine 10 MG / benazepril hydrochloride 20 MG Oral Capsule [Lotrel],SBD
+CV400,898343,amlodipine 10 MG / benazepril hydrochloride 20 MG [Lotrel],SBDC
+CV400,744885,amlodipine / benazepril Oral Capsule [Lotrel],SBDF
+CV400,1180906,Lotrel Oral Product,SBDG
+CV400,1180909,Lotrel Pill,SBDG
+CV400,898342,amlodipine 10 MG / benazepril hydrochloride 20 MG Oral Capsule,SCD
+CV400,898341,benazepril hydrochloride 20 MG,SCDC
+CV400,371002,amlodipine / benazepril Oral Capsule,SCDF
+CV400,1152283,amlodipine / benazepril Oral Product,SCDG
+CV400,1152284,amlodipine / benazepril Pill,SCDG
+CV400,898348,amlodipine 10 MG / benazepril hydrochloride 40 MG Oral Capsule [Lotrel],SBD
+CV400,898347,amlodipine 10 MG / benazepril hydrochloride 40 MG [Lotrel],SBDC
+CV400,898346,amlodipine 10 MG / benazepril hydrochloride 40 MG Oral Capsule,SCD
+CV400,898345,benazepril hydrochloride 40 MG,SCDC
+CV400,898352,amlodipine 2.5 MG / benazepril hydrochloride 10 MG Oral Capsule [Lotrel],SBD
+CV400,898351,amlodipine 2.5 MG / benazepril hydrochloride 10 MG [Lotrel],SBDC
+CV400,898350,amlodipine 2.5 MG / benazepril hydrochloride 10 MG Oral Capsule,SCD
+CV400,898349,benazepril hydrochloride 10 MG,SCDC
+CV400,898355,amlodipine 5 MG / benazepril hydrochloride 10 MG Oral Capsule [Lotrel],SBD
+CV400,898354,amlodipine 5 MG / benazepril hydrochloride 10 MG [Lotrel],SBDC
+CV400,898353,amlodipine 5 MG / benazepril hydrochloride 10 MG Oral Capsule,SCD
+CV400,898358,amlodipine 5 MG / benazepril hydrochloride 20 MG Oral Capsule [Lotrel],SBD
+CV400,898357,amlodipine 5 MG / benazepril hydrochloride 20 MG [Lotrel],SBDC
+CV400,898356,amlodipine 5 MG / benazepril hydrochloride 20 MG Oral Capsule,SCD
+CV400,898361,amlodipine 5 MG / benazepril hydrochloride 40 MG Oral Capsule [Lotrel],SBD
+CV400,898360,amlodipine 5 MG / benazepril hydrochloride 40 MG [Lotrel],SBDC
+CV400,898359,amlodipine 5 MG / benazepril hydrochloride 40 MG Oral Capsule,SCD
+CV400,214287,benazepril / hydrochlorothiazide,MIN
+CV400,898366,benazepril hydrochloride 10 MG / hydrochlorothiazide 12.5 MG Oral Tablet [Lotensin HCT],SBD
+CV400,898364,benazepril hydrochloride 10 MG / hydrochlorothiazide 12.5 MG [Lotensin HCT],SBDC
+CV400,898381,benazepril / hydrochlorothiazide Oral Tablet [Lotensin HCT],SBDF
+CV400,1180897,Lotensin HCT Pill,SBDG
+CV400,1180902,Lotensin HCT Oral Product,SBDG
+CV400,898362,benazepril hydrochloride 10 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,371000,benazepril / hydrochlorothiazide Oral Tablet,SCDF
+CV400,1160005,benazepril / hydrochlorothiazide Oral Product,SCDG
+CV400,1160006,benazepril / hydrochlorothiazide Pill,SCDG
+CV400,898371,benazepril hydrochloride 20 MG / hydrochlorothiazide 12.5 MG Oral Tablet [Lotensin HCT],SBD
+CV400,898369,benazepril hydrochloride 20 MG / hydrochlorothiazide 12.5 MG [Lotensin HCT],SBDC
+CV400,898367,benazepril hydrochloride 20 MG / hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV400,898376,benazepril hydrochloride 20 MG / hydrochlorothiazide 25 MG Oral Tablet [Lotensin HCT],SBD
+CV400,898374,benazepril hydrochloride 20 MG / hydrochlorothiazide 25 MG [Lotensin HCT],SBDC
+CV400,898372,benazepril hydrochloride 20 MG / hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV400,898378,benazepril hydrochloride 5 MG / hydrochlorothiazide 6.25 MG Oral Tablet,SCD
+CV400,898377,benazepril hydrochloride 5 MG,SCDC
+CV400,5470,hydralazine,IN
+CV400,6058,isosorbide dinitrate,IN
+CV400,608424,hydralazine / isosorbide dinitrate,MIN
+CV400,82027,hydralazine hydrochloride,PIN
+CV400,905379,hydralazine hydrochloride 37.5 MG / isosorbide dinitrate 20 MG Oral Tablet [Bidil],SBD
+CV400,905378,hydralazine hydrochloride 37.5 MG / isosorbide dinitrate 20 MG [Bidil],SBDC
+CV400,721814,hydralazine / isosorbide dinitrate Oral Tablet [Bidil],SBDF
+CV400,1173648,Bidil Oral Product,SBDG
+CV400,1173649,Bidil Pill,SBDG
+CV400,905377,hydralazine hydrochloride 37.5 MG / isosorbide dinitrate 20 MG Oral Tablet,SCD
+CV400,381033,isosorbide dinitrate 20 MG,SCDC
+CV400,905376,hydralazine hydrochloride 37.5 MG,SCDC
+CV400,721832,hydralazine / isosorbide dinitrate Oral Tablet,SCDF
+CV400,1161551,hydralazine / isosorbide dinitrate Oral Product,SCDG
+CV400,1161552,hydralazine / isosorbide dinitrate Pill,SCDG
+CV400,52175,losartan,IN
+CV400,214619,hydrochlorothiazide / losartan,MIN
+CV400,203160,losartan potassium,PIN
+CV400,979466,hydrochlorothiazide 12.5 MG / losartan potassium 100 MG Oral Tablet [Hyzaar],SBD
+CV400,979465,hydrochlorothiazide 12.5 MG / losartan potassium 100 MG [Hyzaar],SBDC
+CV400,823962,hydrochlorothiazide / losartan Oral Tablet [Hyzaar],SBDF
+CV400,1166546,Hyzaar Oral Product,SBDG
+CV400,1166549,Hyzaar Pill,SBDG
+CV400,979464,hydrochlorothiazide 12.5 MG / losartan potassium 100 MG Oral Tablet,SCD
+CV400,979463,losartan potassium 100 MG,SCDC
+CV400,372650,hydrochlorothiazide / losartan Oral Tablet,SCDF
+CV400,1162126,hydrochlorothiazide / losartan Oral Product,SCDG
+CV400,1162127,hydrochlorothiazide / losartan Pill,SCDG
+CV400,979470,hydrochlorothiazide 12.5 MG / losartan potassium 50 MG Oral Tablet [Hyzaar],SBD
+CV400,979469,hydrochlorothiazide 12.5 MG / losartan potassium 50 MG [Hyzaar],SBDC
+CV400,979468,hydrochlorothiazide 12.5 MG / losartan potassium 50 MG Oral Tablet,SCD
+CV400,979467,losartan potassium 50 MG,SCDC
+CV400,979473,hydrochlorothiazide 25 MG / losartan potassium 100 MG Oral Tablet [Hyzaar],SBD
+CV400,979472,hydrochlorothiazide 25 MG / losartan potassium 100 MG [Hyzaar],SBDC
+CV400,979471,hydrochlorothiazide 25 MG / losartan potassium 100 MG Oral Tablet,SCD
+CV400,999971,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 20 MG Oral Tablet [Tribenzor],SBD
+CV400,999969,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 20 MG [Tribenzor],SBDC
+CV400,999967,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 20 MG Oral Tablet,SCD
+CV400,999990,amlodipine 10 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG Oral Tablet [Tribenzor],SBD
+CV400,999988,amlodipine 10 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG [Tribenzor],SBDC
+CV400,999986,amlodipine 10 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,999995,amlodipine 10 MG / hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG Oral Tablet [Tribenzor],SBD
+CV400,999993,amlodipine 10 MG / hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG [Tribenzor],SBDC
+CV400,999991,amlodipine 10 MG / hydrochlorothiazide 25 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV400,1000000,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG Oral Tablet [Tribenzor],SBD
+CV400,999998,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG [Tribenzor],SBDC
+CV400,999996,amlodipine 5 MG / hydrochlorothiazide 12.5 MG / olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV490,2599,clonidine,IN
+CV490,142432,clonidine hydrochloride,PIN
+CV490,1013934,12 HR clonidine hydrochloride 0.1 MG Extended Release Oral Tablet [Kapvay],SBD
+CV490,1013932,clonidine hydrochloride 0.1 MG [Kapvay],SBDC
+CV490,1013933,clonidine Extended Release Oral Tablet [Kapvay],SBDF
+CV490,1169289,Kapvay Oral Product,SBDG
+CV490,1169290,Kapvay Pill,SBDG
+CV490,1013930,12 HR clonidine hydrochloride 0.1 MG Extended Release Oral Tablet,SCD
+CV490,884172,clonidine hydrochloride 0.1 MG,SCDC
+CV490,885794,clonidine Extended Release Oral Tablet,SCDF
+CV490,1153385,clonidine Oral Product,SCDG
+CV490,1153386,clonidine Pill,SCDG
+CV490,6673,mecamylamine,IN
+CV490,91240,mecamylamine hydrochloride,PIN
+CV490,1373008,mecamylamine hydrochloride 2.5 MG Oral Tablet [Vecamyl],SBD
+CV490,1373004,mecamylamine hydrochloride 2.5 MG [Vecamyl],SBDC
+CV490,1373005,mecamylamine Oral Tablet [Vecamyl],SBDF
+CV490,1373006,Vecamyl Oral Product,SBDG
+CV490,1373007,Vecamyl Pill,SBDG
+CV490,1298874,mecamylamine hydrochloride 2.5 MG Oral Tablet,SCD
+CV490,1298873,mecamylamine hydrochloride 2.5 MG,SCDC
+CV490,372728,mecamylamine Oral Tablet,SCDF
+CV490,1158650,mecamylamine Oral Product,SCDG
+CV490,1158651,mecamylamine Pill,SCDG
+CV490,136411,sildenafil,IN
+CV490,1307431,sildenafil 10 MG/ML Oral Suspension [Revatio],SBD
+CV490,1307428,sildenafil 10 MG/ML [Revatio],SBDC
+CV490,1307429,sildenafil Oral Suspension [Revatio],SBDF
+CV490,1182547,Revatio Oral Product,SBDG
+CV490,1307430,Revatio Oral Liquid Product,SBDG
+CV490,1307427,sildenafil 10 MG/ML Oral Suspension,SCD
+CV490,1307424,sildenafil 10 MG/ML,SCDC
+CV490,1307426,sildenafil Oral Suspension,SCDF
+CV490,1159091,sildenafil Oral Product,SCDG
+CV490,1307425,sildenafil Oral Liquid Product,SCDG
+CV490,1439816,riociguat,IN
+CV490,1439894,riociguat 0.5 MG Oral Tablet [Adempas],SBD
+CV490,1439890,riociguat 0.5 MG [Adempas],SBDC
+CV490,1439891,riociguat Oral Tablet [Adempas],SBDF
+CV490,1439892,Adempas Oral Product,SBDG
+CV490,1439893,Adempas Pill,SBDG
+CV490,1439821,riociguat 0.5 MG Oral Tablet,SCD
+CV490,1439817,riociguat 0.5 MG,SCDC
+CV490,1439820,riociguat Oral Tablet,SCDF
+CV490,1439818,riociguat Oral Product,SCDG
+CV490,1439819,riociguat Pill,SCDG
+CV490,1439899,riociguat 1.5 MG Oral Tablet [Adempas],SBD
+CV490,1439898,riociguat 1.5 MG [Adempas],SBDC
+CV490,1439823,riociguat 1.5 MG Oral Tablet,SCD
+CV490,1439822,riociguat 1.5 MG,SCDC
+CV490,1439896,riociguat 1 MG Oral Tablet [Adempas],SBD
+CV490,1439895,riociguat 1 MG [Adempas],SBDC
+CV490,1439831,riociguat 1 MG Oral Tablet,SCD
+CV490,1439830,riociguat 1 MG,SCDC
+CV490,1439903,riociguat 2.5 MG Oral Tablet [Adempas],SBD
+CV490,1439902,riociguat 2.5 MG [Adempas],SBDC
+CV490,1439833,riociguat 2.5 MG Oral Tablet,SCD
+CV490,1439832,riociguat 2.5 MG,SCDC
+CV490,1439901,riociguat 2 MG Oral Tablet [Adempas],SBD
+CV490,1439900,riociguat 2 MG [Adempas],SBDC
+CV490,1439837,riociguat 2 MG Oral Tablet,SCD
+CV490,1439835,riociguat 2 MG,SCDC
+CV490,1442132,macitentan,IN
+CV490,1442143,macitentan 10 MG Oral Tablet [Opsumit],SBD
+CV490,1442139,macitentan 10 MG [Opsumit],SBDC
+CV490,1442140,macitentan Oral Tablet [Opsumit],SBDF
+CV490,1442141,Opsumit Oral Product,SBDG
+CV490,1442142,Opsumit Pill,SBDG
+CV490,1442137,macitentan 10 MG Oral Tablet,SCD
+CV490,1442133,macitentan 10 MG,SCDC
+CV490,1442136,macitentan Oral Tablet,SCDF
+CV490,1442134,macitentan Oral Product,SCDG
+CV490,1442135,macitentan Pill,SCDG
+CV490,7476,nitroprusside,IN
+CV490,9895,sodium nitroprusside,PIN
+CV490,1876373,100 ML sodium nitroprusside 0.5 MG/ML Injection [Nipride],SBD
+CV490,1876370,sodium nitroprusside 0.5 MG/ML [Nipride],SBDC
+CV490,1876371,nitroprusside Injection [Nipride],SBDF
+CV490,1876372,Nipride Injectable Product,SBDG
+CV490,1876368,100 ML sodium nitroprusside 0.5 MG/ML Injection,SCD
+CV490,1876367,sodium nitroprusside 0.5 MG/ML,SCDC
+CV490,1666592,nitroprusside Injection,SCDF
+CV490,1159833,nitroprusside Injectable Product,SCDG
+CV490,5033,guanabenz,IN
+CV490,197743,guanabenz 4 MG Oral Tablet,SCD
+CV490,329789,guanabenz 4 MG,SCDC
+CV490,372364,guanabenz Oral Tablet,SCDF
+CV490,1159706,guanabenz Oral Product,SCDG
+CV490,1159707,guanabenz Pill,SCDG
+CV490,197744,guanabenz 8 MG Oral Tablet,SCD
+CV490,329790,guanabenz 8 MG,SCDC
+CV490,40114,guanfacine,IN
+CV490,197745,guanfacine 1 MG Oral Tablet,SCD
+CV490,330694,guanfacine 1 MG,SCDC
+CV490,372368,guanfacine Oral Tablet,SCDF
+CV490,1159714,guanfacine Oral Product,SCDG
+CV490,1159715,guanfacine Pill,SCDG
+CV490,197746,guanfacine 2 MG Oral Tablet,SCD
+CV490,329796,guanfacine 2 MG,SCDC
+CV490,6876,methyldopa,IN
+CV490,197956,methyldopa 250 MG Oral Tablet,SCD
+CV490,316283,methyldopa 250 MG,SCDC
+CV490,372855,methyldopa Oral Tablet,SCDF
+CV490,1162876,methyldopa Oral Product,SCDG
+CV490,1162877,methyldopa Pill,SCDG
+CV490,197958,methyldopa 500 MG Oral Tablet,SCD
+CV490,317424,methyldopa 500 MG,SCDC
+CV490,266604,metyrosine,IN
+CV490,201388,metyrosine 250 MG Oral Capsule [Demser],SBD
+CV490,541040,metyrosine 250 MG [Demser],SBDC
+CV490,366207,metyrosine Oral Capsule [Demser],SBDF
+CV490,1172436,Demser Oral Product,SBDG
+CV490,1172437,Demser Pill,SBDG
+CV490,197980,metyrosine 250 MG Oral Capsule,SCD
+CV490,541037,metyrosine 250 MG,SCDC
+CV490,541038,metyrosine Oral Capsule,SCDF
+CV490,1164090,metyrosine Oral Product,SCDG
+CV490,1164091,metyrosine Pill,SCDG
+CV490,6984,minoxidil,IN
+CV490,197986,minoxidil 10 MG Oral Tablet,SCD
+CV490,316310,minoxidil 10 MG,SCDC
+CV490,372938,minoxidil Oral Tablet,SCDF
+CV490,1165357,minoxidil Oral Product,SCDG
+CV490,1165358,minoxidil Pill,SCDG
+CV490,197987,minoxidil 2.5 MG Oral Tablet,SCD
+CV490,317430,minoxidil 2.5 MG,SCDC
+CV490,1999187,50 ML sodium nitroprusside 0.2 MG/ML Injection [Nipride],SBD
+CV490,1999186,sodium nitroprusside 0.2 MG/ML [Nipride],SBDC
+CV490,1999185,50 ML sodium nitroprusside 0.2 MG/ML Injection,SCD
+CV490,1999184,sodium nitroprusside 0.2 MG/ML,SCDC
+CV490,6877,methyldopate,IN
+CV490,91241,methyldopate hydrochloride,PIN
+CV490,204452,5 ML methyldopate hydrochloride 50 MG/ML Injection,SCD
+CV490,1740925,methyldopate hydrochloride 50 MG/ML,SCDC
+CV490,1740926,methyldopate Injection,SCDF
+CV490,1162878,methyldopate Injectable Product,SCDG
+CV490,28863,lofexidine,IN
+CV490,2046597,lofexidine 0.18 MG Oral Tablet [Lucemyra],SBD
+CV490,2046593,lofexidine 0.18 MG [Lucemyra],SBDC
+CV490,2046594,lofexidine Oral Tablet [Lucemyra],SBDF
+CV490,2046595,Lucemyra Oral Product,SBDG
+CV490,2046596,Lucemyra Pill,SBDG
+CV490,2046591,lofexidine 0.18 MG Oral Tablet,SCD
+CV490,2046590,lofexidine 0.18 MG,SCDC
+CV490,372627,lofexidine Oral Tablet,SCDF
+CV490,1163846,lofexidine Oral Product,SCDG
+CV490,1163849,lofexidine Pill,SCDG
+CV490,2052424,100 ML sodium nitroprusside 0.2 MG/ML Injection [Nipride],SBD
+CV490,2052423,100 ML sodium nitroprusside 0.2 MG/ML Injection,SCD
+CV490,358263,tadalafil,IN
+CV490,2110455,Pulmonary Hypertension tadalafil 20 MG Oral Tablet [Alyq],SBD
+CV490,849866,Pulmonary Hypertension tadalafil 20 MG Oral Tablet [Adcirca],SBD
+CV490,2110451,tadalafil 20 MG [Alyq],SBDC
+CV490,849864,tadalafil 20 MG [Adcirca],SBDC
+CV490,2110452,tadalafil Oral Tablet [Alyq],SBDF
+CV490,849865,tadalafil Oral Tablet [Adcirca],SBDF
+CV490,1170612,Adcirca Oral Product,SBDG
+CV490,1170613,Adcirca Pill,SBDG
+CV490,2110453,Alyq Oral Product,SBDG
+CV490,2110454,Alyq Pill,SBDG
+CV490,2123194,Pulmonary Hypertension tadalafil 20 MG Oral Tablet,SCD
+CV490,402438,tadalafil 20 MG,SCDC
+CV490,402452,tadalafil Oral Tablet,SCDF
+CV490,1160859,tadalafil Oral Product,SCDG
+CV490,1160860,tadalafil Pill,SCDG
+CV490,207678,2 ML sodium nitroprusside 25 MG/ML Injection [Nitropress],SBD
+CV490,1666594,sodium nitroprusside 25 MG/ML [Nitropress],SBDC
+CV490,1666595,nitroprusside Injection [Nitropress],SBDF
+CV490,1184462,Nitropress Injectable Product,SBDG
+CV490,240793,2 ML sodium nitroprusside 25 MG/ML Injection,SCD
+CV490,1666591,sodium nitroprusside 25 MG/ML,SCDC
+CV490,2613569,tadalafil 4 MG/ML Oral Suspension [Tadliq],SBD
+CV490,2613565,tadalafil 4 MG/ML [Tadliq],SBDC
+CV490,2613568,tadalafil Oral Suspension [Tadliq],SBDF
+CV490,2613566,Tadliq Oral Product,SBDG
+CV490,2613567,Tadliq Oral Liquid Product,SBDG
+CV490,2613563,tadalafil 4 MG/ML Oral Suspension,SCD
+CV490,2613560,tadalafil 4 MG/ML,SCDC
+CV490,2613562,tadalafil Oral Suspension,SCDF
+CV490,2613561,tadalafil Oral Liquid Product,SCDG
+CV490,343048,treprostinil,IN
+CV490,1488667,12 HR treprostinil 0.125 MG Extended Release Oral Tablet [Orenitram],SBD
+CV490,1488671,12 HR treprostinil 0.25 MG Extended Release Oral Tablet [Orenitram],SBD
+CV490,1485754,treprostinil 0.125 MG [Orenitram],SBDC
+CV490,1485761,treprostinil 0.25 MG [Orenitram],SBDC
+CV490,1488666,treprostinil Extended Release Oral Tablet [Orenitram],SBDF
+CV490,1485756,Orenitram Oral Product,SBDG
+CV490,1485757,Orenitram Pill,SBDG
+CV490,1488665,12 HR treprostinil 0.125 MG Extended Release Oral Tablet,SCD
+CV490,1488670,12 HR treprostinil 0.25 MG Extended Release Oral Tablet,SCD
+CV490,1485748,treprostinil 0.125 MG,SCDC
+CV490,1485759,treprostinil 0.25 MG,SCDC
+CV490,1488664,treprostinil Extended Release Oral Tablet,SCDF
+CV490,1485749,treprostinil Oral Product,SCDG
+CV490,1485750,treprostinil Pill,SCDG
+CV490,1488675,12 HR treprostinil 1 MG Extended Release Oral Tablet [Orenitram],SBD
+CV490,1485765,treprostinil 1 MG [Orenitram],SBDC
+CV490,1488674,12 HR treprostinil 1 MG Extended Release Oral Tablet,SCD
+CV490,1485763,treprostinil 1 MG,SCDC
+CV490,40138,iloprost,IN
+CV490,582595,iloprost 0.01 MG/ML Inhalation Solution [Ventavis],SBD
+CV490,582593,iloprost 0.01 MG/ML [Ventavis],SBDC
+CV490,2108435,iloprost Inhalation Solution [Ventavis],SBDF
+CV490,1187777,Ventavis Inhalant Product,SBDG
+CV490,487056,iloprost 0.01 MG/ML Inhalation Solution,SCD
+CV490,487054,iloprost 0.01 MG/ML,SCDC
+CV490,2108433,iloprost Inhalation Solution,SCDF
+CV490,1156289,iloprost Inhalant Product,SCDG
+CV490,581645,sildenafil 20 MG Oral Tablet [Revatio],SBD
+CV490,581643,sildenafil 20 MG [Revatio],SBDC
+CV490,581644,sildenafil Oral Tablet [Revatio],SBDF
+CV490,1182548,Revatio Pill,SBDG
+CV490,577033,sildenafil 20 MG Oral Tablet,SCD
+CV490,577032,sildenafil 20 MG,SCDC
+CV490,373871,sildenafil Oral Tablet,SCDF
+CV490,1159092,sildenafil Pill,SCDG
+CV490,882530,12.5 ML sildenafil 0.8 MG/ML Injection [Revatio],SBD
+CV490,882528,sildenafil 0.8 MG/ML [Revatio],SBDC
+CV490,1658941,sildenafil Injection [Revatio],SBDF
+CV490,1182546,Revatio Injectable Product,SBDG
+CV490,882527,12.5 ML sildenafil 0.8 MG/ML Injection,SCD
+CV490,882525,sildenafil 0.8 MG/ML,SCDC
+CV490,1658939,sildenafil Injection,SCDF
+CV490,1159090,sildenafil Injectable Product,SCDG
+CV490,884175,clonidine hydrochloride 0.1 MG Oral Tablet [Catapres],SBD
+CV490,884174,clonidine hydrochloride 0.1 MG [Catapres],SBDC
+CV490,92089,clonidine Oral Tablet [Catapres],SBDF
+CV490,1176387,Catapres Oral Product,SBDG
+CV490,1176390,Catapres Pill,SBDG
+CV490,884173,clonidine hydrochloride 0.1 MG Oral Tablet,SCD
+CV490,371583,clonidine Oral Tablet,SCDF
+CV490,884187,clonidine hydrochloride 0.2 MG Oral Tablet [Catapres],SBD
+CV490,884186,clonidine hydrochloride 0.2 MG [Catapres],SBDC
+CV490,884185,clonidine hydrochloride 0.2 MG Oral Tablet,SCD
+CV490,884184,clonidine hydrochloride 0.2 MG,SCDC
+CV490,884191,clonidine hydrochloride 0.3 MG Oral Tablet [Catapres],SBD
+CV490,884190,clonidine hydrochloride 0.3 MG [Catapres],SBDC
+CV490,884189,clonidine hydrochloride 0.3 MG Oral Tablet,SCD
+CV490,884188,clonidine hydrochloride 0.3 MG,SCDC
+CV490,1050338,24 HR clonidine 0.17 MG Extended Release Oral Tablet [Nexiclon],SBD
+CV490,2599285,clonidine 0.17 MG [Nexiclon],SBDC
+CV490,1050333,clonidine Extended Release Oral Tablet [Nexiclon],SBDF
+CV490,1182865,Nexiclon Oral Product,SBDG
+CV490,1182866,Nexiclon Pill,SBDG
+CV490,885880,24 HR clonidine 0.17 MG Extended Release Oral Tablet,SCD
+CV490,2599282,clonidine 0.17 MG,SCDC
+CV490,5470,hydralazine,IN
+CV490,82027,hydralazine hydrochloride,PIN
+CV490,905199,hydralazine hydrochloride 10 MG Oral Tablet,SCD
+CV490,905198,hydralazine hydrochloride 10 MG,SCDC
+CV490,370631,hydralazine Oral Tablet,SCDF
+CV490,1161556,hydralazine Oral Product,SCDG
+CV490,1162117,hydralazine Pill,SCDG
+CV490,905222,hydralazine hydrochloride 100 MG Oral Tablet,SCD
+CV490,905202,hydralazine hydrochloride 100 MG,SCDC
+CV490,905225,hydralazine hydrochloride 25 MG Oral Tablet,SCD
+CV490,905210,hydralazine hydrochloride 25 MG,SCDC
+CV490,905395,hydralazine hydrochloride 50 MG Oral Tablet,SCD
+CV490,905216,hydralazine hydrochloride 50 MG,SCDC
+CV490,966571,1 ML hydralazine hydrochloride 20 MG/ML Injection,SCD
+CV490,966570,hydralazine hydrochloride 20 MG/ML,SCDC
+CV490,1863334,hydralazine Injection,SCDF
+CV490,1161555,hydralazine Injectable Product,SCDG
+CV490,998673,168 HR clonidine 0.00417 MG/HR Transdermal System [Catapres],SBD
+CV490,2268635,clonidine 0.00417 MG/HR [Catapres],SBDC
+CV490,2268636,clonidine Transdermal System [Catapres],SBDF
+CV490,2268637,Catapres Topical Product,SBDG
+CV490,2268638,Catapres Transdermal Product,SBDG
+CV490,998671,168 HR clonidine 0.00417 MG/HR Transdermal System,SCD
+CV490,998670,clonidine 0.00417 MG/HR,SCDC
+CV490,1806253,clonidine Transdermal System,SCDF
+CV490,1153387,clonidine Topical Product,SCDG
+CV490,1295649,clonidine Transdermal Product,SCDG
+CV490,998677,168 HR clonidine 0.00833 MG/HR Transdermal System [Catapres],SBD
+CV490,2268641,clonidine 0.00833 MG/HR [Catapres],SBDC
+CV490,998675,168 HR clonidine 0.00833 MG/HR Transdermal System,SCD
+CV490,998674,clonidine 0.00833 MG/HR,SCDC
+CV490,998681,168 HR clonidine 0.0125 MG/HR Transdermal System [Catapres],SBD
+CV490,2268644,clonidine 0.0125 MG/HR [Catapres],SBDC
+CV490,998679,168 HR clonidine 0.0125 MG/HR Transdermal System,SCD
+CV490,998678,clonidine 0.0125 MG/HR,SCDC
+CV350,2685,colestipol,IN
+CV350,104485,colestipol hydrochloride,PIN
+CV350,1048447,colestipol hydrochloride 1000 MG Oral Tablet [Colestid],SBD
+CV350,1048446,colestipol hydrochloride 1000 MG [Colestid],SBDC
+CV350,368090,colestipol Oral Tablet [Colestid],SBDF
+CV350,1166289,Colestid Oral Product,SBDG
+CV350,1166290,Colestid Pill,SBDG
+CV350,1048445,colestipol hydrochloride 1000 MG Oral Tablet,SCD
+CV350,1048444,colestipol hydrochloride 1000 MG,SCDC
+CV350,374415,colestipol Oral Tablet,SCDF
+CV350,1155486,colestipol Oral Product,SCDG
+CV350,1155487,colestipol Pill,SCDG
+CV350,1048452,colestipol hydrochloride 5000 MG Granules for Oral Suspension [Colestid],SBD
+CV350,1048451,colestipol hydrochloride 5000 MG [Colestid],SBDC
+CV350,2100172,colestipol Granules for Oral Suspension [Colestid],SBDF
+CV350,1296445,Colestid Granule Product,SBDG
+CV350,1048450,colestipol hydrochloride 5000 MG Granules for Oral Suspension,SCD
+CV350,1048449,colestipol hydrochloride 5000 MG,SCDC
+CV350,2100170,colestipol Granules for Oral Suspension,SCDF
+CV350,1295303,colestipol Granule Product,SCDG
+CV350,1304974,icosapent ethyl,IN
+CV350,1304985,icosapent ethyl 1000 MG Oral Capsule [Vascepa],SBD
+CV350,1304981,icosapent ethyl 1000 MG [Vascepa],SBDC
+CV350,1304982,icosapent ethyl Oral Capsule [Vascepa],SBDF
+CV350,1304983,Vascepa Oral Product,SBDG
+CV350,1304984,Vascepa Pill,SBDG
+CV350,1304979,icosapent ethyl 1000 MG Oral Capsule,SCD
+CV350,1304975,icosapent ethyl 1000 MG,SCDC
+CV350,1304978,icosapent ethyl Oral Capsule,SCDF
+CV350,1304976,icosapent ethyl Oral Product,SCDG
+CV350,1304977,icosapent ethyl Pill,SCDG
+CV350,1364479,lomitapide,IN
+CV350,1364490,lomitapide 10 MG Oral Capsule [Juxtapid],SBD
+CV350,1364486,lomitapide 10 MG [Juxtapid],SBDC
+CV350,1364487,lomitapide Oral Capsule [Juxtapid],SBDF
+CV350,1364488,Juxtapid Oral Product,SBDG
+CV350,1364489,Juxtapid Pill,SBDG
+CV350,1364484,lomitapide 10 MG Oral Capsule,SCD
+CV350,1364480,lomitapide 10 MG,SCDC
+CV350,1364483,lomitapide Oral Capsule,SCDF
+CV350,1364481,lomitapide Oral Product,SCDG
+CV350,1364482,lomitapide Pill,SCDG
+CV350,1364494,lomitapide 20 MG Oral Capsule [Juxtapid],SBD
+CV350,1364493,lomitapide 20 MG [Juxtapid],SBDC
+CV350,1364492,lomitapide 20 MG Oral Capsule,SCD
+CV350,1364491,lomitapide 20 MG,SCDC
+CV350,1364498,lomitapide 5 MG Oral Capsule [Juxtapid],SBD
+CV350,1364497,lomitapide 5 MG [Juxtapid],SBDC
+CV350,1364496,lomitapide 5 MG Oral Capsule,SCD
+CV350,1364495,lomitapide 5 MG,SCDC
+CV350,8703,fenofibrate,IN
+CV350,1442165,fenofibrate 30 MG Oral Capsule [Antara],SBD
+CV350,1442164,fenofibrate 30 MG [Antara],SBDC
+CV350,578796,fenofibrate Oral Capsule [Antara],SBDF
+CV350,1165999,Antara Pill,SBDG
+CV350,1176848,Antara Oral Product,SBDG
+CV350,1442163,fenofibrate 30 MG Oral Capsule,SCD
+CV350,1442162,fenofibrate 30 MG,SCDC
+CV350,379815,fenofibrate Oral Capsule,SCDF
+CV350,1159042,fenofibrate Oral Product,SCDG
+CV350,1159043,fenofibrate Pill,SCDG
+CV350,1442170,fenofibrate 90 MG Oral Capsule [Antara],SBD
+CV350,1442169,fenofibrate 90 MG [Antara],SBDC
+CV350,1442168,fenofibrate 90 MG Oral Capsule,SCD
+CV350,1442167,fenofibrate 90 MG,SCDC
+CV350,1648772,lomitapide 30 MG Oral Capsule [Juxtapid],SBD
+CV350,1648771,lomitapide 30 MG [Juxtapid],SBDC
+CV350,1648770,lomitapide 30 MG Oral Capsule,SCD
+CV350,1648769,lomitapide 30 MG,SCDC
+CV350,1648776,lomitapide 40 MG Oral Capsule [Juxtapid],SBD
+CV350,1648775,lomitapide 40 MG [Juxtapid],SBDC
+CV350,1648774,lomitapide 40 MG Oral Capsule,SCD
+CV350,1648773,lomitapide 40 MG,SCDC
+CV350,1648780,lomitapide 60 MG Oral Capsule [Juxtapid],SBD
+CV350,1648779,lomitapide 60 MG [Juxtapid],SBDC
+CV350,1648778,lomitapide 60 MG Oral Capsule,SCD
+CV350,1648777,lomitapide 60 MG,SCDC
+CV350,1659152,alirocumab,IN
+CV350,1659161,1 ML alirocumab 150 MG/ML Auto-Injector [Praluent],SBD
+CV350,1659158,alirocumab 150 MG/ML [Praluent],SBDC
+CV350,1659159,alirocumab Auto-Injector [Praluent],SBDF
+CV350,1659160,Praluent Injectable Product,SBDG
+CV350,1659156,1 ML alirocumab 150 MG/ML Auto-Injector,SCD
+CV350,1659153,alirocumab 150 MG/ML,SCDC
+CV350,1659155,alirocumab Auto-Injector,SCDF
+CV350,1659154,alirocumab Injectable Product,SCDG
+CV350,1659183,1 ML alirocumab 75 MG/ML Auto-Injector [Praluent],SBD
+CV350,1659178,alirocumab 75 MG/ML [Praluent],SBDC
+CV350,1659182,1 ML alirocumab 75 MG/ML Auto-Injector,SCD
+CV350,1659176,alirocumab 75 MG/ML,SCDC
+CV350,1665684,evolocumab,IN
+CV350,1665900,1 ML evolocumab 140 MG/ML Auto-Injector [Repatha],SBD
+CV350,1665897,evolocumab 140 MG/ML [Repatha],SBDC
+CV350,1665898,evolocumab Auto-Injector [Repatha],SBDF
+CV350,1665899,Repatha Injectable Product,SBDG
+CV350,1665895,1 ML evolocumab 140 MG/ML Auto-Injector,SCD
+CV350,1665892,evolocumab 140 MG/ML,SCDC
+CV350,1665894,evolocumab Auto-Injector,SCDF
+CV350,1665893,evolocumab Injectable Product,SCDG
+CV350,1665906,1 ML evolocumab 140 MG/ML Prefilled Syringe [Repatha],SBD
+CV350,1665905,evolocumab Prefilled Syringe [Repatha],SBDF
+CV350,1665904,1 ML evolocumab 140 MG/ML Prefilled Syringe,SCD
+CV350,1665903,evolocumab Prefilled Syringe,SCDF
+CV350,1726975,sebelipase alfa,IN
+CV350,1726984,10 ML sebelipase alfa 2 MG/ML Injection [Kanuma],SBD
+CV350,1726981,sebelipase alfa 2 MG/ML [Kanuma],SBDC
+CV350,1726982,sebelipase alfa Injection [Kanuma],SBDF
+CV350,1726983,Kanuma Injectable Product,SBDG
+CV350,1726979,10 ML sebelipase alfa 2 MG/ML Injection,SCD
+CV350,1726976,sebelipase alfa 2 MG/ML,SCDC
+CV350,1726978,sebelipase alfa Injection,SCDF
+CV350,1726977,sebelipase alfa Injectable Product,SCDG
+CV350,36567,simvastatin,IN
+CV350,1944262,simvastatin 4 MG/ML Oral Suspension [Flolipid],SBD
+CV350,1944258,simvastatin 4 MG/ML [Flolipid],SBDC
+CV350,1944259,simvastatin Oral Suspension [Flolipid],SBDF
+CV350,1944260,Flolipid Oral Product,SBDG
+CV350,1944261,Flolipid Oral Liquid Product,SBDG
+CV350,1790679,simvastatin 4 MG/ML Oral Suspension,SCD
+CV350,1790676,simvastatin 4 MG/ML,SCDC
+CV350,1790678,simvastatin Oral Suspension,SCDF
+CV350,1158753,simvastatin Oral Product,SCDG
+CV350,1790677,simvastatin Oral Liquid Product,SCDG
+CV350,2447,cholestyramine resin,IN
+CV350,1801280,Sugar-Free cholestyramine resin 4000 MG Powder for Oral Suspension [Questran],SBD
+CV350,848951,Sugar-Free cholestyramine resin 4000 MG Powder for Oral Suspension [Prevalite],SBD
+CV350,1801268,cholestyramine resin 4000 MG [Questran],SBDC
+CV350,1801272,cholestyramine resin 4000 MG [Prevalite],SBDC
+CV350,1801269,cholestyramine resin Powder for Oral Suspension [Questran],SBDF
+CV350,1801273,cholestyramine resin Powder for Oral Suspension [Prevalite],SBDF
+CV350,1177645,Prevalite Oral Product,SBDG
+CV350,1185876,Questran Oral Product,SBDG
+CV350,1801270,Questran Oral Powder Product,SBDG
+CV350,1801274,Prevalite Oral Powder Product,SBDG
+CV350,1801279,Sugar-Free cholestyramine resin 4000 MG Powder for Oral Suspension,SCD
+CV350,317329,cholestyramine resin 4000 MG,SCDC
+CV350,1801266,cholestyramine resin Powder for Oral Suspension,SCDF
+CV350,1156140,cholestyramine resin Oral Product,SCDG
+CV350,1801265,cholestyramine resin Oral Powder Product,SCDG
+CV350,1801322,3.5 ML evolocumab 120 MG/ML Cartridge [Repatha],SBD
+CV350,1801320,evolocumab 120 MG/ML [Repatha],SBDC
+CV350,1801321,evolocumab Cartridge [Repatha],SBDF
+CV350,1801319,3.5 ML evolocumab 120 MG/ML Cartridge,SCD
+CV350,1801317,evolocumab 120 MG/ML,SCDC
+CV350,1801318,evolocumab Cartridge,SCDF
+CV350,1811182,icosapent ethyl 500 MG Oral Capsule [Vascepa],SBD
+CV350,1811181,icosapent ethyl 500 MG [Vascepa],SBDC
+CV350,1811180,icosapent ethyl 500 MG Oral Capsule,SCD
+CV350,1811179,icosapent ethyl 500 MG,SCDC
+CV350,1944266,simvastatin 8 MG/ML Oral Suspension [Flolipid],SBD
+CV350,1944265,simvastatin 8 MG/ML [Flolipid],SBDC
+CV350,1944264,simvastatin 8 MG/ML Oral Suspension,SCD
+CV350,1944263,simvastatin 8 MG/ML,SCDC
+CV350,6472,lovastatin,IN
+CV350,197903,lovastatin 10 MG Oral Tablet,SCD
+CV350,316174,lovastatin 10 MG,SCDC
+CV350,372652,lovastatin Oral Tablet,SCDF
+CV350,1165346,lovastatin Oral Product,SCDG
+CV350,1165347,lovastatin Pill,SCDG
+CV350,206257,lovastatin 20 MG Oral Tablet [Mevacor],SBD
+CV350,567115,lovastatin 20 MG [Mevacor],SBDC
+CV350,368931,lovastatin Oral Tablet [Mevacor],SBDF
+CV350,1177512,Mevacor Oral Product,SBDG
+CV350,1177513,Mevacor Pill,SBDG
+CV350,197904,lovastatin 20 MG Oral Tablet,SCD
+CV350,316175,lovastatin 20 MG,SCDC
+CV350,206258,lovastatin 40 MG Oral Tablet [Mevacor],SBD
+CV350,567116,lovastatin 40 MG [Mevacor],SBDC
+CV350,197905,lovastatin 40 MG Oral Tablet,SCD
+CV350,316176,lovastatin 40 MG,SCDC
+CV350,152923,simvastatin 40 MG Oral Tablet [Zocor],SBD
+CV350,565109,simvastatin 40 MG [Zocor],SBDC
+CV350,368276,simvastatin Oral Tablet [Zocor],SBDF
+CV350,1187973,Zocor Oral Product,SBDG
+CV350,1187974,Zocor Pill,SBDG
+CV350,198211,simvastatin 40 MG Oral Tablet,SCD
+CV350,316674,simvastatin 40 MG,SCDC
+CV350,373888,simvastatin Oral Tablet,SCDF
+CV350,1158754,simvastatin Pill,SCDG
+CV350,861634,pitavastatin,IN
+CV350,2001252,pitavastatin magnesium,PIN
+CV350,2001264,pitavastatin magnesium 2 MG Oral Tablet [Zypitamag],SBD
+CV350,2001263,pitavastatin magnesium 2 MG [Zypitamag],SBDC
+CV350,2001257,pitavastatin Oral Tablet [Zypitamag],SBDF
+CV350,2001258,Zypitamag Oral Product,SBDG
+CV350,2001259,Zypitamag Pill,SBDG
+CV350,2001262,pitavastatin magnesium 2 MG Oral Tablet,SCD
+CV350,2001261,pitavastatin magnesium 2 MG,SCDC
+CV350,861642,pitavastatin Oral Tablet,SCDF
+CV350,1163274,pitavastatin Oral Product,SCDG
+CV350,1164454,pitavastatin Pill,SCDG
+CV350,2001268,pitavastatin magnesium 4 MG Oral Tablet [Zypitamag],SBD
+CV350,2001267,pitavastatin magnesium 4 MG [Zypitamag],SBDC
+CV350,2001266,pitavastatin magnesium 4 MG Oral Tablet,SCD
+CV350,2001265,pitavastatin magnesium 4 MG,SCDC
+CV350,200311,fenofibrate 67 MG Oral Capsule,SCD
+CV350,379816,fenofibrate 67 MG,SCDC
+CV350,213319,simvastatin 80 MG Oral Tablet [Zocor],SBD
+CV350,573220,simvastatin 80 MG [Zocor],SBDC
+CV350,200345,simvastatin 80 MG Oral Tablet,SCD
+CV350,316675,simvastatin 80 MG,SCDC
+CV350,301542,rosuvastatin,IN
+CV350,2167563,rosuvastatin 10 MG Oral Capsule [Ezallor],SBD
+CV350,2167559,rosuvastatin 10 MG [Ezallor],SBDC
+CV350,2167560,rosuvastatin Oral Capsule [Ezallor],SBDF
+CV350,2167561,Ezallor Oral Product,SBDG
+CV350,2167562,Ezallor Pill,SBDG
+CV350,2167557,rosuvastatin 10 MG Oral Capsule,SCD
+CV350,2167555,rosuvastatin 10 MG,SCDC
+CV350,2167556,rosuvastatin Oral Capsule,SCDF
+CV350,1157991,rosuvastatin Oral Product,SCDG
+CV350,1157992,rosuvastatin Pill,SCDG
+CV350,2167567,rosuvastatin 20 MG Oral Capsule [Ezallor],SBD
+CV350,2167566,rosuvastatin 20 MG [Ezallor],SBDC
+CV350,2167565,rosuvastatin 20 MG Oral Capsule,SCD
+CV350,2167564,rosuvastatin 20 MG,SCDC
+CV350,2167571,rosuvastatin 40 MG Oral Capsule [Ezallor],SBD
+CV350,2167570,rosuvastatin 40 MG [Ezallor],SBDC
+CV350,2167569,rosuvastatin 40 MG Oral Capsule,SCD
+CV350,2167568,rosuvastatin 40 MG,SCDC
+CV350,2167575,rosuvastatin 5 MG Oral Capsule [Ezallor],SBD
+CV350,2167574,rosuvastatin 5 MG [Ezallor],SBDC
+CV350,2167573,rosuvastatin 5 MG Oral Capsule,SCD
+CV350,2167572,rosuvastatin 5 MG,SCDC
+CV350,2282403,bempedoic acid,IN
+CV350,2282414,bempedoic acid 180 MG Oral Tablet [Nexletol],SBD
+CV350,2282410,bempedoic acid 180 MG [Nexletol],SBDC
+CV350,2282411,bempedoic acid Oral Tablet [Nexletol],SBDF
+CV350,2282412,Nexletol Oral Product,SBDG
+CV350,2282413,Nexletol Pill,SBDG
+CV350,2282408,bempedoic acid 180 MG Oral Tablet,SCD
+CV350,2282404,bempedoic acid 180 MG,SCDC
+CV350,2282407,bempedoic acid Oral Tablet,SCDF
+CV350,2282405,bempedoic acid Oral Product,SCDG
+CV350,2282406,bempedoic acid Pill,SCDG
+CV350,341248,ezetimibe,IN
+CV350,2283229,bempedoic acid / ezetimibe,MIN
+CV350,2283236,bempedoic acid 180 MG / ezetimibe 10 MG Oral Tablet [Nexlizet],SBD
+CV350,2283232,bempedoic acid 180 MG / ezetimibe 10 MG [Nexlizet],SBDC
+CV350,2283233,bempedoic acid / ezetimibe Oral Tablet [Nexlizet],SBDF
+CV350,2283234,Nexlizet Oral Product,SBDG
+CV350,2283235,Nexlizet Pill,SBDG
+CV350,2283230,bempedoic acid 180 MG / ezetimibe 10 MG Oral Tablet,SCD
+CV350,350671,ezetimibe 10 MG,SCDC
+CV350,2283228,bempedoic acid / ezetimibe Oral Tablet,SCDF
+CV350,2283226,bempedoic acid / ezetimibe Oral Product,SCDG
+CV350,2283227,bempedoic acid / ezetimibe Pill,SCDG
+CV350,2478335,evinacumab,IN
+CV350,2478646,evinacumab-dgnb,PIN
+CV350,2478650,2.3 ML evinacumab-dgnb 150 MG/ML Injection [Evkeeza],SBD
+CV350,2478649,evinacumab-dgnb 150 MG/ML [Evkeeza],SBDC
+CV350,2478464,evinacumab Injection [Evkeeza],SBDF
+CV350,2478465,Evkeeza Injectable Product,SBDG
+CV350,2478648,2.3 ML evinacumab-dgnb 150 MG/ML Injection,SCD
+CV350,2478647,evinacumab-dgnb 150 MG/ML,SCDC
+CV350,2478460,evinacumab Injection,SCDF
+CV350,2478459,evinacumab Injectable Product,SCDG
+CV350,2478732,8 ML evinacumab-dgnb 150 MG/ML Injection [Evkeeza],SBD
+CV350,2478731,8 ML evinacumab-dgnb 150 MG/ML Injection,SCD
+CV350,2535748,ezetimibe / rosuvastatin,MIN
+CV350,2536062,ezetimibe 10 MG / rosuvastatin 20 MG Oral Tablet [Roszet],SBD
+CV350,2536061,ezetimibe 10 MG / rosuvastatin 20 MG [Roszet],SBDC
+CV350,2536057,ezetimibe / rosuvastatin Oral Tablet [Roszet],SBDF
+CV350,2536058,Roszet Oral Product,SBDG
+CV350,2536059,Roszet Pill,SBDG
+CV350,2535745,ezetimibe 10 MG / rosuvastatin 20 MG Oral Tablet,SCD
+CV350,2535746,ezetimibe / rosuvastatin Oral Tablet,SCDF
+CV350,2535744,ezetimibe / rosuvastatin Oral Product,SCDG
+CV350,2535751,ezetimibe / rosuvastatin Pill,SCDG
+CV350,2536066,ezetimibe 10 MG / rosuvastatin 5 MG Oral Tablet [Roszet],SBD
+CV350,2536065,ezetimibe 10 MG / rosuvastatin 5 MG [Roszet],SBDC
+CV350,2535747,ezetimibe 10 MG / rosuvastatin 5 MG Oral Tablet,SCD
+CV350,2536064,ezetimibe 10 MG / rosuvastatin 40 MG Oral Tablet [Roszet],SBD
+CV350,2536063,ezetimibe 10 MG / rosuvastatin 40 MG [Roszet],SBDC
+CV350,2535749,ezetimibe 10 MG / rosuvastatin 40 MG Oral Tablet,SCD
+CV350,2536060,ezetimibe 10 MG / rosuvastatin 10 MG Oral Tablet [Roszet],SBD
+CV350,2536056,ezetimibe 10 MG / rosuvastatin 10 MG [Roszet],SBDC
+CV350,2535750,ezetimibe 10 MG / rosuvastatin 10 MG Oral Tablet,SCD
+CV350,2588243,inclisiran,IN
+CV350,2588269,1.5 ML inclisiran 189 MG/ML Prefilled Syringe [Leqvio],SBD
+CV350,2588266,inclisiran 189 MG/ML [Leqvio],SBDC
+CV350,2588268,inclisiran Prefilled Syringe [Leqvio],SBDF
+CV350,2588267,Leqvio Injectable Product,SBDG
+CV350,2588263,1.5 ML inclisiran 189 MG/ML Prefilled Syringe,SCD
+CV350,2588260,inclisiran 189 MG/ML,SCDC
+CV350,2588262,inclisiran Prefilled Syringe,SCDF
+CV350,2588261,inclisiran Injectable Product,SCDG
+CV350,83367,atorvastatin,IN
+CV350,262095,atorvastatin 80 MG Oral Tablet [Lipitor],SBD
+CV350,574676,atorvastatin 80 MG [Lipitor],SBDC
+CV350,367665,atorvastatin Oral Tablet [Lipitor],SBDF
+CV350,1177400,Lipitor Oral Product,SBDG
+CV350,1177401,Lipitor Pill,SBDG
+CV350,259255,atorvastatin 80 MG Oral Tablet,SCD
+CV350,329299,atorvastatin 80 MG,SCDC
+CV350,370621,atorvastatin Oral Tablet,SCDF
+CV350,1158284,atorvastatin Oral Product,SCDG
+CV350,1158285,atorvastatin Pill,SCDG
+CV350,2631867,atorvastatin 4 MG/ML Oral Suspension [Atorvaliq],SBD
+CV350,2631863,atorvastatin 4 MG/ML [Atorvaliq],SBDC
+CV350,2631866,atorvastatin Oral Suspension [Atorvaliq],SBDF
+CV350,2631864,Atorvaliq Oral Product,SBDG
+CV350,2631865,Atorvaliq Oral Liquid Product,SBDG
+CV350,2630760,atorvastatin 4 MG/ML Oral Suspension,SCD
+CV350,2630757,atorvastatin 4 MG/ML,SCDC
+CV350,2630759,atorvastatin Oral Suspension,SCDF
+CV350,2630758,atorvastatin Oral Liquid Product,SCDG
+CV350,310288,fenofibrate 134 MG Oral Capsule,SCD
+CV350,379821,fenofibrate 134 MG,SCDC
+CV350,310289,fenofibrate 200 MG Oral Capsule,SCD
+CV350,379814,fenofibrate 200 MG,SCDC
+CV350,41127,fluvastatin,IN
+CV350,103918,fluvastatin 20 MG Oral Capsule [Lescol],SBD
+CV350,563452,fluvastatin 20 MG [Lescol],SBDC
+CV350,366775,fluvastatin Oral Capsule [Lescol],SBDF
+CV350,1166061,Lescol Oral Product,SBDG
+CV350,1166062,Lescol Pill,SBDG
+CV350,310404,fluvastatin 20 MG Oral Capsule,SCD
+CV350,328265,fluvastatin 20 MG,SCDC
+CV350,372255,fluvastatin Oral Capsule,SCDF
+CV350,1165660,fluvastatin Oral Product,SCDG
+CV350,1165661,fluvastatin Pill,SCDG
+CV350,103919,fluvastatin 40 MG Oral Capsule [Lescol],SBD
+CV350,563453,fluvastatin 40 MG [Lescol],SBDC
+CV350,310405,fluvastatin 40 MG Oral Capsule,SCD
+CV350,328267,fluvastatin 40 MG,SCDC
+CV350,4719,gemfibrozil,IN
+CV350,205751,gemfibrozil 600 MG Oral Tablet [Lopid],SBD
+CV350,566639,gemfibrozil 600 MG [Lopid],SBDC
+CV350,369510,gemfibrozil Oral Tablet [Lopid],SBDF
+CV350,1179662,Lopid Oral Product,SBDG
+CV350,1179663,Lopid Pill,SBDG
+CV350,310459,gemfibrozil 600 MG Oral Tablet,SCD
+CV350,317636,gemfibrozil 600 MG,SCDC
+CV350,372300,gemfibrozil Oral Tablet,SCDF
+CV350,1163944,gemfibrozil Oral Product,SCDG
+CV350,1163945,gemfibrozil Pill,SCDG
+CV350,104491,simvastatin 20 MG Oral Tablet [Zocor],SBD
+CV350,563654,simvastatin 20 MG [Zocor],SBDC
+CV350,312961,simvastatin 20 MG Oral Tablet,SCD
+CV350,316673,simvastatin 20 MG,SCDC
+CV350,208220,simvastatin 5 MG Oral Tablet [Zocor],SBD
+CV350,568935,simvastatin 5 MG [Zocor],SBDC
+CV350,312962,simvastatin 5 MG Oral Tablet,SCD
+CV350,317497,simvastatin 5 MG,SCDC
+CV350,104490,simvastatin 10 MG Oral Tablet [Zocor],SBD
+CV350,563653,simvastatin 10 MG [Zocor],SBDC
+CV350,314231,simvastatin 10 MG Oral Tablet,SCD
+CV350,316672,simvastatin 10 MG,SCDC
+CV350,349287,fenofibrate 160 MG Oral Tablet,SCD
+CV350,379822,fenofibrate 160 MG,SCDC
+CV350,379818,fenofibrate Oral Tablet,SCDF
+CV350,352304,ezetimibe 10 MG Oral Tablet [Zetia],SBD
+CV350,576000,ezetimibe 10 MG [Zetia],SBDC
+CV350,368566,ezetimibe Oral Tablet [Zetia],SBDF
+CV350,1187441,Zetia Oral Product,SBDG
+CV350,1187442,Zetia Pill,SBDG
+CV350,349556,ezetimibe 10 MG Oral Tablet,SCD
+CV350,378303,ezetimibe Oral Tablet,SCDF
+CV350,1163793,ezetimibe Oral Product,SCDG
+CV350,1163794,ezetimibe Pill,SCDG
+CV350,351133,fenofibrate 54 MG Oral Tablet,SCD
+CV350,379823,fenofibrate 54 MG,SCDC
+CV350,997007,24 HR lovastatin 40 MG Extended Release Oral Tablet [Altoprev],SBD
+CV350,542190,lovastatin 40 MG [Altoprev],SBDC
+CV350,541843,lovastatin Extended Release Oral Tablet [Altoprev],SBDF
+CV350,1169988,Altoprev Oral Product,SBDG
+CV350,1169989,Altoprev Pill,SBDG
+CV350,359731,24 HR lovastatin 40 MG Extended Release Oral Tablet,SCD
+CV350,378724,lovastatin Extended Release Oral Tablet,SCDF
+CV350,884383,24 HR lovastatin 60 MG Extended Release Oral Tablet [Altoprev],SBD
+CV350,542195,lovastatin 60 MG [Altoprev],SBDC
+CV350,359732,24 HR lovastatin 60 MG Extended Release Oral Tablet,SCD
+CV350,353377,lovastatin 60 MG,SCDC
+CV350,687048,24 HR fluvastatin 80 MG Extended Release Oral Tablet [Lescol],SBD
+CV350,687046,fluvastatin 80 MG [Lescol],SBDC
+CV350,687047,fluvastatin Extended Release Oral Tablet [Lescol],SBDF
+CV350,360507,24 HR fluvastatin 80 MG Extended Release Oral Tablet,SCD
+CV350,330788,fluvastatin 80 MG,SCDC
+CV350,375074,fluvastatin Extended Release Oral Tablet,SCDF
+CV350,997006,24 HR lovastatin 20 MG Extended Release Oral Tablet [Altoprev],SBD
+CV350,541845,lovastatin 20 MG [Altoprev],SBDC
+CV350,433849,24 HR lovastatin 20 MG Extended Release Oral Tablet,SCD
+CV350,484211,ezetimibe / simvastatin,MIN
+CV350,1245420,ezetimibe 10 MG / simvastatin 10 MG Oral Tablet [Vytorin],SBD
+CV350,1245416,ezetimibe 10 MG / simvastatin 10 MG [Vytorin],SBDC
+CV350,1245438,ezetimibe / simvastatin Oral Tablet [Vytorin],SBDF
+CV350,1245439,Vytorin Oral Product,SBDG
+CV350,1245440,Vytorin Pill,SBDG
+CV350,476345,ezetimibe 10 MG / simvastatin 10 MG Oral Tablet,SCD
+CV350,476348,ezetimibe / simvastatin Oral Tablet,SCDF
+CV350,1163791,ezetimibe / simvastatin Oral Product,SCDG
+CV350,1163792,ezetimibe / simvastatin Pill,SCDG
+CV350,1245430,ezetimibe 10 MG / simvastatin 20 MG Oral Tablet [Vytorin],SBD
+CV350,1245426,ezetimibe 10 MG / simvastatin 20 MG [Vytorin],SBDC
+CV350,476349,ezetimibe 10 MG / simvastatin 20 MG Oral Tablet,SCD
+CV350,1245441,ezetimibe 10 MG / simvastatin 40 MG Oral Tablet [Vytorin],SBD
+CV350,1245437,ezetimibe 10 MG / simvastatin 40 MG [Vytorin],SBDC
+CV350,476350,ezetimibe 10 MG / simvastatin 40 MG Oral Tablet,SCD
+CV350,1245449,ezetimibe 10 MG / simvastatin 80 MG Oral Tablet [Vytorin],SBD
+CV350,1245445,ezetimibe 10 MG / simvastatin 80 MG [Vytorin],SBDC
+CV350,476351,ezetimibe 10 MG / simvastatin 80 MG Oral Tablet,SCD
+CV350,540281,fenofibrate 145 MG Oral Tablet [Tricor],SBD
+CV350,540280,fenofibrate 145 MG [Tricor],SBDC
+CV350,368613,fenofibrate Oral Tablet [Tricor],SBDF
+CV350,1182714,Tricor Oral Product,SBDG
+CV350,1182715,Tricor Pill,SBDG
+CV350,477560,fenofibrate 145 MG Oral Tablet,SCD
+CV350,477561,fenofibrate 145 MG,SCDC
+CV350,544518,fenofibrate 48 MG Oral Tablet [Tricor],SBD
+CV350,544517,fenofibrate 48 MG [Tricor],SBDC
+CV350,477562,fenofibrate 48 MG Oral Tablet,SCD
+CV350,477563,fenofibrate 48 MG,SCDC
+CV350,578797,fenofibrate 130 MG Oral Capsule [Antara],SBD
+CV350,578795,fenofibrate 130 MG [Antara],SBDC
+CV350,483425,fenofibrate 130 MG Oral Capsule,SCD
+CV350,483424,fenofibrate 130 MG,SCDC
+CV350,578799,fenofibrate 43 MG Oral Capsule [Antara],SBD
+CV350,578798,fenofibrate 43 MG [Antara],SBDC
+CV350,483427,fenofibrate 43 MG Oral Capsule,SCD
+CV350,483426,fenofibrate 43 MG,SCDC
+CV350,577031,fenofibrate 50 MG Oral Tablet,SCD
+CV350,577030,fenofibrate 50 MG,SCDC
+CV350,484348,omega-3 acid ethyl esters (USP),IN
+CV350,607044,omega-3 acid ethyl esters (USP) 1000 MG Oral Capsule [Lovaza],SBD
+CV350,607042,omega-3 acid ethyl esters (USP) 1000 MG [Lovaza],SBDC
+CV350,809887,omega-3 acid ethyl esters (USP) Oral Capsule [Lovaza],SBDF
+CV350,1180928,Lovaza Oral Product,SBDG
+CV350,1180929,Lovaza Pill,SBDG
+CV350,577208,omega-3 acid ethyl esters (USP) 1000 MG Oral Capsule,SCD
+CV350,577206,omega-3 acid ethyl esters (USP) 1000 MG,SCDC
+CV350,809886,omega-3 acid ethyl esters (USP) Oral Capsule,SCDF
+CV350,1161021,omega-3 acid ethyl esters (USP) Oral Product,SCDG
+CV350,1161022,omega-3 acid ethyl esters (USP) Pill,SCDG
+CV350,702055,fenofibrate 150 MG Oral Capsule [Lipofen],SBD
+CV350,702054,fenofibrate 150 MG [Lipofen],SBDC
+CV350,702052,fenofibrate Oral Capsule [Lipofen],SBDF
+CV350,1177402,Lipofen Oral Product,SBDG
+CV350,1177403,Lipofen Pill,SBDG
+CV350,616852,fenofibrate 150 MG Oral Capsule,SCD
+CV350,616851,fenofibrate 150 MG,SCDC
+CV350,702169,fenofibrate 50 MG Oral Capsule [Lipofen],SBD
+CV350,702168,fenofibrate 50 MG [Lipofen],SBDC
+CV350,616853,fenofibrate 50 MG Oral Capsule,SCD
+CV350,617318,atorvastatin 20 MG Oral Tablet [Lipitor],SBD
+CV350,617317,atorvastatin 20 MG [Lipitor],SBDC
+CV350,617310,atorvastatin 20 MG Oral Tablet,SCD
+CV350,597966,atorvastatin 20 MG,SCDC
+CV350,617320,atorvastatin 40 MG Oral Tablet [Lipitor],SBD
+CV350,617319,atorvastatin 40 MG [Lipitor],SBDC
+CV350,617311,atorvastatin 40 MG Oral Tablet,SCD
+CV350,597983,atorvastatin 40 MG,SCDC
+CV350,617314,atorvastatin 10 MG Oral Tablet [Lipitor],SBD
+CV350,617313,atorvastatin 10 MG [Lipitor],SBDC
+CV350,617312,atorvastatin 10 MG Oral Tablet,SCD
+CV350,597970,atorvastatin 10 MG,SCDC
+CV350,763250,fenofibrate 120 MG Oral Tablet [Fenoglide],SBD
+CV350,763248,fenofibrate 120 MG [Fenoglide],SBDC
+CV350,763249,fenofibrate Oral Tablet [Fenoglide],SBDF
+CV350,1166487,Fenoglide Oral Product,SBDG
+CV350,1166488,Fenoglide Pill,SBDG
+CV350,749802,fenofibrate 120 MG Oral Tablet,SCD
+CV350,749801,fenofibrate 120 MG,SCDC
+CV350,763252,fenofibrate 40 MG Oral Tablet [Fenoglide],SBD
+CV350,763251,fenofibrate 40 MG [Fenoglide],SBDC
+CV350,749804,fenofibrate 40 MG Oral Tablet,SCD
+CV350,749803,fenofibrate 40 MG,SCDC
+CV350,24852,fenofibric acid,PIN
+CV350,828377,fenofibric acid 135 MG Delayed Release Oral Capsule [Trilipix],SBD
+CV350,828375,fenofibric acid 135 MG [Trilipix],SBDC
+CV350,828376,fenofibrate Delayed Release Oral Capsule [Trilipix],SBDF
+CV350,1183781,Trilipix Oral Product,SBDG
+CV350,1183782,Trilipix Pill,SBDG
+CV350,828373,fenofibric acid 135 MG Delayed Release Oral Capsule,SCD
+CV350,828372,fenofibric acid 135 MG,SCDC
+CV350,439656,fenofibrate Delayed Release Oral Capsule,SCDF
+CV350,828381,fenofibric acid 45 MG Delayed Release Oral Capsule [Trilipix],SBD
+CV350,828380,fenofibric acid 45 MG [Trilipix],SBDC
+CV350,828379,fenofibric acid 45 MG Delayed Release Oral Capsule,SCD
+CV350,828378,fenofibric acid 45 MG,SCDC
+CV350,848949,cholestyramine resin 4000 MG Powder for Oral Suspension [Questran],SBD
+CV350,848943,cholestyramine resin 4000 MG Powder for Oral Suspension,SCD
+CV350,323828,rosuvastatin calcium,PIN
+CV350,859421,rosuvastatin calcium 40 MG Oral Tablet [Crestor],SBD
+CV350,859420,rosuvastatin calcium 40 MG [Crestor],SBDC
+CV350,405880,rosuvastatin Oral Tablet [Crestor],SBDF
+CV350,1173051,Crestor Oral Product,SBDG
+CV350,1173053,Crestor Pill,SBDG
+CV350,859419,rosuvastatin calcium 40 MG Oral Tablet,SCD
+CV350,859418,rosuvastatin calcium 40 MG,SCDC
+CV350,402354,rosuvastatin Oral Tablet,SCDF
+CV350,859426,rosuvastatin calcium 5 MG Oral Tablet [Crestor],SBD
+CV350,859425,rosuvastatin calcium 5 MG [Crestor],SBDC
+CV350,859424,rosuvastatin calcium 5 MG Oral Tablet,SCD
+CV350,859423,rosuvastatin calcium 5 MG,SCDC
+CV350,859749,rosuvastatin calcium 10 MG Oral Tablet [Crestor],SBD
+CV350,859748,rosuvastatin calcium 10 MG [Crestor],SBDC
+CV350,859747,rosuvastatin calcium 10 MG Oral Tablet,SCD
+CV350,859746,rosuvastatin calcium 10 MG,SCDC
+CV350,859753,rosuvastatin calcium 20 MG Oral Tablet [Crestor],SBD
+CV350,859752,rosuvastatin calcium 20 MG [Crestor],SBDC
+CV350,859751,rosuvastatin calcium 20 MG Oral Tablet,SCD
+CV350,859750,rosuvastatin calcium 20 MG,SCDC
+CV350,860884,fenofibric acid 105 MG Oral Tablet [Fibricor],SBD
+CV350,860882,fenofibric acid 105 MG [Fibricor],SBDC
+CV350,860883,fenofibrate Oral Tablet [Fibricor],SBDF
+CV350,1168314,Fibricor Oral Product,SBDG
+CV350,1168315,Fibricor Pill,SBDG
+CV350,860880,fenofibric acid 105 MG Oral Tablet,SCD
+CV350,860879,fenofibric acid 105 MG,SCDC
+CV350,860888,fenofibric acid 35 MG Oral Tablet [Fibricor],SBD
+CV350,860887,fenofibric acid 35 MG [Fibricor],SBDC
+CV350,860886,fenofibric acid 35 MG Oral Tablet,SCD
+CV350,860885,fenofibric acid 35 MG,SCDC
+CV350,861640,pitavastatin calcium,PIN
+CV350,861646,pitavastatin calcium 1 MG Oral Tablet [Livalo],SBD
+CV350,2001324,pitavastatin calcium 1 MG [Livalo],SBDC
+CV350,861645,pitavastatin Oral Tablet [Livalo],SBDF
+CV350,1179132,Livalo Oral Product,SBDG
+CV350,1179133,Livalo Pill,SBDG
+CV350,861643,pitavastatin calcium 1 MG Oral Tablet,SCD
+CV350,2001322,pitavastatin calcium 1 MG,SCDC
+CV350,861650,pitavastatin calcium 2 MG Oral Tablet [Livalo],SBD
+CV350,2001333,pitavastatin calcium 2 MG [Livalo],SBDC
+CV350,861648,pitavastatin calcium 2 MG Oral Tablet,SCD
+CV350,2001331,pitavastatin calcium 2 MG,SCDC
+CV350,861654,pitavastatin calcium 4 MG Oral Tablet [Livalo],SBD
+CV350,2001338,pitavastatin calcium 4 MG [Livalo],SBDC
+CV350,861652,pitavastatin calcium 4 MG Oral Tablet,SCD
+CV350,2001336,pitavastatin calcium 4 MG,SCDC
+CV350,141626,colesevelam,IN
+CV350,141625,colesevelam hydrochloride,PIN
+CV350,866907,colesevelam hydrochloride 3750 MG Powder for Oral Suspension [Welchol],SBD
+CV350,1870340,colesevelam hydrochloride 3750 MG [Welchol],SBDC
+CV350,1870341,colesevelam Powder for Oral Suspension [Welchol],SBDF
+CV350,1187941,Welchol Oral Product,SBDG
+CV350,1870342,Welchol Oral Powder Product,SBDG
+CV350,866905,colesevelam hydrochloride 3750 MG Powder for Oral Suspension,SCD
+CV350,1870336,colesevelam hydrochloride 3750 MG,SCDC
+CV350,1870338,colesevelam Powder for Oral Suspension,SCDF
+CV350,1164984,colesevelam Oral Product,SCDG
+CV350,1870337,colesevelam Oral Powder Product,SCDG
+CV350,866912,colesevelam hydrochloride 625 MG Oral Tablet [Welchol],SBD
+CV350,866911,colesevelam hydrochloride 625 MG [Welchol],SBDC
+CV350,368175,colesevelam Oral Tablet [Welchol],SBDF
+CV350,1187942,Welchol Pill,SBDG
+CV350,866910,colesevelam hydrochloride 625 MG Oral Tablet,SCD
+CV350,866909,colesevelam hydrochloride 625 MG,SCDC
+CV350,374632,colesevelam Oral Tablet,SCDF
+CV350,1164985,colesevelam Pill,SCDG
+CV350,42463,pravastatin,IN
+CV350,203144,pravastatin sodium,PIN
+CV350,904458,pravastatin sodium 10 MG Oral Tablet,SCD
+CV350,904457,pravastatin sodium 10 MG,SCDC
+CV350,373560,pravastatin Oral Tablet,SCDF
+CV350,1161691,pravastatin Oral Product,SCDG
+CV350,1161692,pravastatin Pill,SCDG
+CV350,904469,pravastatin sodium 20 MG Oral Tablet [Pravachol],SBD
+CV350,904468,pravastatin sodium 20 MG [Pravachol],SBDC
+CV350,368322,pravastatin Oral Tablet [Pravachol],SBDF
+CV350,1184638,Pravachol Oral Product,SBDG
+CV350,1184639,Pravachol Pill,SBDG
+CV350,904467,pravastatin sodium 20 MG Oral Tablet,SCD
+CV350,904466,pravastatin sodium 20 MG,SCDC
+CV350,904477,pravastatin sodium 40 MG Oral Tablet [Pravachol],SBD
+CV350,904476,pravastatin sodium 40 MG [Pravachol],SBDC
+CV350,904475,pravastatin sodium 40 MG Oral Tablet,SCD
+CV350,904474,pravastatin sodium 40 MG,SCDC
+CV350,904483,pravastatin sodium 80 MG Oral Tablet [Pravachol],SBD
+CV350,904482,pravastatin sodium 80 MG [Pravachol],SBDC
+CV350,904481,pravastatin sodium 80 MG Oral Tablet,SCD
+CV350,904480,pravastatin sodium 80 MG,SCDC
+BL110,1037042,dabigatran etexilate,IN
+BL110,1037049,dabigatran etexilate 150 MG Oral Capsule [Pradaxa],SBD
+BL110,1037047,dabigatran etexilate 150 MG [Pradaxa],SBDC
+BL110,1037048,dabigatran etexilate Oral Capsule [Pradaxa],SBDF
+BL110,1184616,Pradaxa Oral Product,SBDG
+BL110,1184617,Pradaxa Pill,SBDG
+BL110,1037045,dabigatran etexilate 150 MG Oral Capsule,SCD
+BL110,1037043,dabigatran etexilate 150 MG,SCDC
+BL110,1037044,dabigatran etexilate Oral Capsule,SCDF
+BL110,1156646,dabigatran etexilate Oral Product,SCDG
+BL110,1156647,dabigatran etexilate Pill,SCDG
+BL110,1037181,dabigatran etexilate 75 MG Oral Capsule [Pradaxa],SBD
+BL110,1037180,dabigatran etexilate 75 MG [Pradaxa],SBDC
+BL110,1037179,dabigatran etexilate 75 MG Oral Capsule,SCD
+BL110,1037178,dabigatran etexilate 75 MG,SCDC
+BL110,1114195,rivaroxaban,IN
+BL110,1114202,rivaroxaban 10 MG Oral Tablet [Xarelto],SBD
+BL110,1114200,rivaroxaban 10 MG [Xarelto],SBDC
+BL110,1114201,rivaroxaban Oral Tablet [Xarelto],SBDF
+BL110,1186304,Xarelto Oral Product,SBDG
+BL110,1186305,Xarelto Pill,SBDG
+BL110,1114198,rivaroxaban 10 MG Oral Tablet,SCD
+BL110,1114196,rivaroxaban 10 MG,SCDC
+BL110,1114197,rivaroxaban Oral Tablet,SCDF
+BL110,1157968,rivaroxaban Oral Product,SCDG
+BL110,1157969,rivaroxaban Pill,SCDG
+BL110,1232084,rivaroxaban 15 MG Oral Tablet [Xarelto],SBD
+BL110,1232083,rivaroxaban 15 MG [Xarelto],SBDC
+BL110,1232082,rivaroxaban 15 MG Oral Tablet,SCD
+BL110,1232081,rivaroxaban 15 MG,SCDC
+BL110,1232088,rivaroxaban 20 MG Oral Tablet [Xarelto],SBD
+BL110,1232087,rivaroxaban 20 MG [Xarelto],SBDC
+BL110,1232086,rivaroxaban 20 MG Oral Tablet,SCD
+BL110,1232085,rivaroxaban 20 MG,SCDC
+BL110,5224,heparin,IN
+BL110,314659,"heparin sodium, porcine",PIN
+BL110,1361029,"heparin sodium, porcine 10 UNT/ML Injectable Solution",SCD
+BL110,1361026,"heparin sodium, porcine 10 UNT/ML",SCDC
+BL110,1856275,heparin Injectable Solution,SCDF
+BL110,1856274,heparin Injectable Product,SCDG
+BL110,1361048,"heparin sodium, porcine 100 UNT/ML Injectable Solution",SCD
+BL110,1361047,"heparin sodium, porcine 100 UNT/ML",SCDC
+BL110,1361226,"heparin sodium, porcine 1000 UNT/ML Injectable Solution",SCD
+BL110,1361225,"heparin sodium, porcine 1000 UNT/ML",SCDC
+BL110,1361574,"heparin sodium, porcine 20000 UNT/ML Injectable Solution",SCD
+BL110,1361573,"heparin sodium, porcine 20000 UNT/ML",SCDC
+BL110,1361607,"500 ML heparin sodium, porcine 40 UNT/ML Injection",SCD
+BL110,1361606,"heparin sodium, porcine 40 UNT/ML",SCDC
+BL110,1857598,heparin Injection,SCDF
+BL110,1361615,"heparin sodium, porcine 5000 UNT/ML Injectable Solution",SCD
+BL110,1361614,"heparin sodium, porcine 5000 UNT/ML",SCDC
+BL110,1361853,"0.5 ML heparin sodium, porcine 10000 UNT/ML Cartridge",SCD
+BL110,1361852,"heparin sodium, porcine 10000 UNT/ML",SCDC
+BL110,1857949,heparin Cartridge,SCDF
+BL110,1362831,"heparin sodium, porcine 10000 UNT/ML Injectable Solution",SCD
+BL110,1364430,apixaban,IN
+BL110,1364441,apixaban 2.5 MG Oral Tablet [Eliquis],SBD
+BL110,1364437,apixaban 2.5 MG [Eliquis],SBDC
+BL110,1364438,apixaban Oral Tablet [Eliquis],SBDF
+BL110,1364439,Eliquis Oral Product,SBDG
+BL110,1364440,Eliquis Pill,SBDG
+BL110,1364435,apixaban 2.5 MG Oral Tablet,SCD
+BL110,1364431,apixaban 2.5 MG,SCDC
+BL110,1364434,apixaban Oral Tablet,SCDF
+BL110,1364432,apixaban Oral Product,SCDG
+BL110,1364433,apixaban Pill,SCDG
+BL110,1364447,apixaban 5 MG Oral Tablet [Eliquis],SBD
+BL110,1364446,apixaban 5 MG [Eliquis],SBDC
+BL110,1364445,apixaban 5 MG Oral Tablet,SCD
+BL110,1364444,apixaban 5 MG,SCDC
+BL110,1599538,edoxaban,IN
+BL110,1599549,edoxaban 15 MG Oral Tablet [Savaysa],SBD
+BL110,1599545,edoxaban 15 MG [Savaysa],SBDC
+BL110,1599546,edoxaban Oral Tablet [Savaysa],SBDF
+BL110,1599547,Savaysa Oral Product,SBDG
+BL110,1599548,Savaysa Pill,SBDG
+BL110,1599543,edoxaban 15 MG Oral Tablet,SCD
+BL110,1599539,edoxaban 15 MG,SCDC
+BL110,1599542,edoxaban Oral Tablet,SCDF
+BL110,1599540,edoxaban Oral Product,SCDG
+BL110,1599541,edoxaban Pill,SCDG
+BL110,1599553,edoxaban 30 MG Oral Tablet [Savaysa],SBD
+BL110,1599552,edoxaban 30 MG [Savaysa],SBDC
+BL110,1599551,edoxaban 30 MG Oral Tablet,SCD
+BL110,1599550,edoxaban 30 MG,SCDC
+BL110,1599557,edoxaban 60 MG Oral Tablet [Savaysa],SBD
+BL110,1599556,edoxaban 60 MG [Savaysa],SBDC
+BL110,1599555,edoxaban 60 MG Oral Tablet,SCD
+BL110,1599554,edoxaban 60 MG,SCDC
+BL110,1658634,"0.5 ML heparin sodium, porcine 10000 UNT/ML Injection",SCD
+BL110,1658637,"1 ML heparin sodium, porcine 10000 UNT/ML Injection",SCD
+BL110,1658647,"2 ML heparin sodium, porcine 1000 UNT/ML Injection",SCD
+BL110,1658659,"1 ML heparin sodium, porcine 1000 UNT/ML Injection",SCD
+BL110,1658690,"1000 ML heparin sodium, porcine 2 UNT/ML Injection",SCD
+BL110,1362064,"heparin sodium, porcine 2 UNT/ML",SCDC
+BL110,1658692,"500 ML heparin sodium, porcine 2 UNT/ML Injection",SCD
+BL110,1658717,"250 ML heparin sodium, porcine 100 UNT/ML Injection",SCD
+BL110,1659195,"500 ML heparin sodium, porcine 50 UNT/ML Injection",SCD
+BL110,1361612,"heparin sodium, porcine 50 UNT/ML",SCDC
+BL110,1659197,"250 ML heparin sodium, porcine 50 UNT/ML Injection",SCD
+BL110,1659263,"1 ML heparin sodium, porcine 5000 UNT/ML Injection",SCD
+BL110,1723478,dabigatran etexilate 110 MG Oral Capsule [Pradaxa],SBD
+BL110,1723477,dabigatran etexilate 110 MG [Pradaxa],SBDC
+BL110,1723476,dabigatran etexilate 110 MG Oral Capsule,SCD
+BL110,1723475,dabigatran etexilate 110 MG,SCDC
+BL110,75635,eptifibatide,IN
+BL110,1736472,10 ML eptifibatide 2 MG/ML Injection [Integrilin],SBD
+BL110,574344,eptifibatide 2 MG/ML [Integrilin],SBDC
+BL110,1736471,eptifibatide Injection [Integrilin],SBDF
+BL110,1173433,Integrilin Injectable Product,SBDG
+BL110,1736470,10 ML eptifibatide 2 MG/ML Injection,SCD
+BL110,315864,eptifibatide 2 MG/ML,SCDC
+BL110,1736469,eptifibatide Injection,SCDF
+BL110,1161927,eptifibatide Injectable Product,SCDG
+BL110,1736478,100 ML eptifibatide 2 MG/ML Injection [Integrilin],SBD
+BL110,1736477,100 ML eptifibatide 2 MG/ML Injection,SCD
+BL110,73137,tirofiban,IN
+BL110,1737468,100 ML tirofiban 0.05 MG/ML Injection [Aggrastat],SBD
+BL110,573208,tirofiban 0.05 MG/ML [Aggrastat],SBDC
+BL110,1737467,tirofiban Injection [Aggrastat],SBDF
+BL110,1172779,Aggrastat Injectable Product,SBDG
+BL110,1737466,100 ML tirofiban 0.05 MG/ML Injection,SCD
+BL110,330276,tirofiban 0.05 MG/ML,SCDC
+BL110,1737465,tirofiban Injection,SCDF
+BL110,1162116,tirofiban Injectable Product,SCDG
+BL110,1737472,250 ML tirofiban 0.05 MG/ML Injection [Aggrastat],SBD
+BL110,1737471,250 ML tirofiban 0.05 MG/ML Injection,SCD
+BL110,1311089,defibrotide,IN
+BL110,1746523,defibrotide sodium,PIN
+BL110,1746532,2.5 ML defibrotide sodium 80 MG/ML Injection [Defitelio],SBD
+BL110,1746529,defibrotide sodium 80 MG/ML [Defitelio],SBDC
+BL110,1746530,defibrotide Injection [Defitelio],SBDF
+BL110,1746531,Defitelio Injectable Product,SBDG
+BL110,1746527,2.5 ML defibrotide sodium 80 MG/ML Injection,SCD
+BL110,1746524,defibrotide sodium 80 MG/ML,SCDC
+BL110,1746526,defibrotide Injection,SCDF
+BL110,1746525,defibrotide Injectable Product,SCDG
+BL110,1798389,"1 ML heparin sodium, porcine 5000 UNT/ML Prefilled Syringe",SCD
+BL110,1856278,heparin Prefilled Syringe,SCDF
+BL110,15202,argatroban,IN
+BL110,1804735,50 ML argatroban 1 MG/ML Injection,SCD
+BL110,1110707,argatroban 1 MG/ML,SCDC
+BL110,1804730,argatroban Injection,SCDF
+BL110,1158258,argatroban Injectable Product,SCDG
+BL110,1804738,250 ML argatroban 1 MG/ML Injection,SCD
+BL110,60819,bivalirudin,IN
+BL110,2380558,50 ML bivalirudin 5 MG/ML Injection [Angiomax],SBD
+BL110,2380557,bivalirudin 5 MG/ML [Angiomax],SBDC
+BL110,1657994,bivalirudin Injection [Angiomax],SBDF
+BL110,1176229,Angiomax Injectable Product,SBDG
+BL110,1997015,50 ML bivalirudin 5 MG/ML Injection,SCD
+BL110,1997014,bivalirudin 5 MG/ML,SCDC
+BL110,1657991,bivalirudin Injection,SCDF
+BL110,1161844,bivalirudin Injectable Product,SCDG
+BL110,261097,100 ML eptifibatide 0.75 MG/ML Injection [Integrilin],SBD
+BL110,574345,eptifibatide 0.75 MG/ML [Integrilin],SBDC
+BL110,200349,100 ML eptifibatide 0.75 MG/ML Injection,SCD
+BL110,315863,eptifibatide 0.75 MG/ML,SCDC
+BL110,2059017,rivaroxaban 2.5 MG Oral Tablet [Xarelto],SBD
+BL110,2059016,rivaroxaban 2.5 MG [Xarelto],SBDC
+BL110,2059015,rivaroxaban 2.5 MG Oral Tablet,SCD
+BL110,2059014,rivaroxaban 2.5 MG,SCDC
+BL110,2588066,rivaroxaban 1 MG/ML Oral Suspension [Xarelto],SBD
+BL110,2589628,rivaroxaban 1 MG/ML [Xarelto],SBDC
+BL110,2589630,rivaroxaban Oral Suspension [Xarelto],SBDF
+BL110,2589629,Xarelto Oral Liquid Product,SBDG
+BL110,2588062,rivaroxaban 1 MG/ML Oral Suspension,SCD
+BL110,2589624,rivaroxaban 1 MG/ML,SCDC
+BL110,2589626,rivaroxaban Oral Suspension,SCDF
+BL110,2589625,rivaroxaban Oral Liquid Product,SCDG
+BL110,2590619,dabigatran etexilate 110 MG Oral Pellet [Pradaxa],SBD
+BL110,2590618,dabigatran etexilate Oral Pellet [Pradaxa],SBDF
+BL110,2590617,Pradaxa Pellet Product,SBDG
+BL110,2590616,dabigatran etexilate 110 MG Oral Pellet,SCD
+BL110,2590615,dabigatran etexilate Oral Pellet,SCDF
+BL110,2590614,dabigatran etexilate Pellet Product,SCDG
+BL110,2590621,dabigatran etexilate 150 MG Oral Pellet [Pradaxa],SBD
+BL110,2590620,dabigatran etexilate 150 MG Oral Pellet,SCD
+BL110,2590625,dabigatran etexilate 20 MG Oral Pellet [Pradaxa],SBD
+BL110,2590624,dabigatran etexilate 20 MG [Pradaxa],SBDC
+BL110,2590623,dabigatran etexilate 20 MG Oral Pellet,SCD
+BL110,2590622,dabigatran etexilate 20 MG,SCDC
+BL110,2590629,dabigatran etexilate 30 MG Oral Pellet [Pradaxa],SBD
+BL110,2590628,dabigatran etexilate 30 MG [Pradaxa],SBDC
+BL110,2590627,dabigatran etexilate 30 MG Oral Pellet,SCD
+BL110,2590626,dabigatran etexilate 30 MG,SCDC
+BL110,2590633,dabigatran etexilate 40 MG Oral Pellet [Pradaxa],SBD
+BL110,2590632,dabigatran etexilate 40 MG [Pradaxa],SBDC
+BL110,2590631,dabigatran etexilate 40 MG Oral Pellet,SCD
+BL110,2590630,dabigatran etexilate 40 MG,SCDC
+BL110,2590637,dabigatran etexilate 50 MG Oral Pellet [Pradaxa],SBD
+BL110,2590636,dabigatran etexilate 50 MG [Pradaxa],SBDC
+BL110,2590635,dabigatran etexilate 50 MG Oral Pellet,SCD
+BL110,2590634,dabigatran etexilate 50 MG,SCDC
+BL110,67109,dalteparin,IN
+BL110,82137,dalteparin sodium,PIN
+BL110,2618842,4 ML dalteparin sodium 2500 UNT/ML Injection [Fragmin],SBD
+BL110,978775,dalteparin sodium 2500 UNT/ML [Fragmin],SBDC
+BL110,2618841,dalteparin Injection [Fragmin],SBDF
+BL110,1173301,Fragmin Injectable Product,SBDG
+BL110,2618839,4 ML dalteparin sodium 2500 UNT/ML Injection,SCD
+BL110,978773,dalteparin sodium 2500 UNT/ML,SCDC
+BL110,2618838,dalteparin Injection,SCDF
+BL110,1151837,dalteparin Injectable Product,SCDG
+BL110,308351,2.5 ML argatroban 100 MG/ML Injection,SCD
+BL110,329284,argatroban 100 MG/ML,SCDC
+BL110,284534,bivalirudin 250 MG Injection [Angiomax],SBD
+BL110,1657993,bivalirudin 250 MG [Angiomax],SBDC
+BL110,308769,bivalirudin 250 MG Injection,SCD
+BL110,1657990,bivalirudin 250 MG,SCDC
+BL110,114934,desirudin,IN
+BL110,402249,desirudin 15 MG Injection [Iprivask],SBD
+BL110,1807811,desirudin 15 MG [Iprivask],SBDC
+BL110,1807812,desirudin Injection [Iprivask],SBDF
+BL110,1176754,Iprivask Injectable Product,SBDG
+BL110,402248,desirudin 15 MG Injection,SCD
+BL110,1807808,desirudin 15 MG,SCDC
+BL110,1807809,desirudin Injection,SCDF
+BL110,1157753,desirudin Injectable Product,SCDG
+BL110,67108,enoxaparin,IN
+BL110,221095,enoxaparin sodium,PIN
+BL110,854232,0.3 ML enoxaparin sodium 100 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854231,enoxaparin sodium 100 MG/ML [Lovenox],SBDC
+BL110,759594,enoxaparin Prefilled Syringe [Lovenox],SBDF
+BL110,1180930,Lovenox Injectable Product,SBDG
+BL110,854228,0.3 ML enoxaparin sodium 100 MG/ML Prefilled Syringe,SCD
+BL110,854227,enoxaparin sodium 100 MG/ML,SCDC
+BL110,727722,enoxaparin Prefilled Syringe,SCDF
+BL110,1162664,enoxaparin Injectable Product,SCDG
+BL110,854236,0.4 ML enoxaparin sodium 100 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854235,0.4 ML enoxaparin sodium 100 MG/ML Prefilled Syringe,SCD
+BL110,854239,0.6 ML enoxaparin sodium 100 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854238,0.6 ML enoxaparin sodium 100 MG/ML Prefilled Syringe,SCD
+BL110,854242,0.8 ML enoxaparin sodium 100 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854241,0.8 ML enoxaparin sodium 100 MG/ML Prefilled Syringe,SCD
+BL110,854247,0.8 ML enoxaparin sodium 150 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854246,enoxaparin sodium 150 MG/ML [Lovenox],SBDC
+BL110,854245,0.8 ML enoxaparin sodium 150 MG/ML Prefilled Syringe,SCD
+BL110,854244,enoxaparin sodium 150 MG/ML,SCDC
+BL110,854249,1 ML enoxaparin sodium 100 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854248,1 ML enoxaparin sodium 100 MG/ML Prefilled Syringe,SCD
+BL110,854253,1 ML enoxaparin sodium 150 MG/ML Prefilled Syringe [Lovenox],SBD
+BL110,854252,1 ML enoxaparin sodium 150 MG/ML Prefilled Syringe,SCD
+BL110,854256,enoxaparin sodium 100 MG/ML Injectable Solution [Lovenox],SBD
+BL110,362788,enoxaparin Injectable Solution [Lovenox],SBDF
+BL110,854255,enoxaparin sodium 100 MG/ML Injectable Solution,SCD
+BL110,372012,enoxaparin Injectable Solution,SCDF
+BL110,11289,warfarin,IN
+BL110,114194,warfarin sodium,PIN
+BL110,855290,warfarin sodium 1 MG Oral Tablet [Coumadin],SBD
+BL110,855292,warfarin sodium 1 MG Oral Tablet [Jantoven],SBD
+BL110,855289,warfarin sodium 1 MG [Coumadin],SBDC
+BL110,855291,warfarin sodium 1 MG [Jantoven],SBDC
+BL110,368417,warfarin Oral Tablet [Coumadin],SBDF
+BL110,406078,warfarin Oral Tablet [Jantoven],SBDF
+BL110,1167808,Jantoven Oral Product,SBDG
+BL110,1167809,Jantoven Pill,SBDG
+BL110,1171655,Coumadin Oral Product,SBDG
+BL110,1171656,Coumadin Pill,SBDG
+BL110,855288,warfarin sodium 1 MG Oral Tablet,SCD
+BL110,855287,warfarin sodium 1 MG,SCDC
+BL110,374319,warfarin Oral Tablet,SCDF
+BL110,1161790,warfarin Oral Product,SCDG
+BL110,1161791,warfarin Pill,SCDG
+BL110,855298,warfarin sodium 10 MG Oral Tablet [Coumadin],SBD
+BL110,855300,warfarin sodium 10 MG Oral Tablet [Jantoven],SBD
+BL110,855297,warfarin sodium 10 MG [Coumadin],SBDC
+BL110,855299,warfarin sodium 10 MG [Jantoven],SBDC
+BL110,855296,warfarin sodium 10 MG Oral Tablet,SCD
+BL110,855295,warfarin sodium 10 MG,SCDC
+BL110,855304,warfarin sodium 2 MG Oral Tablet [Coumadin],SBD
+BL110,855306,warfarin sodium 2 MG Oral Tablet [Jantoven],SBD
+BL110,855303,warfarin sodium 2 MG [Coumadin],SBDC
+BL110,855305,warfarin sodium 2 MG [Jantoven],SBDC
+BL110,855302,warfarin sodium 2 MG Oral Tablet,SCD
+BL110,855301,warfarin sodium 2 MG,SCDC
+BL110,855314,warfarin sodium 2.5 MG Oral Tablet [Coumadin],SBD
+BL110,855316,warfarin sodium 2.5 MG Oral Tablet [Jantoven],SBD
+BL110,855313,warfarin sodium 2.5 MG [Coumadin],SBDC
+BL110,855315,warfarin sodium 2.5 MG [Jantoven],SBDC
+BL110,855312,warfarin sodium 2.5 MG Oral Tablet,SCD
+BL110,855311,warfarin sodium 2.5 MG,SCDC
+BL110,855320,warfarin sodium 3 MG Oral Tablet [Coumadin],SBD
+BL110,855322,warfarin sodium 3 MG Oral Tablet [Jantoven],SBD
+BL110,855319,warfarin sodium 3 MG [Coumadin],SBDC
+BL110,855321,warfarin sodium 3 MG [Jantoven],SBDC
+BL110,855318,warfarin sodium 3 MG Oral Tablet,SCD
+BL110,855317,warfarin sodium 3 MG,SCDC
+BL110,855326,warfarin sodium 4 MG Oral Tablet [Coumadin],SBD
+BL110,855328,warfarin sodium 4 MG Oral Tablet [Jantoven],SBD
+BL110,855325,warfarin sodium 4 MG [Coumadin],SBDC
+BL110,855327,warfarin sodium 4 MG [Jantoven],SBDC
+BL110,855324,warfarin sodium 4 MG Oral Tablet,SCD
+BL110,855323,warfarin sodium 4 MG,SCDC
+BL110,855334,warfarin sodium 5 MG Oral Tablet [Coumadin],SBD
+BL110,855336,warfarin sodium 5 MG Oral Tablet [Jantoven],SBD
+BL110,855333,warfarin sodium 5 MG [Coumadin],SBDC
+BL110,855335,warfarin sodium 5 MG [Jantoven],SBDC
+BL110,855332,warfarin sodium 5 MG Oral Tablet,SCD
+BL110,855331,warfarin sodium 5 MG,SCDC
+BL110,855340,warfarin sodium 6 MG Oral Tablet [Coumadin],SBD
+BL110,855342,warfarin sodium 6 MG Oral Tablet [Jantoven],SBD
+BL110,855339,warfarin sodium 6 MG [Coumadin],SBDC
+BL110,855341,warfarin sodium 6 MG [Jantoven],SBDC
+BL110,855338,warfarin sodium 6 MG Oral Tablet,SCD
+BL110,855337,warfarin sodium 6 MG,SCDC
+BL110,855346,warfarin sodium 7.5 MG Oral Tablet [Coumadin],SBD
+BL110,855348,warfarin sodium 7.5 MG Oral Tablet [Jantoven],SBD
+BL110,855345,warfarin sodium 7.5 MG [Coumadin],SBDC
+BL110,855347,warfarin sodium 7.5 MG [Jantoven],SBDC
+BL110,855344,warfarin sodium 7.5 MG Oral Tablet,SCD
+BL110,855343,warfarin sodium 7.5 MG,SCDC
+BL110,321208,fondaparinux,IN
+BL110,322154,fondaparinux sodium,PIN
+BL110,861358,0.8 ML fondaparinux sodium 12.5 MG/ML Prefilled Syringe [Arixtra],SBD
+BL110,861357,fondaparinux sodium 12.5 MG/ML [Arixtra],SBDC
+BL110,727561,fondaparinux Prefilled Syringe [Arixtra],SBDF
+BL110,1170763,Arixtra Injectable Product,SBDG
+BL110,861356,0.8 ML fondaparinux sodium 12.5 MG/ML Prefilled Syringe,SCD
+BL110,545075,fondaparinux sodium 12.5 MG/ML,SCDC
+BL110,727559,fondaparinux Prefilled Syringe,SCDF
+BL110,1165637,fondaparinux Injectable Product,SCDG
+BL110,861362,0.5 ML fondaparinux sodium 5 MG/ML Prefilled Syringe [Arixtra],SBD
+BL110,861361,fondaparinux sodium 5 MG/ML [Arixtra],SBDC
+BL110,861360,0.5 ML fondaparinux sodium 5 MG/ML Prefilled Syringe,SCD
+BL110,861359,fondaparinux sodium 5 MG/ML,SCDC
+BL110,861364,0.4 ML fondaparinux sodium 12.5 MG/ML Prefilled Syringe [Arixtra],SBD
+BL110,861363,0.4 ML fondaparinux sodium 12.5 MG/ML Prefilled Syringe,SCD
+BL110,861366,0.6 ML fondaparinux sodium 12.5 MG/ML Prefilled Syringe [Arixtra],SBD
+BL110,861365,0.6 ML fondaparinux sodium 12.5 MG/ML Prefilled Syringe,SCD
+BL110,978727,0.2 ML dalteparin sodium 12500 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978726,dalteparin sodium 12500 UNT/ML [Fragmin],SBDC
+BL110,753110,dalteparin Prefilled Syringe [Fragmin],SBDF
+BL110,978725,0.2 ML dalteparin sodium 12500 UNT/ML Prefilled Syringe,SCD
+BL110,978724,dalteparin sodium 12500 UNT/ML,SCDC
+BL110,727382,dalteparin Prefilled Syringe,SCDF
+BL110,978735,0.2 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978734,dalteparin sodium 25000 UNT/ML [Fragmin],SBDC
+BL110,978733,0.2 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe,SCD
+BL110,978732,dalteparin sodium 25000 UNT/ML,SCDC
+BL110,978737,0.3 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978736,0.3 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe,SCD
+BL110,978741,0.5 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978740,0.5 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe,SCD
+BL110,978745,0.6 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978744,0.6 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe,SCD
+BL110,978747,0.72 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978746,0.72 ML dalteparin sodium 25000 UNT/ML Prefilled Syringe,SCD
+BL110,978757,1 ML dalteparin sodium 10000 UNT/ML Prefilled Syringe [Fragmin],SBD
+BL110,978756,dalteparin sodium 10000 UNT/ML [Fragmin],SBDC
+BL110,978755,1 ML dalteparin sodium 10000 UNT/ML Prefilled Syringe,SCD
+BL110,978754,dalteparin sodium 10000 UNT/ML,SCDC
+BL110,978778,dalteparin sodium 25000 UNT/ML Injectable Solution [Fragmin],SBD
+BL110,363135,dalteparin Injectable Solution [Fragmin],SBDF
+BL110,978777,dalteparin sodium 25000 UNT/ML Injectable Solution,SCD
+BL110,371679,dalteparin Injectable Solution,SCDF
+HS500,6809,metformin,IN
+HS500,857974,saxagliptin,IN
+HS500,1043562,metformin / saxagliptin,MIN
+HS500,235743,metformin hydrochloride,PIN
+HS500,1043567,24 HR metformin hydrochloride 1000 MG / saxagliptin 2.5 MG Extended Release Oral Tablet [Kombiglyze],SBD
+HS500,1043565,metformin hydrochloride 1000 MG / saxagliptin 2.5 MG [Kombiglyze],SBDC
+HS500,1043566,metformin / saxagliptin Extended Release Oral Tablet [Kombiglyze],SBDF
+HS500,1172860,Kombiglyze Pill,SBDG
+HS500,1172861,Kombiglyze Oral Product,SBDG
+HS500,1043563,24 HR metformin hydrochloride 1000 MG / saxagliptin 2.5 MG Extended Release Oral Tablet,SCD
+HS500,858041,saxagliptin 2.5 MG,SCDC
+HS500,860995,metformin hydrochloride 1000 MG,SCDC
+HS500,1043561,metformin / saxagliptin Extended Release Oral Tablet,SCDF
+HS500,1161605,metformin / saxagliptin Oral Product,SCDG
+HS500,1161606,metformin / saxagliptin Pill,SCDG
+HS500,1043574,24 HR metformin hydrochloride 1000 MG / saxagliptin 5 MG Extended Release Oral Tablet [Kombiglyze],SBD
+HS500,1043572,metformin hydrochloride 1000 MG / saxagliptin 5 MG [Kombiglyze],SBDC
+HS500,1043570,24 HR metformin hydrochloride 1000 MG / saxagliptin 5 MG Extended Release Oral Tablet,SCD
+HS500,858034,saxagliptin 5 MG,SCDC
+HS500,1043582,24 HR metformin hydrochloride 500 MG / saxagliptin 5 MG Extended Release Oral Tablet [Kombiglyze],SBD
+HS500,1043580,metformin hydrochloride 500 MG / saxagliptin 5 MG [Kombiglyze],SBDC
+HS500,1043578,24 HR metformin hydrochloride 500 MG / saxagliptin 5 MG Extended Release Oral Tablet,SCD
+HS500,860974,metformin hydrochloride 500 MG,SCDC
+HS500,4850,glucose,IN
+HS500,1052683,glucose 166.7 MG/ML Oral Solution,SCD
+HS500,1052682,glucose 166.7 MG/ML,SCDC
+HS500,239166,glucose Oral Solution,SCDF
+HS500,1165822,glucose Oral Liquid Product,SCDG
+HS500,1165823,glucose Oral Product,SCDG
+HS500,1605101,insulin isophane,IN
+HS500,253182,"insulin, regular, human",IN
+HS500,1008501,"insulin isophane / insulin, regular, human",MIN
+HS500,253181,"insulin isophane, human",PIN
+HS500,106892,"insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]",SBD
+HS500,573330,"insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML [Humulin]",SBDC
+HS500,365679,"insulin isophane / insulin, regular, human Injectable Suspension [Humulin]",SBDF
+HS500,1171997,Humulin Injectable Product,SBDG
+HS500,311048,"insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension",SCD
+HS500,343079,"insulin isophane, human 70 UNT/ML",SCDC
+HS500,343083,"insulin, regular, human 30 UNT/ML",SCDC
+HS500,378857,"insulin isophane / insulin, regular, human Injectable Suspension",SCDF
+HS500,1653899,"insulin isophane / insulin, regular, human Injectable Product",SCDG
+HS500,1100699,linagliptin,IN
+HS500,1100706,linagliptin 5 MG Oral Tablet [Tradjenta],SBD
+HS500,1100704,linagliptin 5 MG [Tradjenta],SBDC
+HS500,1100705,linagliptin Oral Tablet [Tradjenta],SBDF
+HS500,1179163,Tradjenta Oral Product,SBDG
+HS500,1179164,Tradjenta Pill,SBDG
+HS500,1100702,linagliptin 5 MG Oral Tablet,SCD
+HS500,1100700,linagliptin 5 MG,SCDC
+HS500,1100701,linagliptin Oral Tablet,SCDF
+HS500,1164670,linagliptin Oral Product,SCDG
+HS500,1164671,linagliptin Pill,SCDG
+HS500,1243019,linagliptin / metformin,MIN
+HS500,1243026,linagliptin 2.5 MG / metformin hydrochloride 1000 MG Oral Tablet [Jentadueto],SBD
+HS500,1243022,linagliptin 2.5 MG / metformin hydrochloride 1000 MG [Jentadueto],SBDC
+HS500,1243037,linagliptin / metformin Oral Tablet [Jentadueto],SBDF
+HS500,1243038,Jentadueto Oral Product,SBDG
+HS500,1243039,Jentadueto Pill,SBDG
+HS500,1243020,linagliptin 2.5 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1243015,linagliptin 2.5 MG,SCDC
+HS500,1243018,linagliptin / metformin Oral Tablet,SCDF
+HS500,1243016,linagliptin / metformin Oral Product,SCDG
+HS500,1243017,linagliptin / metformin Pill,SCDG
+HS500,1243033,linagliptin 2.5 MG / metformin hydrochloride 500 MG Oral Tablet [Jentadueto],SBD
+HS500,1243029,linagliptin 2.5 MG / metformin hydrochloride 500 MG [Jentadueto],SBDC
+HS500,1243027,linagliptin 2.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1243040,linagliptin 2.5 MG / metformin hydrochloride 850 MG Oral Tablet [Jentadueto],SBD
+HS500,1243036,linagliptin 2.5 MG / metformin hydrochloride 850 MG [Jentadueto],SBDC
+HS500,1243034,linagliptin 2.5 MG / metformin hydrochloride 850 MG Oral Tablet,SCD
+HS500,861009,metformin hydrochloride 850 MG,SCDC
+HS500,593411,sitagliptin,IN
+HS500,729717,metformin / sitagliptin,MIN
+HS500,1243833,24 HR metformin hydrochloride 1000 MG / sitagliptin 100 MG Extended Release Oral Tablet [Janumet],SBD
+HS500,1243829,metformin hydrochloride 1000 MG / sitagliptin 100 MG [Janumet],SBDC
+HS500,1243839,metformin / sitagliptin Extended Release Oral Tablet [Janumet],SBDF
+HS500,1167810,Janumet Oral Product,SBDG
+HS500,1167811,Janumet Pill,SBDG
+HS500,1243827,24 HR metformin hydrochloride 1000 MG / sitagliptin 100 MG Extended Release Oral Tablet,SCD
+HS500,665031,sitagliptin 100 MG,SCDC
+HS500,1243826,metformin / sitagliptin Extended Release Oral Tablet,SCDF
+HS500,1161607,metformin / sitagliptin Oral Product,SCDG
+HS500,1161608,metformin / sitagliptin Pill,SCDG
+HS500,1243843,24 HR metformin hydrochloride 1000 MG / sitagliptin 50 MG Extended Release Oral Tablet [Janumet],SBD
+HS500,861770,metformin hydrochloride 1000 MG / sitagliptin 50 MG [Janumet],SBDC
+HS500,1243842,24 HR metformin hydrochloride 1000 MG / sitagliptin 50 MG Extended Release Oral Tablet,SCD
+HS500,665041,sitagliptin 50 MG,SCDC
+HS500,1243848,24 HR metformin hydrochloride 500 MG / sitagliptin 50 MG Extended Release Oral Tablet [Janumet],SBD
+HS500,861820,metformin hydrochloride 500 MG / sitagliptin 50 MG [Janumet],SBDC
+HS500,1243846,24 HR metformin hydrochloride 500 MG / sitagliptin 50 MG Extended Release Oral Tablet,SCD
+HS500,1368001,alogliptin,IN
+HS500,1368012,alogliptin 25 MG Oral Tablet [Nesina],SBD
+HS500,1368008,alogliptin 25 MG [Nesina],SBDC
+HS500,1368009,alogliptin Oral Tablet [Nesina],SBDF
+HS500,1368010,Nesina Oral Product,SBDG
+HS500,1368011,Nesina Pill,SBDG
+HS500,1368006,alogliptin 25 MG Oral Tablet,SCD
+HS500,1368002,alogliptin 25 MG,SCDC
+HS500,1368005,alogliptin Oral Tablet,SCDF
+HS500,1368003,alogliptin Oral Product,SCDG
+HS500,1368004,alogliptin Pill,SCDG
+HS500,1368020,alogliptin 6.25 MG Oral Tablet [Nesina],SBD
+HS500,1368019,alogliptin 6.25 MG [Nesina],SBDC
+HS500,1368018,alogliptin 6.25 MG Oral Tablet,SCD
+HS500,1368017,alogliptin 6.25 MG,SCDC
+HS500,1368036,alogliptin 12.5 MG Oral Tablet [Nesina],SBD
+HS500,1368035,alogliptin 12.5 MG [Nesina],SBDC
+HS500,1368034,alogliptin 12.5 MG Oral Tablet,SCD
+HS500,1368033,alogliptin 12.5 MG,SCDC
+HS500,1368384,alogliptin / metformin,MIN
+HS500,1368391,alogliptin 12.5 MG / metformin hydrochloride 1000 MG Oral Tablet [Kazano],SBD
+HS500,1368387,alogliptin 12.5 MG / metformin hydrochloride 1000 MG [Kazano],SBDC
+HS500,1368395,alogliptin / metformin Oral Tablet [Kazano],SBDF
+HS500,1368396,Kazano Oral Product,SBDG
+HS500,1368397,Kazano Pill,SBDG
+HS500,1368385,alogliptin 12.5 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1368383,alogliptin / metformin Oral Tablet,SCDF
+HS500,1368381,alogliptin / metformin Oral Product,SCDG
+HS500,1368382,alogliptin / metformin Pill,SCDG
+HS500,1368398,alogliptin 12.5 MG / metformin hydrochloride 500 MG Oral Tablet [Kazano],SBD
+HS500,1368394,alogliptin 12.5 MG / metformin hydrochloride 500 MG [Kazano],SBDC
+HS500,1368392,alogliptin 12.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,33738,pioglitazone,IN
+HS500,1368402,alogliptin / pioglitazone,MIN
+HS500,1368416,alogliptin 12.5 MG / pioglitazone 30 MG Oral Tablet [Oseni],SBD
+HS500,1368412,alogliptin 12.5 MG / pioglitazone 30 MG [Oseni],SBDC
+HS500,1368434,alogliptin / pioglitazone Oral Tablet [Oseni],SBDF
+HS500,1368435,Oseni Oral Product,SBDG
+HS500,1368436,Oseni Pill,SBDG
+HS500,1368410,alogliptin 12.5 MG / pioglitazone 30 MG Oral Tablet,SCD
+HS500,331478,pioglitazone 30 MG,SCDC
+HS500,1368401,alogliptin / pioglitazone Oral Tablet,SCDF
+HS500,1368399,alogliptin / pioglitazone Oral Product,SCDG
+HS500,1368400,alogliptin / pioglitazone Pill,SCDG
+HS500,1368430,alogliptin 25 MG / pioglitazone 15 MG Oral Tablet [Oseni],SBD
+HS500,1368426,alogliptin 25 MG / pioglitazone 15 MG [Oseni],SBDC
+HS500,1368424,alogliptin 25 MG / pioglitazone 15 MG Oral Tablet,SCD
+HS500,332435,pioglitazone 15 MG,SCDC
+HS500,1368437,alogliptin 25 MG / pioglitazone 30 MG Oral Tablet [Oseni],SBD
+HS500,1368433,alogliptin 25 MG / pioglitazone 30 MG [Oseni],SBDC
+HS500,1368431,alogliptin 25 MG / pioglitazone 30 MG Oral Tablet,SCD
+HS500,1368444,alogliptin 25 MG / pioglitazone 45 MG Oral Tablet [Oseni],SBD
+HS500,1368440,alogliptin 25 MG / pioglitazone 45 MG [Oseni],SBDC
+HS500,1368438,alogliptin 25 MG / pioglitazone 45 MG Oral Tablet,SCD
+HS500,332436,pioglitazone 45 MG,SCDC
+HS500,1373458,canagliflozin,IN
+HS500,1373469,canagliflozin 100 MG Oral Tablet [Invokana],SBD
+HS500,1373465,canagliflozin 100 MG [Invokana],SBDC
+HS500,1373466,canagliflozin Oral Tablet [Invokana],SBDF
+HS500,1373467,Invokana Oral Product,SBDG
+HS500,1373468,Invokana Pill,SBDG
+HS500,1373463,canagliflozin 100 MG Oral Tablet,SCD
+HS500,1373459,canagliflozin 100 MG,SCDC
+HS500,1373462,canagliflozin Oral Tablet,SCDF
+HS500,1373460,canagliflozin Oral Product,SCDG
+HS500,1373461,canagliflozin Pill,SCDG
+HS500,1373473,canagliflozin 300 MG Oral Tablet [Invokana],SBD
+HS500,1373472,canagliflozin 300 MG [Invokana],SBDC
+HS500,1373471,canagliflozin 300 MG Oral Tablet,SCD
+HS500,1373470,canagliflozin 300 MG,SCDC
+HS500,2418,cholecalciferol,IN
+HS500,1375959,cholecalciferol / glucose,MIN
+HS500,1423393,cholecalciferol 6.67 UNT/ML / glucose 250 MG/ML Oral Solution [ReliOn Glucose],SBD
+HS500,1423389,cholecalciferol 6.67 UNT/ML / glucose 250 MG/ML [ReliOn Glucose],SBDC
+HS500,1423390,cholecalciferol / glucose Oral Solution [ReliOn Glucose],SBDF
+HS500,1423391,ReliOn Glucose Oral Liquid Product,SBDG
+HS500,1423392,ReliOn Glucose Oral Product,SBDG
+HS500,1375960,cholecalciferol 6.67 UNT/ML / glucose 250 MG/ML Oral Solution,SCD
+HS500,1375955,cholecalciferol 6.67 UNT/ML,SCDC
+HS500,317349,glucose 250 MG/ML,SCDC
+HS500,1375958,cholecalciferol / glucose Oral Solution,SCDF
+HS500,1375956,cholecalciferol / glucose Oral Liquid Product,SCDG
+HS500,1375957,cholecalciferol / glucose Oral Product,SCDG
+HS500,1488564,dapagliflozin,IN
+HS500,1486977,dapagliflozin 10 MG Oral Tablet [Farxiga],SBD
+HS500,1534397,dapagliflozin 10 MG [Farxiga],SBDC
+HS500,1534343,dapagliflozin Oral Tablet [Farxiga],SBDF
+HS500,1486975,Farxiga Oral Product,SBDG
+HS500,1486976,Farxiga Pill,SBDG
+HS500,1488569,dapagliflozin 10 MG Oral Tablet,SCD
+HS500,1488565,dapagliflozin 10 MG,SCDC
+HS500,1488568,dapagliflozin Oral Tablet,SCDF
+HS500,1488566,dapagliflozin Oral Product,SCDG
+HS500,1488567,dapagliflozin Pill,SCDG
+HS500,1486981,dapagliflozin 5 MG Oral Tablet [Farxiga],SBD
+HS500,1534344,dapagliflozin 5 MG [Farxiga],SBDC
+HS500,1488574,dapagliflozin 5 MG Oral Tablet,SCD
+HS500,1488573,dapagliflozin 5 MG,SCDC
+HS500,1543207,"insulin, regular, human 4 UNT Inhalation Powder [Afrezza]",SBD
+HS500,1650260,"insulin, regular, human 4 UNT [Afrezza]",SBDC
+HS500,2108527,"insulin, regular, human Inhalation Powder [Afrezza]",SBDF
+HS500,1543206,Afrezza Inhalant Product,SBDG
+HS500,1543202,"insulin, regular, human 4 UNT Inhalation Powder",SCD
+HS500,1650256,"insulin, regular, human 4 UNT",SCDC
+HS500,2108525,"insulin, regular, human Inhalation Powder",SCDF
+HS500,1543200,"insulin, regular, human Inhalant Product",SCDG
+HS500,1544490,"insulin, regular, human 8 UNT Inhalation Powder [Afrezza]",SBD
+HS500,1650264,"insulin, regular, human 8 UNT [Afrezza]",SBDC
+HS500,1544488,"insulin, regular, human 8 UNT Inhalation Powder",SCD
+HS500,1650262,"insulin, regular, human 8 UNT",SCDC
+HS500,1545149,canagliflozin / metformin,MIN
+HS500,1545156,canagliflozin 150 MG / metformin hydrochloride 1000 MG Oral Tablet [Invokamet],SBD
+HS500,1545152,canagliflozin 150 MG / metformin hydrochloride 1000 MG [Invokamet],SBDC
+HS500,1545153,canagliflozin / metformin Oral Tablet [Invokamet],SBDF
+HS500,1545154,Invokamet Oral Product,SBDG
+HS500,1545155,Invokamet Pill,SBDG
+HS500,1545150,canagliflozin 150 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1545145,canagliflozin 150 MG,SCDC
+HS500,1545148,canagliflozin / metformin Oral Tablet,SCDF
+HS500,1545146,canagliflozin / metformin Oral Product,SCDG
+HS500,1545147,canagliflozin / metformin Pill,SCDG
+HS500,1545159,canagliflozin 150 MG / metformin hydrochloride 500 MG Oral Tablet [Invokamet],SBD
+HS500,1545158,canagliflozin 150 MG / metformin hydrochloride 500 MG [Invokamet],SBDC
+HS500,1545157,canagliflozin 150 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1545163,canagliflozin 50 MG / metformin hydrochloride 1000 MG Oral Tablet [Invokamet],SBD
+HS500,1545162,canagliflozin 50 MG / metformin hydrochloride 1000 MG [Invokamet],SBDC
+HS500,1545161,canagliflozin 50 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1545160,canagliflozin 50 MG,SCDC
+HS500,1545166,canagliflozin 50 MG / metformin hydrochloride 500 MG Oral Tablet [Invokamet],SBD
+HS500,1545165,canagliflozin 50 MG / metformin hydrochloride 500 MG [Invokamet],SBDC
+HS500,1545164,canagliflozin 50 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1545653,empagliflozin,IN
+HS500,1545664,empagliflozin 10 MG Oral Tablet [Jardiance],SBD
+HS500,1545660,empagliflozin 10 MG [Jardiance],SBDC
+HS500,1545661,empagliflozin Oral Tablet [Jardiance],SBDF
+HS500,1545662,Jardiance Oral Product,SBDG
+HS500,1545663,Jardiance Pill,SBDG
+HS500,1545658,empagliflozin 10 MG Oral Tablet,SCD
+HS500,1545654,empagliflozin 10 MG,SCDC
+HS500,1545657,empagliflozin Oral Tablet,SCDF
+HS500,1545655,empagliflozin Oral Product,SCDG
+HS500,1545656,empagliflozin Pill,SCDG
+HS500,1545668,empagliflozin 25 MG Oral Tablet [Jardiance],SBD
+HS500,1545667,empagliflozin 25 MG [Jardiance],SBDC
+HS500,1545666,empagliflozin 25 MG Oral Tablet,SCD
+HS500,1545665,empagliflozin 25 MG,SCDC
+HS500,1551291,dulaglutide,IN
+HS500,1551300,0.5 ML dulaglutide 1.5 MG/ML Auto-Injector [Trulicity],SBD
+HS500,1551297,dulaglutide 1.5 MG/ML [Trulicity],SBDC
+HS500,1649586,dulaglutide Auto-Injector [Trulicity],SBDF
+HS500,1551299,Trulicity Injectable Product,SBDG
+HS500,1551295,0.5 ML dulaglutide 1.5 MG/ML Auto-Injector,SCD
+HS500,1551292,dulaglutide 1.5 MG/ML,SCDC
+HS500,1649584,dulaglutide Auto-Injector,SCDF
+HS500,1551293,dulaglutide Injectable Product,SCDG
+HS500,1551306,0.5 ML dulaglutide 3 MG/ML Auto-Injector [Trulicity],SBD
+HS500,1551305,dulaglutide 3 MG/ML [Trulicity],SBDC
+HS500,1551304,0.5 ML dulaglutide 3 MG/ML Auto-Injector,SCD
+HS500,1551303,dulaglutide 3 MG/ML,SCDC
+HS500,1486436,dapagliflozin / metformin,MIN
+HS500,1593775,24 HR dapagliflozin 10 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Xigduo],SBD
+HS500,1592722,dapagliflozin 10 MG / metformin hydrochloride 1000 MG [Xigduo],SBDC
+HS500,1593774,dapagliflozin / metformin Extended Release Oral Tablet [Xigduo],SBDF
+HS500,1592716,Xigduo Oral Product,SBDG
+HS500,1592717,Xigduo Pill,SBDG
+HS500,1593058,24 HR dapagliflozin 10 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1593057,dapagliflozin / metformin Extended Release Oral Tablet,SCDF
+HS500,1592709,dapagliflozin / metformin Oral Product,SCDG
+HS500,1592710,dapagliflozin / metformin Pill,SCDG
+HS500,1593835,24 HR dapagliflozin 10 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet [Xigduo],SBD
+HS500,1593826,dapagliflozin 10 MG / metformin hydrochloride 500 MG [Xigduo],SBDC
+HS500,1593068,24 HR dapagliflozin 10 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,1593833,24 HR dapagliflozin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Xigduo],SBD
+HS500,1593828,dapagliflozin 5 MG / metformin hydrochloride 1000 MG [Xigduo],SBDC
+HS500,1593070,24 HR dapagliflozin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1593831,24 HR dapagliflozin 5 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet [Xigduo],SBD
+HS500,1593830,dapagliflozin 5 MG / metformin hydrochloride 500 MG [Xigduo],SBDC
+HS500,1593072,24 HR dapagliflozin 5 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,475968,liraglutide,IN
+HS500,1598268,3 ML liraglutide 6 MG/ML Pen Injector [Saxenda],SBD
+HS500,1598265,liraglutide 6 MG/ML [Saxenda],SBDC
+HS500,1653600,liraglutide Pen Injector [Saxenda],SBDF
+HS500,1598267,Saxenda Injectable Product,SBDG
+HS500,897122,3 ML liraglutide 6 MG/ML Pen Injector,SCD
+HS500,897120,liraglutide 6 MG/ML,SCDC
+HS500,1653594,liraglutide Pen Injector,SCDF
+HS500,1163230,liraglutide Injectable Product,SCDG
+HS500,1598322,glucose 0.774 MG/MG Oral Gel [Insta-Glucose],SBD
+HS500,1598321,glucose 0.774 MG/MG [Insta-Glucose],SBDC
+HS500,367164,glucose Oral Gel [Insta-Glucose],SBDF
+HS500,1173421,Insta-Glucose Oral Product,SBDG
+HS500,1296512,Insta-Glucose Oral Gel Product,SBDG
+HS500,1598320,glucose 0.774 MG/MG Oral Gel,SCD
+HS500,1598319,glucose 0.774 MG/MG,SCDC
+HS500,377980,glucose Oral Gel,SCDF
+HS500,1294948,glucose Oral Gel Product,SCDG
+HS500,1598392,empagliflozin / linagliptin,MIN
+HS500,1602115,empagliflozin 10 MG / linagliptin 5 MG Oral Tablet [Glyxambi],SBD
+HS500,1602111,empagliflozin 10 MG / linagliptin 5 MG [Glyxambi],SBDC
+HS500,1602112,empagliflozin / linagliptin Oral Tablet [Glyxambi],SBDF
+HS500,1602113,Glyxambi Oral Product,SBDG
+HS500,1602114,Glyxambi Pill,SBDG
+HS500,1602109,empagliflozin 10 MG / linagliptin 5 MG Oral Tablet,SCD
+HS500,1602108,empagliflozin / linagliptin Oral Tablet,SCDF
+HS500,1602106,empagliflozin / linagliptin Oral Product,SCDG
+HS500,1602107,empagliflozin / linagliptin Pill,SCDG
+HS500,1602120,empagliflozin 25 MG / linagliptin 5 MG Oral Tablet [Glyxambi],SBD
+HS500,1602119,empagliflozin 25 MG / linagliptin 5 MG [Glyxambi],SBDC
+HS500,1602118,empagliflozin 25 MG / linagliptin 5 MG Oral Tablet,SCD
+HS500,274783,insulin glargine,IN
+HS500,1604544,1.5 ML insulin glargine 300 UNT/ML Pen Injector [Toujeo],SBD
+HS500,1604541,insulin glargine 300 UNT/ML [Toujeo],SBDC
+HS500,1653506,insulin glargine Pen Injector [Toujeo],SBDF
+HS500,1604543,Toujeo Injectable Product,SBDG
+HS500,1604539,1.5 ML insulin glargine 300 UNT/ML Pen Injector,SCD
+HS500,1604538,insulin glargine 300 UNT/ML,SCDC
+HS500,1653497,insulin glargine Pen Injector,SCDF
+HS500,1157459,insulin glargine Injectable Product,SCDG
+HS500,86009,insulin lispro,IN
+HS500,1652242,3 ML insulin lispro 200 UNT/ML Pen Injector [Humalog],SBD
+HS500,1652240,insulin lispro 200 UNT/ML [Humalog],SBDC
+HS500,1652241,insulin lispro Pen Injector [Humalog],SBDF
+HS500,1171289,Humalog Injectable Product,SBDG
+HS500,1652239,3 ML insulin lispro 200 UNT/ML Pen Injector,SCD
+HS500,1652237,insulin lispro 200 UNT/ML,SCDC
+HS500,1652238,insulin lispro Pen Injector,SCDF
+HS500,1157461,insulin lispro Injectable Product,SCDG
+HS500,1652640,3 ML insulin lispro 100 UNT/ML Pen Injector [Humalog],SBD
+HS500,1992171,3 ML insulin lispro 100 UNT/ML Pen Injector [Admelog],SBD
+HS500,1992166,insulin lispro 100 UNT/ML [Admelog],SBDC
+HS500,575151,insulin lispro 100 UNT/ML [Humalog],SBDC
+HS500,1992170,insulin lispro Pen Injector [Admelog],SBDF
+HS500,1992168,Admelog Injectable Product,SBDG
+HS500,1652639,3 ML insulin lispro 100 UNT/ML Pen Injector,SCD
+HS500,343076,insulin lispro 100 UNT/ML,SCDC
+HS500,1652646,3 ML insulin lispro 100 UNT/ML Cartridge [Humalog],SBD
+HS500,1652645,insulin lispro Cartridge [Humalog],SBDF
+HS500,1652644,3 ML insulin lispro 100 UNT/ML Cartridge,SCD
+HS500,1652643,insulin lispro Cartridge,SCDF
+HS500,51428,"insulin aspart, human",IN
+HS500,1653198,"3 ML insulin aspart, human 100 UNT/ML Cartridge [NovoLog]",SBD
+HS500,2205454,"3 ML insulin aspart, human 100 UNT/ML Cartridge [Fiasp]",SBD
+HS500,1986351,"insulin aspart, human 100 UNT/ML [Fiasp]",SBDC
+HS500,575679,"insulin aspart, human 100 UNT/ML [NovoLog]",SBDC
+HS500,1653197,"insulin aspart, human Cartridge [NovoLog]",SBDF
+HS500,2205453,"insulin aspart, human Cartridge [Fiasp]",SBDF
+HS500,1178119,NovoLog Injectable Product,SBDG
+HS500,1986353,Fiasp Injectable Product,SBDG
+HS500,1653196,"3 ML insulin aspart, human 100 UNT/ML Cartridge",SCD
+HS500,343211,"insulin aspart, human 100 UNT/ML",SCDC
+HS500,1653195,"insulin aspart, human Cartridge",SCDF
+HS500,1157463,"insulin aspart, human Injectable Product",SCDG
+HS500,1653204,"3 ML insulin aspart, human 100 UNT/ML Pen Injector [NovoLog]",SBD
+HS500,1986356,"3 ML insulin aspart, human 100 UNT/ML Pen Injector [Fiasp]",SBD
+HS500,1653203,"insulin aspart, human Pen Injector [NovoLog]",SBDF
+HS500,1986355,"insulin aspart, human Pen Injector [Fiasp]",SBDF
+HS500,1653202,"3 ML insulin aspart, human 100 UNT/ML Pen Injector",SCD
+HS500,1653201,"insulin aspart, human Pen Injector",SCDF
+HS500,1654912,"insulin, regular, human 12 UNT Inhalation Powder [Afrezza]",SBD
+HS500,1654911,"insulin, regular, human 12 UNT [Afrezza]",SBDC
+HS500,1654910,"insulin, regular, human 12 UNT Inhalation Powder",SCD
+HS500,1654909,"insulin, regular, human 12 UNT",SCDC
+HS500,1664314,empagliflozin / metformin,MIN
+HS500,1664321,empagliflozin 5 MG / metformin hydrochloride 500 MG Oral Tablet [Synjardy],SBD
+HS500,1664317,empagliflozin 5 MG / metformin hydrochloride 500 MG [Synjardy],SBDC
+HS500,1664318,empagliflozin / metformin Oral Tablet [Synjardy],SBDF
+HS500,1664319,Synjardy Oral Product,SBDG
+HS500,1664320,Synjardy Pill,SBDG
+HS500,1664315,empagliflozin 5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1664310,empagliflozin 5 MG,SCDC
+HS500,1664313,empagliflozin / metformin Oral Tablet,SCDF
+HS500,1664311,empagliflozin / metformin Oral Product,SCDG
+HS500,1664312,empagliflozin / metformin Pill,SCDG
+HS500,1664325,empagliflozin 12.5 MG / metformin hydrochloride 500 MG Oral Tablet [Synjardy],SBD
+HS500,1664324,empagliflozin 12.5 MG / metformin hydrochloride 500 MG [Synjardy],SBDC
+HS500,1664323,empagliflozin 12.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1664322,empagliflozin 12.5 MG,SCDC
+HS500,1664328,empagliflozin 5 MG / metformin hydrochloride 1000 MG Oral Tablet [Synjardy],SBD
+HS500,1664327,empagliflozin 5 MG / metformin hydrochloride 1000 MG [Synjardy],SBDC
+HS500,1664326,empagliflozin 5 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1665369,empagliflozin 12.5 MG / metformin hydrochloride 1000 MG Oral Tablet [Synjardy],SBD
+HS500,1665368,empagliflozin 12.5 MG / metformin hydrochloride 1000 MG [Synjardy],SBDC
+HS500,1665367,empagliflozin 12.5 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1670007,insulin degludec,IN
+HS500,1670016,3 ML insulin degludec 100 UNT/ML Pen Injector [Tresiba],SBD
+HS500,1670013,insulin degludec 100 UNT/ML [Tresiba],SBDC
+HS500,1670014,insulin degludec Pen Injector [Tresiba],SBDF
+HS500,1670015,Tresiba Injectable Product,SBDG
+HS500,1670011,3 ML insulin degludec 100 UNT/ML Pen Injector,SCD
+HS500,1670008,insulin degludec 100 UNT/ML,SCDC
+HS500,1670010,insulin degludec Pen Injector,SCDF
+HS500,1670009,insulin degludec Injectable Product,SCDG
+HS500,1670023,3 ML insulin degludec 200 UNT/ML Pen Injector [Tresiba],SBD
+HS500,1670022,insulin degludec 200 UNT/ML [Tresiba],SBDC
+HS500,1670021,3 ML insulin degludec 200 UNT/ML Pen Injector,SCD
+HS500,1670020,insulin degludec 200 UNT/ML,SCDC
+HS500,1731317,"3 ML insulin, regular, human 500 UNT/ML Pen Injector [Humulin R]",SBD
+HS500,575628,"insulin, regular, human 500 UNT/ML [Humulin R]",SBDC
+HS500,1731316,"insulin, regular, human Pen Injector [Humulin R]",SBDF
+HS500,1172692,Humulin R Injectable Product,SBDG
+HS500,1731315,"3 ML insulin, regular, human 500 UNT/ML Pen Injector",SCD
+HS500,340327,"insulin, regular, human 500 UNT/ML",SCDC
+HS500,1731314,"insulin, regular, human Pen Injector",SCDF
+HS500,1164824,"insulin, regular, human Injectable Product",SCDG
+HS500,1796091,24 HR linagliptin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Jentadueto],SBD
+HS500,1796090,linagliptin / metformin Extended Release Oral Tablet [Jentadueto],SBDF
+HS500,1796089,24 HR linagliptin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1796088,linagliptin / metformin Extended Release Oral Tablet,SCDF
+HS500,1796096,24 HR linagliptin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Jentadueto],SBD
+HS500,1796095,linagliptin 5 MG / metformin hydrochloride 1000 MG [Jentadueto],SBDC
+HS500,1796094,24 HR linagliptin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,861015,Modified 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet [Glumetza],SBD
+HS500,861014,metformin hydrochloride 1000 MG [Glumetza],SBDC
+HS500,647241,metformin Extended Release Oral Tablet [Glumetza],SBDF
+HS500,1171254,Glumetza Oral Product,SBDG
+HS500,1171255,Glumetza Pill,SBDG
+HS500,1807888,Modified 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,372804,metformin Extended Release Oral Tablet,SCDF
+HS500,1161610,metformin Oral Product,SCDG
+HS500,1161611,metformin Pill,SCDG
+HS500,860998,Osmotic 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet [Fortamet],SBD
+HS500,860997,metformin hydrochloride 1000 MG [Fortamet],SBDC
+HS500,541768,metformin Extended Release Oral Tablet [Fortamet],SBDF
+HS500,1172629,Fortamet Oral Product,SBDG
+HS500,1172630,Fortamet Pill,SBDG
+HS500,1807894,Osmotic 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,861018,Modified 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet [Glumetza],SBD
+HS500,861017,metformin hydrochloride 500 MG [Glumetza],SBDC
+HS500,1807915,Modified 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,861002,Osmotic 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet [Fortamet],SBD
+HS500,861001,metformin hydrochloride 500 MG [Fortamet],SBDC
+HS500,1807917,Osmotic 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,1810999,24 HR canagliflozin 150 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Invokamet],SBD
+HS500,1810998,canagliflozin / metformin Extended Release Oral Tablet [Invokamet],SBDF
+HS500,1810997,24 HR canagliflozin 150 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1810996,canagliflozin / metformin Extended Release Oral Tablet,SCDF
+HS500,1811003,24 HR canagliflozin 150 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet [Invokamet],SBD
+HS500,1811002,24 HR canagliflozin 150 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,1811007,24 HR canagliflozin 50 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Invokamet],SBD
+HS500,1811006,24 HR canagliflozin 50 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1811011,24 HR canagliflozin 50 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet [Invokamet],SBD
+HS500,1811010,24 HR canagliflozin 50 MG / metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,1440051,lixisenatide,IN
+HS500,1858994,insulin glargine / lixisenatide,MIN
+HS500,1859000,3 ML insulin glargine 100 UNT/ML / lixisenatide 0.033 MG/ML Pen Injector [Soliqua],SBD
+HS500,1858997,insulin glargine 100 UNT/ML / lixisenatide 0.033 MG/ML [Soliqua],SBDC
+HS500,1858998,insulin glargine / lixisenatide Pen Injector [Soliqua],SBDF
+HS500,1858999,Soliqua Injectable Product,SBDG
+HS500,1858995,3 ML insulin glargine 100 UNT/ML / lixisenatide 0.033 MG/ML Pen Injector,SCD
+HS500,1858991,lixisenatide 0.033 MG/ML,SCDC
+HS500,343226,insulin glargine 100 UNT/ML,SCDC
+HS500,1858993,insulin glargine / lixisenatide Pen Injector,SCDF
+HS500,1858992,insulin glargine / lixisenatide Injectable Product,SCDG
+HS500,1727493,insulin degludec / liraglutide,MIN
+HS500,1860172,3 ML insulin degludec 100 UNT/ML / liraglutide 3.6 MG/ML Pen Injector [Xultophy],SBD
+HS500,1860169,insulin degludec 100 UNT/ML / liraglutide 3.6 MG/ML [Xultophy],SBDC
+HS500,1860170,insulin degludec / liraglutide Pen Injector [Xultophy],SBDF
+HS500,1860171,Xultophy Injectable Product,SBDG
+HS500,1860167,3 ML insulin degludec 100 UNT/ML / liraglutide 3.6 MG/ML Pen Injector,SCD
+HS500,1860164,liraglutide 3.6 MG/ML,SCDC
+HS500,1860166,insulin degludec / liraglutide Pen Injector,SCDF
+HS500,1860165,insulin degludec / liraglutide Injectable Product,SCDG
+HS500,1862688,24 HR empagliflozin 10 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Synjardy],SBD
+HS500,1862686,empagliflozin 10 MG / metformin hydrochloride 1000 MG [Synjardy],SBDC
+HS500,1862687,empagliflozin / metformin Extended Release Oral Tablet [Synjardy],SBDF
+HS500,1862685,24 HR empagliflozin 10 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1862684,empagliflozin / metformin Extended Release Oral Tablet,SCDF
+HS500,1862692,24 HR empagliflozin 12.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Synjardy],SBD
+HS500,1862691,24 HR empagliflozin 12.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1862697,24 HR empagliflozin 25 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Synjardy],SBD
+HS500,1862696,empagliflozin 25 MG / metformin hydrochloride 1000 MG [Synjardy],SBDC
+HS500,1862695,24 HR empagliflozin 25 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1862701,24 HR empagliflozin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Synjardy],SBD
+HS500,1862700,24 HR empagliflozin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1919489,cholecalciferol 9.52 UNT/ML / glucose 357 MG/ML Oral Gel,SCD
+HS500,1919485,cholecalciferol 9.52 UNT/ML,SCDC
+HS500,1919486,glucose 357 MG/ML,SCDC
+HS500,1919488,cholecalciferol / glucose Oral Gel,SCDF
+HS500,1919487,cholecalciferol / glucose Oral Gel Product,SCDG
+HS500,1727500,dapagliflozin / saxagliptin,MIN
+HS500,1925504,dapagliflozin 10 MG / saxagliptin 5 MG Oral Tablet [Qtern],SBD
+HS500,1925500,dapagliflozin 10 MG / saxagliptin 5 MG [Qtern],SBDC
+HS500,1925501,dapagliflozin / saxagliptin Oral Tablet [Qtern],SBDF
+HS500,1925502,Qtern Oral Product,SBDG
+HS500,1925503,Qtern Pill,SBDG
+HS500,1925498,dapagliflozin 10 MG / saxagliptin 5 MG Oral Tablet,SCD
+HS500,1925497,dapagliflozin / saxagliptin Oral Tablet,SCDF
+HS500,1925495,dapagliflozin / saxagliptin Oral Product,SCDG
+HS500,1925496,dapagliflozin / saxagliptin Pill,SCDG
+HS500,1926332,0.5 UNT Doses 3 ML insulin lispro 100 UNT/ML Pen Injector [Humalog],SBD
+HS500,1926331,0.5 UNT Doses 3 ML insulin lispro 100 UNT/ML Pen Injector,SCD
+HS500,1940498,24 HR dapagliflozin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Xigduo],SBD
+HS500,1940497,dapagliflozin 2.5 MG / metformin hydrochloride 1000 MG [Xigduo],SBDC
+HS500,1940496,24 HR dapagliflozin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,1940495,dapagliflozin 2.5 MG,SCDC
+HS500,2404,chlorpropamide,IN
+HS500,197495,chlorpropamide 100 MG Oral Tablet,SCD
+HS500,315647,chlorpropamide 100 MG,SCDC
+HS500,371465,chlorpropamide Oral Tablet,SCDF
+HS500,1155471,chlorpropamide Oral Product,SCDG
+HS500,1155472,chlorpropamide Pill,SCDG
+HS500,197496,chlorpropamide 250 MG Oral Tablet,SCD
+HS500,315648,chlorpropamide 250 MG,SCDC
+HS500,3327,diazoxide,IN
+HS500,207634,diazoxide 50 MG/ML Oral Suspension [Proglycem],SBD
+HS500,568386,diazoxide 50 MG/ML [Proglycem],SBDC
+HS500,366111,diazoxide Oral Suspension [Proglycem],SBDF
+HS500,1180659,Proglycem Oral Liquid Product,SBDG
+HS500,1180660,Proglycem Oral Product,SBDG
+HS500,197593,diazoxide 50 MG/ML Oral Suspension,SCD
+HS500,315801,diazoxide 50 MG/ML,SCDC
+HS500,371789,diazoxide Oral Suspension,SCDF
+HS500,1155866,diazoxide Oral Liquid Product,SCDG
+HS500,1155867,diazoxide Oral Product,SCDG
+HS500,4815,glyburide,IN
+HS500,197737,glyburide 1.25 MG Oral Tablet,SCD
+HS500,315987,glyburide 1.25 MG,SCDC
+HS500,372333,glyburide Oral Tablet,SCDF
+HS500,1156200,glyburide Oral Product,SCDG
+HS500,1156201,glyburide Pill,SCDG
+HS500,10633,tolazamide,IN
+HS500,198292,tolazamide 250 MG Oral Tablet,SCD
+HS500,316833,tolazamide 250 MG,SCDC
+HS500,374149,tolazamide Oral Tablet,SCDF
+HS500,1157121,tolazamide Oral Product,SCDG
+HS500,1157122,tolazamide Pill,SCDG
+HS500,10635,tolbutamide,IN
+HS500,198294,tolbutamide 500 MG Oral Tablet,SCD
+HS500,316836,tolbutamide 500 MG,SCDC
+HS500,374152,tolbutamide Oral Tablet,SCDF
+HS500,1157643,tolbutamide Oral Product,SCDG
+HS500,1157644,tolbutamide Pill,SCDG
+HS500,1986354,"insulin aspart, human 100 UNT/ML Injectable Solution [Fiasp]",SBD
+HS500,1986352,"insulin aspart, human Injectable Solution [Fiasp]",SBDF
+HS500,311040,"insulin aspart, human 100 UNT/ML Injectable Solution",SCD
+HS500,378914,"insulin aspart, human Injectable Solution",SCDF
+HS500,1038787,glucose 0.4 MG/MG Oral Gel [Glutose],SBD
+HS500,211372,glucose 0.4 MG/MG Oral Gel [Insta-Glucose],SBD
+HS500,616103,glucose 0.4 MG/MG Oral Gel [Dex4],SBD
+HS500,1038784,glucose 0.4 MG/MG [Glutose],SBDC
+HS500,571808,glucose 0.4 MG/MG [Insta-Glucose],SBDC
+HS500,616101,glucose 0.4 MG/MG [Dex4],SBDC
+HS500,1038786,glucose Oral Gel [Glutose],SBDF
+HS500,616102,glucose Oral Gel [Dex4],SBDF
+HS500,1171915,Glutose Oral Product,SBDG
+HS500,1175229,Dex4 Oral Product,SBDG
+HS500,1296683,Dex4 Oral Gel Product,SBDG
+HS500,1296804,Glutose Oral Gel Product,SBDG
+HS500,198683,glucose 0.4 MG/MG Oral Gel,SCD
+HS500,329086,glucose 0.4 MG/MG,SCDC
+HS500,60548,exenatide,IN
+HS500,1990869,0.85 ML exenatide 2.35 MG/ML Auto-Injector [Bydureon],SBD
+HS500,1990867,exenatide 2.35 MG/ML [Bydureon],SBDC
+HS500,1990868,exenatide Auto-Injector [Bydureon],SBDF
+HS500,1242967,Bydureon Injectable Product,SBDG
+HS500,1990866,0.85 ML exenatide 2.35 MG/ML Auto-Injector,SCD
+HS500,1990864,exenatide 2.35 MG/ML,SCDC
+HS500,1990865,exenatide Auto-Injector,SCDF
+HS500,1163790,exenatide Injectable Product,SCDG
+HS500,16681,acarbose,IN
+HS500,209247,acarbose 50 MG Oral Tablet [Precose],SBD
+HS500,569871,acarbose 50 MG [Precose],SBDC
+HS500,368300,acarbose Oral Tablet [Precose],SBDF
+HS500,1185237,Precose Oral Product,SBDG
+HS500,1185238,Precose Pill,SBDG
+HS500,199149,acarbose 50 MG Oral Tablet,SCD
+HS500,315248,acarbose 50 MG,SCDC
+HS500,370504,acarbose Oral Tablet,SCDF
+HS500,1153649,acarbose Oral Product,SCDG
+HS500,1153650,acarbose Pill,SCDG
+HS500,209248,acarbose 100 MG Oral Tablet [Precose],SBD
+HS500,569872,acarbose 100 MG [Precose],SBDC
+HS500,199150,acarbose 100 MG Oral Tablet,SCD
+HS500,315246,acarbose 100 MG,SCDC
+HS500,1992169,insulin lispro 100 UNT/ML Injectable Solution [Admelog],SBD
+HS500,1992167,insulin lispro Injectable Solution [Admelog],SBDF
+HS500,242120,insulin lispro 100 UNT/ML Injectable Solution,SCD
+HS500,378841,insulin lispro Injectable Solution,SCDF
+HS500,25789,glimepiride,IN
+HS500,153843,glimepiride 1 MG Oral Tablet [Amaryl],SBD
+HS500,565408,glimepiride 1 MG [Amaryl],SBDC
+HS500,367762,glimepiride Oral Tablet [Amaryl],SBDF
+HS500,1170663,Amaryl Oral Product,SBDG
+HS500,1170664,Amaryl Pill,SBDG
+HS500,199245,glimepiride 1 MG Oral Tablet,SCD
+HS500,315978,glimepiride 1 MG,SCDC
+HS500,372319,glimepiride Oral Tablet,SCDF
+HS500,1157244,glimepiride Oral Product,SCDG
+HS500,1157245,glimepiride Pill,SCDG
+HS500,153591,glimepiride 2 MG Oral Tablet [Amaryl],SBD
+HS500,565327,glimepiride 2 MG [Amaryl],SBDC
+HS500,199246,glimepiride 2 MG Oral Tablet,SCD
+HS500,317637,glimepiride 2 MG,SCDC
+HS500,153845,glimepiride 4 MG Oral Tablet [Amaryl],SBD
+HS500,565410,glimepiride 4 MG [Amaryl],SBDC
+HS500,199247,glimepiride 4 MG Oral Tablet,SCD
+HS500,315979,glimepiride 4 MG,SCDC
+HS500,1992672,ertugliflozin,IN
+HS500,1992684,ertugliflozin / metformin,MIN
+HS500,1992691,ertugliflozin 2.5 MG / metformin hydrochloride 1000 MG Oral Tablet [Segluromet],SBD
+HS500,1992687,ertugliflozin 2.5 MG / metformin hydrochloride 1000 MG [Segluromet],SBDC
+HS500,1992688,ertugliflozin / metformin Oral Tablet [Segluromet],SBDF
+HS500,1992689,Segluromet Oral Product,SBDG
+HS500,1992690,Segluromet Pill,SBDG
+HS500,1992685,ertugliflozin 2.5 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1992680,ertugliflozin 2.5 MG,SCDC
+HS500,1992683,ertugliflozin / metformin Oral Tablet,SCDF
+HS500,1992681,ertugliflozin / metformin Oral Product,SCDG
+HS500,1992682,ertugliflozin / metformin Pill,SCDG
+HS500,1992695,ertugliflozin 2.5 MG / metformin hydrochloride 500 MG Oral Tablet [Segluromet],SBD
+HS500,1992694,ertugliflozin 2.5 MG / metformin hydrochloride 500 MG [Segluromet],SBDC
+HS500,1992693,ertugliflozin 2.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1992700,ertugliflozin 7.5 MG / metformin hydrochloride 1000 MG Oral Tablet [Segluromet],SBD
+HS500,1992699,ertugliflozin 7.5 MG / metformin hydrochloride 1000 MG [Segluromet],SBDC
+HS500,1992698,ertugliflozin 7.5 MG / metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,1992697,ertugliflozin 7.5 MG,SCDC
+HS500,1992703,ertugliflozin 7.5 MG / metformin hydrochloride 500 MG Oral Tablet [Segluromet],SBD
+HS500,1992702,ertugliflozin 7.5 MG / metformin hydrochloride 500 MG [Segluromet],SBDC
+HS500,1992701,ertugliflozin 7.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,1992816,ertugliflozin 5 MG Oral Tablet [Steglatro],SBD
+HS500,1992812,ertugliflozin 5 MG [Steglatro],SBDC
+HS500,1992813,ertugliflozin Oral Tablet [Steglatro],SBDF
+HS500,1992814,Steglatro Oral Product,SBDG
+HS500,1992815,Steglatro Pill,SBDG
+HS500,1992810,ertugliflozin 5 MG Oral Tablet,SCD
+HS500,1992806,ertugliflozin 5 MG,SCDC
+HS500,1992809,ertugliflozin Oral Tablet,SCDF
+HS500,1992807,ertugliflozin Oral Product,SCDG
+HS500,1992808,ertugliflozin Pill,SCDG
+HS500,1992821,ertugliflozin 15 MG Oral Tablet [Steglatro],SBD
+HS500,1992820,ertugliflozin 15 MG [Steglatro],SBDC
+HS500,1992819,ertugliflozin 15 MG Oral Tablet,SCD
+HS500,1992818,ertugliflozin 15 MG,SCDC
+HS500,1992825,ertugliflozin / sitagliptin,MIN
+HS500,1992832,ertugliflozin 15 MG / sitagliptin 100 MG Oral Tablet [Steglujan],SBD
+HS500,1992828,ertugliflozin 15 MG / sitagliptin 100 MG [Steglujan],SBDC
+HS500,1992829,ertugliflozin / sitagliptin Oral Tablet [Steglujan],SBDF
+HS500,1992830,Steglujan Oral Product,SBDG
+HS500,1992831,Steglujan Pill,SBDG
+HS500,1992826,ertugliflozin 15 MG / sitagliptin 100 MG Oral Tablet,SCD
+HS500,1992824,ertugliflozin / sitagliptin Oral Tablet,SCDF
+HS500,1992822,ertugliflozin / sitagliptin Oral Product,SCDG
+HS500,1992823,ertugliflozin / sitagliptin Pill,SCDG
+HS500,1992837,ertugliflozin 5 MG / sitagliptin 100 MG Oral Tablet [Steglujan],SBD
+HS500,1992836,ertugliflozin 5 MG / sitagliptin 100 MG [Steglujan],SBDC
+HS500,1992835,ertugliflozin 5 MG / sitagliptin 100 MG Oral Tablet,SCD
+HS500,213170,acarbose 25 MG Oral Tablet [Precose],SBD
+HS500,573095,acarbose 25 MG [Precose],SBDC
+HS500,200132,acarbose 25 MG Oral Tablet,SCD
+HS500,315247,acarbose 25 MG,SCDC
+HS500,2002420,3 ML insulin glargine 300 UNT/ML Pen Injector [Toujeo],SBD
+HS500,2002419,3 ML insulin glargine 300 UNT/ML Pen Injector,SCD
+HS500,73044,repaglinide,IN
+HS500,213219,repaglinide 1 MG Oral Tablet [Prandin],SBD
+HS500,573137,repaglinide 1 MG [Prandin],SBDC
+HS500,368289,repaglinide Oral Tablet [Prandin],SBDF
+HS500,1184631,Prandin Oral Product,SBDG
+HS500,1184632,Prandin Pill,SBDG
+HS500,200256,repaglinide 1 MG Oral Tablet,SCD
+HS500,316630,repaglinide 1 MG,SCDC
+HS500,373759,repaglinide Oral Tablet,SCDF
+HS500,1157407,repaglinide Oral Product,SCDG
+HS500,1157408,repaglinide Pill,SCDG
+HS500,200257,repaglinide 0.5 MG Oral Tablet,SCD
+HS500,331433,repaglinide 0.5 MG,SCDC
+HS500,213220,repaglinide 2 MG Oral Tablet [Prandin],SBD
+HS500,573138,repaglinide 2 MG [Prandin],SBDC
+HS500,200258,repaglinide 2 MG Oral Tablet,SCD
+HS500,316631,repaglinide 2 MG,SCDC
+HS500,2049380,"3 ML insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Pen Injector [Novolin]",SBD
+HS500,573331,"insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML [Novolin]",SBDC
+HS500,2049379,"insulin isophane / insulin, regular, human Pen Injector [Novolin]",SBDF
+HS500,1178125,Novolin Injectable Product,SBDG
+HS500,847187,"3 ML insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Pen Injector",SCD
+HS500,1654651,"insulin isophane / insulin, regular, human Pen Injector",SCDF
+HS500,30009,miglitol,IN
+HS500,213485,miglitol 25 MG Oral Tablet [Glyset],SBD
+HS500,573373,miglitol 25 MG [Glyset],SBDC
+HS500,368246,miglitol Oral Tablet [Glyset],SBDF
+HS500,1171936,Glyset Oral Product,SBDG
+HS500,1171937,Glyset Pill,SBDG
+HS500,205329,miglitol 25 MG Oral Tablet,SCD
+HS500,316305,miglitol 25 MG,SCDC
+HS500,372926,miglitol Oral Tablet,SCDF
+HS500,1157268,miglitol Oral Product,SCDG
+HS500,1157269,miglitol Pill,SCDG
+HS500,213486,miglitol 50 MG Oral Tablet [Glyset],SBD
+HS500,573374,miglitol 50 MG [Glyset],SBDC
+HS500,205330,miglitol 50 MG Oral Tablet,SCD
+HS500,316306,miglitol 50 MG,SCDC
+HS500,213487,miglitol 100 MG Oral Tablet [Glyset],SBD
+HS500,573375,miglitol 100 MG [Glyset],SBDC
+HS500,205331,miglitol 100 MG Oral Tablet,SCD
+HS500,316304,miglitol 100 MG,SCDC
+HS500,2107522,insulin degludec 100 UNT/ML Injectable Solution [Tresiba],SBD
+HS500,2107521,insulin degludec Injectable Solution [Tresiba],SBDF
+HS500,2107520,insulin degludec 100 UNT/ML Injectable Solution,SCD
+HS500,2107519,insulin degludec Injectable Solution,SCDF
+HS500,213442,"insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Novolin]",SBD
+HS500,365672,"insulin isophane / insulin, regular, human Injectable Suspension [Novolin]",SBDF
+HS500,2169276,dapagliflozin 5 MG / saxagliptin 5 MG Oral Tablet [Qtern],SBD
+HS500,2169275,dapagliflozin 5 MG / saxagliptin 5 MG [Qtern],SBDC
+HS500,2169274,dapagliflozin 5 MG / saxagliptin 5 MG Oral Tablet,SCD
+HS500,2179749,"100 ML insulin, regular, human 1 UNT/ML Injection [Myxredlin]",SBD
+HS500,2179746,"insulin, regular, human 1 UNT/ML [Myxredlin]",SBDC
+HS500,2179747,"insulin, regular, human Injection [Myxredlin]",SBDF
+HS500,2179748,Myxredlin Injectable Product,SBDG
+HS500,2179744,"100 ML insulin, regular, human 1 UNT/ML Injection",SCD
+HS500,2179742,"insulin, regular, human 1 UNT/ML",SCDC
+HS500,2179743,"insulin, regular, human Injection",SCDF
+HS500,4832,glucagon,IN
+HS500,2180671,glucagon 3 MG Nasal Powder [Baqsimi],SBD
+HS500,2180668,glucagon 3 MG [Baqsimi],SBDC
+HS500,2180669,glucagon Nasal Powder [Baqsimi],SBDF
+HS500,2180670,Baqsimi Nasal Product,SBDG
+HS500,2180666,glucagon 3 MG Nasal Powder,SCD
+HS500,2180663,glucagon 3 MG,SCDC
+HS500,2180665,glucagon Nasal Powder,SCDF
+HS500,2180664,glucagon Nasal Product,SCDG
+HS500,2199304,0.1 ML glucagon 5 MG/ML Auto-Injector [Gvoke],SBD
+HS500,2199301,glucagon 5 MG/ML [Gvoke],SBDC
+HS500,2199302,glucagon Auto-Injector [Gvoke],SBDF
+HS500,2199303,Gvoke Injectable Product,SBDG
+HS500,2199299,0.1 ML glucagon 5 MG/ML Auto-Injector,SCD
+HS500,2199297,glucagon 5 MG/ML,SCDC
+HS500,2199298,glucagon Auto-Injector,SCDF
+HS500,1165209,glucagon Injectable Product,SCDG
+HS500,2199308,0.2 ML glucagon 5 MG/ML Auto-Injector [Gvoke],SBD
+HS500,2199307,0.2 ML glucagon 5 MG/ML Auto-Injector,SCD
+HS500,2199312,0.1 ML glucagon 5 MG/ML Prefilled Syringe [Gvoke],SBD
+HS500,2199311,glucagon Prefilled Syringe [Gvoke],SBDF
+HS500,2199310,0.1 ML glucagon 5 MG/ML Prefilled Syringe,SCD
+HS500,2199309,glucagon Prefilled Syringe,SCDF
+HS500,2199316,0.2 ML glucagon 5 MG/ML Prefilled Syringe [Gvoke],SBD
+HS500,2199315,0.2 ML glucagon 5 MG/ML Prefilled Syringe,SCD
+HS500,2200520,metformin hydrochloride 100 MG/ML Extended Release Suspension [Riomet],SBD
+HS500,861026,metformin hydrochloride 100 MG/ML [Riomet],SBDC
+HS500,2200519,metformin Extended Release Suspension [Riomet],SBDF
+HS500,1185325,Riomet Oral Liquid Product,SBDG
+HS500,1185326,Riomet Oral Product,SBDG
+HS500,2200518,metformin hydrochloride 100 MG/ML Extended Release Suspension,SCD
+HS500,861024,metformin hydrochloride 100 MG/ML,SCDC
+HS500,2200517,metformin Extended Release Suspension,SCDF
+HS500,1161609,metformin Oral Liquid Product,SCDG
+HS500,1991302,semaglutide,IN
+HS500,2200650,semaglutide 14 MG Oral Tablet [Rybelsus],SBD
+HS500,2200646,semaglutide 14 MG [Rybelsus],SBDC
+HS500,2200647,semaglutide Oral Tablet [Rybelsus],SBDF
+HS500,2200648,Rybelsus Oral Product,SBDG
+HS500,2200649,Rybelsus Pill,SBDG
+HS500,2200644,semaglutide 14 MG Oral Tablet,SCD
+HS500,2200640,semaglutide 14 MG,SCDC
+HS500,2200643,semaglutide Oral Tablet,SCDF
+HS500,2200641,semaglutide Oral Product,SCDG
+HS500,2200642,semaglutide Pill,SCDG
+HS500,2200654,semaglutide 3 MG Oral Tablet [Rybelsus],SBD
+HS500,2200653,semaglutide 3 MG [Rybelsus],SBDC
+HS500,2200652,semaglutide 3 MG Oral Tablet,SCD
+HS500,2200651,semaglutide 3 MG,SCDC
+HS500,2200658,semaglutide 7 MG Oral Tablet [Rybelsus],SBD
+HS500,2200657,semaglutide 7 MG [Rybelsus],SBDC
+HS500,2200656,semaglutide 7 MG Oral Tablet,SCD
+HS500,2200655,semaglutide 7 MG,SCDC
+HS500,2206092,"3 ML insulin, regular, human 100 UNT/ML Pen Injector [Novolin R]",SBD
+HS500,575146,"insulin, regular, human 100 UNT/ML [Novolin R]",SBDC
+HS500,2206091,"insulin, regular, human Pen Injector [Novolin R]",SBDF
+HS500,1178128,Novolin R Injectable Product,SBDG
+HS500,2206090,"3 ML insulin, regular, human 100 UNT/ML Pen Injector",SCD
+HS500,340325,"insulin, regular, human 100 UNT/ML",SCDC
+HS500,2206099,"3 ML insulin isophane, human 100 UNT/ML Pen Injector [Novolin N]",SBD
+HS500,575142,"insulin isophane, human 100 UNT/ML [Novolin N]",SBDC
+HS500,2206098,insulin isophane Pen Injector [Novolin N],SBDF
+HS500,1178127,Novolin N Injectable Product,SBDG
+HS500,1654862,"3 ML insulin isophane, human 100 UNT/ML Pen Injector",SCD
+HS500,343101,"insulin isophane, human 100 UNT/ML",SCDC
+HS500,1654861,insulin isophane Pen Injector,SCDF
+HS500,1653897,insulin isophane Injectable Product,SCDG
+HS500,2268065,Sensor 3 ML insulin glargine 100 UNT/ML Pen Injector [Basaglar],SBD
+HS500,1736860,insulin glargine 100 UNT/ML [Basaglar],SBDC
+HS500,1736861,insulin glargine Pen Injector [Basaglar],SBDF
+HS500,1736862,Basaglar Injectable Product,SBDG
+HS500,2268064,Sensor 3 ML insulin glargine 100 UNT/ML Pen Injector,SCD
+HS500,2281864,empagliflozin / linagliptin / metformin,MIN
+HS500,2359285,24 HR empagliflozin 10 MG / linagliptin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Trijardy],SBD
+HS500,2359281,empagliflozin 10 MG / linagliptin 5 MG / metformin hydrochloride 1000 MG [Trijardy],SBDC
+HS500,2359282,empagliflozin / linagliptin / metformin Extended Release Oral Tablet [Trijardy],SBDF
+HS500,2359283,Trijardy Oral Product,SBDG
+HS500,2359284,Trijardy Pill,SBDG
+HS500,2359279,24 HR empagliflozin 10 MG / linagliptin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,2359278,empagliflozin / linagliptin / metformin Extended Release Oral Tablet,SCDF
+HS500,2359276,empagliflozin / linagliptin / metformin Oral Product,SCDG
+HS500,2359277,empagliflozin / linagliptin / metformin Pill,SCDG
+HS500,2359290,24 HR empagliflozin 12.5 MG / linagliptin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Trijardy],SBD
+HS500,2359289,empagliflozin 12.5 MG / linagliptin 2.5 MG / metformin hydrochloride 1000 MG [Trijardy],SBDC
+HS500,2359288,24 HR empagliflozin 12.5 MG / linagliptin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,2359353,24 HR empagliflozin 25 MG / linagliptin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Trijardy],SBD
+HS500,2359352,empagliflozin 25 MG / linagliptin 5 MG / metformin hydrochloride 1000 MG [Trijardy],SBDC
+HS500,2359351,24 HR empagliflozin 25 MG / linagliptin 5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,2359358,24 HR empagliflozin 5 MG / linagliptin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet [Trijardy],SBD
+HS500,2359357,empagliflozin 5 MG / linagliptin 2.5 MG / metformin hydrochloride 1000 MG [Trijardy],SBDC
+HS500,2359356,24 HR empagliflozin 5 MG / linagliptin 2.5 MG / metformin hydrochloride 1000 MG Extended Release Oral Tablet,SCD
+HS500,2376838,insulin lispro-aabc,PIN
+HS500,2380236,insulin lispro-aabc 100 UNT/ML Injectable Solution [Lyumjev],SBD
+HS500,2380233,insulin lispro-aabc 100 UNT/ML [Lyumjev],SBDC
+HS500,2380234,insulin lispro Injectable Solution [Lyumjev],SBDF
+HS500,2380235,Lyumjev Injectable Product,SBDG
+HS500,2380231,insulin lispro-aabc 100 UNT/ML Injectable Solution,SCD
+HS500,2380230,insulin lispro-aabc 100 UNT/ML,SCDC
+HS500,2380256,3 ML insulin lispro-aabc 200 UNT/ML Pen Injector [Lyumjev],SBD
+HS500,2380255,insulin lispro-aabc 200 UNT/ML [Lyumjev],SBDC
+HS500,2380240,insulin lispro Pen Injector [Lyumjev],SBDF
+HS500,2380254,3 ML insulin lispro-aabc 200 UNT/ML Pen Injector,SCD
+HS500,2380253,insulin lispro-aabc 200 UNT/ML,SCDC
+HS500,2380260,3 ML insulin lispro-aabc 100 UNT/ML Pen Injector [Lyumjev],SBD
+HS500,2380259,3 ML insulin lispro-aabc 100 UNT/ML Pen Injector,SCD
+HS500,2395779,0.5 ML dulaglutide 6 MG/ML Auto-Injector [Trulicity],SBD
+HS500,2395778,dulaglutide 6 MG/ML [Trulicity],SBDC
+HS500,2395777,0.5 ML dulaglutide 6 MG/ML Auto-Injector,SCD
+HS500,2395776,dulaglutide 6 MG/ML,SCDC
+HS500,2395785,0.5 ML dulaglutide 9 MG/ML Auto-Injector [Trulicity],SBD
+HS500,2395784,dulaglutide 9 MG/ML [Trulicity],SBDC
+HS500,2395783,0.5 ML dulaglutide 9 MG/ML Auto-Injector,SCD
+HS500,2395782,dulaglutide 9 MG/ML,SCDC
+HS500,2398842,3 ML semaglutide 1.34 MG/ML Pen Injector [Ozempic],SBD
+HS500,1991308,semaglutide 1.34 MG/ML [Ozempic],SBDC
+HS500,1991309,semaglutide Pen Injector [Ozempic],SBDF
+HS500,1991310,Ozempic Injectable Product,SBDG
+HS500,2398841,3 ML semaglutide 1.34 MG/ML Pen Injector,SCD
+HS500,1991303,semaglutide 1.34 MG/ML,SCDC
+HS500,1991305,semaglutide Pen Injector,SCDF
+HS500,1991304,semaglutide Injectable Product,SCDG
+HS500,865098,insulin lispro 100 UNT/ML Injectable Solution [Humalog],SBD
+HS500,865097,insulin lispro Injectable Solution [Humalog],SBDF
+HS500,2535233,dasiglucagon,IN
+HS500,2535243,0.6 ML dasiglucagon 1 MG/ML Prefilled Syringe [Zegalogue],SBD
+HS500,2535240,dasiglucagon 1 MG/ML [Zegalogue],SBDC
+HS500,2535241,dasiglucagon Prefilled Syringe [Zegalogue],SBDF
+HS500,2535242,Zegalogue Injectable Product,SBDG
+HS500,2535238,0.6 ML dasiglucagon 1 MG/ML Prefilled Syringe,SCD
+HS500,2535235,dasiglucagon 1 MG/ML,SCDC
+HS500,2535237,dasiglucagon Prefilled Syringe,SCDF
+HS500,2535236,dasiglucagon Injectable Product,SCDG
+HS500,2535249,0.6 ML dasiglucagon 1 MG/ML Auto-Injector [Zegalogue],SBD
+HS500,2535248,dasiglucagon Auto-Injector [Zegalogue],SBDF
+HS500,2535247,0.6 ML dasiglucagon 1 MG/ML Auto-Injector,SCD
+HS500,2535246,dasiglucagon Auto-Injector,SCDF
+HS500,2553506,0.5 ML semaglutide 0.5 MG/ML Auto-Injector [Wegovy],SBD
+HS500,2553503,semaglutide 0.5 MG/ML [Wegovy],SBDC
+HS500,2553504,semaglutide Auto-Injector [Wegovy],SBDF
+HS500,2553505,Wegovy Injectable Product,SBDG
+HS500,2553501,0.5 ML semaglutide 0.5 MG/ML Auto-Injector,SCD
+HS500,2553400,semaglutide 0.5 MG/ML,SCDC
+HS500,2553500,semaglutide Auto-Injector,SCDF
+HS500,2553603,0.5 ML semaglutide 1 MG/ML Auto-Injector [Wegovy],SBD
+HS500,2553602,semaglutide 1 MG/ML [Wegovy],SBDC
+HS500,2553601,0.5 ML semaglutide 1 MG/ML Auto-Injector,SCD
+HS500,2553600,semaglutide 1 MG/ML,SCDC
+HS500,2553803,0.5 ML semaglutide 2 MG/ML Auto-Injector [Wegovy],SBD
+HS500,2553608,semaglutide 2 MG/ML [Wegovy],SBDC
+HS500,2553802,0.5 ML semaglutide 2 MG/ML Auto-Injector,SCD
+HS500,2553606,semaglutide 2 MG/ML,SCDC
+HS500,2553903,0.75 ML semaglutide 2.27 MG/ML Auto-Injector [Wegovy],SBD
+HS500,2553902,semaglutide 2.27 MG/ML [Wegovy],SBDC
+HS500,2553901,0.75 ML semaglutide 2.27 MG/ML Auto-Injector,SCD
+HS500,2553900,semaglutide 2.27 MG/ML,SCDC
+HS500,2554104,0.75 ML semaglutide 3.2 MG/ML Auto-Injector [Wegovy],SBD
+HS500,2554103,semaglutide 3.2 MG/ML [Wegovy],SBDC
+HS500,2554102,0.75 ML semaglutide 3.2 MG/ML Auto-Injector,SCD
+HS500,2554101,semaglutide 3.2 MG/ML,SCDC
+HS500,2563969,insulin glargine-yfgn,PIN
+HS500,2563973,3 ML insulin glargine-yfgn 100 UNT/ML Pen Injector [Semglee],SBD
+HS500,2563972,insulin glargine-yfgn 100 UNT/ML [Semglee],SBDC
+HS500,2377230,insulin glargine Pen Injector [Semglee],SBDF
+HS500,2377133,Semglee Injectable Product,SBDG
+HS500,2563971,3 ML insulin glargine-yfgn 100 UNT/ML Pen Injector,SCD
+HS500,2563970,insulin glargine-yfgn 100 UNT/ML,SCDC
+HS500,2563977,insulin glargine-yfgn 100 UNT/ML Injectable Solution [Semglee],SBD
+HS500,2377132,insulin glargine Injectable Solution [Semglee],SBDF
+HS500,2563976,insulin glargine-yfgn 100 UNT/ML Injectable Solution,SCD
+HS500,378864,insulin glargine Injectable Solution,SCDF
+HS500,2589006,insulin glargine-aglr,PIN
+HS500,2589014,3 ML insulin glargine-aglr 100 UNT/ML Pen Injector [Rezvoglar],SBD
+HS500,2589011,insulin glargine-aglr 100 UNT/ML [Rezvoglar],SBDC
+HS500,2589013,insulin glargine Pen Injector [Rezvoglar],SBDF
+HS500,2589012,Rezvoglar Injectable Product,SBDG
+HS500,2589008,3 ML insulin glargine-aglr 100 UNT/ML Pen Injector,SCD
+HS500,2589007,insulin glargine-aglr 100 UNT/ML,SCDC
+HS500,2599365,3 ML semaglutide 2.68 MG/ML Pen Injector [Ozempic],SBD
+HS500,2599364,semaglutide 2.68 MG/ML [Ozempic],SBDC
+HS500,2599362,3 ML semaglutide 2.68 MG/ML Pen Injector,SCD
+HS500,2599361,semaglutide 2.68 MG/ML,SCDC
+HS500,2601723,tirzepatide,IN
+HS500,2601746,0.5 ML tirzepatide 10 MG/ML Auto-Injector [Mounjaro],SBD
+HS500,2601745,tirzepatide 10 MG/ML [Mounjaro],SBDC
+HS500,2601737,tirzepatide Auto-Injector [Mounjaro],SBDF
+HS500,2601736,Mounjaro Injectable Product,SBDG
+HS500,2601743,0.5 ML tirzepatide 10 MG/ML Auto-Injector,SCD
+HS500,2601742,tirzepatide 10 MG/ML,SCDC
+HS500,2601731,tirzepatide Auto-Injector,SCDF
+HS500,2601730,tirzepatide Injectable Product,SCDG
+HS500,2601758,0.5 ML tirzepatide 30 MG/ML Auto-Injector [Mounjaro],SBD
+HS500,2601757,tirzepatide 30 MG/ML [Mounjaro],SBDC
+HS500,2601755,0.5 ML tirzepatide 30 MG/ML Auto-Injector,SCD
+HS500,2601754,tirzepatide 30 MG/ML,SCDC
+HS500,2601764,0.5 ML tirzepatide 5 MG/ML Auto-Injector [Mounjaro],SBD
+HS500,2601763,tirzepatide 5 MG/ML [Mounjaro],SBDC
+HS500,2601761,0.5 ML tirzepatide 5 MG/ML Auto-Injector,SCD
+HS500,2601760,tirzepatide 5 MG/ML,SCDC
+HS500,2601770,0.5 ML tirzepatide 20 MG/ML Auto-Injector [Mounjaro],SBD
+HS500,2601769,tirzepatide 20 MG/ML [Mounjaro],SBDC
+HS500,2601767,0.5 ML tirzepatide 20 MG/ML Auto-Injector,SCD
+HS500,2601766,tirzepatide 20 MG/ML,SCDC
+HS500,2601776,0.5 ML tirzepatide 25 MG/ML Auto-Injector [Mounjaro],SBD
+HS500,2601775,tirzepatide 25 MG/ML [Mounjaro],SBDC
+HS500,2601773,0.5 ML tirzepatide 25 MG/ML Auto-Injector,SCD
+HS500,2601772,tirzepatide 25 MG/ML,SCDC
+HS500,2601785,0.5 ML tirzepatide 15 MG/ML Auto-Injector [Mounjaro],SBD
+HS500,2601781,tirzepatide 15 MG/ML [Mounjaro],SBDC
+HS500,2601784,0.5 ML tirzepatide 15 MG/ML Auto-Injector,SCD
+HS500,2601778,tirzepatide 15 MG/ML,SCDC
+HS500,2619154,"0.25 MG, 0.5 MG Dose 3 ML semaglutide 0.68 MG/ML Pen Injector [Ozempic]",SBD
+HS500,2619153,semaglutide 0.68 MG/ML [Ozempic],SBDC
+HS500,2619152,"0.25 MG, 0.5 MG Dose 3 ML semaglutide 0.68 MG/ML Pen Injector",SCD
+HS500,2619151,semaglutide 0.68 MG/ML,SCDC
+HS500,2621572,Sensor 3 ML insulin lispro 100 UNT/ML Pen Injector [Humalog],SBD
+HS500,2621571,Sensor 3 ML insulin lispro 100 UNT/ML Pen Injector,SCD
+HS500,2621880,teplizumab,IN
+HS500,2621881,teplizumab-mzwv,PIN
+HS500,2621891,2 ML teplizumab-mzwv 1 MG/ML Injection [Tzield],SBD
+HS500,2621888,teplizumab-mzwv 1 MG/ML [Tzield],SBDC
+HS500,2621890,teplizumab Injection [Tzield],SBDF
+HS500,2621889,Tzield Injectable Product,SBDG
+HS500,2621885,2 ML teplizumab-mzwv 1 MG/ML Injection,SCD
+HS500,2621882,teplizumab-mzwv 1 MG/ML,SCDC
+HS500,2621884,teplizumab Injection,SCDF
+HS500,2621883,teplizumab Injectable Product,SCDG
+HS500,2627044,bexagliflozin,IN
+HS500,2637865,bexagliflozin 20 MG Oral Tablet [Brenzavvy],SBD
+HS500,2637861,bexagliflozin 20 MG [Brenzavvy],SBDC
+HS500,2637864,bexagliflozin Oral Tablet [Brenzavvy],SBDF
+HS500,2637862,Brenzavvy Oral Product,SBDG
+HS500,2637863,Brenzavvy Pill,SBDG
+HS500,2637859,bexagliflozin 20 MG Oral Tablet,SCD
+HS500,2637858,bexagliflozin 20 MG,SCDC
+HS500,2627048,bexagliflozin Oral Tablet,SCDF
+HS500,2627046,bexagliflozin Oral Product,SCDG
+HS500,2627047,bexagliflozin Pill,SCDG
+HS500,2638675,sotagliflozin,IN
+HS500,2638689,sotagliflozin 200 MG Oral Tablet [Inpefa],SBD
+HS500,2638685,sotagliflozin 200 MG [Inpefa],SBDC
+HS500,2638688,sotagliflozin Oral Tablet [Inpefa],SBDF
+HS500,2638686,Inpefa Oral Product,SBDG
+HS500,2638687,Inpefa Pill,SBDG
+HS500,2638683,sotagliflozin 200 MG Oral Tablet,SCD
+HS500,2638679,sotagliflozin 200 MG,SCDC
+HS500,2638682,sotagliflozin Oral Tablet,SCDF
+HS500,2638680,sotagliflozin Oral Product,SCDG
+HS500,2638681,sotagliflozin Pill,SCDG
+HS500,2642217,donislecel,IN
+HS500,2642260,donislecel-jujn,PIN
+HS500,2642270,400 ML donislecel-jujn 2500 EIN/ML Injection [Lantidra],SBD
+HS500,2642267,donislecel-jujn 2500 EIN/ML [Lantidra],SBDC
+HS500,2642269,donislecel Injection [Lantidra],SBDF
+HS500,2642268,Lantidra Injectable Product,SBDG
+HS500,2642264,400 ML donislecel-jujn 2500 EIN/ML Injection,SCD
+HS500,2642261,donislecel-jujn 2500 EIN/ML,SCDC
+HS500,2642263,donislecel Injection,SCDF
+HS500,2642262,donislecel Injectable Product,SCDG
+HS500,2642809,"1.6 ML insulin aspart, human 100 UNT/ML Cartridge [Fiasp]",SBD
+HS500,2642808,"1.6 ML insulin aspart, human 100 UNT/ML Cartridge",SCD
+HS500,309774,glucose 0.417 MG/MG Oral Gel,SCD
+HS500,340721,glucose 0.417 MG/MG,SCDC
+HS500,4821,glipizide,IN
+HS500,205830,glipizide 10 MG Oral Tablet [Glucotrol],SBD
+HS500,566720,glipizide 10 MG [Glucotrol],SBDC
+HS500,369500,glipizide Oral Tablet [Glucotrol],SBDF
+HS500,1171246,Glucotrol Oral Product,SBDG
+HS500,1171247,Glucotrol Pill,SBDG
+HS500,310488,glipizide 10 MG Oral Tablet,SCD
+HS500,317379,glipizide 10 MG,SCDC
+HS500,372320,glipizide Oral Tablet,SCDF
+HS500,1165207,glipizide Oral Product,SCDG
+HS500,1165208,glipizide Pill,SCDG
+HS500,865571,24 HR glipizide 2.5 MG Extended Release Oral Tablet [Glucotrol],SBD
+HS500,865570,glipizide 2.5 MG [Glucotrol],SBDC
+HS500,865567,glipizide Extended Release Oral Tablet [Glucotrol],SBDF
+HS500,310489,24 HR glipizide 2.5 MG Extended Release Oral Tablet,SCD
+HS500,330349,glipizide 2.5 MG,SCDC
+HS500,700835,glipizide Extended Release Oral Tablet,SCDF
+HS500,205828,glipizide 5 MG Oral Tablet [Glucotrol],SBD
+HS500,566718,glipizide 5 MG [Glucotrol],SBDC
+HS500,310490,glipizide 5 MG Oral Tablet,SCD
+HS500,315980,glipizide 5 MG,SCDC
+HS500,261716,glucagon (rDNA),PIN
+HS500,153095,glucagon (rDNA) 1 MG Injection [GlucaGen],SBD
+HS500,1865730,glucagon (rDNA) 1 MG [GlucaGen],SBDC
+HS500,1653348,glucagon Injection [GlucaGen],SBDF
+HS500,1171240,GlucaGen Injectable Product,SBDG
+HS500,310497,glucagon (rDNA) 1 MG Injection,SCD
+HS500,1865728,glucagon (rDNA) 1 MG,SCDC
+HS500,1653345,glucagon Injection,SCDF
+HS500,1147993,glucose 4000 MG Chewable Tablet [Dex4],SBD
+HS500,1147992,glucose 4000 MG [Dex4],SBDC
+HS500,1147020,glucose Chewable Tablet [Dex4],SBDF
+HS500,1175230,Dex4 Pill,SBDG
+HS500,1296280,Dex4 Chewable Product,SBDG
+HS500,310519,glucose 4000 MG Chewable Tablet,SCD
+HS500,317380,glucose 4000 MG,SCDC
+HS500,372326,glucose Chewable Tablet,SCDF
+HS500,1165824,glucose Pill,SCDG
+HS500,1295628,glucose Chewable Product,SCDG
+HS500,310534,glyburide 2.5 MG Oral Tablet,SCD
+HS500,315989,glyburide 2.5 MG,SCDC
+HS500,881409,glyburide 3 MG Oral Tablet [Glynase],SBD
+HS500,881408,glyburide 3 MG [Glynase],SBDC
+HS500,881406,glyburide Oral Tablet [Glynase],SBDF
+HS500,1171933,Glynase Oral Product,SBDG
+HS500,1171934,Glynase Pill,SBDG
+HS500,310536,glyburide 3 MG Oral Tablet,SCD
+HS500,315990,glyburide 3 MG,SCDC
+HS500,310537,glyburide 5 MG Oral Tablet,SCD
+HS500,315991,glyburide 5 MG,SCDC
+HS500,881411,glyburide 6 MG Oral Tablet [Glynase],SBD
+HS500,881410,glyburide 6 MG [Glynase],SBDC
+HS500,310539,glyburide 6 MG Oral Tablet,SCD
+HS500,315992,glyburide 6 MG,SCDC
+HS500,311026,"insulin isophane, human 100 UNT/ML Injectable Suspension [Humulin N]",SBD
+HS500,575141,"insulin isophane, human 100 UNT/ML [Humulin N]",SBDC
+HS500,365677,insulin isophane Injectable Suspension [Humulin N],SBDF
+HS500,1172691,Humulin N Injectable Product,SBDG
+HS500,311028,"insulin isophane, human 100 UNT/ML Injectable Suspension",SCD
+HS500,378928,insulin isophane Injectable Suspension,SCDF
+HS500,311027,"insulin isophane, human 100 UNT/ML Injectable Suspension [Novolin N]",SBD
+HS500,365573,insulin isophane Injectable Suspension [Novolin N],SBDF
+HS500,311033,"insulin, regular, human 100 UNT/ML Injectable Solution [Novolin R]",SBD
+HS500,363221,"insulin, regular, human Injectable Solution [Novolin R]",SBDF
+HS500,311034,"insulin, regular, human 100 UNT/ML Injectable Solution",SCD
+HS500,376915,"insulin, regular, human Injectable Solution",SCDF
+HS500,311036,"insulin, regular, human 100 UNT/ML Injectable Solution [Humulin R]",SBD
+HS500,575148,"insulin, regular, human 100 UNT/ML [Humulin R]",SBDC
+HS500,362622,"insulin, regular, human Injectable Solution [Humulin R]",SBDF
+HS500,351926,"insulin aspart, human 100 UNT/ML Injectable Solution [NovoLog]",SBD
+HS500,363534,"insulin aspart, human Injectable Solution [NovoLog]",SBDF
+HS500,2377134,insulin glargine 100 UNT/ML Injectable Solution [Semglee],SBD
+HS500,285018,insulin glargine 100 UNT/ML Injectable Solution [Lantus],SBD
+HS500,2377131,insulin glargine 100 UNT/ML [Semglee],SBDC
+HS500,575068,insulin glargine 100 UNT/ML [Lantus],SBDC
+HS500,362585,insulin glargine Injectable Solution [Lantus],SBDF
+HS500,1175624,Lantus Injectable Product,SBDG
+HS500,311041,insulin glargine 100 UNT/ML Injectable Solution,SCD
+HS500,274332,nateglinide,IN
+HS500,284530,nateglinide 120 MG Oral Tablet [Starlix],SBD
+HS500,574958,nateglinide 120 MG [Starlix],SBDC
+HS500,402944,nateglinide Oral Tablet [Starlix],SBDF
+HS500,1178433,Starlix Oral Product,SBDG
+HS500,1178434,Starlix Pill,SBDG
+HS500,311919,nateglinide 120 MG Oral Tablet,SCD
+HS500,330385,nateglinide 120 MG,SCDC
+HS500,374648,nateglinide Oral Tablet,SCDF
+HS500,1158396,nateglinide Oral Product,SCDG
+HS500,1158397,nateglinide Pill,SCDG
+HS500,261267,pioglitazone 30 MG Oral Tablet [Actos],SBD
+HS500,574496,pioglitazone 30 MG [Actos],SBDC
+HS500,368230,pioglitazone Oral Tablet [Actos],SBDF
+HS500,1169928,Actos Oral Product,SBDG
+HS500,1169929,Actos Pill,SBDG
+HS500,312440,pioglitazone 30 MG Oral Tablet,SCD
+HS500,374606,pioglitazone Oral Tablet,SCDF
+HS500,1163231,pioglitazone Oral Product,SCDG
+HS500,1163232,pioglitazone Pill,SCDG
+HS500,261268,pioglitazone 45 MG Oral Tablet [Actos],SBD
+HS500,574497,pioglitazone 45 MG [Actos],SBDC
+HS500,312441,pioglitazone 45 MG Oral Tablet,SCD
+HS500,84108,rosiglitazone,IN
+HS500,261241,rosiglitazone 2 MG Oral Tablet [Avandia],SBD
+HS500,574470,rosiglitazone 2 MG [Avandia],SBDC
+HS500,368234,rosiglitazone Oral Tablet [Avandia],SBDF
+HS500,1175666,Avandia Oral Product,SBDG
+HS500,1175667,Avandia Pill,SBDG
+HS500,312859,rosiglitazone 2 MG Oral Tablet,SCD
+HS500,358530,rosiglitazone 2 MG,SCDC
+HS500,373801,rosiglitazone Oral Tablet,SCDF
+HS500,1157987,rosiglitazone Oral Product,SCDG
+HS500,1157988,rosiglitazone Pill,SCDG
+HS500,261242,rosiglitazone 4 MG Oral Tablet [Avandia],SBD
+HS500,574471,rosiglitazone 4 MG [Avandia],SBDC
+HS500,312860,rosiglitazone 4 MG Oral Tablet,SCD
+HS500,358499,rosiglitazone 4 MG,SCDC
+HS500,881407,glyburide 1.5 MG Oral Tablet [Glynase],SBD
+HS500,881405,glyburide 1.5 MG [Glynase],SBDC
+HS500,314000,glyburide 1.5 MG Oral Tablet,SCD
+HS500,315988,glyburide 1.5 MG,SCDC
+HS500,865573,24 HR glipizide 5 MG Extended Release Oral Tablet [Glucotrol],SBD
+HS500,314006,24 HR glipizide 5 MG Extended Release Oral Tablet,SCD
+HS500,284529,nateglinide 60 MG Oral Tablet [Starlix],SBD
+HS500,574957,nateglinide 60 MG [Starlix],SBDC
+HS500,314142,nateglinide 60 MG Oral Tablet,SCD
+HS500,330386,nateglinide 60 MG,SCDC
+HS500,865568,24 HR glipizide 10 MG Extended Release Oral Tablet [Glucotrol],SBD
+HS500,315107,24 HR glipizide 10 MG Extended Release Oral Tablet,SCD
+HS500,261266,pioglitazone 15 MG Oral Tablet [Actos],SBD
+HS500,574495,pioglitazone 15 MG [Actos],SBDC
+HS500,317573,pioglitazone 15 MG Oral Tablet,SCD
+HS500,351859,"insulin, regular, human 500 UNT/ML Injectable Solution [Humulin R]",SBD
+HS500,249220,"insulin, regular, human 500 UNT/ML Injectable Solution",SCD
+HS500,139825,insulin detemir,IN
+HS500,616238,insulin detemir 100 UNT/ML Injectable Solution [Levemir],SBD
+HS500,616236,insulin detemir 100 UNT/ML [Levemir],SBDC
+HS500,616237,insulin detemir Injectable Solution [Levemir],SBDF
+HS500,1167934,Levemir Injectable Product,SBDG
+HS500,484322,insulin detemir 100 UNT/ML Injectable Solution,SCD
+HS500,484320,insulin detemir 100 UNT/ML,SCDC
+HS500,484321,insulin detemir Injectable Solution,SCDF
+HS500,1160696,insulin detemir Injectable Product,SCDG
+HS500,400008,"insulin glulisine, human",IN
+HS500,803194,"insulin glulisine, human 100 UNT/ML Injectable Solution [Apidra]",SBD
+HS500,803192,"insulin glulisine, human 100 UNT/ML [Apidra]",SBDC
+HS500,803193,"insulin glulisine, human Injectable Solution [Apidra]",SBDF
+HS500,1168563,Apidra Injectable Product,SBDG
+HS500,485210,"insulin glulisine, human 100 UNT/ML Injectable Solution",SCD
+HS500,485208,"insulin glulisine, human 100 UNT/ML",SCDC
+HS500,485209,"insulin glulisine, human Injectable Solution",SCDF
+HS500,1157464,"insulin glulisine, human Injectable Product",SCDG
+HS500,647235,glimepiride / pioglitazone,MIN
+HS500,731463,glimepiride 2 MG / pioglitazone 30 MG Oral Tablet [Duetact],SBD
+HS500,731461,glimepiride 2 MG / pioglitazone 30 MG [Duetact],SBDC
+HS500,731462,glimepiride / pioglitazone Oral Tablet [Duetact],SBDF
+HS500,1166403,Duetact Oral Product,SBDG
+HS500,1166404,Duetact Pill,SBDG
+HS500,647237,glimepiride 2 MG / pioglitazone 30 MG Oral Tablet,SCD
+HS500,647236,glimepiride / pioglitazone Oral Tablet,SCDF
+HS500,1157240,glimepiride / pioglitazone Oral Product,SCDG
+HS500,1157241,glimepiride / pioglitazone Pill,SCDG
+HS500,731457,glimepiride 4 MG / pioglitazone 30 MG Oral Tablet [Duetact],SBD
+HS500,731455,glimepiride 4 MG / pioglitazone 30 MG [Duetact],SBDC
+HS500,647239,glimepiride 4 MG / pioglitazone 30 MG Oral Tablet,SCD
+HS500,665036,sitagliptin 100 MG Oral Tablet [Januvia],SBD
+HS500,665034,sitagliptin 100 MG [Januvia],SBDC
+HS500,665035,sitagliptin Oral Tablet [Januvia],SBDF
+HS500,1167814,Januvia Oral Product,SBDG
+HS500,1167815,Januvia Pill,SBDG
+HS500,665033,sitagliptin 100 MG Oral Tablet,SCD
+HS500,665032,sitagliptin Oral Tablet,SCDF
+HS500,1159662,sitagliptin Oral Product,SCDG
+HS500,1159663,sitagliptin Pill,SCDG
+HS500,665040,sitagliptin 25 MG Oral Tablet [Januvia],SBD
+HS500,665039,sitagliptin 25 MG [Januvia],SBDC
+HS500,665038,sitagliptin 25 MG Oral Tablet,SCD
+HS500,665037,sitagliptin 25 MG,SCDC
+HS500,665044,sitagliptin 50 MG Oral Tablet [Januvia],SBD
+HS500,665043,sitagliptin 50 MG [Januvia],SBDC
+HS500,665042,sitagliptin 50 MG Oral Tablet,SCD
+HS500,314684,"insulin lispro protamine, human",IN
+HS500,816726,"insulin lispro / insulin lispro protamine, human",MIN
+HS500,731281,"insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Injectable Suspension [Humalog Mix]",SBD
+HS500,731277,"insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML [Humalog Mix]",SBDC
+HS500,731280,"insulin lispro / insulin lispro protamine, human Injectable Suspension [Humalog Mix]",SBDF
+HS500,1171291,Humalog Mix Injectable Product,SBDG
+HS500,260265,"insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Injectable Suspension",SCD
+HS500,343262,"insulin lispro protamine, human 50 UNT/ML",SCDC
+HS500,343663,insulin lispro 50 UNT/ML,SCDC
+HS500,378966,"insulin lispro / insulin lispro protamine, human Injectable Suspension",SCDF
+HS500,1157460,"insulin lispro / insulin lispro protamine, human Injectable Product",SCDG
+HS500,752388,"insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Injectable Suspension [Humalog Mix]",SBD
+HS500,752386,"insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML [Humalog Mix]",SBDC
+HS500,259111,"insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Injectable Suspension",SCD
+HS500,343263,insulin lispro 25 UNT/ML,SCDC
+HS500,343264,"insulin lispro protamine, human 75 UNT/ML",SCDC
+HS500,847189,"3 ML insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Pen Injector [Humulin]",SBD
+HS500,1654855,"insulin isophane / insulin, regular, human Pen Injector [Humulin]",SBDF
+HS500,352385,"insulin aspart protamine, human",IN
+HS500,1007184,"insulin aspart protamine, human / insulin aspart, human",MIN
+HS500,977840,"3 ML insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Pen Injector [NovoLog Mix]",SBD
+HS500,977838,"insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML [NovoLog Mix]",SBDC
+HS500,1653209,"insulin aspart protamine, human / insulin aspart, human Pen Injector [NovoLog Mix]",SBDF
+HS500,1178120,NovoLog Mix Injectable Product,SBDG
+HS500,847191,"3 ML insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Pen Injector",SCD
+HS500,353487,"insulin aspart protamine, human 70 UNT/ML",SCDC
+HS500,360342,"insulin aspart, human 30 UNT/ML",SCDC
+HS500,1653207,"insulin aspart protamine, human / insulin aspart, human Pen Injector",SCDF
+HS500,1157462,"insulin aspart protamine, human / insulin aspart, human Injectable Product",SCDG
+HS500,847199,"3 ML insulin isophane, human 100 UNT/ML Pen Injector [Humulin N]",SBD
+HS500,1654863,insulin isophane Pen Injector [Humulin N],SBDF
+HS500,847213,"3 ML insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Pen Injector [Humalog Mix]",SBD
+HS500,1653106,"insulin lispro / insulin lispro protamine, human Pen Injector [Humalog Mix]",SBDF
+HS500,847211,"3 ML insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Pen Injector",SCD
+HS500,1653104,"insulin lispro / insulin lispro protamine, human Pen Injector",SCDF
+HS500,1736863,3 ML insulin glargine 100 UNT/ML Pen Injector [Basaglar],SBD
+HS500,2377231,3 ML insulin glargine 100 UNT/ML Pen Injector [Semglee],SBD
+HS500,847232,3 ML insulin glargine 100 UNT/ML Pen Injector [Lantus],SBD
+HS500,1653499,insulin glargine Pen Injector [Lantus],SBDF
+HS500,847230,3 ML insulin glargine 100 UNT/ML Pen Injector,SCD
+HS500,847241,3 ML insulin detemir 100 UNT/ML Pen Injector [Levemir],SBD
+HS500,1654192,insulin detemir Pen Injector [Levemir],SBDF
+HS500,847239,3 ML insulin detemir 100 UNT/ML Pen Injector,SCD
+HS500,1654190,insulin detemir Pen Injector,SCDF
+HS500,847254,"3 ML insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Pen Injector [Humalog Mix]",SBD
+HS500,847252,"3 ML insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Pen Injector",SCD
+HS500,847261,"3 ML insulin glulisine, human 100 UNT/ML Pen Injector [Apidra]",SBD
+HS500,1651315,"insulin glulisine, human Pen Injector [Apidra]",SBDF
+HS500,847259,"3 ML insulin glulisine, human 100 UNT/ML Pen Injector",SCD
+HS500,1651313,"insulin glulisine, human Pen Injector",SCDF
+HS500,847913,60 ACTUAT exenatide 0.01 MG/ACTUAT Pen Injector [Byetta],SBD
+HS500,847911,exenatide 0.01 MG/ACTUAT [Byetta],SBDC
+HS500,1653625,exenatide Pen Injector [Byetta],SBDF
+HS500,1169415,Byetta Injectable Product,SBDG
+HS500,847910,60 ACTUAT exenatide 0.01 MG/ACTUAT Pen Injector,SCD
+HS500,847908,exenatide 0.01 MG/ACTUAT,SCDC
+HS500,1653616,exenatide Pen Injector,SCDF
+HS500,847917,60 ACTUAT exenatide 0.005 MG/ACTUAT Pen Injector [Byetta],SBD
+HS500,847916,exenatide 0.005 MG/ACTUAT [Byetta],SBDC
+HS500,847915,60 ACTUAT exenatide 0.005 MG/ACTUAT Pen Injector,SCD
+HS500,847914,exenatide 0.005 MG/ACTUAT,SCDC
+HS500,1653438,glucose 254 MG/ML Oral Solution [Dex4],SBD
+HS500,1653437,glucose 254 MG/ML [Dex4],SBDC
+HS500,1012372,glucose Oral Solution [Dex4],SBDF
+HS500,1175228,Dex4 Oral Liquid Product,SBDG
+HS500,849418,glucose 254 MG/ML Oral Solution,SCD
+HS500,849417,glucose 254 MG/ML,SCDC
+HS500,858040,saxagliptin 5 MG Oral Tablet [Onglyza],SBD
+HS500,858038,saxagliptin 5 MG [Onglyza],SBDC
+HS500,858039,saxagliptin Oral Tablet [Onglyza],SBDF
+HS500,1181729,Onglyza Oral Product,SBDG
+HS500,1181730,Onglyza Pill,SBDG
+HS500,858036,saxagliptin 5 MG Oral Tablet,SCD
+HS500,858035,saxagliptin Oral Tablet,SCDF
+HS500,1158518,saxagliptin Oral Product,SCDG
+HS500,1158519,saxagliptin Pill,SCDG
+HS500,858044,saxagliptin 2.5 MG Oral Tablet [Onglyza],SBD
+HS500,858043,saxagliptin 2.5 MG [Onglyza],SBDC
+HS500,858042,saxagliptin 2.5 MG Oral Tablet,SCD
+HS500,860977,24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet [Glucophage],SBD
+HS500,860976,metformin hydrochloride 500 MG [Glucophage],SBDC
+HS500,802051,metformin Extended Release Oral Tablet [Glucophage],SBDF
+HS500,1171244,Glucophage Oral Product,SBDG
+HS500,1171245,Glucophage Pill,SBDG
+HS500,860975,24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet,SCD
+HS500,860983,24 HR metformin hydrochloride 750 MG Extended Release Oral Tablet [Glucophage],SBD
+HS500,860982,metformin hydrochloride 750 MG [Glucophage],SBDC
+HS500,860981,24 HR metformin hydrochloride 750 MG Extended Release Oral Tablet,SCD
+HS500,860980,metformin hydrochloride 750 MG,SCDC
+HS500,861006,metformin hydrochloride 1000 MG Oral Tablet [Glucophage],SBD
+HS500,861005,metformin hydrochloride 1000 MG [Glucophage],SBDC
+HS500,368254,metformin Oral Tablet [Glucophage],SBDF
+HS500,861004,metformin hydrochloride 1000 MG Oral Tablet,SCD
+HS500,372803,metformin Oral Tablet,SCDF
+HS500,861008,metformin hydrochloride 500 MG Oral Tablet [Glucophage],SBD
+HS500,861007,metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,861012,metformin hydrochloride 850 MG Oral Tablet [Glucophage],SBD
+HS500,861011,metformin hydrochloride 850 MG [Glucophage],SBDC
+HS500,861010,metformin hydrochloride 850 MG Oral Tablet,SCD
+HS500,861021,metformin hydrochloride 625 MG Oral Tablet,SCD
+HS500,861020,metformin hydrochloride 625 MG,SCDC
+HS500,861027,metformin hydrochloride 100 MG/ML Oral Solution [Riomet],SBD
+HS500,406257,metformin Oral Solution [Riomet],SBDF
+HS500,861025,metformin hydrochloride 100 MG/ML Oral Solution,SCD
+HS500,406082,metformin Oral Solution,SCDF
+HS500,139953,pramlintide,IN
+HS500,356773,pramlintide acetate,PIN
+HS500,861039,pramlintide acetate 0.6 MG/ML Injectable Solution,SCD
+HS500,861038,pramlintide acetate 0.6 MG/ML,SCDC
+HS500,486505,pramlintide Injectable Solution,SCDF
+HS500,1161690,pramlintide Injectable Product,SCDG
+HS500,861043,2.7 ML pramlintide acetate 1 MG/ML Pen Injector [Symlin],SBD
+HS500,861036,pramlintide acetate 1 MG/ML [Symlin],SBDC
+HS500,1657565,pramlintide Pen Injector [Symlin],SBDF
+HS500,1185508,Symlin Injectable Product,SBDG
+HS500,861042,2.7 ML pramlintide acetate 1 MG/ML Pen Injector,SCD
+HS500,861034,pramlintide acetate 1 MG/ML,SCDC
+HS500,1657563,pramlintide Pen Injector,SCDF
+HS500,861045,1.5 ML pramlintide acetate 1 MG/ML Pen Injector [Symlin],SBD
+HS500,861044,1.5 ML pramlintide acetate 1 MG/ML Pen Injector,SCD
+HS500,352381,glipizide / metformin,MIN
+HS500,861731,glipizide 2.5 MG / metformin hydrochloride 250 MG Oral Tablet,SCD
+HS500,861730,metformin hydrochloride 250 MG,SCDC
+HS500,378730,glipizide / metformin Oral Tablet,SCDF
+HS500,1165205,glipizide / metformin Oral Product,SCDG
+HS500,1165206,glipizide / metformin Pill,SCDG
+HS500,861736,glipizide 2.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,861740,glipizide 5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,285129,glyburide / metformin,MIN
+HS500,861743,glyburide 1.25 MG / metformin hydrochloride 250 MG Oral Tablet,SCD
+HS500,374635,glyburide / metformin Oral Tablet,SCDF
+HS500,1156197,glyburide / metformin Pill,SCDG
+HS500,1165845,glyburide / metformin Oral Product,SCDG
+HS500,861752,glyburide 2.5 MG / metformin hydrochloride 500 MG Oral Tablet [Glucovance],SBD
+HS500,861750,glyburide 2.5 MG / metformin hydrochloride 500 MG [Glucovance],SBDC
+HS500,861756,glyburide / metformin Oral Tablet [Glucovance],SBDF
+HS500,1171248,Glucovance Oral Product,SBDG
+HS500,1171249,Glucovance Pill,SBDG
+HS500,861748,glyburide 2.5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,861757,glyburide 5 MG / metformin hydrochloride 500 MG Oral Tablet [Glucovance],SBD
+HS500,861755,glyburide 5 MG / metformin hydrochloride 500 MG [Glucovance],SBDC
+HS500,861753,glyburide 5 MG / metformin hydrochloride 500 MG Oral Tablet,SCD
+HS500,614348,metformin / rosiglitazone,MIN
+HS500,861762,metformin hydrochloride 1000 MG / rosiglitazone 2 MG Oral Tablet [Avandamet],SBD
+HS500,861761,metformin hydrochloride 1000 MG / rosiglitazone 2 MG [Avandamet],SBDC
+HS500,806287,metformin / rosiglitazone Oral Tablet [Avandamet],SBDF
+HS500,1175016,Avandamet Oral Product,SBDG
+HS500,1175021,Avandamet Pill,SBDG
+HS500,861760,metformin hydrochloride 1000 MG / rosiglitazone 2 MG Oral Tablet,SCD
+HS500,378729,metformin / rosiglitazone Oral Tablet,SCDF
+HS500,1161603,metformin / rosiglitazone Oral Product,SCDG
+HS500,1161604,metformin / rosiglitazone Pill,SCDG
+HS500,861763,metformin hydrochloride 1000 MG / rosiglitazone 4 MG Oral Tablet,SCD
+HS500,861771,metformin hydrochloride 1000 MG / sitagliptin 50 MG Oral Tablet [Janumet],SBD
+HS500,757603,metformin / sitagliptin Oral Tablet [Janumet],SBDF
+HS500,861769,metformin hydrochloride 1000 MG / sitagliptin 50 MG Oral Tablet,SCD
+HS500,700516,metformin / sitagliptin Oral Tablet,SCDF
+HS500,607999,metformin / pioglitazone,MIN
+HS500,861785,metformin hydrochloride 500 MG / pioglitazone 15 MG Oral Tablet [Actoplus Met],SBD
+HS500,861784,metformin hydrochloride 500 MG / pioglitazone 15 MG [Actoplus Met],SBDC
+HS500,731442,metformin / pioglitazone Oral Tablet [Actoplus Met],SBDF
+HS500,1169920,Actoplus Met Oral Product,SBDG
+HS500,1169923,Actoplus Met Pill,SBDG
+HS500,861783,metformin hydrochloride 500 MG / pioglitazone 15 MG Oral Tablet,SCD
+HS500,577093,metformin / pioglitazone Oral Tablet,SCDF
+HS500,1161597,metformin / pioglitazone Oral Product,SCDG
+HS500,1161598,metformin / pioglitazone Pill,SCDG
+HS500,861808,metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet [Avandamet],SBD
+HS500,861807,metformin hydrochloride 500 MG / rosiglitazone 2 MG [Avandamet],SBDC
+HS500,861806,metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet,SCD
+HS500,861818,metformin hydrochloride 500 MG / rosiglitazone 4 MG Oral Tablet [Avandamet],SBD
+HS500,861817,metformin hydrochloride 500 MG / rosiglitazone 4 MG [Avandamet],SBDC
+HS500,861816,metformin hydrochloride 500 MG / rosiglitazone 4 MG Oral Tablet,SCD
+HS500,861821,metformin hydrochloride 500 MG / sitagliptin 50 MG Oral Tablet [Janumet],SBD
+HS500,861819,metformin hydrochloride 500 MG / sitagliptin 50 MG Oral Tablet,SCD
+HS500,861824,metformin hydrochloride 850 MG / pioglitazone 15 MG Oral Tablet [Actoplus Met],SBD
+HS500,861823,metformin hydrochloride 850 MG / pioglitazone 15 MG [Actoplus Met],SBDC
+HS500,861822,metformin hydrochloride 850 MG / pioglitazone 15 MG Oral Tablet,SCD
+HS500,897126,3 ML liraglutide 6 MG/ML Pen Injector [Victoza],SBD
+HS500,897124,liraglutide 6 MG/ML [Victoza],SBDC
+HS500,1653597,liraglutide Pen Injector [Victoza],SBDF
+HS500,1186578,Victoza Injectable Product,SBDG
+HS500,977842,"insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Injectable Suspension [NovoLog Mix]",SBD
+HS500,977841,"insulin aspart protamine, human / insulin aspart, human Injectable Suspension [NovoLog Mix]",SBDF
+HS500,351297,"insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Injectable Suspension",SCD
+HS500,379056,"insulin aspart protamine, human / insulin aspart, human Injectable Suspension",SCDF

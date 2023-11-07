@@ -1,0 +1,193 @@
+VACLS,IN
+CV400,amlodipine
+CV400,olmesartan
+CV400,hydrochlorothiazide
+CV400,amlodipine / hydrochlorothiazide / olmesartan
+CV400,aliskiren
+CV400,aliskiren / hydrochlorothiazide
+CV400,azilsartan
+CV400,chlorthalidone
+CV400,azilsartan / chlorthalidone
+CV400,moexipril
+CV400,hydrochlorothiazide / moexipril
+CV400,perindopril
+CV400,amlodipine / perindopril
+CV400,sacubitril
+CV400,valsartan
+CV400,sacubitril / valsartan
+CV400,atenolol
+CV400,atenolol / chlorthalidone
+CV400,captopril
+CV400,captopril / hydrochlorothiazide
+CV400,lisinopril
+CV400,hydrochlorothiazide / lisinopril
+CV400,methyldopa
+CV400,hydrochlorothiazide / methyldopa
+CV400,bendroflumethiazide
+CV400,nadolol
+CV400,bendroflumethiazide / nadolol
+CV400,hydrochlorothiazide / valsartan
+CV400,telmisartan
+CV400,hydrochlorothiazide / telmisartan
+CV400,irbesartan
+CV400,hydrochlorothiazide / irbesartan
+CV400,quinapril
+CV400,hydrochlorothiazide / quinapril
+CV400,eprosartan
+CV400,eprosartan / hydrochlorothiazide
+CV400,hydrochlorothiazide / olmesartan
+CV400,candesartan
+CV400,candesartan / hydrochlorothiazide
+CV400,amlodipine / valsartan
+CV400,amlodipine / olmesartan
+CV400,amlodipine / hydrochlorothiazide / valsartan
+CV400,bisoprolol
+CV400,bisoprolol / hydrochlorothiazide
+CV400,propranolol
+CV400,hydrochlorothiazide / propranolol
+CV400,fosinopril
+CV400,fosinopril / hydrochlorothiazide
+CV400,enalapril
+CV400,enalapril / hydrochlorothiazide
+CV400,metoprolol
+CV400,hydrochlorothiazide / metoprolol
+CV400,amlodipine / telmisartan
+CV400,verapamil
+CV400,trandolapril
+CV400,trandolapril / verapamil
+CV400,benazepril
+CV400,amlodipine / benazepril
+CV400,benazepril / hydrochlorothiazide
+CV400,hydralazine
+CV400,isosorbide dinitrate
+CV400,hydralazine / isosorbide dinitrate
+CV400,losartan
+CV400,hydrochlorothiazide / losartan
+CV490,clonidine
+CV490,mecamylamine
+CV490,sildenafil
+CV490,riociguat
+CV490,macitentan
+CV490,nitroprusside
+CV490,guanabenz
+CV490,guanfacine
+CV490,methyldopa
+CV490,metyrosine
+CV490,minoxidil
+CV490,methyldopate
+CV490,lofexidine
+CV490,tadalafil
+CV490,treprostinil
+CV490,iloprost
+CV490,hydralazine
+CV350,colestipol
+CV350,icosapent ethyl
+CV350,lomitapide
+CV350,fenofibrate
+CV350,alirocumab
+CV350,evolocumab
+CV350,sebelipase alfa
+CV350,simvastatin
+CV350,cholestyramine resin
+CV350,lovastatin
+CV350,pitavastatin
+CV350,rosuvastatin
+CV350,bempedoic acid
+CV350,ezetimibe
+CV350,bempedoic acid / ezetimibe
+CV350,evinacumab
+CV350,ezetimibe / rosuvastatin
+CV350,inclisiran
+CV350,atorvastatin
+CV350,fluvastatin
+CV350,gemfibrozil
+CV350,ezetimibe / simvastatin
+CV350,omega-3 acid ethyl esters (USP)
+CV350,colesevelam
+CV350,pravastatin
+BL110,dabigatran etexilate
+BL110,rivaroxaban
+BL110,heparin
+BL110,apixaban
+BL110,edoxaban
+BL110,eptifibatide
+BL110,tirofiban
+BL110,defibrotide
+BL110,argatroban
+BL110,bivalirudin
+BL110,dalteparin
+BL110,desirudin
+BL110,enoxaparin
+BL110,warfarin
+BL110,fondaparinux
+HS500,metformin
+HS500,saxagliptin
+HS500,metformin / saxagliptin
+HS500,glucose
+HS500,insulin isophane
+HS500,"insulin, regular, human"
+HS500,"insulin isophane / insulin, regular, human"
+HS500,linagliptin
+HS500,linagliptin / metformin
+HS500,sitagliptin
+HS500,metformin / sitagliptin
+HS500,alogliptin
+HS500,alogliptin / metformin
+HS500,pioglitazone
+HS500,alogliptin / pioglitazone
+HS500,canagliflozin
+HS500,cholecalciferol
+HS500,cholecalciferol / glucose
+HS500,dapagliflozin
+HS500,canagliflozin / metformin
+HS500,empagliflozin
+HS500,dulaglutide
+HS500,dapagliflozin / metformin
+HS500,liraglutide
+HS500,empagliflozin / linagliptin
+HS500,insulin glargine
+HS500,insulin lispro
+HS500,"insulin aspart, human"
+HS500,empagliflozin / metformin
+HS500,insulin degludec
+HS500,lixisenatide
+HS500,insulin glargine / lixisenatide
+HS500,insulin degludec / liraglutide
+HS500,dapagliflozin / saxagliptin
+HS500,chlorpropamide
+HS500,diazoxide
+HS500,glyburide
+HS500,tolazamide
+HS500,tolbutamide
+HS500,exenatide
+HS500,acarbose
+HS500,glimepiride
+HS500,ertugliflozin
+HS500,ertugliflozin / metformin
+HS500,ertugliflozin / sitagliptin
+HS500,repaglinide
+HS500,miglitol
+HS500,glucagon
+HS500,semaglutide
+HS500,empagliflozin / linagliptin / metformin
+HS500,dasiglucagon
+HS500,tirzepatide
+HS500,teplizumab
+HS500,bexagliflozin
+HS500,sotagliflozin
+HS500,donislecel
+HS500,glipizide
+HS500,nateglinide
+HS500,rosiglitazone
+HS500,insulin detemir
+HS500,"insulin glulisine, human"
+HS500,glimepiride / pioglitazone
+HS500,"insulin lispro protamine, human"
+HS500,"insulin lispro / insulin lispro protamine, human"
+HS500,"insulin aspart protamine, human"
+HS500,"insulin aspart protamine, human / insulin aspart, human"
+HS500,pramlintide
+HS500,glipizide / metformin
+HS500,glyburide / metformin
+HS500,metformin / rosiglitazone
+HS500,metformin / pioglitazone
