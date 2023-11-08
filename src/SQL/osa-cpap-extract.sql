@@ -9,8 +9,8 @@
 use role GROUSE_ROLE_C_ANALYTICS_DROC114; 
 use warehouse GROUSE_WH;
 use database GROUSE_DEID_ANALYTICS_DB_DROC114;
-create schema if not exists OBESITY_OSA;
-use schema OBESITY_OSA;
+create schema if not exists SX_OSA_PAP;
+use schema SX_OSA_PAP;
 
 set cdm_db_schema = 'CMS_PCORNET_CDM';
 set diagnosis = $cdm_db_schema || '.V_DEID_DIAGNOSIS';
@@ -97,14 +97,15 @@ with mace_event as (
           ,dx.DX_DATE ENDPOINT_DATE
     from identifier($DIAGNOSIS) dx
     where (dx.DX_TYPE = '09' and split_part(dx.DX,'.',1) in ( '410','412')) OR
-          (dx.DX_TYPE = '10' and split_part(dx.DX,'.',1) in ( 'I21','I22','I23'))
+          (dx.DX_TYPE = '10' and split_part(dx.DX,'.',1) in ( 'I21','I22')) OR 
+          (dx.DX_TYPE = '10' and substr(dx.DX,1,5) in ( 'I25.2'))
     union
     select dx.PATID
           ,'STROKE' ENDPOINT
           ,dx.DX_DATE ENDPOINT_DATE
     from identifier($DIAGNOSIS) dx
     where (dx.DX_TYPE = '09' and split_part(dx.DX,'.',1) in ( '431','434')) OR
-          (dx.DX_TYPE = '10' and split_part(dx.DX,'.',1) in ( 'I61','I62','I63'))
+          (dx.DX_TYPE = '10' and split_part(dx.DX,'.',1) in ( 'I61','I62','I63','I64'))
     union
     select dx.PATID
           ,'HF' ENDPOINT
@@ -179,6 +180,7 @@ where px.PX in ('95782','95783','95800','95801',
       px.PX_TYPE = 'CH'
 ;
 select count(distinct patid) from PAT_OSA_TEST;
+-- 404,099
 
 /*exposure: Oral device/appliance*/
 create or replace table PAT_OSA_MAD as
@@ -196,7 +198,7 @@ where px.PX in ('E0485','E0486')
       -- and px.PX_DATE > p.OSA_DX1_DATE
 ;
 select count(distinct patid) from PAT_OSA_MAD;
--- 2,132
+-- 7,941
 
 /*exposure: CPAP initialization*/
 create or replace table PAT_OSA_PAP_DEVICE as
@@ -269,7 +271,6 @@ select distinct
       ,dx.DX_TYPE
       ,dx.DX_DATE
       ,datediff('day',p.OSA_DX1_DATE,dx.DX_DATE) as DAYS_SINCE_INDEX
-      ,dx.DIAGNOSISID
 from identifier($pat_elig) p
 join identifier($diagnosis) dx 
 on p.patid = dx.patid
@@ -277,21 +278,48 @@ on p.patid = dx.patid
 select count(distinct patid) from PAT_OSA_ALL_DX;
 -- 907,759
 
+/*covariates: selective comorb*/
+select * from Z_REF_COMORB;
+create or replace table PAT_OSA_SEL_DX as 
+with cte_comorb_map as (
+      select dx.patid,
+             dx.dx_date,
+             dx.days_since_index,
+             cmb.code_grp,
+             cmb.full as code_grp_lbl,
+             row_number() over (partition by dx.patid,cmb.code_grp, case when dx.days_since_index <=0 then 1 else 0 end order by dx.days_since_index) as rn
+      from PAT_OSA_ALL_DX dx
+      join Z_REF_COMORB cmb 
+      on dx.dx like cmb.code || '%' and 
+         dx.dx_type = cmb.code_type
+)
+select patid
+      ,dx_date as comorb_date
+      ,days_since_index
+      ,code_grp
+      ,code_grp_lbl
+from cte_comorb_map 
+where rn = 1 
+; 
+select code_grp_lbl, count(distinct patid) from PAT_OSA_SEL_DX
+group by code_grp_lbl;
+ 
+
 /*covariates: cci*/
-select * from CCI_MAP;
-create or replace PAT_OSA_CCI as
+select * from Z_REF_CCI;
+create or replace table PAT_OSA_CCI as
 with cte_cci_map as (
       select dx.patid,
              dx.dx_date,
              dx.days_since_index,
              cci.code_grp,
-             cci."full" as code_grp_lbl,
-             try_to_double(cci."score") as cci_score,
-             row_number() over (partition by dx.patid,cci.code_grp, case when dx.days_since_index <=0 then 1 else 0 end order by cci.days_since_index) as rn
+             cci.full as code_grp_lbl,
+             cci.score as cci_score,
+             row_number() over (partition by dx.patid,cci.code_grp, case when dx.days_since_index <=0 then 1 else 0 end order by dx.days_since_index) as rn
       from PAT_OSA_ALL_DX dx
-      join CCI_MAP cci 
-      on replace(dx.dx,".","") like cci.code || '%' and 
-         dx.dx_type = cci.code_type_cdm
+      join Z_REF_CCI cci 
+      on dx.dx like cci.code || '%' and 
+         dx.dx_type = cci.code_type
 )
 select patid
       ,dx_date as cci_date
@@ -304,15 +332,34 @@ where rn = 1
 ; 
 
 /*covariates: medications*/
-create or replace table PAT_OSA_ALL_RX as
-select distinct
-       p.PATID
-      ,dx.DX
-      ,dx.DX_TYPE
-      ,dx.DX_DATE
-      ,datediff('day',p.OSA_DX1_DATE,dx.DX_DATE) as DAYS_SINCE_OSA
-      ,dx.DIAGNOSISID
-from identifier($pat_elig) p
-join identifier($dispensing) rx 
-on p.patid = dx.patid
+select * from z_ref_rx_ndc;
+create or replace table PAT_OSA_SEL_RX as
+with cte_cls as (
+      select p.PATID
+            ,case when z.VACLS in ('CV350') then 'ALP'
+                  when z.VACLS in ('BL110') then 'ACG'
+                  when z.VACLS in ('HS500') then 'BGR' 
+                  else 'AHT' 
+             end as RXCLS
+            ,rx.DISPENSE_DATE
+            ,datediff('day',p.OSA_DX1_DATE,dx.DISPENSE_DATE) as DAYS_SINCE_OSA
+      from identifier($pat_elig) p
+      join identifier($dispensing) rx 
+      on p.patid = dx.patid
+      join z_ref_rx_ndc z 
+      on rx.ndc = z.ndc
+), cte_ord as (
+      select patid
+            ,rxcls
+            ,dispense_date
+            ,days_since_osa
+            ,row_number() over (partition by patid,rxcls,case_when days_since_osa<=0 then 1 else 0 end order by abs(days_since_osa)) as rn
+      from cte_cls
+)
+select patid
+      ,rxcls
+      ,dispense_date
+      ,days_since_osa
+from cte_ord
+where rn = 1
 ;
