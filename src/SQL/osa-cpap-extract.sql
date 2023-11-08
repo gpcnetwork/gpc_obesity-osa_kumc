@@ -18,7 +18,9 @@ set procedures = $cdm_db_schema || '.V_DEID_PROCEDURES';
 set enrollment = $cdm_db_schema || '.V_DEID_ENROLLMENT';
 set demographic = $cdm_db_schema || '.V_DEID_DEMOGRAPHIC';
 set death = $cdm_db_schema || '.V_DEID_DEATH';
-set address = $cdm_db_schema || '.V_DEID_ADDRESS_HISTORY';
+set dispensing = $cdm_db_schema || '.V_DEID_DISPENSING';
+set pat_elig = 'PAT_OSA_ELIG';
+
 
 -----------------------------------------------------------------------------------
 
@@ -89,7 +91,6 @@ select count(distinct patid) from PAT_OSA_ELIG;
 -- 907,759
 
 /*adverse outcome identification, pre-post: MACE, All-cause mortality*/
-set pat_elig = 'PAT_OSA_ELIG';
 create or replace table PAT_OSA_ENDPT as
 with mace_event as (
     select dx.PATID
@@ -301,7 +302,8 @@ select patid
 from cte_comorb_map 
 where rn = 1 
 ; 
-select code_grp_lbl, count(distinct patid) from PAT_OSA_SEL_DX
+select code_grp_lbl, count(distinct patid) 
+from PAT_OSA_SEL_DX
 group by code_grp_lbl;
  
 
@@ -331,6 +333,10 @@ from cte_cci_map
 where rn = 1
 ; 
 
+select code_grp_lbl, count(distinct patid) 
+from PAT_OSA_CCI
+group by code_grp_lbl;
+
 /*covariates: medications*/
 select * from z_ref_rx_ndc;
 create or replace table PAT_OSA_SEL_RX as
@@ -342,18 +348,16 @@ with cte_cls as (
                   else 'AHT' 
              end as RXCLS
             ,rx.DISPENSE_DATE
-            ,datediff('day',p.OSA_DX1_DATE,dx.DISPENSE_DATE) as DAYS_SINCE_OSA
+            ,datediff('day',p.OSA_DX1_DATE,rx.DISPENSE_DATE) as DAYS_SINCE_OSA
       from identifier($pat_elig) p
-      join identifier($dispensing) rx 
-      on p.patid = dx.patid
-      join z_ref_rx_ndc z 
-      on rx.ndc = z.ndc
+      join identifier($dispensing) rx on p.patid = rx.patid
+      join z_ref_rx_ndc z on rx.ndc = z.ndc
 ), cte_ord as (
       select patid
             ,rxcls
             ,dispense_date
             ,days_since_osa
-            ,row_number() over (partition by patid,rxcls,case_when days_since_osa<=0 then 1 else 0 end order by abs(days_since_osa)) as rn
+            ,row_number() over (partition by patid,rxcls,case when days_since_osa<=0 then 1 else 0 end order by abs(days_since_osa)) as rn
       from cte_cls
 )
 select patid
@@ -362,4 +366,13 @@ select patid
       ,days_since_osa
 from cte_ord
 where rn = 1
+;
+
+select rxcls, count(distinct patid) 
+from PAT_OSA_SEL_RX
+group by rxcls
+;
+
+select * from PAT_OSA_SEL_RX
+order by patid
 ;
