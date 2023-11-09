@@ -1,4 +1,983 @@
 VACLS,RXNORM,NAME,TTY
+CV100,6185,labetalol,IN
+CV100,202693,labetalol hydrochloride,PIN
+CV100,1234256,4 ML labetalol hydrochloride 5 MG/ML Cartridge,SCD
+CV100,896770,labetalol hydrochloride 5 MG/ML,SCDC
+CV100,1666588,labetalol Cartridge,SCDF
+CV100,1161585,labetalol Injectable Product,SCDG
+CV100,1520,betaxolol,IN
+CV100,142144,betaxolol hydrochloride,PIN
+CV100,1297753,betaxolol hydrochloride 10 MG Oral Tablet,SCD
+CV100,1297752,betaxolol hydrochloride 10 MG,SCDC
+CV100,371065,betaxolol Oral Tablet,SCDF
+CV100,1153807,betaxolol Oral Product,SCDG
+CV100,1153808,betaxolol Pill,SCDG
+CV100,1297757,betaxolol hydrochloride 20 MG Oral Tablet,SCD
+CV100,1297756,betaxolol hydrochloride 20 MG,SCDC
+CV100,8787,propranolol,IN
+CV100,82084,propranolol hydrochloride,PIN
+CV100,1495064,propranolol hydrochloride 4.28 MG/ML Oral Solution [Hemangeol],SBD
+CV100,1495060,propranolol hydrochloride 4.28 MG/ML [Hemangeol],SBDC
+CV100,1495061,propranolol Oral Solution [Hemangeol],SBDF
+CV100,1495062,Hemangeol Oral Liquid Product,SBDG
+CV100,1495063,Hemangeol Oral Product,SBDG
+CV100,1495058,propranolol hydrochloride 4.28 MG/ML Oral Solution,SCD
+CV100,1495057,propranolol hydrochloride 4.28 MG/ML,SCDC
+CV100,373653,propranolol Oral Solution,SCDF
+CV100,1162935,propranolol Oral Liquid Product,SCDG
+CV100,1162936,propranolol Oral Product,SCDG
+CV100,9947,sotalol,IN
+CV100,7008,sotalol hydrochloride,PIN
+CV100,1593731,sotalol hydrochloride 5 MG/ML Oral Solution [Sotylize],SBD
+CV100,1593727,sotalol hydrochloride 5 MG/ML [Sotylize],SBDC
+CV100,1593728,sotalol Oral Solution [Sotylize],SBDF
+CV100,1593729,Sotylize Oral Liquid Product,SBDG
+CV100,1593730,Sotylize Oral Product,SBDG
+CV100,1593725,sotalol hydrochloride 5 MG/ML Oral Solution,SCD
+CV100,1593722,sotalol hydrochloride 5 MG/ML,SCDC
+CV100,1593724,sotalol Oral Solution,SCDF
+CV100,1161104,sotalol Oral Product,SCDG
+CV100,1593723,sotalol Oral Liquid Product,SCDG
+CV100,6918,metoprolol,IN
+CV100,203191,metoprolol tartrate,PIN
+CV100,1606347,metoprolol tartrate 37.5 MG Oral Tablet,SCD
+CV100,1606346,metoprolol tartrate 37.5 MG,SCDC
+CV100,372891,metoprolol Oral Tablet,SCDF
+CV100,1163523,metoprolol Oral Product,SCDG
+CV100,1163524,metoprolol Pill,SCDG
+CV100,1606349,metoprolol tartrate 75 MG Oral Tablet,SCD
+CV100,1606348,metoprolol tartrate 75 MG,SCDC
+CV100,49737,esmolol,IN
+CV100,203222,esmolol hydrochloride,PIN
+CV100,1736543,250 ML esmolol hydrochloride 10 MG/ML Injection [Brevibloc],SBD
+CV100,979429,esmolol hydrochloride 10 MG/ML [Brevibloc],SBDC
+CV100,1736542,esmolol Injection [Brevibloc],SBDF
+CV100,1175742,Brevibloc Injectable Product,SBDG
+CV100,1736541,250 ML esmolol hydrochloride 10 MG/ML Injection,SCD
+CV100,979427,esmolol hydrochloride 10 MG/ML,SCDC
+CV100,1736540,esmolol Injection,SCDF
+CV100,1162506,esmolol Injectable Product,SCDG
+CV100,1736547,10 ML esmolol hydrochloride 10 MG/ML Injection [Brevibloc],SBD
+CV100,1736546,10 ML esmolol hydrochloride 10 MG/ML Injection,SCD
+CV100,1922721,Atrial Fibrillation sotalol hydrochloride 120 MG Oral Tablet [Betapace],SBD
+CV100,904568,sotalol hydrochloride 120 MG [Betapace],SBDC
+CV100,367639,sotalol Oral Tablet [Betapace],SBDF
+CV100,1172920,Betapace Oral Product,SBDG
+CV100,1172921,Betapace Pill,SBDG
+CV100,1922720,Atrial Fibrillation sotalol hydrochloride 120 MG Oral Tablet,SCD
+CV100,904566,sotalol hydrochloride 120 MG,SCDC
+CV100,373937,sotalol Oral Tablet,SCDF
+CV100,1161105,sotalol Pill,SCDG
+CV100,1922764,Atrial Fibrillation sotalol hydrochloride 160 MG Oral Tablet [Betapace],SBD
+CV100,904580,sotalol hydrochloride 160 MG [Betapace],SBDC
+CV100,1922763,Atrial Fibrillation sotalol hydrochloride 160 MG Oral Tablet,SCD
+CV100,904578,sotalol hydrochloride 160 MG,SCDC
+CV100,1922766,Atrial Fibrillation sotalol hydrochloride 80 MG Oral Tablet [Betapace],SBD
+CV100,904602,sotalol hydrochloride 80 MG [Betapace],SBDC
+CV100,1922765,Atrial Fibrillation sotalol hydrochloride 80 MG Oral Tablet,SCD
+CV100,904600,sotalol hydrochloride 80 MG,SCDC
+CV100,1923423,sotalol hydrochloride 120 MG Oral Tablet [Betapace],SBD
+CV100,904571,sotalol hydrochloride 120 MG Oral Tablet [Sorine],SBD
+CV100,904570,sotalol hydrochloride 120 MG [Sorine],SBDC
+CV100,368661,sotalol Oral Tablet [Sorine],SBDF
+CV100,1186020,Sorine Oral Product,SBDG
+CV100,1186021,Sorine Pill,SBDG
+CV100,1923422,sotalol hydrochloride 120 MG Oral Tablet,SCD
+CV100,1923425,sotalol hydrochloride 160 MG Oral Tablet [Betapace],SBD
+CV100,904583,sotalol hydrochloride 160 MG Oral Tablet [Sorine],SBD
+CV100,904582,sotalol hydrochloride 160 MG [Sorine],SBDC
+CV100,1923424,sotalol hydrochloride 160 MG Oral Tablet,SCD
+CV100,1923427,sotalol hydrochloride 80 MG Oral Tablet [Betapace],SBD
+CV100,904605,sotalol hydrochloride 80 MG Oral Tablet [Sorine],SBD
+CV100,904604,sotalol hydrochloride 80 MG [Sorine],SBDC
+CV100,1923426,sotalol hydrochloride 80 MG Oral Tablet,SCD
+CV100,1202,atenolol,IN
+CV100,201322,atenolol 100 MG Oral Tablet [Tenormin],SBD
+CV100,565804,atenolol 100 MG [Tenormin],SBDC
+CV100,367659,atenolol Oral Tablet [Tenormin],SBDF
+CV100,1182019,Tenormin Oral Product,SBDG
+CV100,1182020,Tenormin Pill,SBDG
+CV100,197379,atenolol 100 MG Oral Tablet,SCD
+CV100,315436,atenolol 100 MG,SCDC
+CV100,370619,atenolol Oral Tablet,SCDF
+CV100,1154378,atenolol Oral Product,SCDG
+CV100,1154379,atenolol Pill,SCDG
+CV100,150750,atenolol 25 MG Oral Tablet [Tenormin],SBD
+CV100,564787,atenolol 25 MG [Tenormin],SBDC
+CV100,197380,atenolol 25 MG Oral Tablet,SCD
+CV100,315437,atenolol 25 MG,SCDC
+CV100,152414,atenolol 50 MG Oral Tablet [Tenormin],SBD
+CV100,564981,atenolol 50 MG [Tenormin],SBDC
+CV100,197381,atenolol 50 MG Oral Tablet,SCD
+CV100,315438,atenolol 50 MG,SCDC
+CV100,7226,nadolol,IN
+CV100,206961,nadolol 20 MG Oral Tablet [Corgard],SBD
+CV100,567762,nadolol 20 MG [Corgard],SBDC
+CV100,92254,nadolol Oral Tablet [Corgard],SBDF
+CV100,1169536,Corgard Oral Product,SBDG
+CV100,1169537,Corgard Pill,SBDG
+CV100,198006,nadolol 20 MG Oral Tablet,SCD
+CV100,316319,nadolol 20 MG,SCDC
+CV100,372978,nadolol Oral Tablet,SCDF
+CV100,1156399,nadolol Oral Product,SCDG
+CV100,1156400,nadolol Pill,SCDG
+CV100,201337,nadolol 40 MG Oral Tablet [Corgard],SBD
+CV100,565819,nadolol 40 MG [Corgard],SBDC
+CV100,198007,nadolol 40 MG Oral Tablet,SCD
+CV100,316320,nadolol 40 MG,SCDC
+CV100,201338,nadolol 80 MG Oral Tablet [Corgard],SBD
+CV100,565820,nadolol 80 MG [Corgard],SBDC
+CV100,198008,nadolol 80 MG Oral Tablet,SCD
+CV100,316321,nadolol 80 MG,SCDC
+CV100,8332,pindolol,IN
+CV100,198104,pindolol 10 MG Oral Tablet,SCD
+CV100,316521,pindolol 10 MG,SCDC
+CV100,373460,pindolol Oral Tablet,SCDF
+CV100,1159271,pindolol Oral Product,SCDG
+CV100,1159272,pindolol Pill,SCDG
+CV100,198105,pindolol 5 MG Oral Tablet,SCD
+CV100,316522,pindolol 5 MG,SCDC
+CV100,10600,timolol,IN
+CV100,198284,timolol 10 MG Oral Tablet,SCD
+CV100,330504,timolol 10 MG,SCDC
+CV100,374135,timolol Oral Tablet,SCDF
+CV100,1157086,timolol Pill,SCDG
+CV100,1157101,timolol Oral Product,SCDG
+CV100,198285,timolol 20 MG Oral Tablet,SCD
+CV100,328746,timolol 20 MG,SCDC
+CV100,198286,timolol 5 MG Oral Tablet,SCD
+CV100,328745,timolol 5 MG,SCDC
+CV100,221124,metoprolol succinate,PIN
+CV100,2047766,24 HR metoprolol succinate 100 MG Extended Release Oral Capsule [Kapspargo],SBD
+CV100,2047762,metoprolol succinate 100 MG [Kapspargo],SBDC
+CV100,2047763,metoprolol Extended Release Oral Capsule [Kapspargo],SBDF
+CV100,2047764,Kapspargo Oral Product,SBDG
+CV100,2047765,Kapspargo Pill,SBDG
+CV100,1999031,24 HR metoprolol succinate 100 MG Extended Release Oral Capsule,SCD
+CV100,1370483,metoprolol succinate 100 MG,SCDC
+CV100,1999027,metoprolol Extended Release Oral Capsule,SCDF
+CV100,2047769,24 HR metoprolol succinate 200 MG Extended Release Oral Capsule [Kapspargo],SBD
+CV100,2047768,metoprolol succinate 200 MG [Kapspargo],SBDC
+CV100,1999033,24 HR metoprolol succinate 200 MG Extended Release Oral Capsule,SCD
+CV100,1370500,metoprolol succinate 200 MG,SCDC
+CV100,2047772,24 HR metoprolol succinate 25 MG Extended Release Oral Capsule [Kapspargo],SBD
+CV100,2047771,metoprolol succinate 25 MG [Kapspargo],SBDC
+CV100,1999035,24 HR metoprolol succinate 25 MG Extended Release Oral Capsule,SCD
+CV100,1370489,metoprolol succinate 25 MG,SCDC
+CV100,2047775,24 HR metoprolol succinate 50 MG Extended Release Oral Capsule [Kapspargo],SBD
+CV100,2047774,metoprolol succinate 50 MG [Kapspargo],SBDC
+CV100,1999037,24 HR metoprolol succinate 50 MG Extended Release Oral Capsule,SCD
+CV100,1370474,metoprolol succinate 50 MG,SCDC
+CV100,20352,carvedilol,IN
+CV100,212388,carvedilol 6.25 MG Oral Tablet [Coreg],SBD
+CV100,572581,carvedilol 6.25 MG [Coreg],SBDC
+CV100,368387,carvedilol Oral Tablet [Coreg],SBDF
+CV100,1169532,Coreg Oral Product,SBDG
+CV100,1169533,Coreg Pill,SBDG
+CV100,200031,carvedilol 6.25 MG Oral Tablet,SCD
+CV100,315577,carvedilol 6.25 MG,SCDC
+CV100,371296,carvedilol Oral Tablet,SCDF
+CV100,1160589,carvedilol Oral Product,SCDG
+CV100,1160590,carvedilol Pill,SCDG
+CV100,212389,carvedilol 12.5 MG Oral Tablet [Coreg],SBD
+CV100,572582,carvedilol 12.5 MG [Coreg],SBDC
+CV100,200032,carvedilol 12.5 MG Oral Tablet,SCD
+CV100,315575,carvedilol 12.5 MG,SCDC
+CV100,212390,carvedilol 25 MG Oral Tablet [Coreg],SBD
+CV100,572583,carvedilol 25 MG [Coreg],SBDC
+CV100,200033,carvedilol 25 MG Oral Tablet,SCD
+CV100,315576,carvedilol 25 MG,SCDC
+CV100,2479564,200 ML labetalol hydrochloride 1 MG/ML Injection,SCD
+CV100,2479563,labetalol hydrochloride 1 MG/ML,SCDC
+CV100,2477888,labetalol Injection,SCDF
+CV100,2479566,100 ML labetalol hydrochloride 1 MG/ML Injection,SCD
+CV100,2479567,300 ML labetalol hydrochloride 1 MG/ML Injection,SCD
+CV100,2598343,2 ML labetalol hydrochloride 5 MG/ML Prefilled Syringe,SCD
+CV100,2598342,labetalol Prefilled Syringe,SCDF
+CV100,31555,nebivolol,IN
+CV100,751623,nebivolol 5 MG Oral Tablet [Bystolic],SBD
+CV100,751622,nebivolol 5 MG [Bystolic],SBDC
+CV100,751615,nebivolol Oral Tablet [Bystolic],SBDF
+CV100,1169416,Bystolic Oral Product,SBDG
+CV100,1169417,Bystolic Pill,SBDG
+CV100,387013,nebivolol 5 MG Oral Tablet,SCD
+CV100,393307,nebivolol 5 MG,SCDC
+CV100,393308,nebivolol Oral Tablet,SCDF
+CV100,1158401,nebivolol Oral Product,SCDG
+CV100,1158402,nebivolol Pill,SCDG
+CV100,686926,carvedilol 3.125 MG Oral Tablet [Coreg],SBD
+CV100,686925,carvedilol 3.125 MG [Coreg],SBDC
+CV100,686924,carvedilol 3.125 MG Oral Tablet,SCD
+CV100,686923,carvedilol 3.125 MG,SCDC
+CV100,751616,nebivolol 10 MG Oral Tablet [Bystolic],SBD
+CV100,751614,nebivolol 10 MG [Bystolic],SBDC
+CV100,751612,nebivolol 10 MG Oral Tablet,SCD
+CV100,751611,nebivolol 10 MG,SCDC
+CV100,751620,nebivolol 2.5 MG Oral Tablet [Bystolic],SBD
+CV100,751619,nebivolol 2.5 MG [Bystolic],SBDC
+CV100,751618,nebivolol 2.5 MG Oral Tablet,SCD
+CV100,751617,nebivolol 2.5 MG,SCDC
+CV100,827075,nebivolol 20 MG Oral Tablet [Bystolic],SBD
+CV100,827074,nebivolol 20 MG [Bystolic],SBDC
+CV100,827073,nebivolol 20 MG Oral Tablet,SCD
+CV100,827072,nebivolol 20 MG,SCDC
+CV100,19484,bisoprolol,IN
+CV100,142146,bisoprolol fumarate,PIN
+CV100,854901,bisoprolol fumarate 10 MG Oral Tablet,SCD
+CV100,854900,bisoprolol fumarate 10 MG,SCDC
+CV100,371104,bisoprolol Oral Tablet,SCDF
+CV100,1154706,bisoprolol Oral Product,SCDG
+CV100,1154707,bisoprolol Pill,SCDG
+CV100,854907,bisoprolol fumarate 5 MG Oral Tablet [Zebeta],SBD
+CV100,854906,bisoprolol fumarate 5 MG [Zebeta],SBDC
+CV100,368134,bisoprolol Oral Tablet [Zebeta],SBDF
+CV100,1187056,Zebeta Oral Product,SBDG
+CV100,1187057,Zebeta Pill,SBDG
+CV100,854905,bisoprolol fumarate 5 MG Oral Tablet,SCD
+CV100,854904,bisoprolol fumarate 5 MG,SCDC
+CV100,856443,1 ML propranolol hydrochloride 1 MG/ML Injection,SCD
+CV100,856442,propranolol hydrochloride 1 MG/ML,SCDC
+CV100,1789973,propranolol Injection,SCDF
+CV100,1162934,propranolol Injectable Product,SCDG
+CV100,856448,propranolol hydrochloride 10 MG Oral Tablet,SCD
+CV100,856447,propranolol hydrochloride 10 MG,SCDC
+CV100,373654,propranolol Oral Tablet,SCDF
+CV100,1162937,propranolol Pill,SCDG
+CV100,856457,propranolol hydrochloride 20 MG Oral Tablet,SCD
+CV100,856456,propranolol hydrochloride 20 MG,SCDC
+CV100,856462,24 HR propranolol hydrochloride 120 MG Extended Release Oral Capsule [Inderal],SBD
+CV100,856471,24 HR propranolol hydrochloride 120 MG Extended Release Oral Capsule [InnoPran],SBD
+CV100,856461,propranolol hydrochloride 120 MG [Inderal],SBDC
+CV100,856469,propranolol hydrochloride 120 MG [InnoPran],SBDC
+CV100,491323,propranolol Extended Release Oral Capsule [Inderal],SBDF
+CV100,856470,propranolol Extended Release Oral Capsule [InnoPran],SBDF
+CV100,1172016,Inderal Oral Product,SBDG
+CV100,1172017,Inderal Pill,SBDG
+CV100,1172765,InnoPran Oral Product,SBDG
+CV100,1172766,InnoPran Pill,SBDG
+CV100,856460,24 HR propranolol hydrochloride 120 MG Extended Release Oral Capsule,SCD
+CV100,856392,propranolol hydrochloride 120 MG,SCDC
+CV100,373652,propranolol Extended Release Oral Capsule,SCDF
+CV100,856483,24 HR propranolol hydrochloride 160 MG Extended Release Oral Capsule [Inderal],SBD
+CV100,856482,propranolol hydrochloride 160 MG [Inderal],SBDC
+CV100,856481,24 HR propranolol hydrochloride 160 MG Extended Release Oral Capsule,SCD
+CV100,856400,propranolol hydrochloride 160 MG,SCDC
+CV100,856519,propranolol hydrochloride 40 MG Oral Tablet,SCD
+CV100,856421,propranolol hydrochloride 40 MG,SCDC
+CV100,856537,24 HR propranolol hydrochloride 60 MG Extended Release Oral Capsule [Inderal],SBD
+CV100,856536,propranolol hydrochloride 60 MG [Inderal],SBDC
+CV100,856535,24 HR propranolol hydrochloride 60 MG Extended Release Oral Capsule,SCD
+CV100,856534,propranolol hydrochloride 60 MG,SCDC
+CV100,856556,propranolol hydrochloride 60 MG Oral Tablet,SCD
+CV100,856571,24 HR propranolol hydrochloride 80 MG Extended Release Oral Capsule [Inderal],SBD
+CV100,856576,24 HR propranolol hydrochloride 80 MG Extended Release Oral Capsule [InnoPran],SBD
+CV100,856570,propranolol hydrochloride 80 MG [Inderal],SBDC
+CV100,856575,propranolol hydrochloride 80 MG [InnoPran],SBDC
+CV100,856569,24 HR propranolol hydrochloride 80 MG Extended Release Oral Capsule,SCD
+CV100,856411,propranolol hydrochloride 80 MG,SCDC
+CV100,856578,propranolol hydrochloride 80 MG Oral Tablet,SCD
+CV100,856724,propranolol hydrochloride 4 MG/ML Oral Solution,SCD
+CV100,856723,propranolol hydrochloride 4 MG/ML,SCDC
+CV100,856733,propranolol hydrochloride 8 MG/ML Oral Solution,SCD
+CV100,856732,propranolol hydrochloride 8 MG/ML,SCDC
+CV100,668310,carvedilol phosphate,PIN
+CV100,860512,24 HR carvedilol phosphate 10 MG Extended Release Oral Capsule [Coreg],SBD
+CV100,860511,carvedilol phosphate 10 MG [Coreg],SBDC
+CV100,664770,carvedilol Extended Release Oral Capsule [Coreg],SBDF
+CV100,860510,24 HR carvedilol phosphate 10 MG Extended Release Oral Capsule,SCD
+CV100,860509,carvedilol phosphate 10 MG,SCDC
+CV100,664767,carvedilol Extended Release Oral Capsule,SCDF
+CV100,860518,24 HR carvedilol phosphate 20 MG Extended Release Oral Capsule [Coreg],SBD
+CV100,860517,carvedilol phosphate 20 MG [Coreg],SBDC
+CV100,860516,24 HR carvedilol phosphate 20 MG Extended Release Oral Capsule,SCD
+CV100,860515,carvedilol phosphate 20 MG,SCDC
+CV100,860524,24 HR carvedilol phosphate 40 MG Extended Release Oral Capsule [Coreg],SBD
+CV100,860523,carvedilol phosphate 40 MG [Coreg],SBDC
+CV100,860522,24 HR carvedilol phosphate 40 MG Extended Release Oral Capsule,SCD
+CV100,860521,carvedilol phosphate 40 MG,SCDC
+CV100,860534,24 HR carvedilol phosphate 80 MG Extended Release Oral Capsule [Coreg],SBD
+CV100,860533,carvedilol phosphate 80 MG [Coreg],SBDC
+CV100,860532,24 HR carvedilol phosphate 80 MG Extended Release Oral Capsule,SCD
+CV100,860531,carvedilol phosphate 80 MG,SCDC
+CV100,866414,24 HR metoprolol succinate 100 MG Extended Release Oral Tablet [Toprol],SBD
+CV100,1370485,metoprolol succinate 100 MG [Toprol],SBDC
+CV100,865577,metoprolol Extended Release Oral Tablet [Toprol],SBDF
+CV100,1178006,Toprol Oral Product,SBDG
+CV100,1178007,Toprol Pill,SBDG
+CV100,866412,24 HR metoprolol succinate 100 MG Extended Release Oral Tablet,SCD
+CV100,378660,metoprolol Extended Release Oral Tablet,SCDF
+CV100,866421,24 HR metoprolol succinate 200 MG Extended Release Oral Tablet [Toprol],SBD
+CV100,1370502,metoprolol succinate 200 MG [Toprol],SBDC
+CV100,866419,24 HR metoprolol succinate 200 MG Extended Release Oral Tablet,SCD
+CV100,866429,24 HR metoprolol succinate 25 MG Extended Release Oral Tablet [Toprol],SBD
+CV100,1370507,metoprolol succinate 25 MG [Toprol],SBDC
+CV100,866427,24 HR metoprolol succinate 25 MG Extended Release Oral Tablet,SCD
+CV100,866438,24 HR metoprolol succinate 50 MG Extended Release Oral Tablet [Toprol],SBD
+CV100,1370512,metoprolol succinate 50 MG [Toprol],SBDC
+CV100,866436,24 HR metoprolol succinate 50 MG Extended Release Oral Tablet,SCD
+CV100,866510,5 ML metoprolol tartrate 1 MG/ML Injection [Lopressor],SBD
+CV100,866509,metoprolol tartrate 1 MG/ML [Lopressor],SBDC
+CV100,1740911,metoprolol Injection [Lopressor],SBDF
+CV100,1180278,Lopressor Injectable Product,SBDG
+CV100,866508,5 ML metoprolol tartrate 1 MG/ML Injection,SCD
+CV100,866507,metoprolol tartrate 1 MG/ML,SCDC
+CV100,1740909,metoprolol Injection,SCDF
+CV100,1163522,metoprolol Injectable Product,SCDG
+CV100,866513,metoprolol tartrate 100 MG Oral Tablet [Lopressor],SBD
+CV100,866512,metoprolol tartrate 100 MG [Lopressor],SBDC
+CV100,368757,metoprolol Oral Tablet [Lopressor],SBDF
+CV100,1180279,Lopressor Oral Product,SBDG
+CV100,1180280,Lopressor Pill,SBDG
+CV100,866511,metoprolol tartrate 100 MG Oral Tablet,SCD
+CV100,866411,metoprolol tartrate 100 MG,SCDC
+CV100,866516,metoprolol tartrate 50 MG Oral Tablet [Lopressor],SBD
+CV100,866515,metoprolol tartrate 50 MG [Lopressor],SBDC
+CV100,866514,metoprolol tartrate 50 MG Oral Tablet,SCD
+CV100,866435,metoprolol tartrate 50 MG,SCDC
+CV100,866924,metoprolol tartrate 25 MG Oral Tablet,SCD
+CV100,866426,metoprolol tartrate 25 MG,SCDC
+CV100,896777,labetalol hydrochloride 100 MG Oral Tablet [Trandate],SBD
+CV100,896776,labetalol hydrochloride 100 MG [Trandate],SBDC
+CV100,368577,labetalol Oral Tablet [Trandate],SBDF
+CV100,1179177,Trandate Oral Product,SBDG
+CV100,1179178,Trandate Pill,SBDG
+CV100,896758,labetalol hydrochloride 100 MG Oral Tablet,SCD
+CV100,896757,labetalol hydrochloride 100 MG,SCDC
+CV100,372554,labetalol Oral Tablet,SCDF
+CV100,1161586,labetalol Oral Product,SCDG
+CV100,1161587,labetalol Pill,SCDG
+CV100,896781,labetalol hydrochloride 200 MG Oral Tablet [Trandate],SBD
+CV100,896780,labetalol hydrochloride 200 MG [Trandate],SBDC
+CV100,896762,labetalol hydrochloride 200 MG Oral Tablet,SCD
+CV100,896761,labetalol hydrochloride 200 MG,SCDC
+CV100,896783,labetalol hydrochloride 300 MG Oral Tablet [Trandate],SBD
+CV100,896782,labetalol hydrochloride 300 MG [Trandate],SBDC
+CV100,896766,labetalol hydrochloride 300 MG Oral Tablet,SCD
+CV100,896765,labetalol hydrochloride 300 MG,SCDC
+CV100,896771,labetalol hydrochloride 5 MG/ML Injectable Solution,SCD
+CV100,377107,labetalol Injectable Solution,SCDF
+CV100,904591,sotalol hydrochloride 240 MG Oral Tablet [Betapace],SBD
+CV100,904593,sotalol hydrochloride 240 MG Oral Tablet [Sorine],SBD
+CV100,904590,sotalol hydrochloride 240 MG [Betapace],SBDC
+CV100,904592,sotalol hydrochloride 240 MG [Sorine],SBDC
+CV100,904589,sotalol hydrochloride 240 MG Oral Tablet,SCD
+CV100,904588,sotalol hydrochloride 240 MG,SCDC
+CV100,904630,10 ML sotalol hydrochloride 15 MG/ML Injection,SCD
+CV100,904629,sotalol hydrochloride 15 MG/ML,SCDC
+CV100,1721605,sotalol Injection,SCDF
+CV100,1161103,sotalol Injectable Product,SCDG
+CV100,979434,100 ML esmolol hydrochloride 20 MG/ML Injection [Brevibloc],SBD
+CV100,979433,esmolol hydrochloride 20 MG/ML [Brevibloc],SBDC
+CV100,979432,100 ML esmolol hydrochloride 20 MG/ML Injection,SCD
+CV100,979431,esmolol hydrochloride 20 MG/ML,SCDC
+CV100,149,acebutolol,IN
+CV100,998685,acebutolol 400 MG Oral Capsule,SCD
+CV100,328700,acebutolol 400 MG,SCDC
+CV100,370505,acebutolol Oral Capsule,SCDF
+CV100,1153659,acebutolol Oral Product,SCDG
+CV100,1153660,acebutolol Pill,SCDG
+CV100,998689,acebutolol 200 MG Oral Capsule,SCD
+CV100,328656,acebutolol 200 MG,SCDC
+CV150,49276,doxazosin,IN
+CV150,104367,doxazosin 1 MG Oral Tablet [Cardura],SBD
+CV150,563606,doxazosin 1 MG [Cardura],SBDC
+CV150,92084,doxazosin Oral Tablet [Cardura],SBDF
+CV150,1175764,Cardura Oral Product,SBDG
+CV150,1175765,Cardura Pill,SBDG
+CV150,197625,doxazosin 1 MG Oral Tablet,SCD
+CV150,328235,doxazosin 1 MG,SCDC
+CV150,371961,doxazosin Oral Tablet,SCDF
+CV150,1160764,doxazosin Oral Product,SCDG
+CV150,1160765,doxazosin Pill,SCDG
+CV150,104368,doxazosin 2 MG Oral Tablet [Cardura],SBD
+CV150,563607,doxazosin 2 MG [Cardura],SBDC
+CV150,197626,doxazosin 2 MG Oral Tablet,SCD
+CV150,328236,doxazosin 2 MG,SCDC
+CV150,104369,doxazosin 4 MG Oral Tablet [Cardura],SBD
+CV150,563608,doxazosin 4 MG [Cardura],SBDC
+CV150,197627,doxazosin 4 MG Oral Tablet,SCD
+CV150,328238,doxazosin 4 MG,SCDC
+CV150,205544,doxazosin 8 MG Oral Tablet [Cardura],SBD
+CV150,566444,doxazosin 8 MG [Cardura],SBDC
+CV150,197628,doxazosin 8 MG Oral Tablet,SCD
+CV150,328239,doxazosin 8 MG,SCDC
+CV150,8629,prazosin,IN
+CV150,208981,prazosin 5 MG Oral Capsule [Minipress],SBD
+CV150,569625,prazosin 5 MG [Minipress],SBDC
+CV150,366692,prazosin Oral Capsule [Minipress],SBDF
+CV150,1179767,Minipress Oral Product,SBDG
+CV150,1179768,Minipress Pill,SBDG
+CV150,198141,prazosin 5 MG Oral Capsule,SCD
+CV150,328787,prazosin 5 MG,SCDC
+CV150,373565,prazosin Oral Capsule,SCDF
+CV150,1161700,prazosin Oral Product,SCDG
+CV150,1161701,prazosin Pill,SCDG
+CV150,37798,terazosin,IN
+CV150,260376,terazosin 10 MG Oral Capsule,SCD
+CV150,328725,terazosin 10 MG,SCDC
+CV150,374033,terazosin Oral Capsule,SCDF
+CV150,1164232,terazosin Oral Product,SCDG
+CV150,1164233,terazosin Pill,SCDG
+CV150,208979,prazosin 1 MG Oral Capsule [Minipress],SBD
+CV150,569623,prazosin 1 MG [Minipress],SBDC
+CV150,312593,prazosin 1 MG Oral Capsule,SCD
+CV150,330527,prazosin 1 MG,SCDC
+CV150,208980,prazosin 2 MG Oral Capsule [Minipress],SBD
+CV150,569624,prazosin 2 MG [Minipress],SBDC
+CV150,312594,prazosin 2 MG Oral Capsule,SCD
+CV150,328786,prazosin 2 MG,SCDC
+CV150,313215,terazosin 1 MG Oral Capsule,SCD
+CV150,328724,terazosin 1 MG,SCDC
+CV150,313217,terazosin 2 MG Oral Capsule,SCD
+CV150,328723,terazosin 2 MG,SCDC
+CV150,313219,terazosin 5 MG Oral Capsule,SCD
+CV150,330521,terazosin 5 MG,SCDC
+CV150,1242404,24 HR doxazosin 4 MG Extended Release Oral Tablet [Cardura],SBD
+CV150,631239,doxazosin Extended Release Oral Tablet [Cardura],SBDF
+CV150,636360,24 HR doxazosin 4 MG Extended Release Oral Tablet,SCD
+CV150,393431,doxazosin Extended Release Oral Tablet,SCDF
+CV150,1242408,24 HR doxazosin 8 MG Extended Release Oral Tablet [Cardura],SBD
+CV150,636361,24 HR doxazosin 8 MG Extended Release Oral Tablet,SCD
+CV150,313216,terazosin 1 MG Oral Tablet,SCD
+CV150,313218,terazosin 2 MG Oral Tablet,SCD
+CV150,374034,terazosin Oral Tablet,SCDF
+CV150,720825,silodosin,IN
+CV150,809481,silodosin 8 MG Oral Capsule [Rapaflo],SBD
+CV150,809479,silodosin 8 MG [Rapaflo],SBDC
+CV150,809480,silodosin Oral Capsule [Rapaflo],SBDF
+CV150,1177699,Rapaflo Oral Product,SBDG
+CV150,1177700,Rapaflo Pill,SBDG
+CV150,809477,silodosin 8 MG Oral Capsule,SCD
+CV150,809475,silodosin 8 MG,SCDC
+CV150,809476,silodosin Oral Capsule,SCDF
+CV150,1159096,silodosin Oral Product,SCDG
+CV150,1159097,silodosin Pill,SCDG
+CV150,826614,silodosin 4 MG Oral Capsule [Rapaflo],SBD
+CV150,826613,silodosin 4 MG [Rapaflo],SBDC
+CV150,826612,silodosin 4 MG Oral Capsule,SCD
+CV150,826611,silodosin 4 MG,SCDC
+CV150,17300,alfuzosin,IN
+CV150,46043,alfuzosin hydrochloride,PIN
+CV150,861134,24 HR alfuzosin hydrochloride 10 MG Extended Release Oral Tablet [UroXatral],SBD
+CV150,861133,alfuzosin hydrochloride 10 MG [UroXatral],SBDC
+CV150,406325,alfuzosin Extended Release Oral Tablet [UroXatral],SBDF
+CV150,1186759,UroXatral Oral Product,SBDG
+CV150,1186760,UroXatral Pill,SBDG
+CV150,861132,24 HR alfuzosin hydrochloride 10 MG Extended Release Oral Tablet,SCD
+CV150,861131,alfuzosin hydrochloride 10 MG,SCDC
+CV150,370798,alfuzosin Extended Release Oral Tablet,SCDF
+CV150,1164267,alfuzosin Oral Product,SCDG
+CV150,1164268,alfuzosin Pill,SCDG
+CV150,77492,tamsulosin,IN
+CV150,236495,tamsulosin hydrochloride,PIN
+CV150,863671,tamsulosin hydrochloride 0.4 MG Oral Capsule [Flomax],SBD
+CV150,863670,tamsulosin hydrochloride 0.4 MG [Flomax],SBDC
+CV150,366475,tamsulosin Oral Capsule [Flomax],SBDF
+CV150,1169777,Flomax Oral Product,SBDG
+CV150,1169778,Flomax Pill,SBDG
+CV150,863669,tamsulosin hydrochloride 0.4 MG Oral Capsule,SCD
+CV150,863668,tamsulosin hydrochloride 0.4 MG,SCDC
+CV150,374021,tamsulosin Oral Capsule,SCDF
+CV150,1160872,tamsulosin Oral Product,SCDG
+CV150,1160873,tamsulosin Pill,SCDG
+CV200,11170,verapamil,IN
+CV200,203138,verapamil hydrochloride,PIN
+CV200,1665057,2 ML verapamil hydrochloride 2.5 MG/ML Injection,SCD
+CV200,897705,verapamil hydrochloride 2.5 MG/ML,SCDC
+CV200,1665056,verapamil Injection,SCDF
+CV200,1160510,verapamil Injectable Product,SCDG
+CV200,1665061,4 ML verapamil hydrochloride 2.5 MG/ML Injection,SCD
+CV200,233603,clevidipine,IN
+CV200,1790242,50 ML clevidipine 0.5 MG/ML Injection [Cleviprex],SBD
+CV200,1790240,clevidipine 0.5 MG/ML [Cleviprex],SBDC
+CV200,1790241,clevidipine Injection [Cleviprex],SBDF
+CV200,1172336,Cleviprex Injectable Product,SBDG
+CV200,1790239,50 ML clevidipine 0.5 MG/ML Injection,SCD
+CV200,1790237,clevidipine 0.5 MG/ML,SCDC
+CV200,1790238,clevidipine Injection,SCDF
+CV200,1163745,clevidipine Injectable Product,SCDG
+CV200,1790246,100 ML clevidipine 0.5 MG/ML Injection [Cleviprex],SBD
+CV200,1790245,100 ML clevidipine 0.5 MG/ML Injection,SCD
+CV200,3443,diltiazem,IN
+CV200,203211,diltiazem hydrochloride,PIN
+CV200,1791229,5 ML diltiazem hydrochloride 5 MG/ML Injection,SCD
+CV200,833194,diltiazem hydrochloride 5 MG/ML,SCDC
+CV200,1791228,diltiazem Injection,SCDF
+CV200,1151887,diltiazem Injectable Product,SCDG
+CV200,1791232,10 ML diltiazem hydrochloride 5 MG/ML Injection,SCD
+CV200,1791233,25 ML diltiazem hydrochloride 5 MG/ML Injection,SCD
+CV200,1791240,diltiazem hydrochloride 100 MG Injection,SCD
+CV200,849867,diltiazem hydrochloride 100 MG,SCDC
+CV200,7417,nifedipine,IN
+CV200,207772,Osmotic 24 HR nifedipine 30 MG Extended Release Oral Tablet [Procardia],SBD
+CV200,491288,nifedipine 30 MG [Procardia],SBDC
+CV200,491279,nifedipine Extended Release Oral Tablet [Procardia],SBDF
+CV200,1180008,Procardia Oral Product,SBDG
+CV200,1180009,Procardia Pill,SBDG
+CV200,1812011,Osmotic 24 HR nifedipine 30 MG Extended Release Oral Tablet,SCD
+CV200,317655,nifedipine 30 MG,SCDC
+CV200,373070,nifedipine Extended Release Oral Tablet,SCDF
+CV200,1158688,nifedipine Oral Product,SCDG
+CV200,1158689,nifedipine Pill,SCDG
+CV200,207773,Osmotic 24 HR nifedipine 60 MG Extended Release Oral Tablet [Procardia],SBD
+CV200,491292,nifedipine 60 MG [Procardia],SBDC
+CV200,1812013,Osmotic 24 HR nifedipine 60 MG Extended Release Oral Tablet,SCD
+CV200,317438,nifedipine 60 MG,SCDC
+CV200,207774,Osmotic 24 HR nifedipine 90 MG Extended Release Oral Tablet [Procardia],SBD
+CV200,491278,nifedipine 90 MG [Procardia],SBDC
+CV200,1812015,Osmotic 24 HR nifedipine 90 MG Extended Release Oral Tablet,SCD
+CV200,345858,nifedipine 90 MG,SCDC
+CV200,17767,amlodipine,IN
+CV200,212549,amlodipine 5 MG Oral Tablet [Norvasc],SBD
+CV200,572722,amlodipine 5 MG [Norvasc],SBDC
+CV200,368359,amlodipine Oral Tablet [Norvasc],SBDF
+CV200,1185732,Norvasc Oral Product,SBDG
+CV200,1185733,Norvasc Pill,SBDG
+CV200,197361,amlodipine 5 MG Oral Tablet,SCD
+CV200,329528,amlodipine 5 MG,SCDC
+CV200,370573,amlodipine Oral Tablet,SCDF
+CV200,1152291,amlodipine Oral Product,SCDG
+CV200,1152292,amlodipine Pill,SCDG
+CV200,33910,isradipine,IN
+CV200,197848,isradipine 2.5 MG Oral Capsule,SCD
+CV200,316111,isradipine 2.5 MG,SCDC
+CV200,370724,isradipine Oral Capsule,SCDF
+CV200,1159770,isradipine Oral Product,SCDG
+CV200,1159771,isradipine Pill,SCDG
+CV200,197849,isradipine 5 MG Oral Capsule,SCD
+CV200,316112,isradipine 5 MG,SCDC
+CV200,207765,nifedipine 10 MG Oral Capsule [Procardia],SBD
+CV200,568505,nifedipine 10 MG [Procardia],SBDC
+CV200,93866,nifedipine Oral Capsule [Procardia],SBDF
+CV200,198032,nifedipine 10 MG Oral Capsule,SCD
+CV200,316352,nifedipine 10 MG,SCDC
+CV200,373067,nifedipine Oral Capsule,SCDF
+CV200,198033,nifedipine 20 MG Oral Capsule,SCD
+CV200,316353,nifedipine 20 MG,SCDC
+CV200,672916,24 HR nifedipine 30 MG Extended Release Oral Tablet [Adalat],SBD
+CV200,672920,24 HR nifedipine 30 MG Extended Release Oral Tablet [Afeditab CR],SBD
+CV200,491071,nifedipine 30 MG [Adalat],SBDC
+CV200,542721,nifedipine 30 MG [Afeditab CR],SBDC
+CV200,491072,nifedipine Extended Release Oral Tablet [Adalat],SBDF
+CV200,542722,nifedipine Extended Release Oral Tablet [Afeditab CR],SBDF
+CV200,1169958,Adalat Oral Product,SBDG
+CV200,1169959,Adalat Pill,SBDG
+CV200,1172064,Afeditab CR Oral Product,SBDG
+CV200,1172065,Afeditab CR Pill,SBDG
+CV200,198034,24 HR nifedipine 30 MG Extended Release Oral Tablet,SCD
+CV200,672917,24 HR nifedipine 60 MG Extended Release Oral Tablet [Adalat],SBD
+CV200,672921,24 HR nifedipine 60 MG Extended Release Oral Tablet [Afeditab CR],SBD
+CV200,491079,nifedipine 60 MG [Adalat],SBDC
+CV200,602208,nifedipine 60 MG [Afeditab CR],SBDC
+CV200,198035,24 HR nifedipine 60 MG Extended Release Oral Tablet,SCD
+CV200,672918,24 HR nifedipine 90 MG Extended Release Oral Tablet [Adalat],SBD
+CV200,491087,nifedipine 90 MG [Adalat],SBDC
+CV200,198036,24 HR nifedipine 90 MG Extended Release Oral Tablet,SCD
+CV200,7426,nimodipine,IN
+CV200,207779,nimodipine 30 MG Oral Capsule [Nimotop],SBD
+CV200,568519,nimodipine 30 MG [Nimotop],SBDC
+CV200,366716,nimodipine Oral Capsule [Nimotop],SBDF
+CV200,1183917,Nimotop Oral Product,SBDG
+CV200,1183918,Nimotop Pill,SBDG
+CV200,198037,nimodipine 30 MG Oral Capsule,SCD
+CV200,316355,nimodipine 30 MG,SCDC
+CV200,373087,nimodipine Oral Capsule,SCDF
+CV200,1159235,nimodipine Oral Product,SCDG
+CV200,1159236,nimodipine Pill,SCDG
+CV200,140587,celecoxib,IN
+CV200,2047714,amlodipine / celecoxib,MIN
+CV200,2049593,amlodipine 2.5 MG / celecoxib 200 MG Oral Tablet [Consensi],SBD
+CV200,2049589,amlodipine 2.5 MG / celecoxib 200 MG [Consensi],SBDC
+CV200,2049590,amlodipine / celecoxib Oral Tablet [Consensi],SBDF
+CV200,2049591,Consensi Oral Product,SBDG
+CV200,2049592,Consensi Pill,SBDG
+CV200,2047715,amlodipine 2.5 MG / celecoxib 200 MG Oral Tablet,SCD
+CV200,315604,celecoxib 200 MG,SCDC
+CV200,329527,amlodipine 2.5 MG,SCDC
+CV200,2047713,amlodipine / celecoxib Oral Tablet,SCDF
+CV200,2047711,amlodipine / celecoxib Oral Product,SCDG
+CV200,2047712,amlodipine / celecoxib Pill,SCDG
+CV200,2266818,amlodipine 5 MG / celecoxib 200 MG Oral Tablet [Consensi],SBD
+CV200,2266817,amlodipine 5 MG / celecoxib 200 MG [Consensi],SBDC
+CV200,2047716,amlodipine 5 MG / celecoxib 200 MG Oral Tablet,SCD
+CV200,2266816,amlodipine 10 MG / celecoxib 200 MG Oral Tablet [Consensi],SBD
+CV200,2266815,amlodipine 10 MG / celecoxib 200 MG [Consensi],SBDC
+CV200,2047717,amlodipine 10 MG / celecoxib 200 MG Oral Tablet,SCD
+CV200,329526,amlodipine 10 MG,SCDC
+CV200,2184126,amlodipine 1 MG/ML Oral Suspension [Katerzia],SBD
+CV200,2184122,amlodipine 1 MG/ML [Katerzia],SBDC
+CV200,2184123,amlodipine Oral Suspension [Katerzia],SBDF
+CV200,2184124,Katerzia Oral Liquid Product,SBDG
+CV200,2184125,Katerzia Oral Product,SBDG
+CV200,2184120,amlodipine 1 MG/ML Oral Suspension,SCD
+CV200,2184117,amlodipine 1 MG/ML,SCDC
+CV200,2184119,amlodipine Oral Suspension,SCDF
+CV200,2184118,amlodipine Oral Liquid Product,SCDG
+CV200,2361313,nimodipine 6 MG/ML Oral Solution [Nymalize],SBD
+CV200,2361312,nimodipine 6 MG/ML [Nymalize],SBDC
+CV200,1423770,nimodipine Oral Solution [Nymalize],SBDF
+CV200,1423771,Nymalize Oral Liquid Product,SBDG
+CV200,1423772,Nymalize Oral Product,SBDG
+CV200,2361311,nimodipine 6 MG/ML Oral Solution,SCD
+CV200,2361310,nimodipine 6 MG/ML,SCDC
+CV200,373088,nimodipine Oral Solution,SCDF
+CV200,1159234,nimodipine Oral Liquid Product,SCDG
+CV200,2376944,levamlodipine,IN
+CV200,2377369,levamlodipine 2.5 MG Oral Tablet [Conjupri],SBD
+CV200,2377368,levamlodipine 2.5 MG [Conjupri],SBDC
+CV200,2377362,levamlodipine Oral Tablet [Conjupri],SBDF
+CV200,2377363,Conjupri Oral Product,SBDG
+CV200,2377364,Conjupri Pill,SBDG
+CV200,2377367,levamlodipine 2.5 MG Oral Tablet,SCD
+CV200,2377366,levamlodipine 2.5 MG,SCDC
+CV200,2377358,levamlodipine Oral Tablet,SCDF
+CV200,2377356,levamlodipine Oral Product,SCDG
+CV200,2377357,levamlodipine Pill,SCDG
+CV200,2377373,levamlodipine 5 MG Oral Tablet [Conjupri],SBD
+CV200,2377372,levamlodipine 5 MG [Conjupri],SBDC
+CV200,2377371,levamlodipine 5 MG Oral Tablet,SCD
+CV200,2377370,levamlodipine 5 MG,SCDC
+CV200,2599179,amlodipine 1 MG/ML Oral Solution [Norliqva],SBD
+CV200,2599175,amlodipine 1 MG/ML [Norliqva],SBDC
+CV200,2599178,amlodipine Oral Solution [Norliqva],SBDF
+CV200,2599176,Norliqva Oral Product,SBDG
+CV200,2599177,Norliqva Oral Liquid Product,SBDG
+CV200,2599173,amlodipine 1 MG/ML Oral Solution,SCD
+CV200,2599172,amlodipine Oral Solution,SCDF
+CV200,212575,amlodipine 10 MG Oral Tablet [Norvasc],SBD
+CV200,572746,amlodipine 10 MG [Norvasc],SBDC
+CV200,308135,amlodipine 10 MG Oral Tablet,SCD
+CV200,212542,amlodipine 2.5 MG Oral Tablet [Norvasc],SBD
+CV200,572719,amlodipine 2.5 MG [Norvasc],SBDC
+CV200,308136,amlodipine 2.5 MG Oral Tablet,SCD
+CV200,7435,nisoldipine,IN
+CV200,597921,24 HR nisoldipine 20 MG Extended Release Oral Tablet [Sular],SBD
+CV200,571777,nisoldipine 20 MG [Sular],SBDC
+CV200,370027,nisoldipine Extended Release Oral Tablet [Sular],SBDF
+CV200,1183759,Sular Oral Product,SBDG
+CV200,1183760,Sular Pill,SBDG
+CV200,311984,24 HR nisoldipine 20 MG Extended Release Oral Tablet,SCD
+CV200,316356,nisoldipine 20 MG,SCDC
+CV200,373094,nisoldipine Extended Release Oral Tablet,SCDF
+CV200,1159241,nisoldipine Oral Product,SCDG
+CV200,1159242,nisoldipine Pill,SCDG
+CV200,311985,24 HR nisoldipine 30 MG Extended Release Oral Tablet,SCD
+CV200,316357,nisoldipine 30 MG,SCDC
+CV200,360344,24 HR nisoldipine 40 MG Extended Release Oral Tablet,SCD
+CV200,316358,nisoldipine 40 MG,SCDC
+CV200,4316,felodipine,IN
+CV200,104420,24 HR felodipine 10 MG Extended Release Oral Tablet [Plendil],SBD
+CV200,563635,felodipine 10 MG [Plendil],SBDC
+CV200,380895,felodipine Extended Release Oral Tablet [Plendil],SBDF
+CV200,1181799,Plendil Oral Product,SBDG
+CV200,1181800,Plendil Pill,SBDG
+CV200,402695,24 HR felodipine 10 MG Extended Release Oral Tablet,SCD
+CV200,315925,felodipine 10 MG,SCDC
+CV200,439558,felodipine Extended Release Oral Tablet,SCDF
+CV200,1159028,felodipine Oral Product,SCDG
+CV200,1159029,felodipine Pill,SCDG
+CV200,402696,24 HR felodipine 5 MG Extended Release Oral Tablet,SCD
+CV200,317371,felodipine 5 MG,SCDC
+CV200,402698,24 HR felodipine 2.5 MG Extended Release Oral Tablet,SCD
+CV200,315926,felodipine 2.5 MG,SCDC
+CV200,83367,atorvastatin,IN
+CV200,404773,amlodipine / atorvastatin,MIN
+CV200,750239,amlodipine 5 MG / atorvastatin 80 MG Oral Tablet [Caduet],SBD
+CV200,750237,amlodipine 5 MG / atorvastatin 80 MG [Caduet],SBDC
+CV200,750218,amlodipine / atorvastatin Oral Tablet [Caduet],SBDF
+CV200,1170193,Caduet Oral Product,SBDG
+CV200,1170826,Caduet Pill,SBDG
+CV200,404011,amlodipine 5 MG / atorvastatin 80 MG Oral Tablet,SCD
+CV200,329299,atorvastatin 80 MG,SCDC
+CV200,405788,amlodipine / atorvastatin Oral Tablet,SCDF
+CV200,1152281,amlodipine / atorvastatin Oral Product,SCDG
+CV200,1152282,amlodipine / atorvastatin Pill,SCDG
+CV200,750211,amlodipine 10 MG / atorvastatin 80 MG Oral Tablet [Caduet],SBD
+CV200,750209,amlodipine 10 MG / atorvastatin 80 MG [Caduet],SBDC
+CV200,404013,amlodipine 10 MG / atorvastatin 80 MG Oral Tablet,SCD
+CV200,562518,24 HR isradipine 10 MG Extended Release Oral Tablet,SCD
+CV200,317393,isradipine 10 MG,SCDC
+CV200,370723,isradipine Extended Release Oral Tablet,SCDF
+CV200,562520,24 HR isradipine 5 MG Extended Release Oral Tablet,SCD
+CV200,750203,amlodipine 10 MG / atorvastatin 20 MG Oral Tablet [Caduet],SBD
+CV200,750201,amlodipine 10 MG / atorvastatin 20 MG [Caduet],SBDC
+CV200,597967,amlodipine 10 MG / atorvastatin 20 MG Oral Tablet,SCD
+CV200,597966,atorvastatin 20 MG,SCDC
+CV200,597971,amlodipine 2.5 MG / atorvastatin 10 MG Oral Tablet,SCD
+CV200,597970,atorvastatin 10 MG,SCDC
+CV200,597974,amlodipine 2.5 MG / atorvastatin 20 MG Oral Tablet,SCD
+CV200,750227,amlodipine 5 MG / atorvastatin 10 MG Oral Tablet [Caduet],SBD
+CV200,750225,amlodipine 5 MG / atorvastatin 10 MG [Caduet],SBDC
+CV200,597977,amlodipine 5 MG / atorvastatin 10 MG Oral Tablet,SCD
+CV200,750231,amlodipine 5 MG / atorvastatin 20 MG Oral Tablet [Caduet],SBD
+CV200,750229,amlodipine 5 MG / atorvastatin 20 MG [Caduet],SBDC
+CV200,597980,amlodipine 5 MG / atorvastatin 20 MG Oral Tablet,SCD
+CV200,750235,amlodipine 5 MG / atorvastatin 40 MG Oral Tablet [Caduet],SBD
+CV200,750233,amlodipine 5 MG / atorvastatin 40 MG [Caduet],SBDC
+CV200,597984,amlodipine 5 MG / atorvastatin 40 MG Oral Tablet,SCD
+CV200,597983,atorvastatin 40 MG,SCDC
+CV200,750199,amlodipine 10 MG / atorvastatin 10 MG Oral Tablet [Caduet],SBD
+CV200,750197,amlodipine 10 MG / atorvastatin 10 MG [Caduet],SBDC
+CV200,597987,amlodipine 10 MG / atorvastatin 10 MG Oral Tablet,SCD
+CV200,750207,amlodipine 10 MG / atorvastatin 40 MG Oral Tablet [Caduet],SBD
+CV200,750205,amlodipine 10 MG / atorvastatin 40 MG [Caduet],SBDC
+CV200,597990,amlodipine 10 MG / atorvastatin 40 MG Oral Tablet,SCD
+CV200,750215,amlodipine 2.5 MG / atorvastatin 40 MG Oral Tablet [Caduet],SBD
+CV200,750213,amlodipine 2.5 MG / atorvastatin 40 MG [Caduet],SBDC
+CV200,597993,amlodipine 2.5 MG / atorvastatin 40 MG Oral Tablet,SCD
+CV200,763521,24 HR nisoldipine 17 MG Extended Release Oral Tablet [Sular],SBD
+CV200,763520,nisoldipine 17 MG [Sular],SBDC
+CV200,763519,24 HR nisoldipine 17 MG Extended Release Oral Tablet,SCD
+CV200,763518,nisoldipine 17 MG,SCDC
+CV200,763576,24 HR nisoldipine 25.5 MG Extended Release Oral Tablet [Sular],SBD
+CV200,763575,nisoldipine 25.5 MG [Sular],SBDC
+CV200,763574,24 HR nisoldipine 25.5 MG Extended Release Oral Tablet,SCD
+CV200,763573,nisoldipine 25.5 MG,SCDC
+CV200,763591,24 HR nisoldipine 34 MG Extended Release Oral Tablet [Sular],SBD
+CV200,763590,nisoldipine 34 MG [Sular],SBDC
+CV200,763589,24 HR nisoldipine 34 MG Extended Release Oral Tablet,SCD
+CV200,763588,nisoldipine 34 MG,SCDC
+CV200,790840,24 HR nisoldipine 8.5 MG Extended Release Oral Tablet [Sular],SBD
+CV200,763498,nisoldipine 8.5 MG [Sular],SBDC
+CV200,790489,24 HR nisoldipine 8.5 MG Extended Release Oral Tablet,SCD
+CV200,763496,nisoldipine 8.5 MG,SCDC
+CV200,1988324,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Capsule [Tiadylt],SBD
+CV200,830798,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Capsule [Cardizem],SBD
+CV200,831347,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Capsule [Tiazac],SBD
+CV200,831349,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Capsule [Taztia],SBD
+CV200,1988323,diltiazem hydrochloride 360 MG [Tiadylt],SBDC
+CV200,830796,diltiazem hydrochloride 360 MG [Cardizem],SBDC
+CV200,831346,diltiazem hydrochloride 360 MG [Tiazac],SBDC
+CV200,831348,diltiazem hydrochloride 360 MG [Taztia],SBDC
+CV200,1988305,diltiazem Extended Release Oral Capsule [Tiadylt],SBDF
+CV200,367127,diltiazem Extended Release Oral Capsule [Tiazac],SBDF
+CV200,406247,diltiazem Extended Release Oral Capsule [Taztia],SBDF
+CV200,830797,diltiazem Extended Release Oral Capsule [Cardizem],SBDF
+CV200,1175760,Cardizem Oral Product,SBDG
+CV200,1175761,Cardizem Pill,SBDG
+CV200,1178488,Tiazac Oral Product,SBDG
+CV200,1178489,Tiazac Pill,SBDG
+CV200,1180263,Taztia Oral Product,SBDG
+CV200,1180264,Taztia Pill,SBDG
+CV200,1988306,Tiadylt Oral Product,SBDG
+CV200,1988307,Tiadylt Pill,SBDG
+CV200,830795,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Capsule,SCD
+CV200,830794,diltiazem hydrochloride 360 MG,SCDC
+CV200,374425,diltiazem Extended Release Oral Capsule,SCDF
+CV200,1151888,diltiazem Oral Product,SCDG
+CV200,1151889,diltiazem Pill,SCDG
+CV200,1988319,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule [Tiadylt],SBD
+CV200,830803,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule [Cardizem],SBD
+CV200,831323,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule [Tiazac],SBD
+CV200,831325,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule [Taztia],SBD
+CV200,831338,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule [Cartia],SBD
+CV200,833705,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule [Diltzac],SBD
+CV200,1988318,diltiazem hydrochloride 300 MG [Tiadylt],SBDC
+CV200,830802,diltiazem hydrochloride 300 MG [Cardizem],SBDC
+CV200,831318,diltiazem hydrochloride 300 MG [Diltzac],SBDC
+CV200,831320,diltiazem hydrochloride 300 MG [Cartia],SBDC
+CV200,831322,diltiazem hydrochloride 300 MG [Tiazac],SBDC
+CV200,831324,diltiazem hydrochloride 300 MG [Taztia],SBDC
+CV200,491097,diltiazem Extended Release Oral Capsule [Cartia],SBDF
+CV200,629302,diltiazem Extended Release Oral Capsule [Diltzac],SBDF
+CV200,1169602,Diltzac Oral Product,SBDG
+CV200,1169603,Diltzac Pill,SBDG
+CV200,1175800,Cartia Oral Product,SBDG
+CV200,1175801,Cartia Pill,SBDG
+CV200,830801,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Capsule,SCD
+CV200,830800,diltiazem hydrochloride 300 MG,SCDC
+CV200,1988316,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Tiadylt],SBD
+CV200,830839,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Cardizem],SBD
+CV200,831285,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Dilt],SBD
+CV200,831296,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Tiazac],SBD
+CV200,831300,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Taztia],SBD
+CV200,831309,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Cartia],SBD
+CV200,833704,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule [Diltzac],SBD
+CV200,1988315,diltiazem hydrochloride 240 MG [Tiadylt],SBDC
+CV200,830838,diltiazem hydrochloride 240 MG [Cardizem],SBDC
+CV200,831281,diltiazem hydrochloride 240 MG [Diltzac],SBDC
+CV200,831284,diltiazem hydrochloride 240 MG [Dilt],SBDC
+CV200,831287,diltiazem hydrochloride 240 MG [Cartia],SBDC
+CV200,831295,diltiazem hydrochloride 240 MG [Tiazac],SBDC
+CV200,831299,diltiazem hydrochloride 240 MG [Taztia],SBDC
+CV200,540620,diltiazem Extended Release Oral Capsule [Dilt],SBDF
+CV200,1169598,Dilt Oral Product,SBDG
+CV200,1169599,Dilt Pill,SBDG
+CV200,830837,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Capsule,SCD
+CV200,830836,diltiazem hydrochloride 240 MG,SCDC
+CV200,1988311,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule [Tiadylt],SBD
+CV200,830847,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule [Cardizem],SBD
+CV200,831244,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule [Tiazac],SBD
+CV200,831248,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule [Taztia],SBD
+CV200,831252,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule [Dilt],SBD
+CV200,831255,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule [Cartia],SBD
+CV200,1988310,diltiazem hydrochloride 180 MG [Tiadylt],SBDC
+CV200,830846,diltiazem hydrochloride 180 MG [Cardizem],SBDC
+CV200,831241,diltiazem hydrochloride 180 MG [Cartia],SBDC
+CV200,831243,diltiazem hydrochloride 180 MG [Tiazac],SBDC
+CV200,831247,diltiazem hydrochloride 180 MG [Taztia],SBDC
+CV200,831251,diltiazem hydrochloride 180 MG [Dilt],SBDC
+CV200,830845,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Capsule,SCD
+CV200,830844,diltiazem hydrochloride 180 MG,SCDC
+CV200,1988308,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Tiadylt],SBD
+CV200,830863,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Cardizem],SBD
+CV200,831193,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Tiazac],SBD
+CV200,831196,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Taztia],SBD
+CV200,831215,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Dilt],SBD
+CV200,831226,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Cartia],SBD
+CV200,848524,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule [Diltzac],SBD
+CV200,1988304,diltiazem hydrochloride 120 MG [Tiadylt],SBDC
+CV200,830862,diltiazem hydrochloride 120 MG [Cardizem],SBDC
+CV200,831171,diltiazem hydrochloride 120 MG [Diltzac],SBDC
+CV200,831192,diltiazem hydrochloride 120 MG [Tiazac],SBDC
+CV200,831195,diltiazem hydrochloride 120 MG [Taztia],SBDC
+CV200,831214,diltiazem hydrochloride 120 MG [Dilt],SBDC
+CV200,831225,diltiazem hydrochloride 120 MG [Cartia],SBDC
+CV200,830861,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule,SCD
+CV200,830860,diltiazem hydrochloride 120 MG,SCDC
+CV200,830865,12 HR diltiazem hydrochloride 60 MG Extended Release Oral Capsule,SCD
+CV200,830864,diltiazem hydrochloride 60 MG,SCDC
+CV200,830869,12 HR diltiazem hydrochloride 90 MG Extended Release Oral Capsule,SCD
+CV200,830868,diltiazem hydrochloride 90 MG,SCDC
+CV200,830872,12 HR diltiazem hydrochloride 120 MG Extended Release Oral Capsule,SCD
+CV200,830876,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Tablet [Cardizem],SBD
+CV200,830875,diltiazem Extended Release Oral Tablet [Cardizem],SBDF
+CV200,830874,24 HR diltiazem hydrochloride 120 MG Extended Release Oral Tablet,SCD
+CV200,375031,diltiazem Extended Release Oral Tablet,SCDF
+CV200,1091632,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Tablet [Matzim],SBD
+CV200,830878,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Tablet [Cardizem],SBD
+CV200,1091631,diltiazem hydrochloride 180 MG [Matzim],SBDC
+CV200,1091622,diltiazem Extended Release Oral Tablet [Matzim],SBDF
+CV200,1181567,Matzim Oral Product,SBDG
+CV200,1181568,Matzim Pill,SBDG
+CV200,830877,24 HR diltiazem hydrochloride 180 MG Extended Release Oral Tablet,SCD
+CV200,1091629,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Tablet [Matzim],SBD
+CV200,830880,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Tablet [Cardizem],SBD
+CV200,1091628,diltiazem hydrochloride 240 MG [Matzim],SBDC
+CV200,830879,24 HR diltiazem hydrochloride 240 MG Extended Release Oral Tablet,SCD
+CV200,1091635,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Tablet [Matzim],SBD
+CV200,830883,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Tablet [Cardizem],SBD
+CV200,1091634,diltiazem hydrochloride 300 MG [Matzim],SBDC
+CV200,830882,24 HR diltiazem hydrochloride 300 MG Extended Release Oral Tablet,SCD
+CV200,1091638,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Tablet [Matzim],SBD
+CV200,830898,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Tablet [Cardizem],SBD
+CV200,1091637,diltiazem hydrochloride 360 MG [Matzim],SBDC
+CV200,830897,24 HR diltiazem hydrochloride 360 MG Extended Release Oral Tablet,SCD
+CV200,1091623,24 HR diltiazem hydrochloride 420 MG Extended Release Oral Tablet [Matzim],SBD
+CV200,830902,24 HR diltiazem hydrochloride 420 MG Extended Release Oral Tablet [Cardizem],SBD
+CV200,1091621,diltiazem hydrochloride 420 MG [Matzim],SBDC
+CV200,830901,diltiazem hydrochloride 420 MG [Cardizem],SBDC
+CV200,830900,24 HR diltiazem hydrochloride 420 MG Extended Release Oral Tablet,SCD
+CV200,830899,diltiazem hydrochloride 420 MG,SCDC
+CV200,831055,diltiazem hydrochloride 120 MG Oral Tablet [Cardizem],SBD
+CV200,369261,diltiazem Oral Tablet [Cardizem],SBDF
+CV200,831054,diltiazem hydrochloride 120 MG Oral Tablet,SCD
+CV200,371856,diltiazem Oral Tablet,SCDF
+CV200,831102,diltiazem hydrochloride 90 MG Oral Tablet,SCD
+CV200,834393,diltiazem hydrochloride 60 MG Oral Tablet [Cardizem],SBD
+CV200,830866,diltiazem hydrochloride 60 MG [Cardizem],SBDC
+CV200,831103,diltiazem hydrochloride 60 MG Oral Tablet,SCD
+CV200,1988330,24 HR diltiazem hydrochloride 420 MG Extended Release Oral Capsule [Tiadylt],SBD
+CV200,831360,24 HR diltiazem hydrochloride 420 MG Extended Release Oral Capsule [Tiazac],SBD
+CV200,1988329,diltiazem hydrochloride 420 MG [Tiadylt],SBDC
+CV200,831356,diltiazem hydrochloride 420 MG [Tiazac],SBDC
+CV200,831359,24 HR diltiazem hydrochloride 420 MG Extended Release Oral Capsule,SCD
+CV200,833219,diltiazem hydrochloride 30 MG Oral Tablet [Cardizem],SBD
+CV200,833218,diltiazem hydrochloride 30 MG [Cardizem],SBDC
+CV200,833217,diltiazem hydrochloride 30 MG Oral Tablet,SCD
+CV200,833216,diltiazem hydrochloride 30 MG,SCDC
+CV200,7396,nicardipine,IN
+CV200,235230,nicardipine hydrochloride,PIN
+CV200,858601,200 ML nicardipine hydrochloride 0.1 MG/ML Injection [Cardene],SBD
+CV200,858600,nicardipine hydrochloride 0.1 MG/ML [Cardene],SBDC
+CV200,1791341,nicardipine Injection [Cardene],SBDF
+CV200,1175113,Cardene Injectable Product,SBDG
+CV200,858599,200 ML nicardipine hydrochloride 0.1 MG/ML Injection,SCD
+CV200,858598,nicardipine hydrochloride 0.1 MG/ML,SCDC
+CV200,1791339,nicardipine Injection,SCDF
+CV200,1158669,nicardipine Injectable Product,SCDG
+CV200,858605,200 ML nicardipine hydrochloride 0.2 MG/ML Injection [Cardene],SBD
+CV200,858604,nicardipine hydrochloride 0.2 MG/ML [Cardene],SBDC
+CV200,858603,200 ML nicardipine hydrochloride 0.2 MG/ML Injection,SCD
+CV200,858602,nicardipine hydrochloride 0.2 MG/ML,SCDC
+CV200,858609,10 ML nicardipine hydrochloride 2.5 MG/ML Injection [Cardene],SBD
+CV200,858608,nicardipine hydrochloride 2.5 MG/ML [Cardene],SBDC
+CV200,858607,10 ML nicardipine hydrochloride 2.5 MG/ML Injection,SCD
+CV200,858606,nicardipine hydrochloride 2.5 MG/ML,SCDC
+CV200,858613,nicardipine hydrochloride 20 MG Oral Capsule,SCD
+CV200,858612,nicardipine hydrochloride 20 MG,SCDC
+CV200,373058,nicardipine Oral Capsule,SCDF
+CV200,1158670,nicardipine Oral Product,SCDG
+CV200,1158671,nicardipine Pill,SCDG
+CV200,858616,nicardipine hydrochloride 30 MG Oral Capsule,SCD
+CV200,858586,nicardipine hydrochloride 30 MG,SCDC
+CV200,897586,24 HR verapamil hydrochloride 100 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897585,verapamil hydrochloride 100 MG [Verelan],SBDC
+CV200,367136,verapamil Extended Release Oral Capsule [Verelan],SBDF
+CV200,1187891,Verelan Oral Product,SBDG
+CV200,1187892,Verelan Pill,SBDG
+CV200,897584,24 HR verapamil hydrochloride 100 MG Extended Release Oral Capsule,SCD
+CV200,897583,verapamil hydrochloride 100 MG,SCDC
+CV200,375337,verapamil Extended Release Oral Capsule,SCDF
+CV200,1160512,verapamil Oral Product,SCDG
+CV200,1160513,verapamil Pill,SCDG
+CV200,897592,24 HR verapamil hydrochloride 200 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897591,verapamil hydrochloride 200 MG [Verelan],SBDC
+CV200,897590,24 HR verapamil hydrochloride 200 MG Extended Release Oral Capsule,SCD
+CV200,897589,verapamil hydrochloride 200 MG,SCDC
+CV200,897598,24 HR verapamil hydrochloride 300 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897597,verapamil hydrochloride 300 MG [Verelan],SBDC
+CV200,897596,24 HR verapamil hydrochloride 300 MG Extended Release Oral Capsule,SCD
+CV200,897595,verapamil hydrochloride 300 MG,SCDC
+CV200,897614,24 HR verapamil hydrochloride 120 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897613,verapamil hydrochloride 120 MG [Verelan],SBDC
+CV200,897612,24 HR verapamil hydrochloride 120 MG Extended Release Oral Capsule,SCD
+CV200,897611,verapamil hydrochloride 120 MG,SCDC
+CV200,897620,24 HR verapamil hydrochloride 180 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897619,verapamil hydrochloride 180 MG [Verelan],SBDC
+CV200,897618,24 HR verapamil hydrochloride 180 MG Extended Release Oral Capsule,SCD
+CV200,897617,verapamil hydrochloride 180 MG,SCDC
+CV200,897626,24 HR verapamil hydrochloride 240 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897625,verapamil hydrochloride 240 MG [Verelan],SBDC
+CV200,897624,24 HR verapamil hydrochloride 240 MG Extended Release Oral Capsule,SCD
+CV200,897623,verapamil hydrochloride 240 MG,SCDC
+CV200,897632,24 HR verapamil hydrochloride 360 MG Extended Release Oral Capsule [Verelan],SBD
+CV200,897631,verapamil hydrochloride 360 MG [Verelan],SBDC
+CV200,897630,24 HR verapamil hydrochloride 360 MG Extended Release Oral Capsule,SCD
+CV200,897629,verapamil hydrochloride 360 MG,SCDC
+CV200,897676,verapamil hydrochloride 180 MG Extended Release Oral Tablet [Calan],SBD
+CV200,897700,verapamil hydrochloride 180 MG Extended Release Oral Tablet [Isoptin],SBD
+CV200,897675,verapamil hydrochloride 180 MG [Calan],SBDC
+CV200,897699,verapamil hydrochloride 180 MG [Isoptin],SBDC
+CV200,876534,verapamil Extended Release Oral Tablet [Isoptin],SBDF
+CV200,885399,verapamil Extended Release Oral Tablet [Calan],SBDF
+CV200,1166643,Isoptin Oral Product,SBDG
+CV200,1166644,Isoptin Pill,SBDG
+CV200,1170878,Calan Oral Product,SBDG
+CV200,1170879,Calan Pill,SBDG
+CV200,897640,verapamil hydrochloride 180 MG Extended Release Oral Tablet,SCD
+CV200,374290,verapamil Extended Release Oral Tablet,SCDF
+CV200,897680,verapamil hydrochloride 240 MG Extended Release Oral Tablet [Calan],SBD
+CV200,897714,verapamil hydrochloride 240 MG Extended Release Oral Tablet [Isoptin],SBD
+CV200,897679,verapamil hydrochloride 240 MG [Calan],SBDC
+CV200,897713,verapamil hydrochloride 240 MG [Isoptin],SBDC
+CV200,897649,verapamil hydrochloride 240 MG Extended Release Oral Tablet,SCD
+CV200,897661,verapamil hydrochloride 120 MG Extended Release Oral Tablet [Calan],SBD
+CV200,897693,verapamil hydrochloride 120 MG Extended Release Oral Tablet [Isoptin],SBD
+CV200,897660,verapamil hydrochloride 120 MG [Calan],SBDC
+CV200,897692,verapamil hydrochloride 120 MG [Isoptin],SBDC
+CV200,897659,verapamil hydrochloride 120 MG Extended Release Oral Tablet,SCD
+CV200,897666,verapamil hydrochloride 120 MG Oral Tablet,SCD
+CV200,374289,verapamil Oral Tablet,SCDF
+CV200,897685,verapamil hydrochloride 80 MG Oral Tablet [Calan],SBD
+CV200,897684,verapamil hydrochloride 80 MG [Calan],SBDC
+CV200,92052,verapamil Oral Tablet [Calan],SBDF
+CV200,897683,verapamil hydrochloride 80 MG Oral Tablet,SCD
+CV200,897682,verapamil hydrochloride 80 MG,SCDC
+CV200,897722,verapamil hydrochloride 40 MG Oral Tablet,SCD
+CV200,897718,verapamil hydrochloride 40 MG,SCDC
+CV200,898316,4 ML verapamil hydrochloride 2.5 MG/ML Prefilled Syringe,SCD
+CV200,727700,verapamil Prefilled Syringe,SCDF
 CV400,17767,amlodipine,IN
 CV400,321064,olmesartan,IN
 CV400,5487,hydrochlorothiazide,IN
@@ -884,6 +1863,786 @@ CV490,998681,168 HR clonidine 0.0125 MG/HR Transdermal System [Catapres],SBD
 CV490,2268644,clonidine 0.0125 MG/HR [Catapres],SBDC
 CV490,998679,168 HR clonidine 0.0125 MG/HR Transdermal System,SCD
 CV490,998678,clonidine 0.0125 MG/HR,SCDC
+CV701,2396,chlorothiazide,IN
+CV701,197476,chlorothiazide 500 MG Oral Tablet,SCD
+CV701,317325,chlorothiazide 500 MG,SCDC
+CV701,371410,chlorothiazide Oral Tablet,SCDF
+CV701,1153869,chlorothiazide Oral Product,SCDG
+CV701,1153870,chlorothiazide Pill,SCDG
+CV701,2409,chlorthalidone,IN
+CV701,214081,chlorthalidone 15 MG Oral Tablet [Thalitone],SBD
+CV701,573920,chlorthalidone 15 MG [Thalitone],SBDC
+CV701,368711,chlorthalidone Oral Tablet [Thalitone],SBDF
+CV701,1184927,Thalitone Oral Product,SBDG
+CV701,1184928,Thalitone Pill,SBDG
+CV701,197498,chlorthalidone 15 MG Oral Tablet,SCD
+CV701,315654,chlorthalidone 15 MG,SCDC
+CV701,371472,chlorthalidone Oral Tablet,SCDF
+CV701,1155795,chlorthalidone Oral Product,SCDG
+CV701,1155796,chlorthalidone Pill,SCDG
+CV701,214083,chlorthalidone 25 MG Oral Tablet [Thalitone],SBD
+CV701,573922,chlorthalidone 25 MG [Thalitone],SBDC
+CV701,197499,chlorthalidone 25 MG Oral Tablet,SCD
+CV701,315655,chlorthalidone 25 MG,SCDC
+CV701,197500,chlorthalidone 50 MG Oral Tablet,SCD
+CV701,317328,chlorthalidone 50 MG,SCDC
+CV701,5487,hydrochlorothiazide,IN
+CV701,197770,hydrochlorothiazide 50 MG Oral Tablet,SCD
+CV701,316051,hydrochlorothiazide 50 MG,SCDC
+CV701,370635,hydrochlorothiazide Oral Tablet,SCDF
+CV701,1162786,hydrochlorothiazide Oral Product,SCDG
+CV701,1162787,hydrochlorothiazide Pill,SCDG
+CV701,5764,indapamide,IN
+CV701,197815,indapamide 1.25 MG Oral Tablet,SCD
+CV701,316079,indapamide 1.25 MG,SCDC
+CV701,370682,indapamide Oral Tablet,SCDF
+CV701,1156302,indapamide Oral Product,SCDG
+CV701,1156303,indapamide Pill,SCDG
+CV701,197816,indapamide 2.5 MG Oral Tablet,SCD
+CV701,316080,indapamide 2.5 MG,SCDC
+CV701,6916,metolazone,IN
+CV701,197978,metolazone 10 MG Oral Tablet,SCD
+CV701,316297,metolazone 10 MG,SCDC
+CV701,372888,metolazone Oral Tablet,SCDF
+CV701,1163518,metolazone Oral Product,SCDG
+CV701,1163519,metolazone Pill,SCDG
+CV701,197979,metolazone 2.5 MG Oral Tablet,SCD
+CV701,316298,metolazone 2.5 MG,SCDC
+CV701,199903,hydrochlorothiazide 12.5 MG Oral Capsule,SCD
+CV701,316047,hydrochlorothiazide 12.5 MG,SCDC
+CV701,370636,hydrochlorothiazide Oral Capsule,SCDF
+CV701,213439,chlorothiazide 50 MG/ML Oral Suspension [Diuril],SBD
+CV701,573328,chlorothiazide 50 MG/ML [Diuril],SBDC
+CV701,92479,chlorothiazide Oral Suspension [Diuril],SBDF
+CV701,1173159,Diuril Oral Liquid Product,SBDG
+CV701,1173160,Diuril Oral Product,SBDG
+CV701,309198,chlorothiazide 50 MG/ML Oral Suspension,SCD
+CV701,315639,chlorothiazide 50 MG/ML,SCDC
+CV701,371409,chlorothiazide Oral Suspension,SCDF
+CV701,1153868,chlorothiazide Oral Liquid Product,SCDG
+CV701,310798,hydrochlorothiazide 25 MG Oral Tablet,SCD
+CV701,316049,hydrochlorothiazide 25 MG,SCDC
+CV701,311671,metolazone 5 MG Oral Tablet,SCD
+CV701,316299,metolazone 5 MG,SCDC
+CV701,429503,hydrochlorothiazide 12.5 MG Oral Tablet,SCD
+CV701,996476,chlorothiazide 500 MG Injection [Diuril],SBD
+CV701,573336,chlorothiazide 500 MG [Diuril],SBDC
+CV701,1731063,chlorothiazide Injection [Diuril],SBDF
+CV701,1173158,Diuril Injectable Product,SBDG
+CV701,484152,chlorothiazide 500 MG Injection,SCD
+CV701,1731061,chlorothiazide Injection,SCDF
+CV701,1153867,chlorothiazide Injectable Product,SCDG
+CV702,62349,ethacrynate,IN
+CV702,4109,ethacrynic acid,PIN
+CV702,1251905,ethacrynic acid 25 MG Oral Tablet [Edecrin],SBD
+CV702,1251904,ethacrynic acid 25 MG [Edecrin],SBDC
+CV702,619260,ethacrynate Oral Tablet [Edecrin],SBDF
+CV702,1173193,Edecrin Oral Product,SBDG
+CV702,1173194,Edecrin Pill,SBDG
+CV702,1251903,ethacrynic acid 25 MG Oral Tablet,SCD
+CV702,1251902,ethacrynic acid 25 MG,SCDC
+CV702,617327,ethacrynate Oral Tablet,SCDF
+CV702,1156816,ethacrynate Oral Product,SCDG
+CV702,1156817,ethacrynate Pill,SCDG
+CV702,4603,furosemide,IN
+CV702,1719286,10 ML furosemide 10 MG/ML Injection,SCD
+CV702,317376,furosemide 10 MG/ML,SCDC
+CV702,1719285,furosemide Injection,SCDF
+CV702,1162712,furosemide Injectable Product,SCDG
+CV702,1719290,2 ML furosemide 10 MG/ML Injection,SCD
+CV702,1719291,4 ML furosemide 10 MG/ML Injection,SCD
+CV702,1808,bumetanide,IN
+CV702,1727569,4 ML bumetanide 0.25 MG/ML Injection,SCD
+CV702,315499,bumetanide 0.25 MG/ML,SCDC
+CV702,1727568,bumetanide Injection,SCDF
+CV702,1151347,bumetanide Injectable Product,SCDG
+CV702,1727572,2 ML bumetanide 0.25 MG/ML Injection,SCD
+CV702,205488,bumetanide 0.5 MG Oral Tablet [Bumex],SBD
+CV702,566394,bumetanide 0.5 MG [Bumex],SBDC
+CV702,369375,bumetanide Oral Tablet [Bumex],SBDF
+CV702,1168680,Bumex Oral Product,SBDG
+CV702,1168681,Bumex Pill,SBDG
+CV702,197417,bumetanide 0.5 MG Oral Tablet,SCD
+CV702,315500,bumetanide 0.5 MG,SCDC
+CV702,371158,bumetanide Oral Tablet,SCDF
+CV702,1151349,bumetanide Oral Product,SCDG
+CV702,1151350,bumetanide Pill,SCDG
+CV702,205489,bumetanide 1 MG Oral Tablet [Bumex],SBD
+CV702,566395,bumetanide 1 MG [Bumex],SBDC
+CV702,197418,bumetanide 1 MG Oral Tablet,SCD
+CV702,315501,bumetanide 1 MG,SCDC
+CV702,205490,bumetanide 2 MG Oral Tablet [Bumex],SBD
+CV702,566396,bumetanide 2 MG [Bumex],SBDC
+CV702,197419,bumetanide 2 MG Oral Tablet,SCD
+CV702,315502,bumetanide 2 MG,SCDC
+CV702,197730,furosemide 10 MG/ML Oral Solution,SCD
+CV702,372280,furosemide Oral Solution,SCDF
+CV702,1162713,furosemide Oral Liquid Product,SCDG
+CV702,1162714,furosemide Oral Product,SCDG
+CV702,197731,furosemide 8 MG/ML Oral Solution,SCD
+CV702,315972,furosemide 8 MG/ML,SCDC
+CV702,205732,furosemide 80 MG Oral Tablet [Lasix],SBD
+CV702,566621,furosemide 80 MG [Lasix],SBDC
+CV702,368487,furosemide Oral Tablet [Lasix],SBDF
+CV702,1175647,Lasix Oral Product,SBDG
+CV702,1175648,Lasix Pill,SBDG
+CV702,197732,furosemide 80 MG Oral Tablet,SCD
+CV702,317377,furosemide 80 MG,SCDC
+CV702,372281,furosemide Oral Tablet,SCDF
+CV702,1162715,furosemide Pill,SCDG
+CV702,38413,torsemide,IN
+CV702,208076,torsemide 10 MG Oral Tablet [Demadex],SBD
+CV702,568804,torsemide 10 MG [Demadex],SBDC
+CV702,369285,torsemide Oral Tablet [Demadex],SBDF
+CV702,1172416,Demadex Oral Product,SBDG
+CV702,1172417,Demadex Pill,SBDG
+CV702,198369,torsemide 10 MG Oral Tablet,SCD
+CV702,316842,torsemide 10 MG,SCDC
+CV702,374168,torsemide Oral Tablet,SCDF
+CV702,1162752,torsemide Oral Product,SCDG
+CV702,1162753,torsemide Pill,SCDG
+CV702,198370,torsemide 100 MG Oral Tablet,SCD
+CV702,316844,torsemide 100 MG,SCDC
+CV702,208081,torsemide 20 MG Oral Tablet [Demadex],SBD
+CV702,2589877,torsemide 20 MG Oral Tablet [Soaanz],SBD
+CV702,2589873,torsemide 20 MG [Soaanz],SBDC
+CV702,568809,torsemide 20 MG [Demadex],SBDC
+CV702,2589876,torsemide Oral Tablet [Soaanz],SBDF
+CV702,2589874,Soaanz Oral Product,SBDG
+CV702,2589875,Soaanz Pill,SBDG
+CV702,198371,torsemide 20 MG Oral Tablet,SCD
+CV702,317521,torsemide 20 MG,SCDC
+CV702,198372,torsemide 5 MG Oral Tablet,SCD
+CV702,316845,torsemide 5 MG,SCDC
+CV702,2589883,torsemide 40 MG Oral Tablet [Soaanz],SBD
+CV702,2589882,torsemide 40 MG [Soaanz],SBDC
+CV702,2589881,torsemide 40 MG Oral Tablet,SCD
+CV702,2589880,torsemide 40 MG,SCDC
+CV702,2589887,torsemide 60 MG Oral Tablet [Soaanz],SBD
+CV702,2589886,torsemide 60 MG [Soaanz],SBDC
+CV702,2589885,torsemide 60 MG Oral Tablet,SCD
+CV702,2589884,torsemide 60 MG,SCDC
+CV702,2621028,10 ML furosemide 8 MG/ML Cartridge [Furoscix],SBD
+CV702,2621025,furosemide 8 MG/ML [Furoscix],SBDC
+CV702,2621027,furosemide Cartridge [Furoscix],SBDF
+CV702,2621026,Furoscix Injectable Product,SBDG
+CV702,2621022,10 ML furosemide 8 MG/ML Cartridge,SCD
+CV702,2621021,furosemide Cartridge,SCDF
+CV702,282486,bumetanide 0.25 MG/ML Injectable Solution,SCD
+CV702,374368,bumetanide Injectable Solution,SCDF
+CV702,200801,furosemide 20 MG Oral Tablet [Lasix],SBD
+CV702,565450,furosemide 20 MG [Lasix],SBDC
+CV702,310429,furosemide 20 MG Oral Tablet,SCD
+CV702,315970,furosemide 20 MG,SCDC
+CV702,200809,furosemide 40 MG Oral Tablet [Lasix],SBD
+CV702,565458,furosemide 40 MG [Lasix],SBDC
+CV702,313988,furosemide 40 MG Oral Tablet,SCD
+CV702,315971,furosemide 40 MG,SCDC
+CV702,4108,ethacrynate sodium,PIN
+CV702,211509,ethacrynate sodium 50 MG Injection [Edecrin],SBD
+CV702,1729080,ethacrynate sodium 50 MG [Edecrin],SBDC
+CV702,1729081,ethacrynate Injection [Edecrin],SBDF
+CV702,1729082,Edecrin Injectable Product,SBDG
+CV702,617325,ethacrynate sodium 50 MG Injection,SCD
+CV702,1729077,ethacrynate sodium 50 MG,SCDC
+CV702,1729078,ethacrynate Injection,SCDF
+CV702,1156815,ethacrynate Injectable Product,SCDG
+CV703,167,acetazolamide,IN
+CV703,197303,acetazolamide 125 MG Oral Tablet,SCD
+CV703,315271,acetazolamide 125 MG,SCDC
+CV703,370525,acetazolamide Oral Tablet,SCDF
+CV703,1152847,acetazolamide Oral Product,SCDG
+CV703,1152848,acetazolamide Pill,SCDG
+CV703,197304,acetazolamide 250 MG Oral Tablet,SCD
+CV703,315272,acetazolamide 250 MG,SCDC
+CV703,3353,dichlorphenamide,IN
+CV703,1661799,dichlorphenamide 50 MG Oral Tablet [Keveyis],SBD
+CV703,1661795,dichlorphenamide 50 MG [Keveyis],SBDC
+CV703,1661796,dichlorphenamide Oral Tablet [Keveyis],SBDF
+CV703,1661797,Keveyis Oral Product,SBDG
+CV703,1661798,Keveyis Pill,SBDG
+CV703,197594,dichlorphenamide 50 MG Oral Tablet,SCD
+CV703,317631,dichlorphenamide 50 MG,SCDC
+CV703,371791,dichlorphenamide Oral Tablet,SCDF
+CV703,1151143,dichlorphenamide Pill,SCDG
+CV703,1155895,dichlorphenamide Oral Product,SCDG
+CV703,6826,methazolamide,IN
+CV703,197939,methazolamide 25 MG Oral Tablet,SCD
+CV703,316261,methazolamide 25 MG,SCDC
+CV703,372815,methazolamide Oral Tablet,SCDF
+CV703,1161639,methazolamide Oral Product,SCDG
+CV703,1162202,methazolamide Pill,SCDG
+CV703,197940,methazolamide 50 MG Oral Tablet,SCD
+CV703,317648,methazolamide 50 MG,SCDC
+CV703,307702,acetazolamide 500 MG Injection,SCD
+CV703,317288,acetazolamide 500 MG,SCDC
+CV703,1719786,acetazolamide Injection,SCDF
+CV703,1152846,acetazolamide Injectable Product,SCDG
+CV703,562524,12 HR acetazolamide 500 MG Extended Release Oral Capsule,SCD
+CV703,370526,acetazolamide Extended Release Oral Capsule,SCDF
+CV704,9997,spironolactone,IN
+CV704,1943345,spironolactone 5 MG/ML Oral Suspension [Carospir],SBD
+CV704,1943341,spironolactone 5 MG/ML [Carospir],SBDC
+CV704,1943342,spironolactone Oral Suspension [Carospir],SBDF
+CV704,1943343,Carospir Oral Liquid Product,SBDG
+CV704,1943344,Carospir Oral Product,SBDG
+CV704,104232,spironolactone 5 MG/ML Oral Suspension,SCD
+CV704,360520,spironolactone 5 MG/ML,SCDC
+CV704,379251,spironolactone Oral Suspension,SCDF
+CV704,1161121,spironolactone Oral Liquid Product,SCDG
+CV704,1161122,spironolactone Oral Product,SCDG
+CV704,200825,spironolactone 100 MG Oral Tablet [Aldactone],SBD
+CV704,565473,spironolactone 100 MG [Aldactone],SBDC
+CV704,368071,spironolactone Oral Tablet [Aldactone],SBDF
+CV704,1174848,Aldactone Oral Product,SBDG
+CV704,1174849,Aldactone Pill,SBDG
+CV704,198222,spironolactone 100 MG Oral Tablet,SCD
+CV704,316727,spironolactone 100 MG,SCDC
+CV704,373946,spironolactone Oral Tablet,SCDF
+CV704,1161123,spironolactone Pill,SCDG
+CV704,200817,spironolactone 50 MG Oral Tablet [Aldactone],SBD
+CV704,565465,spironolactone 50 MG [Aldactone],SBDC
+CV704,198223,spironolactone 50 MG Oral Tablet,SCD
+CV704,317508,spironolactone 50 MG,SCDC
+CV704,5487,hydrochlorothiazide,IN
+CV704,324042,hydrochlorothiazide / spironolactone,MIN
+CV704,208112,hydrochlorothiazide 25 MG / spironolactone 25 MG Oral Tablet [Aldactazide],SBD
+CV704,568840,hydrochlorothiazide 25 MG / spironolactone 25 MG [Aldactazide],SBDC
+CV704,369279,hydrochlorothiazide / spironolactone Oral Tablet [Aldactazide],SBDF
+CV704,1174846,Aldactazide Oral Product,SBDG
+CV704,1174847,Aldactazide Pill,SBDG
+CV704,198224,hydrochlorothiazide 25 MG / spironolactone 25 MG Oral Tablet,SCD
+CV704,316049,hydrochlorothiazide 25 MG,SCDC
+CV704,316728,spironolactone 25 MG,SCDC
+CV704,370639,hydrochlorothiazide / spironolactone Oral Tablet,SCDF
+CV704,1162146,hydrochlorothiazide / spironolactone Oral Product,SCDG
+CV704,1162147,hydrochlorothiazide / spironolactone Pill,SCDG
+CV704,10763,triamterene,IN
+CV704,208674,triamterene 100 MG Oral Capsule [Dyrenium],SBD
+CV704,569337,triamterene 100 MG [Dyrenium],SBDC
+CV704,366263,triamterene Oral Capsule [Dyrenium],SBDF
+CV704,1170419,Dyrenium Oral Product,SBDG
+CV704,1170420,Dyrenium Pill,SBDG
+CV704,198312,triamterene 100 MG Oral Capsule,SCD
+CV704,316852,triamterene 100 MG,SCDC
+CV704,374193,triamterene Oral Capsule,SCDF
+CV704,1158234,triamterene Oral Product,SCDG
+CV704,1158235,triamterene Pill,SCDG
+CV704,208675,triamterene 50 MG Oral Capsule [Dyrenium],SBD
+CV704,569338,triamterene 50 MG [Dyrenium],SBDC
+CV704,198313,triamterene 50 MG Oral Capsule,SCD
+CV704,316854,triamterene 50 MG,SCDC
+CV704,258337,hydrochlorothiazide / triamterene,MIN
+CV704,198314,hydrochlorothiazide 25 MG / triamterene 50 MG Oral Capsule,SCD
+CV704,370640,hydrochlorothiazide / triamterene Oral Capsule,SCDF
+CV704,1162152,hydrochlorothiazide / triamterene Oral Product,SCDG
+CV704,1162153,hydrochlorothiazide / triamterene Pill,SCDG
+CV704,208124,hydrochlorothiazide 25 MG / triamterene 37.5 MG Oral Capsule [Dyazide],SBD
+CV704,568851,hydrochlorothiazide 25 MG / triamterene 37.5 MG [Dyazide],SBDC
+CV704,366289,hydrochlorothiazide / triamterene Oral Capsule [Dyazide],SBDF
+CV704,1169664,Dyazide Oral Product,SBDG
+CV704,1169665,Dyazide Pill,SBDG
+CV704,198316,hydrochlorothiazide 25 MG / triamterene 37.5 MG Oral Capsule,SCD
+CV704,316853,triamterene 37.5 MG,SCDC
+CV704,2562811,finerenone,IN
+CV704,2562822,finerenone 10 MG Oral Tablet [Kerendia],SBD
+CV704,2562818,finerenone 10 MG [Kerendia],SBDC
+CV704,2562819,finerenone Oral Tablet [Kerendia],SBDF
+CV704,2562820,Kerendia Oral Product,SBDG
+CV704,2562821,Kerendia Pill,SBDG
+CV704,2562816,finerenone 10 MG Oral Tablet,SCD
+CV704,2562812,finerenone 10 MG,SCDC
+CV704,2562815,finerenone Oral Tablet,SCDF
+CV704,2562813,finerenone Oral Product,SCDG
+CV704,2562814,finerenone Pill,SCDG
+CV704,2562826,finerenone 20 MG Oral Tablet [Kerendia],SBD
+CV704,2562825,finerenone 20 MG [Kerendia],SBDC
+CV704,2562824,finerenone 20 MG Oral Tablet,SCD
+CV704,2562823,finerenone 20 MG,SCDC
+CV704,93253,hydrochlorothiazide 25 MG / triamterene 37.5 MG Oral Tablet [Maxzide],SBD
+CV704,562902,hydrochlorothiazide 25 MG / triamterene 37.5 MG [Maxzide],SBDC
+CV704,369275,hydrochlorothiazide / triamterene Oral Tablet [Maxzide],SBDF
+CV704,1182741,Maxzide Oral Product,SBDG
+CV704,1182742,Maxzide Pill,SBDG
+CV704,310812,hydrochlorothiazide 25 MG / triamterene 37.5 MG Oral Tablet,SCD
+CV704,374192,hydrochlorothiazide / triamterene Oral Tablet,SCDF
+CV704,93252,hydrochlorothiazide 50 MG / triamterene 75 MG Oral Tablet [Maxzide],SBD
+CV704,562901,hydrochlorothiazide 50 MG / triamterene 75 MG [Maxzide],SBDC
+CV704,310818,hydrochlorothiazide 50 MG / triamterene 75 MG Oral Tablet,SCD
+CV704,316051,hydrochlorothiazide 50 MG,SCDC
+CV704,317670,triamterene 75 MG,SCDC
+CV704,200820,spironolactone 25 MG Oral Tablet [Aldactone],SBD
+CV704,565468,spironolactone 25 MG [Aldactone],SBDC
+CV704,313096,spironolactone 25 MG Oral Tablet,SCD
+CV704,298869,eplerenone,IN
+CV704,402106,eplerenone 25 MG Oral Tablet [Inspra],SBD
+CV704,576108,eplerenone 25 MG [Inspra],SBDC
+CV704,402363,eplerenone Oral Tablet [Inspra],SBDF
+CV704,1173417,Inspra Oral Product,SBDG
+CV704,1173418,Inspra Pill,SBDG
+CV704,351256,eplerenone 25 MG Oral Tablet,SCD
+CV704,353386,eplerenone 25 MG,SCDC
+CV704,378726,eplerenone Oral Tablet,SCDF
+CV704,1161909,eplerenone Oral Product,SCDG
+CV704,1161910,eplerenone Pill,SCDG
+CV704,402105,eplerenone 50 MG Oral Tablet [Inspra],SBD
+CV704,576107,eplerenone 50 MG [Inspra],SBDC
+CV704,351257,eplerenone 50 MG Oral Tablet,SCD
+CV704,353387,eplerenone 50 MG,SCDC
+CV704,644,amiloride,IN
+CV704,142424,amiloride hydrochloride,PIN
+CV704,977882,amiloride hydrochloride 5 MG Oral Tablet [Midamor],SBD
+CV704,977881,amiloride hydrochloride 5 MG [Midamor],SBDC
+CV704,368024,amiloride Oral Tablet [Midamor],SBDF
+CV704,1178091,Midamor Oral Product,SBDG
+CV704,1178092,Midamor Pill,SBDG
+CV704,977880,amiloride hydrochloride 5 MG Oral Tablet,SCD
+CV704,977879,amiloride hydrochloride 5 MG,SCDC
+CV704,370564,amiloride Oral Tablet,SCDF
+CV704,1151614,amiloride Oral Product,SCDG
+CV704,1151615,amiloride Pill,SCDG
+CV704,214212,amiloride / hydrochlorothiazide,MIN
+CV704,977883,amiloride hydrochloride 5 MG / hydrochlorothiazide 50 MG Oral Tablet,SCD
+CV704,370638,amiloride / hydrochlorothiazide Oral Tablet,SCDF
+CV704,1151607,amiloride / hydrochlorothiazide Oral Product,SCDG
+CV704,1151608,amiloride / hydrochlorothiazide Pill,SCDG
+CV709,1886,caffeine,IN
+CV709,52364,magnesium salicylate,IN
+CV709,1001434,caffeine / magnesium salicylate,MIN
+CV709,1001437,caffeine 50 MG / magnesium salicylate 162.5 MG Oral Tablet,SCD
+CV709,1001435,magnesium salicylate 162.5 MG,SCDC
+CV709,330900,caffeine 50 MG,SCDC
+CV709,1001436,caffeine / magnesium salicylate Oral Tablet,SCDF
+CV709,1152404,caffeine / magnesium salicylate Oral Product,SCDG
+CV709,1152405,caffeine / magnesium salicylate Pill,SCDG
+CV709,6628,mannitol,IN
+CV709,206536,500 ML mannitol 100 MG/ML Injection [Osmitrol],SBD
+CV709,567365,mannitol 100 MG/ML [Osmitrol],SBDC
+CV709,1791385,mannitol Injection [Osmitrol],SBDF
+CV709,1185149,Osmitrol Injectable Product,SBDG
+CV709,1791395,500 ML mannitol 100 MG/ML Injection,SCD
+CV709,316224,mannitol 100 MG/ML,SCDC
+CV709,1791383,mannitol Injection,SCDF
+CV709,1158624,mannitol Injectable Product,SCDG
+CV709,1791404,250 ML mannitol 200 MG/ML Injection [Osmitrol],SBD
+CV709,564475,mannitol 200 MG/ML [Osmitrol],SBDC
+CV709,1791403,250 ML mannitol 200 MG/ML Injection,SCD
+CV709,316226,mannitol 200 MG/ML,SCDC
+CV709,1791409,500 ML mannitol 200 MG/ML Injection [Osmitrol],SBD
+CV709,1791408,500 ML mannitol 200 MG/ML Injection,SCD
+CV709,54365,pamabrom,IN
+CV709,212541,pamabrom 50 MG Oral Tablet [Aqua-Ban],SBD
+CV709,572718,pamabrom 50 MG [Aqua-Ban],SBDC
+CV709,369451,pamabrom Oral Tablet [Aqua-Ban],SBDF
+CV709,1169303,Aqua-Ban Oral Product,SBDG
+CV709,1169304,Aqua-Ban Pill,SBDG
+CV709,199158,pamabrom 50 MG Oral Tablet,SCD
+CV709,330897,pamabrom 50 MG,SCDC
+CV709,373214,pamabrom Oral Tablet,SCDF
+CV709,1160719,pamabrom Oral Product,SCDG
+CV709,1160720,pamabrom Pill,SCDG
+CV709,311447,1000 ML mannitol 100 MG/ML Injection,SCD
+CV709,206537,500 ML mannitol 150 MG/ML Injection [Osmitrol],SBD
+CV709,567366,mannitol 150 MG/ML [Osmitrol],SBDC
+CV709,311448,500 ML mannitol 150 MG/ML Injection,SCD
+CV709,316225,mannitol 150 MG/ML,SCDC
+CV709,311450,50 ML mannitol 250 MG/ML Injection,SCD
+CV709,316227,mannitol 250 MG/ML,SCDC
+CV709,206535,1000 ML mannitol 50 MG/ML Injection [Osmitrol],SBD
+CV709,567364,mannitol 50 MG/ML [Osmitrol],SBDC
+CV709,311452,1000 ML mannitol 50 MG/ML Injection,SCD
+CV709,316229,mannitol 50 MG/ML,SCDC
+CV800,30131,moexipril,IN
+CV800,236066,moexipril hydrochloride,PIN
+CV800,1299896,moexipril hydrochloride 15 MG Oral Tablet,SCD
+CV800,1299858,moexipril hydrochloride 15 MG,SCDC
+CV800,372945,moexipril Oral Tablet,SCDF
+CV800,1157288,moexipril Oral Product,SCDG
+CV800,1157289,moexipril Pill,SCDG
+CV800,1299897,moexipril hydrochloride 7.5 MG Oral Tablet,SCD
+CV800,1299870,moexipril hydrochloride 7.5 MG,SCDC
+CV800,3827,enalapril,IN
+CV800,203123,enalapril maleate,PIN
+CV800,1435630,enalapril maleate 1 MG/ML Oral Solution [Epaned],SBD
+CV800,1435626,enalapril maleate 1 MG/ML [Epaned],SBDC
+CV800,1435627,enalapril Oral Solution [Epaned],SBDF
+CV800,1435628,Epaned Oral Liquid Product,SBDG
+CV800,1435629,Epaned Oral Product,SBDG
+CV800,1435624,enalapril maleate 1 MG/ML Oral Solution,SCD
+CV800,1435621,enalapril maleate 1 MG/ML,SCDC
+CV800,1435623,enalapril Oral Solution,SCDF
+CV800,1162652,enalapril Oral Product,SCDG
+CV800,1435622,enalapril Oral Liquid Product,SCDG
+CV800,3829,enalaprilat,IN
+CV800,1729200,1 ML enalaprilat 1.25 MG/ML Injection,SCD
+CV800,315855,enalaprilat 1.25 MG/ML,SCDC
+CV800,1729199,enalaprilat Injection,SCDF
+CV800,1162654,enalaprilat Injectable Product,SCDG
+CV800,1729205,2 ML enalaprilat 1.25 MG/ML Injection,SCD
+CV800,29046,lisinopril,IN
+CV800,1806890,lisinopril 1 MG/ML Oral Solution [Qbrelis],SBD
+CV800,1806886,lisinopril 1 MG/ML [Qbrelis],SBDC
+CV800,1806887,lisinopril Oral Solution [Qbrelis],SBDF
+CV800,1806888,Qbrelis Oral Liquid Product,SBDG
+CV800,1806889,Qbrelis Oral Product,SBDG
+CV800,1806884,lisinopril 1 MG/ML Oral Solution,SCD
+CV800,1806881,lisinopril 1 MG/ML,SCDC
+CV800,1806883,lisinopril Oral Solution,SCDF
+CV800,1164689,lisinopril Oral Product,SCDG
+CV800,1806882,lisinopril Oral Liquid Product,SCDG
+CV800,206771,lisinopril 40 MG Oral Tablet [Zestril],SBD
+CV800,567582,lisinopril 40 MG [Zestril],SBDC
+CV800,368248,lisinopril Oral Tablet [Zestril],SBDF
+CV800,1187283,Zestril Oral Product,SBDG
+CV800,1187284,Zestril Pill,SBDG
+CV800,197884,lisinopril 40 MG Oral Tablet,SCD
+CV800,316155,lisinopril 40 MG,SCDC
+CV800,372614,lisinopril Oral Tablet,SCDF
+CV800,1164690,lisinopril Pill,SCDG
+CV800,35296,ramipril,IN
+CV800,104384,ramipril 2.5 MG Oral Capsule [Altace],SBD
+CV800,568144,ramipril 2.5 MG [Altace],SBDC
+CV800,380864,ramipril Oral Capsule [Altace],SBDF
+CV800,1169224,Altace Oral Product,SBDG
+CV800,1169225,Altace Pill,SBDG
+CV800,198188,ramipril 2.5 MG Oral Capsule,SCD
+CV800,316628,ramipril 2.5 MG,SCDC
+CV800,373748,ramipril Oral Capsule,SCDF
+CV800,1164809,ramipril Oral Product,SCDG
+CV800,1164810,ramipril Pill,SCDG
+CV800,104385,ramipril 5 MG Oral Capsule [Altace],SBD
+CV800,568145,ramipril 5 MG [Altace],SBDC
+CV800,198189,ramipril 5 MG Oral Capsule,SCD
+CV800,317482,ramipril 5 MG,SCDC
+CV800,38454,trandolapril,IN
+CV800,199351,trandolapril 2 MG Oral Tablet,SCD
+CV800,316847,trandolapril 2 MG,SCDC
+CV800,374177,trandolapril Oral Tablet,SCDF
+CV800,1162758,trandolapril Oral Product,SCDG
+CV800,1162759,trandolapril Pill,SCDG
+CV800,210673,trandolapril 4 MG Oral Tablet [Mavik],SBD
+CV800,571174,trandolapril 4 MG [Mavik],SBDC
+CV800,367902,trandolapril Oral Tablet [Mavik],SBDF
+CV800,1181569,Mavik Oral Product,SBDG
+CV800,1181570,Mavik Pill,SBDG
+CV800,199352,trandolapril 4 MG Oral Tablet,SCD
+CV800,316848,trandolapril 4 MG,SCDC
+CV800,199353,trandolapril 1 MG Oral Tablet,SCD
+CV800,317522,trandolapril 1 MG,SCDC
+CV800,213482,lisinopril 30 MG Oral Tablet [Zestril],SBD
+CV800,573370,lisinopril 30 MG [Zestril],SBDC
+CV800,205326,lisinopril 30 MG Oral Tablet,SCD
+CV800,316154,lisinopril 30 MG,SCDC
+CV800,260333,ramipril 10 MG Oral Capsule [Altace],SBD
+CV800,574127,ramipril 10 MG [Altace],SBDC
+CV800,261962,ramipril 10 MG Oral Capsule,SCD
+CV800,316627,ramipril 10 MG,SCDC
+CV800,1998,captopril,IN
+CV800,308962,captopril 100 MG Oral Tablet,SCD
+CV800,315559,captopril 100 MG,SCDC
+CV800,371254,captopril Oral Tablet,SCDF
+CV800,1155753,captopril Oral Product,SCDG
+CV800,1155754,captopril Pill,SCDG
+CV800,308963,captopril 12.5 MG Oral Tablet,SCD
+CV800,315560,captopril 12.5 MG,SCDC
+CV800,308964,captopril 50 MG Oral Tablet,SCD
+CV800,315562,captopril 50 MG,SCDC
+CV800,104375,lisinopril 2.5 MG Oral Tablet [Zestril],SBD
+CV800,563609,lisinopril 2.5 MG [Zestril],SBDC
+CV800,311353,lisinopril 2.5 MG Oral Tablet,SCD
+CV800,316152,lisinopril 2.5 MG,SCDC
+CV800,104376,lisinopril 5 MG Oral Tablet [Zestril],SBD
+CV800,206764,lisinopril 5 MG Oral Tablet [Prinivil],SBD
+CV800,563610,lisinopril 5 MG [Zestril],SBDC
+CV800,567575,lisinopril 5 MG [Prinivil],SBDC
+CV800,368865,lisinopril Oral Tablet [Prinivil],SBDF
+CV800,1178275,Prinivil Oral Product,SBDG
+CV800,1178276,Prinivil Pill,SBDG
+CV800,311354,lisinopril 5 MG Oral Tablet,SCD
+CV800,316156,lisinopril 5 MG,SCDC
+CV800,35208,quinapril,IN
+CV800,207892,quinapril 10 MG Oral Tablet [Accupril],SBD
+CV800,568625,quinapril 10 MG [Accupril],SBDC
+CV800,369331,quinapril Oral Tablet [Accupril],SBDF
+CV800,1165996,Accupril Oral Product,SBDG
+CV800,1165997,Accupril Pill,SBDG
+CV800,312748,quinapril 10 MG Oral Tablet,SCD
+CV800,316616,quinapril 10 MG,SCDC
+CV800,373731,quinapril Oral Tablet,SCDF
+CV800,1157876,quinapril Oral Product,SCDG
+CV800,1157877,quinapril Pill,SCDG
+CV800,207893,quinapril 20 MG Oral Tablet [Accupril],SBD
+CV800,568626,quinapril 20 MG [Accupril],SBDC
+CV800,312749,quinapril 20 MG Oral Tablet,SCD
+CV800,316617,quinapril 20 MG,SCDC
+CV800,207891,quinapril 5 MG Oral Tablet [Accupril],SBD
+CV800,568624,quinapril 5 MG [Accupril],SBDC
+CV800,312750,quinapril 5 MG Oral Tablet,SCD
+CV800,316619,quinapril 5 MG,SCDC
+CV800,104377,lisinopril 10 MG Oral Tablet [Zestril],SBD
+CV800,206765,lisinopril 10 MG Oral Tablet [Prinivil],SBD
+CV800,563611,lisinopril 10 MG [Zestril],SBDC
+CV800,567576,lisinopril 10 MG [Prinivil],SBDC
+CV800,314076,lisinopril 10 MG Oral Tablet,SCD
+CV800,316151,lisinopril 10 MG,SCDC
+CV800,104378,lisinopril 20 MG Oral Tablet [Zestril],SBD
+CV800,206766,lisinopril 20 MG Oral Tablet [Prinivil],SBD
+CV800,563612,lisinopril 20 MG [Zestril],SBDC
+CV800,567577,lisinopril 20 MG [Prinivil],SBDC
+CV800,314077,lisinopril 20 MG Oral Tablet,SCD
+CV800,316153,lisinopril 20 MG,SCDC
+CV800,207895,quinapril 40 MG Oral Tablet [Accupril],SBD
+CV800,568627,quinapril 40 MG [Accupril],SBDC
+CV800,314203,quinapril 40 MG Oral Tablet,SCD
+CV800,316618,quinapril 40 MG,SCDC
+CV800,317173,captopril 25 MG Oral Tablet,SCD
+CV800,315561,captopril 25 MG,SCDC
+CV800,845489,ramipril 1.25 MG Oral Capsule [Altace],SBD
+CV800,568143,ramipril 1.25 MG [Altace],SBDC
+CV800,845488,ramipril 1.25 MG Oral Capsule,SCD
+CV800,316626,ramipril 1.25 MG,SCDC
+CV800,54552,perindopril,IN
+CV800,72260,perindopril erbumine,PIN
+CV800,854927,perindopril erbumine 8 MG Oral Tablet [Aceon],SBD
+CV800,854926,perindopril erbumine 8 MG [Aceon],SBDC
+CV800,368233,perindopril Oral Tablet [Aceon],SBDF
+CV800,1168400,Aceon Oral Product,SBDG
+CV800,1168401,Aceon Pill,SBDG
+CV800,854925,perindopril erbumine 8 MG Oral Tablet,SCD
+CV800,854923,perindopril erbumine 8 MG,SCDC
+CV800,373293,perindopril Oral Tablet,SCDF
+CV800,1165430,perindopril Oral Product,SCDG
+CV800,1165431,perindopril Pill,SCDG
+CV800,854986,perindopril erbumine 2 MG Oral Tablet [Aceon],SBD
+CV800,854985,perindopril erbumine 2 MG [Aceon],SBDC
+CV800,854984,perindopril erbumine 2 MG Oral Tablet,SCD
+CV800,854983,perindopril erbumine 2 MG,SCDC
+CV800,854990,perindopril erbumine 4 MG Oral Tablet [Aceon],SBD
+CV800,854989,perindopril erbumine 4 MG [Aceon],SBDC
+CV800,854988,perindopril erbumine 4 MG Oral Tablet,SCD
+CV800,854987,perindopril erbumine 4 MG,SCDC
+CV800,50166,fosinopril,IN
+CV800,227278,fosinopril sodium,PIN
+CV800,857169,fosinopril sodium 10 MG Oral Tablet,SCD
+CV800,857165,fosinopril sodium 10 MG,SCDC
+CV800,372274,fosinopril Oral Tablet,SCDF
+CV800,1162676,fosinopril Oral Product,SCDG
+CV800,1162677,fosinopril Pill,SCDG
+CV800,857183,fosinopril sodium 20 MG Oral Tablet,SCD
+CV800,857173,fosinopril sodium 20 MG,SCDC
+CV800,857187,fosinopril sodium 40 MG Oral Tablet,SCD
+CV800,857186,fosinopril sodium 40 MG,SCDC
+CV800,858806,enalapril maleate 2.5 MG Oral Tablet [Vasotec],SBD
+CV800,858805,enalapril maleate 2.5 MG [Vasotec],SBDC
+CV800,369505,enalapril Oral Tablet [Vasotec],SBDF
+CV800,1187734,Vasotec Oral Product,SBDG
+CV800,1187735,Vasotec Pill,SBDG
+CV800,858804,enalapril maleate 2.5 MG Oral Tablet,SCD
+CV800,858803,enalapril maleate 2.5 MG,SCDC
+CV800,372007,enalapril Oral Tablet,SCDF
+CV800,1162653,enalapril Pill,SCDG
+CV800,858812,enalapril maleate 20 MG Oral Tablet [Vasotec],SBD
+CV800,858811,enalapril maleate 20 MG [Vasotec],SBDC
+CV800,858810,enalapril maleate 20 MG Oral Tablet,SCD
+CV800,858809,enalapril maleate 20 MG,SCDC
+CV800,858815,enalapril maleate 5 MG Oral Tablet [Vasotec],SBD
+CV800,858814,enalapril maleate 5 MG [Vasotec],SBDC
+CV800,858813,enalapril maleate 5 MG Oral Tablet,SCD
+CV800,833236,enalapril maleate 5 MG,SCDC
+CV800,858819,enalapril maleate 10 MG Oral Tablet [Vasotec],SBD
+CV800,858818,enalapril maleate 10 MG [Vasotec],SBDC
+CV800,858817,enalapril maleate 10 MG Oral Tablet,SCD
+CV800,858816,enalapril maleate 10 MG,SCDC
+CV800,18867,benazepril,IN
+CV800,235758,benazepril hydrochloride,PIN
+CV800,898689,benazepril hydrochloride 10 MG Oral Tablet [Lotensin],SBD
+CV800,898688,benazepril hydrochloride 10 MG [Lotensin],SBDC
+CV800,368080,benazepril Oral Tablet [Lotensin],SBDF
+CV800,1180904,Lotensin Oral Product,SBDG
+CV800,1180905,Lotensin Pill,SBDG
+CV800,898687,benazepril hydrochloride 10 MG Oral Tablet,SCD
+CV800,898349,benazepril hydrochloride 10 MG,SCDC
+CV800,371001,benazepril Oral Tablet,SCDF
+CV800,1160007,benazepril Oral Product,SCDG
+CV800,1160008,benazepril Pill,SCDG
+CV800,898692,benazepril hydrochloride 20 MG Oral Tablet [Lotensin],SBD
+CV800,898691,benazepril hydrochloride 20 MG [Lotensin],SBDC
+CV800,898690,benazepril hydrochloride 20 MG Oral Tablet,SCD
+CV800,898341,benazepril hydrochloride 20 MG,SCDC
+CV800,898721,benazepril hydrochloride 40 MG Oral Tablet [Lotensin],SBD
+CV800,898720,benazepril hydrochloride 40 MG [Lotensin],SBDC
+CV800,898719,benazepril hydrochloride 40 MG Oral Tablet,SCD
+CV800,898345,benazepril hydrochloride 40 MG,SCDC
+CV800,898725,benazepril hydrochloride 5 MG Oral Tablet [Lotensin],SBD
+CV800,898724,benazepril hydrochloride 5 MG [Lotensin],SBDC
+CV800,898723,benazepril hydrochloride 5 MG Oral Tablet,SCD
+CV800,898377,benazepril hydrochloride 5 MG,SCDC
+CV805,1091643,azilsartan,IN
+CV805,1091642,azilsartan medoxomil,PIN
+CV805,1091650,azilsartan medoxomil 40 MG Oral Tablet [Edarbi],SBD
+CV805,1091648,azilsartan medoxomil 40 MG [Edarbi],SBDC
+CV805,1091649,azilsartan Oral Tablet [Edarbi],SBDF
+CV805,1173191,Edarbi Oral Product,SBDG
+CV805,1173192,Edarbi Pill,SBDG
+CV805,1091646,azilsartan medoxomil 40 MG Oral Tablet,SCD
+CV805,1091644,azilsartan medoxomil 40 MG,SCDC
+CV805,1091645,azilsartan Oral Tablet,SCDF
+CV805,1155006,azilsartan Oral Product,SCDG
+CV805,1155007,azilsartan Pill,SCDG
+CV805,1091654,azilsartan medoxomil 80 MG Oral Tablet [Edarbi],SBD
+CV805,1091653,azilsartan medoxomil 80 MG [Edarbi],SBDC
+CV805,1091652,azilsartan medoxomil 80 MG Oral Tablet,SCD
+CV805,1091651,azilsartan medoxomil 80 MG,SCDC
+CV805,214354,candesartan,IN
+CV805,135481,candesartan cilexetil,PIN
+CV805,577785,candesartan cilexetil 4 MG Oral Tablet [Atacand],SBD
+CV805,577784,candesartan cilexetil 4 MG [Atacand],SBDC
+CV805,368268,candesartan Oral Tablet [Atacand],SBDF
+CV805,1172187,Atacand Oral Product,SBDG
+CV805,1172188,Atacand Pill,SBDG
+CV805,153822,candesartan cilexetil 4 MG Oral Tablet,SCD
+CV805,540781,candesartan cilexetil 4 MG,SCDC
+CV805,371247,candesartan Oral Tablet,SCDF
+CV805,1156611,candesartan Oral Product,SCDG
+CV805,1156612,candesartan Pill,SCDG
+CV805,577787,candesartan cilexetil 8 MG Oral Tablet [Atacand],SBD
+CV805,577786,candesartan cilexetil 8 MG [Atacand],SBDC
+CV805,153823,candesartan cilexetil 8 MG Oral Tablet,SCD
+CV805,540788,candesartan cilexetil 8 MG,SCDC
+CV805,69749,valsartan,IN
+CV805,1996254,valsartan 4 MG/ML Oral Solution,SCD
+CV805,1996251,valsartan 4 MG/ML,SCDC
+CV805,1996253,valsartan Oral Solution,SCDF
+CV805,1163997,valsartan Oral Product,SCDG
+CV805,1996252,valsartan Oral Liquid Product,SCDG
+CV805,83818,irbesartan,IN
+CV805,153665,irbesartan 75 MG Oral Tablet [Avapro],SBD
+CV805,565354,irbesartan 75 MG [Avapro],SBDC
+CV805,379722,irbesartan Oral Tablet [Avapro],SBDF
+CV805,1175669,Avapro Oral Product,SBDG
+CV805,1175670,Avapro Pill,SBDG
+CV805,200094,irbesartan 75 MG Oral Tablet,SCD
+CV805,316100,irbesartan 75 MG,SCDC
+CV805,370704,irbesartan Oral Tablet,SCDF
+CV805,1161332,irbesartan Oral Product,SCDG
+CV805,1161333,irbesartan Pill,SCDG
+CV805,153666,irbesartan 150 MG Oral Tablet [Avapro],SBD
+CV805,565355,irbesartan 150 MG [Avapro],SBDC
+CV805,200095,irbesartan 150 MG Oral Tablet,SCD
+CV805,316098,irbesartan 150 MG,SCDC
+CV805,153667,irbesartan 300 MG Oral Tablet [Avapro],SBD
+CV805,565356,irbesartan 300 MG [Avapro],SBDC
+CV805,200096,irbesartan 300 MG Oral Tablet,SCD
+CV805,316099,irbesartan 300 MG,SCDC
+CV805,73494,telmisartan,IN
+CV805,213431,telmisartan 40 MG Oral Tablet [Micardis],SBD
+CV805,573320,telmisartan 40 MG [Micardis],SBDC
+CV805,368146,telmisartan Oral Tablet [Micardis],SBDF
+CV805,1178058,Micardis Oral Product,SBDG
+CV805,1178059,Micardis Pill,SBDG
+CV805,205304,telmisartan 40 MG Oral Tablet,SCD
+CV805,316764,telmisartan 40 MG,SCDC
+CV805,374024,telmisartan Oral Tablet,SCDF
+CV805,1161480,telmisartan Oral Product,SCDG
+CV805,1161481,telmisartan Pill,SCDG
+CV805,213432,telmisartan 80 MG Oral Tablet [Micardis],SBD
+CV805,573321,telmisartan 80 MG [Micardis],SBDC
+CV805,205305,telmisartan 80 MG Oral Tablet,SCD
+CV805,316765,telmisartan 80 MG,SCDC
+CV805,284531,telmisartan 20 MG Oral Tablet [Micardis],SBD
+CV805,574959,telmisartan 20 MG [Micardis],SBDC
+CV805,282755,telmisartan 20 MG Oral Tablet,SCD
+CV805,331555,telmisartan 20 MG,SCDC
+CV805,83515,eprosartan,IN
+CV805,310140,eprosartan 600 MG Oral Tablet,SCD
+CV805,330330,eprosartan 600 MG,SCDC
+CV805,374612,eprosartan Oral Tablet,SCDF
+CV805,1161920,eprosartan Oral Product,SCDG
+CV805,1161921,eprosartan Pill,SCDG
+CV805,351761,valsartan 80 MG Oral Tablet [Diovan],SBD
+CV805,565166,valsartan 80 MG [Diovan],SBDC
+CV805,368070,valsartan Oral Tablet [Diovan],SBDF
+CV805,1171720,Diovan Oral Product,SBDG
+CV805,1171721,Diovan Pill,SBDG
+CV805,349199,valsartan 80 MG Oral Tablet,SCD
+CV805,316882,valsartan 80 MG,SCDC
+CV805,378276,valsartan Oral Tablet,SCDF
+CV805,1164561,valsartan Pill,SCDG
+CV805,352001,valsartan 320 MG Oral Tablet [Diovan],SBD
+CV805,575745,valsartan 320 MG [Diovan],SBDC
+CV805,349200,valsartan 320 MG Oral Tablet,SCD
+CV805,350561,valsartan 320 MG,SCDC
+CV805,351762,valsartan 160 MG Oral Tablet [Diovan],SBD
+CV805,565167,valsartan 160 MG [Diovan],SBDC
+CV805,349201,valsartan 160 MG Oral Tablet,SCD
+CV805,316881,valsartan 160 MG,SCDC
+CV805,321064,olmesartan,IN
+CV805,118463,olmesartan medoxomil,PIN
+CV805,352199,olmesartan medoxomil 5 MG Oral Tablet [Benicar],SBD
+CV805,575926,olmesartan medoxomil 5 MG [Benicar],SBDC
+CV805,369419,olmesartan Oral Tablet [Benicar],SBDF
+CV805,1170823,Benicar Oral Product,SBDG
+CV805,1171463,Benicar Pill,SBDG
+CV805,349373,olmesartan medoxomil 5 MG Oral Tablet,SCD
+CV805,359115,olmesartan medoxomil 5 MG,SCDC
+CV805,378991,olmesartan Oral Tablet,SCDF
+CV805,1159559,olmesartan Oral Product,SCDG
+CV805,1159560,olmesartan Pill,SCDG
+CV805,352200,olmesartan medoxomil 20 MG Oral Tablet [Benicar],SBD
+CV805,575927,olmesartan medoxomil 20 MG [Benicar],SBDC
+CV805,349401,olmesartan medoxomil 20 MG Oral Tablet,SCD
+CV805,358775,olmesartan medoxomil 20 MG,SCDC
+CV805,352201,olmesartan medoxomil 40 MG Oral Tablet [Benicar],SBD
+CV805,575928,olmesartan medoxomil 40 MG [Benicar],SBDC
+CV805,349405,olmesartan medoxomil 40 MG Oral Tablet,SCD
+CV805,359114,olmesartan medoxomil 40 MG,SCDC
+CV805,352274,valsartan 40 MG Oral Tablet [Diovan],SBD
+CV805,565165,valsartan 40 MG [Diovan],SBDC
+CV805,349483,valsartan 40 MG Oral Tablet,SCD
+CV805,335831,valsartan 40 MG,SCDC
+CV805,639539,candesartan cilexetil 16 MG Oral Tablet [Atacand],SBD
+CV805,639538,candesartan cilexetil 16 MG [Atacand],SBDC
+CV805,577776,candesartan cilexetil 16 MG Oral Tablet,SCD
+CV805,577775,candesartan cilexetil 16 MG,SCDC
+CV805,639543,candesartan cilexetil 32 MG Oral Tablet [Atacand],SBD
+CV805,577782,candesartan cilexetil 32 MG [Atacand],SBDC
+CV805,639537,candesartan cilexetil 32 MG Oral Tablet,SCD
+CV805,577780,candesartan cilexetil 32 MG,SCDC
+CV805,52175,losartan,IN
+CV805,203160,losartan potassium,PIN
+CV805,979482,losartan potassium 100 MG Oral Tablet [Cozaar],SBD
+CV805,979481,losartan potassium 100 MG [Cozaar],SBDC
+CV805,368240,losartan Oral Tablet [Cozaar],SBDF
+CV805,1172369,Cozaar Oral Product,SBDG
+CV805,1172370,Cozaar Pill,SBDG
+CV805,979480,losartan potassium 100 MG Oral Tablet,SCD
+CV805,979463,losartan potassium 100 MG,SCDC
+CV805,372651,losartan Oral Tablet,SCDF
+CV805,1165342,losartan Oral Product,SCDG
+CV805,1165343,losartan Pill,SCDG
+CV805,979487,losartan potassium 25 MG Oral Tablet [Cozaar],SBD
+CV805,979486,losartan potassium 25 MG [Cozaar],SBDC
+CV805,979485,losartan potassium 25 MG Oral Tablet,SCD
+CV805,979484,losartan potassium 25 MG,SCDC
+CV805,979494,losartan potassium 50 MG Oral Tablet [Cozaar],SBD
+CV805,979493,losartan potassium 50 MG [Cozaar],SBDC
+CV805,979492,losartan potassium 50 MG Oral Tablet,SCD
+CV805,979467,losartan potassium 50 MG,SCDC
+CV806,325646,aliskiren,IN
+CV806,1011738,aliskiren 150 MG Oral Tablet [Tekturna],SBD
+CV806,1011737,aliskiren 150 MG [Tekturna],SBDC
+CV806,700404,aliskiren Oral Tablet [Tekturna],SBDF
+CV806,1180880,Tekturna Oral Product,SBDG
+CV806,1180881,Tekturna Pill,SBDG
+CV806,1011736,aliskiren 150 MG Oral Tablet,SCD
+CV806,1009217,aliskiren 150 MG,SCDC
+CV806,692500,aliskiren Oral Tablet,SCDF
+CV806,1164887,aliskiren Oral Product,SCDG
+CV806,1164888,aliskiren Pill,SCDG
+CV806,1011741,aliskiren 300 MG Oral Tablet [Tekturna],SBD
+CV806,1011740,aliskiren 300 MG [Tekturna],SBDC
+CV806,1011739,aliskiren 300 MG Oral Tablet,SCD
+CV806,1009314,aliskiren 300 MG,SCDC
 CV350,2685,colestipol,IN
 CV350,104485,colestipol hydrochloride,PIN
 CV350,1048447,colestipol hydrochloride 1000 MG Oral Tablet [Colestid],SBD

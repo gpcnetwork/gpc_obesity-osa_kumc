@@ -1,4 +1,39 @@
 VACLS,IN
+CV100,labetalol
+CV100,betaxolol
+CV100,propranolol
+CV100,sotalol
+CV100,metoprolol
+CV100,esmolol
+CV100,atenolol
+CV100,nadolol
+CV100,pindolol
+CV100,timolol
+CV100,carvedilol
+CV100,nebivolol
+CV100,bisoprolol
+CV100,acebutolol
+CV150,doxazosin
+CV150,prazosin
+CV150,terazosin
+CV150,silodosin
+CV150,alfuzosin
+CV150,tamsulosin
+CV200,verapamil
+CV200,clevidipine
+CV200,diltiazem
+CV200,nifedipine
+CV200,amlodipine
+CV200,isradipine
+CV200,nimodipine
+CV200,celecoxib
+CV200,amlodipine / celecoxib
+CV200,levamlodipine
+CV200,nisoldipine
+CV200,felodipine
+CV200,atorvastatin
+CV200,amlodipine / atorvastatin
+CV200,nicardipine
 CV400,amlodipine
 CV400,olmesartan
 CV400,hydrochlorothiazide
@@ -80,6 +115,52 @@ CV490,tadalafil
 CV490,treprostinil
 CV490,iloprost
 CV490,hydralazine
+CV701,chlorothiazide
+CV701,chlorthalidone
+CV701,hydrochlorothiazide
+CV701,indapamide
+CV701,metolazone
+CV702,ethacrynate
+CV702,furosemide
+CV702,bumetanide
+CV702,torsemide
+CV703,acetazolamide
+CV703,dichlorphenamide
+CV703,methazolamide
+CV704,spironolactone
+CV704,hydrochlorothiazide
+CV704,hydrochlorothiazide / spironolactone
+CV704,triamterene
+CV704,hydrochlorothiazide / triamterene
+CV704,finerenone
+CV704,eplerenone
+CV704,amiloride
+CV704,amiloride / hydrochlorothiazide
+CV709,caffeine
+CV709,magnesium salicylate
+CV709,caffeine / magnesium salicylate
+CV709,mannitol
+CV709,pamabrom
+CV800,moexipril
+CV800,enalapril
+CV800,enalaprilat
+CV800,lisinopril
+CV800,ramipril
+CV800,trandolapril
+CV800,captopril
+CV800,quinapril
+CV800,perindopril
+CV800,fosinopril
+CV800,benazepril
+CV805,azilsartan
+CV805,candesartan
+CV805,valsartan
+CV805,irbesartan
+CV805,telmisartan
+CV805,eprosartan
+CV805,olmesartan
+CV805,losartan
+CV806,aliskiren
 CV350,colestipol
 CV350,icosapent ethyl
 CV350,lomitapide
