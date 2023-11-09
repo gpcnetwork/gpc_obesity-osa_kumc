@@ -138,10 +138,17 @@ select * from mace_occur
 pivot (min(DAYS_SINCE_OSA) for MACE_BEF_AFT 
        in ('MI_BEF','MI_AFT','STROKE_BEF','STROKE_AFT','HF_BEF','HF_AFT','REVASC_BEF','REVASC_AFT')) 
        as p(PATID,MI_BEF,MI_AFT,STROKE_BEF,STROKE_AFT,HF_BEF,HF_AFT,REVASC_BEF,REVASC_AFT)
-) 
-select p.PATID
+), cte_censor as (
+      select patid, max(ENR_END_DATE) as CENSOR_DATE
+      from PAT_OSA_ELIG
+      group by patid
+)
+select distinct
+       p.PATID
       ,p.OSA_DX1_DATE
       ,p.AGE_AT_OSA_DX1
+      ,c.CENSOR_DATE
+      ,datediff('day',p.OSA_DX1_DATE,c.CENSOR_DATE) as DAYS_OSA_TO_CENSOR
       ,m.MI_BEF
       ,m.MI_AFT
       ,m.STROKE_BEF
@@ -155,11 +162,12 @@ select p.PATID
       ,d.DEATH_DATE
       ,datediff('day',p.OSA_DX1_DATE,d.DEATH_DATE) as DAYS_OSA_TO_DEATH
 from identifier($pat_elig) p
+inner join cte_censor c on p.patid = c.patid
 left join mace_pivot m on p.PATID = m.PATID
-left join identifier($DEATH) d on p.PATID = d.PATID
+left join identifier($death) d on p.PATID = d.PATID
 ;
 
-select count(distinct patid) from PAT_OSA_ENDPT
+select count(distinct patid), count(*) from PAT_OSA_ENDPT
 where MACE_BEF is null
 ;
 -- 594,984
@@ -217,7 +225,8 @@ create or replace table PAT_OSA_PAP_DEVICE as
 select * from cpap_first_date
 where DAYS_OSA_TO_CPAP_INIT > 0
 ;
-select count(distinct patid) from PAT_OSA_PAP_DEVICE;
+select count(distinct patid), count(*)
+ from PAT_OSA_PAP_DEVICE;
 -- 296,203
 
 /*exposure: CPAP adherence*/
@@ -248,20 +257,6 @@ where px.PX_TYPE = 'CH' and px.PX_DATE >= d.CPAP_INIT_DATE and
 group by d.PATID,e.ENR_START_DATE,e.DAYS_ENR_START_TO_OSA,d.OSA_DX1_DATE,d.CPAP_INIT_DATE,
          d.DAYS_OSA_TO_CPAP_INIT,px.PX_DATE,e.ENR_END_DATE
 order by d.PATID, px.PX_DATE
-;
-
-/*covariates: demographics */
-create or replace table PAT_OSA_DEMO as
-select distinct
-       p.PATID
-      ,d.BIRTH_DATE
-      ,round(datediff('day',d.BIRTH_DATE,p.OSA_DX1_DATE)/365.25) AGE_AT_OSA_DX1
-      ,d.SEX
-      ,d.RACE
-      ,d.HISPANIC
-from identifier($pat_elig) p
-join identifier($demographic) d 
-on p.patid = d.patid
 ;
 
 /*covariates: diagnoses*/
@@ -302,9 +297,9 @@ select patid
 from cte_comorb_map 
 where rn = 1 
 ; 
-select code_grp_lbl, count(distinct patid) 
+select code_grp,code_grp_lbl, count(distinct patid) 
 from PAT_OSA_SEL_DX
-group by code_grp_lbl;
+group by code_grp,code_grp_lbl;
  
 
 /*covariates: cci*/
@@ -333,9 +328,9 @@ from cte_cci_map
 where rn = 1
 ; 
 
-select code_grp_lbl, count(distinct patid) 
+select code_grp,code_grp_lbl, count(distinct patid) 
 from PAT_OSA_CCI
-group by code_grp_lbl;
+group by code_grp,code_grp_lbl;
 
 /*covariates: medications*/
 select * from z_ref_rx_ndc;
@@ -348,7 +343,7 @@ with cte_cls as (
                   else 'AHT' 
              end as RXCLS
             ,rx.DISPENSE_DATE
-            ,datediff('day',p.OSA_DX1_DATE,rx.DISPENSE_DATE) as DAYS_SINCE_OSA
+            ,datediff('day',p.OSA_DX1_DATE,rx.DISPENSE_DATE) as DAYS_SINCE_INDEX
       from identifier($pat_elig) p
       join identifier($dispensing) rx on p.patid = rx.patid
       join z_ref_rx_ndc z on rx.ndc = z.ndc
@@ -356,14 +351,14 @@ with cte_cls as (
       select patid
             ,rxcls
             ,dispense_date
-            ,days_since_osa
-            ,row_number() over (partition by patid,rxcls,case when days_since_osa<=0 then 1 else 0 end order by abs(days_since_osa)) as rn
+            ,days_since_index
+            ,row_number() over (partition by patid,rxcls,case when days_since_index<=0 then 1 else 0 end order by abs(days_since_index)) as rn
       from cte_cls
 )
 select patid
       ,rxcls
       ,dispense_date
-      ,days_since_osa
+      ,days_since_index
 from cte_ord
 where rn = 1
 ;
@@ -373,6 +368,213 @@ from PAT_OSA_SEL_RX
 group by rxcls
 ;
 
-select * from PAT_OSA_SEL_RX
-order by patid
+
+-- final analytical dataset
+create or replace table PAT_OSA_PAP_EXPOS as 
+with cte_cci as (
+      select patid, sum(cci_score) as CCI_SCORE
+      from PAT_OSA_CCI
+      where days_since_index <=0 
+      group by patid
+), cte_sel_dx as (
+      select * from
+      (
+            select patid, code_grp, 1 as ind from PAT_OSA_SEL_DX
+            where days_since_index <= 0 and 
+                  code_grp in (
+                        'obes',
+                        't2dm',
+                        'ckd',
+                        'copd',
+                        'afib',
+                        'htn',
+                        'nd',
+                        'hysm',
+                        'insm'
+                        )
+      )
+      pivot 
+      (
+            max(ind) for code_grp 
+            in  ('obes','t2dm','ckd','copd','afib','htn','nd','hysm','insm') 
+      )
+      as p(patid,obes,t2dm,ckd,copd,afib,htn,nd,hysm,insm)
+), cte_sel_rx as (
+      select * from
+      (
+            select patid, rxcls, 1 as ind from PAT_OSA_SEL_RX
+            where days_since_index <= 0 and days_since_index >= -365
+      )
+      pivot 
+      (
+            max(ind) for rxcls 
+            in  ('ACG','AHT','ALP','BGR') 
+      )
+      as p(patid,ACG,AHT,ALP,BGR)
+), cte_sdoh as (
+      select distinct patid, 1 as lis_dual_ind 
+      from identifier($enrollment)
+      where raw_basis in ('LIS','DUAL')
+)
+select distinct
+       p.PATID
+      ,p.OSA_DX1_DATE
+      ,d.BIRTH_DATE
+      ,round(datediff('day',d.BIRTH_DATE,p.OSA_DX1_DATE)/365.25) AGE_AT_OSA_DX1
+      ,d.SEX
+      ,case when d.RACE = '05' then 'WH'
+            when d.RACE = '03' then 'BL'
+            when d.RACE = '02' then 'AS'
+            when d.RACE = '01' then 'NA'
+            when d.RACE = 'OT' then 'OT'
+            else 'NI'
+       end as RACE
+      ,d.HISPANIC
+      ,o.MI_BEF
+      ,o.MI_AFT
+      ,o.STROKE_BEF
+      ,o.STROKE_AFT
+      ,o.HF_BEF
+      ,o.HF_AFT
+      ,o.REVASC_BEF
+      ,o.REVASC_AFT
+      ,o.MACE_BEF
+      ,o.MACE_AFT
+      ,o.DEATH_DATE
+      ,o.DAYS_OSA_TO_DEATH
+      ,o.CENSOR_DATE
+      ,o.DAYS_OSA_TO_CENSOR
+      ,dv.CPAP_INIT_DATE
+      ,dv.DAYS_OSA_TO_CPAP_INIT
+      ,cci.cci_score
+      ,dx.obes
+      ,dx.t2dm
+      ,dx.ckd
+      ,dx.copd
+      ,dx.afib
+      ,dx.htn
+      ,dx.nd
+      ,dx.hysm
+      ,dx.insm
+      ,rx.ACG
+      ,rx.AHT
+      ,rx.ALP
+      ,rx.BGR
+      ,sdh.LIS_DUAL_IND
+from identifier($pat_elig) p
+inner join identifier($demographic) d on p.patid = d.patid
+inner join PAT_OSA_ENDPT o on p.patid = o.patid 
+left join PAT_OSA_PAP_DEVICE dv on p.patid = dv.patid
+left join cte_cci cci on cci.patid = p.patid
+left join cte_sel_dx dx on dx.patid = p.patid
+left join cte_sel_rx rx on rx.patid = p.patid
+left join cte_sdoh sdh on sdh.patid = p.patid
 ;
+
+select count(distinct patid), count(*) from PAT_OSA_PAP_EXPOS;
+
+
+
+create or replace table PAT_OSA_PAP_ADHRN as 
+with cte_cci as (
+      select patid, sum(cci_score) as CCI_SCORE
+      from PAT_OSA_CCI
+      where days_since_index <= 365 
+      group by patid
+), cte_sel_dx as (
+      select * from
+      (
+            select patid, code_grp, 1 as ind from PAT_OSA_SEL_DX
+            where days_since_index <= 365 and 
+                  code_grp in (
+                        'obes',
+                        't2dm',
+                        'ckd',
+                        'copd',
+                        'afib',
+                        'htn',
+                        'nd',
+                        'hysm',
+                        'insm'
+                        )
+      )
+      pivot 
+      (
+            max(ind) for code_grp 
+            in  ('obes','t2dm','ckd','copd','afib','htn','nd','hysm','insm') 
+      )
+      as p(patid,obes,t2dm,ckd,copd,afib,htn,nd,hysm,insm)
+), cte_sel_rx as (
+      select * from
+      (
+            select patid, rxcls, 1 as ind from PAT_OSA_SEL_RX
+            where days_since_index <= 365 and days_since_index >= 0
+      )
+      pivot 
+      (
+            max(ind) for rxcls 
+            in  ('ACG','AHT','ALP','BGR') 
+      )
+      as p(patid,ACG,AHT,ALP,BGR)
+), cte_sdoh as (
+      select distinct patid, 1 as lis_dual_ind 
+      from identifier($enrollment)
+      where raw_basis in ('LIS','DUAL')
+)
+select distinct
+       p.PATID
+      ,p.OSA_DX1_DATE
+      ,d.BIRTH_DATE
+      ,round(datediff('day',d.BIRTH_DATE,p.OSA_DX1_DATE)/365.25) AGE_AT_OSA_DX1
+      ,d.SEX
+      ,case when d.RACE = '05' then 'WH'
+            when d.RACE = '03' then 'BL'
+            when d.RACE = '02' then 'AS'
+            when d.RACE = '01' then 'NA'
+            when d.RACE = 'OT' then 'OT'
+            else 'NI'
+       end as RACE
+      ,d.HISPANIC
+      ,o.MI_BEF
+      ,o.MI_AFT
+      ,o.STROKE_BEF
+      ,o.STROKE_AFT
+      ,o.HF_BEF
+      ,o.HF_AFT
+      ,o.REVASC_BEF
+      ,o.REVASC_AFT
+      ,o.MACE_BEF
+      ,o.MACE_AFT
+      ,o.DEATH_DATE
+      ,o.DAYS_OSA_TO_DEATH
+      ,o.CENSOR_DATE
+      ,o.DAYS_OSA_TO_CENSOR
+      ,dv.CPAP_INIT_DATE
+      ,dv.DAYS_OSA_TO_CPAP_INIT
+      ,cci.cci_score
+      ,dx.obes
+      ,dx.t2dm
+      ,dx.ckd
+      ,dx.copd
+      ,dx.afib
+      ,dx.htn
+      ,dx.nd
+      ,dx.hysm
+      ,dx.insm
+      ,rx.ACG
+      ,rx.AHT
+      ,rx.ALP
+      ,rx.BGR
+      ,sdh.LIS_DUAL_IND
+from identifier($pat_elig) p
+inner join identifier($demographic) d on p.patid = d.patid
+inner join PAT_OSA_ENDPT o on p.patid = o.patid 
+inner join PAT_OSA_PAP_DEVICE dv on p.patid = dv.patid
+left join cte_cci cci on cci.patid = p.patid
+left join cte_sel_dx dx on dx.patid = p.patid
+left join cte_sel_rx rx on rx.patid = p.patid
+left join cte_sdoh sdh on sdh.patid = p.patid
+;
+
+select count(distinct patid), count(*) from PAT_OSA_PAP_ADHRN;
+-- 296,203
