@@ -17,60 +17,82 @@ pacman::p_load(
   tidycmprsk
 )
 
+# webshot::install_phantomjs()
+
 source_url("https://raw.githubusercontent.com/sxinger/utils/master/analysis_util.R")
 path_to_data_folder<-file.path(
   getwd(),
-  "osa-obesity-cpap-adherence",
   "data"
 )
 
 # overall summary
 var_lst<-c(
-  "AGE_AT_OSA_DX1","AGEGRP","SEXF","RACE_LABEL","LIS_DUAL_IND",
-  "T2DM_HISTORY","HTN_HISTORY","OBESITY_HISTORY",
-  "MI_HISTORY","STROKE_HISTORY","HF_HISTORY","REVASC_HISTORY","MACE_HISTORY",
-  "bariatric_surgery","chronic_obstructive_pulmonary_disease","hypersomnia","insomina",
-  "DEATH_time"
+   "AGEGRP"
+  ,"SEXF"
+  ,"RACE_LABEL"
+  ,"LIS_DUAL_IND"
+  ,'CCI_SCORE'
+  ,'OBES'
+  ,'T2DM'
+  ,'CKD'
+  ,'COPD'
+  ,'AFIB'
+  ,'HTN'
+  ,'ND'
+  ,'HYSM'
+  ,'INSM'
+  ,'ACG'
+  ,'AHT'
+  ,'ALP'
+  ,'BGR'
+  ,paste0(c('MI','HF','STROKE','REVASC',"MACE"),'_HIST')
+  ,paste0(c('MI','HF','STROKE','REVASC',"MACE",'DEATH'),'_status')
+  ,paste0(c('MI','HF','STROKE','REVASC',"MACE",'DEATH'),'_time')
+  ,'DAYS_OSA_TO_CENSOR'
 )
-facvar_lst<-var_lst[!grepl("(age_at|time)",tolower(var_lst))]
-
-var_lst2<-c(
-  "AGE_AT_OSA_DX1","AGEGRP","SEXF","RACE_LABEL","LIS_DUAL_IND",
-  "T2DM_HISTORY","HTN_HISTORY","OBESITY_HISTORY",
-  "bariatric_surgery","chronic_obstructive_pulmonary_disease","hypersomnia","insomina",
-  "MACE_time"
+numvar_lst<-c(
+   'CCI_SCORE'
+  ,paste0(c('MI','HF','STROKE','REVASC',"MACE"),'_time')
+  ,'DAYS_OSA_TO_CENSOR'
 )
-facvar_lst2<-var_lst2[!grepl("(age_at|time)",tolower(var_lst2))]
+facvar_lst<-var_lst[!var_lst %in% numvar_lst]
 
 #===== exposure analysis ========================
 #=== surv =======================================
-df<-readRDS(file.path(path_to_data_folder,"cpap_exposure_aset.rda")) %>%
-  filter(DEATH_time>0)
+df<-readRDS(file.path(path_to_data_folder,"cpap_exposure_final.rda"))
 
 # overview
 desc_cohort<-univar_analysis_mixed(
-  df,
+  df = df,
   id_col="PATID",
-  grp=1,
-  var_lst=var_lst,
-  facvar_lst=facvar_lst,
-  pretty=F
+  grp = 1,
+  var_lst = var_lst,
+  facvar_lst = facvar_lst,
+  pretty = T
 )
-desc_cohort %>% View
+
+desc_cohort %>%
+  save_kable(
+    paste0("./res/expos_all.pdf")
+  )
 
 # comparison
 desc_case_ctrl<-univar_analysis_mixed(
-  df,
-  id_col="PATID",
-  grp=df$CPAP_IND,
-  var_lst=var_lst,
-  facvar_lst=facvar_lst,
-  pretty=F
+  df = df,
+  id_col = "PATID",
+  grp = df$CPAP_IND,
+  var_lst = var_lst,
+  facvar_lst = facvar_lst,
+  pretty = T
 )
-desc_case_ctrl %>% View
+desc_case_ctrl %>%
+  save_kable(
+    paste0("./res/expos_pap.pdf")
+  )
 
 #=== mace ========================================
-df2<-df %>% filter(MACE_HISTORY==0&MACE_time>0)
+df2<-df %>% 
+  filter(MACE_HIST==0&MACE_time>0)
 
 desc_case_ctrl<-univar_analysis_mixed(
   df2,
