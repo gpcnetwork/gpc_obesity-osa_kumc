@@ -479,6 +479,25 @@ where ep.DAYS_OSA_TO_DEATH > 0 or ep.DAYS_OSA_TO_DEATH is null
 select count(distinct patid), count(*) from PAT_OSA_PAP_EXPOS;
 -- 888,835
 
+select CPAP_IND, count(distinct patid), round(count(distinct patid)/888835,2)
+from PAT_OSA_PAP_EXPOS
+group by CPAP_IND;
+-- 1	290015	0.33
+-- 0	598820	0.67
+
+select count(distinct patid) from PAT_OSA_PAP_EXPOS
+where MACE_HIST is not null or DAYS_OSA_TO_MACE <= DAYS_OSA_TO_CPAP_INIT;
+-- 333,818
+
+select count(distinct patid) from PAT_OSA_PAP_EXPOS
+where MACE_HIST is null and (DAYS_OSA_TO_MACE > DAYS_OSA_TO_CPAP_INIT or DAYS_OSA_TO_MACE is null or DAYS_OSA_TO_CPAP_INIT is null);
+-- 555,017
+select CPAP_IND, count(distinct patid), round(count(distinct patid)/555017,2)
+from PAT_OSA_PAP_EXPOS
+where MACE_HIST is null and (DAYS_OSA_TO_MACE > DAYS_OSA_TO_CPAP_INIT or DAYS_OSA_TO_MACE is null or DAYS_OSA_TO_CPAP_INIT is null)
+group by CPAP_IND;
+-- 1	181632	0.33
+-- 0	373385	0.67
 
 create or replace table PAT_OSA_PAP_ADHRN as 
 with cte_cci as (
@@ -619,4 +638,6 @@ where DAYS_CPAP_INIT_TO_SUPPLY_CENSOR >= 365
 
 select count(distinct patid), count(*) from PAT_OSA_PAP_ADHRN;
 -- 238,541
-
+select count(distinct patid) from PAT_OSA_PAP_ADHRN
+where MACE_HIST is null;
+-- 138,071
