@@ -29,20 +29,40 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"pap_exposure_aset.rds")) %>%
   # survival object
   mutate(
     # MACE survival obj
-    MACE_time = coalesce(DAYS_OSA_TO_MACE,DAYS_OSA_TO_CENSOR),
+    MACE_time = coalesce(DAYS_OSA_TO_MACE,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     MACE_status = as.numeric(!is.na(DAYS_OSA_TO_MACE)),
+    MACE_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_MACE) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_MACE))
+    ),
     # MI survival obj
-    MI_time = coalesce(DAYS_OSA_TO_MI,DAYS_OSA_TO_CENSOR),
+    MI_time = coalesce(DAYS_OSA_TO_MI,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     MI_status = as.numeric(!is.na(DAYS_OSA_TO_MI)),
+    MI_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_MI) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_MI))
+    ),
     # STROKE survival obj
-    STROKE_time = coalesce(DAYS_OSA_TO_STROKE,DAYS_OSA_TO_CENSOR),
+    STROKE_time = coalesce(DAYS_OSA_TO_STROKE,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     STROKE_status = as.numeric(!is.na(DAYS_OSA_TO_STROKE)),
+    STROKE_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_STROKE) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_STROKE))
+    ),
     # HF survival obj
-    HF_time = coalesce(DAYS_OSA_TO_HF,DAYS_OSA_TO_CENSOR),
+    HF_time = coalesce(DAYS_OSA_TO_HF,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     HF_status = as.numeric(!is.na(DAYS_OSA_TO_HF)),
+    HF_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_HF) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_HF))
+    ),
     # REVASC survival obj
-    REVASC_time = coalesce(DAYS_OSA_TO_REVASC,DAYS_OSA_TO_CENSOR),
+    REVASC_time = coalesce(DAYS_OSA_TO_REVASC,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     REVASC_status = as.numeric(!is.na(DAYS_OSA_TO_REVASC)),
+    REVASC_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_REVASC) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_REVASC))
+    ),
     # all-cause DEATH survival obj
     DEATH_time = coalesce(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR),
     DEATH_status = as.numeric(!is.na(DAYS_OSA_TO_DEATH))
@@ -55,8 +75,8 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"pap_exposure_aset.rds")) %>%
     HF_HIST = as.numeric(!is.na(HF_HIST)),
     REVASC_HIST = as.numeric(!is.na(REVASC_HIST))
   ) %>%
+  # cleanup demographic fields
   mutate(
-    # label demographic fields
     RACE_LABEL = case_when(RACE=='05' ~ 'White',
                            RACE=='03' ~ 'AA',
                            RACE=='02' ~ 'Asian',
@@ -72,7 +92,16 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"pap_exposure_aset.rds")) %>%
     AGEGRP_fac = paste0("AGEGRP_",relevel(as.factor(AGEGRP),ref="agegrp1")),agegrp_ind = 1,
   ) %>%
   spread(RACE_LABEL_fac,race_ind,fill=0) %>%
-  spread(AGEGRP_fac,agegrp_ind,fill=0)
+  spread(AGEGRP_fac,agegrp_ind,fill=0) %>%
+  # add CCI classes
+  mutate(
+    CCI_CLASS = case_when(
+      CCI_SCORE <= 2 & CCI_SCORE >= 1 ~ 'c1',
+      CCI_SCORE <= 4 & CCI_SCORE >= 3 ~ 'c2',
+      CCI_SCORE >= 5 ~ 'c3',
+      TRUE ~ 'c0'
+    )
+  )
 
 # fill na with 0 for covariate columns
 all_colnm<-colnames(dat_proc)
@@ -127,20 +156,40 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"cpap_adherence_aset.rds")) %>%
   # survival object
   mutate(
     # MACE survival obj
-    MACE_time = coalesce(DAYS_OSA_TO_MACE,DAYS_OSA_TO_CENSOR),
+    MACE_time = coalesce(DAYS_OSA_TO_MACE,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     MACE_status = as.numeric(!is.na(DAYS_OSA_TO_MACE)),
+    MACE_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_MACE) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_MACE))
+    ),
     # MI survival obj
-    MI_time = coalesce(DAYS_OSA_TO_MI,DAYS_OSA_TO_CENSOR),
+    MI_time = coalesce(DAYS_OSA_TO_MI,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     MI_status = as.numeric(!is.na(DAYS_OSA_TO_MI)),
+    MI_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_MI) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_MI))
+    ),
     # STROKE survival obj
-    STROKE_time = coalesce(DAYS_OSA_TO_STROKE,DAYS_OSA_TO_CENSOR),
+    STROKE_time = coalesce(DAYS_OSA_TO_STROKE,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     STROKE_status = as.numeric(!is.na(DAYS_OSA_TO_STROKE)),
+    STROKE_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_STROKE) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_STROKE))
+    ),
     # HF survival obj
-    HF_time = coalesce(DAYS_OSA_TO_HF,DAYS_OSA_TO_CENSOR),
+    HF_time = coalesce(DAYS_OSA_TO_HF,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     HF_status = as.numeric(!is.na(DAYS_OSA_TO_HF)),
+    HF_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_HF) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_HF))
+    ),
     # REVASC survival obj
-    REVASC_time = coalesce(DAYS_OSA_TO_REVASC,DAYS_OSA_TO_CENSOR),
+    REVASC_time = coalesce(DAYS_OSA_TO_REVASC,pmin(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR,na.rm=T)),
     REVASC_status = as.numeric(!is.na(DAYS_OSA_TO_REVASC)),
+    REVASC_status_sub = case_when(
+      !is.na(DAYS_OSA_TO_DEATH)&is.na(DAYS_OSA_TO_REVASC) ~ 2,
+      TRUE ~ as.numeric(!is.na(DAYS_OSA_TO_REVASC))
+    ),
     # all-cause DEATH survival obj
     DEATH_time = coalesce(DAYS_OSA_TO_DEATH,DAYS_OSA_TO_CENSOR),
     DEATH_status = as.numeric(!is.na(DAYS_OSA_TO_DEATH))
@@ -170,7 +219,16 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"cpap_adherence_aset.rds")) %>%
     AGEGRP_fac = paste0("AGEGRP_",relevel(as.factor(AGEGRP),ref="agegrp1")),agegrp_ind = 1,
   ) %>%
   spread(RACE_LABEL_fac,race_ind,fill=0) %>%
-  spread(AGEGRP_fac,agegrp_ind,fill=0)
+  spread(AGEGRP_fac,agegrp_ind,fill=0) %>%
+  # add CCI classes
+  mutate(
+    CCI_CLASS = case_when(
+      CCI_SCORE <= 2 & CCI_SCORE >= 1 ~ 'c1',
+      CCI_SCORE <= 4 & CCI_SCORE >= 3 ~ 'c2',
+      CCI_SCORE >= 5 ~ 'c3',
+      TRUE ~ 'c0'
+    )
+  )
 
 # fill na with 0 for covariate columns
 all_colnm<-colnames(dat_proc)

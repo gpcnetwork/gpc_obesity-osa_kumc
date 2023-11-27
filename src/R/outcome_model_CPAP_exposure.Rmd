@@ -39,25 +39,22 @@ pacman::p_load(
 
 source_url("https://raw.githubusercontent.com/sxinger/utils/master/plot_util.R")
 
-path_to_dir<-file.path(
-  gsub("/src/R","",getwd()),
-  "data"
-)
+path_to_dir<-gsub("/src/R","",getwd())
+path_to_datadir<-file.path(path_to_dir,"data")
 
 endpts<-c(
-  "surv",
-  "mace",
-  "mi",
-  "hf",
-  "stroke",
-  "revasc"
+   "surv"
+  ,"mace"
+  # ,"mi"
+  # ,"hf"
+  # ,"stroke"
+  # ,"revasc"
 )
 
-nboots<-2
+nboots<-1
 
-cpap_use<-readRDS(file.path(path_to_dir,"cpap_exposure_aset.rda")) %>%
-  filter(DEATH_time>0)
-N<-nrow(cpap_use)
+pap_use<-readRDS(file.path(path_to_datadir,"cpap_exposure_final.rda"))
+N<-nrow(pap_use)
 ```
 
 # unadjusted and adjusted KM
@@ -79,12 +76,15 @@ km_mort_unadj<-ggsurvplot(
 
 km_mort_unadj2<-km_mort_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
-  geom_label_repel(data=data.frame(x=risk_tbl$time,
-                                   y=risk_tbl$surv,
-                                   label=round(risk_tbl$surv,3),
-                                   label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
-                   aes(x=x,y=y,label=label)) +
-    geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0))
+  geom_label_repel(
+    data=data.frame(
+      x=risk_tbl$time,
+      y=risk_tbl$surv,
+      label=round(risk_tbl$surv,3),
+      label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
+    aes(x=x,y=y,label=label)) +
+    geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0)
+  )
 
 # unadjusted KM plot - MACE
 cpap_use2<-cpap_use %>% filter(MACE_HISTORY==0&MACE_time>0)
@@ -103,15 +103,19 @@ km_mace_unadj<-ggsurvplot(
 
 km_mace_unadj2<-km_mace_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
-  geom_label_repel(data=data.frame(x=risk_tbl$time,
-                                   y=risk_tbl$surv,
-                                   label=round(risk_tbl$surv,3),
-                                   label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
-                   aes(x=x,y=y,label=label)) +
+  geom_label_repel(
+    data=data.frame(
+      x=risk_tbl$time,
+      y=risk_tbl$surv,
+      label=round(risk_tbl$surv,3),
+      label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")
+    ),
+    aes(x=x,y=y,label=label)
+  ) +
   geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0))
 
 # adjusted KM plot - surv
-fitcox<-readRDS(file.path(path_to_dir,"results","surv","boot1","coxph_iptw_main.rda"))
+fitcox<-readRDS(file.path(path_to_datadir,"surv","boot1","coxph_iptw_main.rda"))
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
 pred_df<-cpap_use %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique 
 # rep_n<-nrow(pred_df)
@@ -155,19 +159,22 @@ km_mort_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
   geom_step(aes(group=CPAP_IND,color = CPAP_IND),size=2.5) +
   geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper)) + 
   geom_vline(xintercept=365*c(1:5),linetype=2) +
-  geom_label_repel(data=data.frame(x=risk_tbl2$time,
-                                   y=risk_tbl2$surv,
-                                   label=round(risk_tbl2$surv,3),
-                                   label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
-                   aes(x=x,y=y,label=label)) + 
+  geom_label_repel(
+    data=data.frame(
+      x=risk_tbl2$time,
+      y=risk_tbl2$surv,
+      label=round(risk_tbl2$surv,3),
+      label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
+    aes(x=x,y=y,label=label)
+  ) + 
   geom_text(aes(x=170, y=0.2, label = ifelse(pval<0.0001, "p < 0.0001",pval)), fontface=0) +
-  scale_x_continuous(breaks = c(0, 365,730,1095,1460,1825),
-                     labels = c(0, 365,730,1095,1460,1825)) +
+  scale_x_continuous(breaks = c(0,365,730,1095,1460,1825),
+                     labels = c(0,365,730,1095,1460,1825)) +
   ylim(0,1) +  ylab("Adjusted Survival Probability") + xlab("Days") +
   theme_survminer()
 
 # adjusted KM plot - MACE
-fitcox<-readRDS(file.path(path_to_dir,"results","mace","boot1","coxph_iptw_main.rda"))
+fitcox<-readRDS(file.path(path_to_datadir,"results","mace","boot1","coxph_iptw_main.rda"))
 pred_df<-cpap_use2 %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique 
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
 # rep_n<-nrow(pred_df)
@@ -211,11 +218,13 @@ km_mace_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
   geom_step(aes(group=CPAP_IND,color = CPAP_IND),size=2.5) +
   geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper)) + 
   geom_vline(xintercept=365*c(1:5),linetype=2) +
-  geom_label_repel(data=data.frame(x=risk_tbl2$time,
-                                   y=risk_tbl2$surv,
-                                   label=round(risk_tbl2$surv,3),
-                                   label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
-                   aes(x=x,y=y,label=label)) + 
+  geom_label_repel(
+    data=data.frame(
+      x=risk_tbl2$time,
+      y=risk_tbl2$surv,
+      label=round(risk_tbl2$surv,3),
+      label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
+    aes(x=x,y=y,label=label)) + 
   geom_text(aes(x=170, y=0.2, label = ifelse(pval<0.0001, "p < 0.0001",pval)), fontface=0) +
   scale_x_continuous(breaks = c(0, 365,730,1095,1460,1825),
                      labels = c(0, 365,730,1095,1460,1825)) +
@@ -233,7 +242,7 @@ kmplot<-ggarrange(
 )
 # kmplot
 # save figure
-ggsave(file.path(path_to_dir,"results","cpap_expo_on_surv_km.pdf"),
+ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_km.pdf"),
        plot = kmplot,
        dpi = 300,
        width = 12, height = 7, units = "in")
@@ -252,8 +261,8 @@ for(endpt_i in endpts){
     # whole-data model
     #--main-effect
     boot<-readRDS(
-      file.path(path_to_dir,"results",endpt_i,paste0("boot",boot_i),
-                "coxph_iptw_main_acm.rda"))
+      file.path(path_to_datadir,endpt_i,paste0("boot",boot_i),
+                "coxph_iptw_main.rda"))[["fit_cox"]]
     adh_df %<>%
         bind_rows(
           data.frame(summary(boot)$coefficients) %>%
@@ -266,36 +275,25 @@ for(endpt_i in endpts){
                    stratum_var = "None",
                    stratum_val = " ")
       )
-    # #--interaction
-    # boot<-readRDS(
-    #   file.path(path_to_dir,"results",endpt_i,paste0("boot",boot_i),
-    #             "coxph_iptw_intx_acm.rda"))
-    # adh_df %<>%
-    #     bind_rows(
-    #       data.frame(summary(boot)$coefficients) %>%
-    #         cbind(data.frame(confint(boot))) %>%
-    #         rownames_to_column(var = "vari") %>%
-    #         filter(grepl("CPAP",vari)) %>%
-    #         gather(summ_var,summ_val,-vari) %>%
-    #         dplyr::filter(summ_var %in% c("coef","X2.5..","X97.5..","Pr...z..")) %>%
-    #         mutate(model = "intx",
-    #                stratum_var = "None",
-    #                stratum_val = " ")
-    #   )
-    
+
     # stratified model
     #--main-effect
-    boot<-read.csv(
-      file.path(path_to_dir,"results",endpt_i,paste0("boot",boot_i),
-                "coxph_strata_main_acm.csv"))
+    boot<-readRDS(
+      file.path(path_to_datadir,endpt_i,paste0("boot",boot_i),
+                "coxph_strata_main.rda")) %>% as.data.frame()
     adh_df %<>%
         bind_rows(
           boot %>%
-            mutate(vari = fit_var) %>%
+            mutate(
+              vari = fit_var,
+              coef = as.numeric(coef),
+              `se(coef)` = as.numeric(`se(coef)`),
+              `Pr...z..` = `Pr(>|z|)`
+            ) %>%
             filter(grepl("CPAP_IND",vari)) %>%
             mutate(
-              `X2.5..`= coef - 1.96*`se.coef.`,
-              `X97.5..`= coef + 1.96*`se.coef.`
+              `X2.5..`= coef - 1.96*`se(coef)`,
+              `X97.5..`= coef + 1.96*`se(coef)`
             ) %>%
             gather(summ_var,summ_val,-vari,-stratum_var,-stratum_val) %>%
             dplyr::filter(summ_var %in% c("coef","X2.5..","X97.5..","Pr...z..")) %>%
@@ -339,18 +337,26 @@ dat %<>%
   mutate(
     stratum_var_lbl = recode(
       stratum_var,
-      "AGEGRP" = "02.Age",
-      "HTN_HISTORY" = "08.Hypertension History",
-      "LIS_DUAL_IND" = "05.Low-income-subsidy/DUal Eligibility",
-      "MACE_HISTORY" = "10.MACE History",
       "None" = "01.None",
-      "OBESITY_HISTORY" = "06.Obesity",
-      "RACE_LABEL" = "04.Race",
+      "AGEGRP" = "02.Age",
       "SEX" = "03.Sex",
-      "T2DM_HISTORY" = "09.T2DM History",  
-      "chronic_obstructive_pulmonary_disease" = "07.COPD History",
-      "hypersomnia" = "11.Hypersomnia",
-      "insomina" = "12.Insomina"
+      "RACE_LABEL" = "04.Race",
+      "LIS_DUAL_IND" = "05.Low-income-subsidy/Dual Eligibility",
+      "HYSM" = "06.Hypersomnia",
+      "INSM" = "07.Insomina",
+      "MACE_HIST" = "08.MACE History",
+      "OBES" = "09.Obesity",
+      "COPD" = "10.COPD",
+      "HTN" = "11.Hypertension",
+      "T2DM" = "12.T2DM", 
+      "ND" = "13.Neurodic Disorder",
+      "AFIB" = "14.Atrial Fibrilation",
+      "CCI_CLASS" = "15.Charlson Comorbidity Index",
+      "ACG" = "16.Anti-coagulant",
+      "AHT" = "17.Anti-hypertensive",
+      "ALP" = "18.Anti-lipemic",
+      "BGR" = "19.Blood",
+      
     ),
     stratum_val_lbl = recode(
       stratum_val,
@@ -381,8 +387,8 @@ dat %<>%
     )
   )
 
-fplt<-forestplot.HR(
-  df = dat %>% filter(endpt %in% c("surv","mace") & model =="main"),  # long table
+fplt1<-forestplot.HR(
+  df = dat %>% filter(endpt %in% c("surv","mace") & model =="main" & grepl("^(0[1-9])+",stratum_var_lbl)),  # long table
   x_idx1="stratum_var_lbl", # 1st layer index
   x_idx2="stratum_val_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -398,10 +404,32 @@ fplt<-forestplot.HR(
   ny = 2, # number of y groups (must be the same as groups of y_idx)
   idx_display = "Stratification",
 )
-fplt
 # save figure
-ggsave(file.path(path_to_dir,"results","cpap_expo_on_surv_mace.pdf"),
-       plot = fplt,
+ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p1.pdf"),
+       plot = fplt1,
+       dpi = 300,
+       width = 12, height = 12, units = "in")
+
+fplt2<-forestplot.HR(
+  df = dat %>% filter(endpt %in% c("surv","mace") & model =="main" & !grepl("^(0[1-9])+",stratum_var_lbl)),  # long table
+  x_idx1="stratum_var_lbl", # 1st layer index
+  x_idx2="stratum_val_lbl", # 2nd layer index
+  y_idx="endpt_lbl", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.4)),2),
+    vert_line = rep(list(c(0.3, 1.2)),2),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),2)
+  ), 
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# save figure
+ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p2.pdf"),
+       plot = fplt2,
        dpi = 300,
        width = 12, height = 12, units = "in")
 ```
@@ -427,7 +455,7 @@ fplt<-forestplot.HR(
 )
 fplt
 # save figure
-ggsave(file.path(path_to_dir,"results","cpap_expo_on_mace_events.pdf"),
+ggsave(file.path(path_to_dir,"res","cpap_expo_on_mace_events.pdf"),
        plot = fplt,
        dpi = 300,
        width = 20, height = 12, units = "in")
@@ -435,6 +463,6 @@ ggsave(file.path(path_to_dir,"results","cpap_expo_on_mace_events.pdf"),
 
 
 ```{r}
-write.csv(dat,file=file.path(path_to_dir,"results","cpap_expo_all_results.csv"))
+write.csv(dat,file=file.path(path_to_dir,"res","cpap_expo_all_results.csv"))
 
 ```
