@@ -132,45 +132,48 @@ strata<-data.frame(
   )
 )
 
-#==== matched sampling ====
-boots<-5
-path_to_file<-file.path(
-  path_to_data_folder,
-  paste0("cpap_exposure_mace_adjset_bts",boots,".rda"
-  ))
-if(!file.exists(path_to_file)){
-  adj_set<-matched_sample.ptdm(
-    ref_dat = df %>% filter(CPAP_IND==1),
-    match_dat = df %>% filter(CPAP_IND==0),
-    id_col = 'PATID',
-    update_ref = 'DAYS_OSA_TO_CPAP_INIT',
-    update_col = 'MACE_time',
-    boots = boots,
-    replace = TRUE
-  )
-  saveRDS(adj_set,file=path_to_file)
-}else{
-  adj_set<-readRDS(path_to_file)
-}
-
-#==== MACE models ====
 mace_endpts<-c(
-  # 'MACE',
+  'MACE',
   'HF',
   'MI',
   'STROKE',
   'REVASC'
 )
+
+#==== MACE models ====
 boots_iter<-1:1
 for(mace_endpt in mace_endpts){
   # mace_endpt<-'MACE' # only for testing
+  #==== matched sampling ====
+  boots<-5
+  path_to_file<-file.path(
+    path_to_data_folder,
+    paste0("cpap_exposure_",tolower(mace_endpt),"_adjset_bts",boots,".rda"
+    ))
+  if(!file.exists(path_to_file)){
+    adj_set<-matched_sample.ptdm(
+      ref_dat = df %>% filter(CPAP_IND==1),
+      match_dat = df %>% filter(CPAP_IND==0),
+      id_col = 'PATID',
+      update_ref = 'DAYS_OSA_TO_CPAP_INIT',
+      update_col = paste0(mace_endpt,'_time'),
+      boots = boots,
+      replace = TRUE
+    )
+    saveRDS(adj_set,file=path_to_file)
+  }else{
+    adj_set<-readRDS(path_to_file)
+  }
+  #----------------------------------
+  print("prep:sample debiasing")
+  
   for(boot_i in boots_iter){
     #==== create subfolder structure
     #--create subdir
-    path_to_dir<-file.path(path_to_data_folder,"mace")
+    path_to_dir<-file.path(path_to_data_folder,mace_endpt)
     if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
     #--create subdir/subdir
-    path_to_dir<-file.path(path_to_data_folder,"mace",paste0("boot",boot_i))
+    path_to_dir<-file.path(path_to_data_folder,mace_endpt,paste0("boot",boot_i))
     if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
     
     #==== construct matching sample
@@ -185,7 +188,7 @@ for(mace_endpt in mace_endpts){
           mutate(!!adj_col:= adj_time) %>% 
           select(-adj_time)
       )
-    
+
     #==== propensity score
     path_to_file<-file.path(path_to_dir,"ps_pap_elasticnet.rda")
     if(!file.exists(path_to_file)){
@@ -263,7 +266,7 @@ for(mace_endpt in mace_endpts){
     
     gc()
     #==== IPTW-adjusted, Main Effect, Stratified, Cause-specific
-    path_to_file<-file.path(path_to_dir,"coxph_strata_main.csv")
+    path_to_file<-file.path(path_to_dir,"coxph_strata_main.rda")
     if(!file.exists(path_to_file)){
       result<-c()
       for(i in seq_len(nrow(strata))){
@@ -344,7 +347,7 @@ for(mace_endpt in mace_endpts){
     # 
     # gc()
     # #==== IPTW-adjusted, Main Effect, Stratified, Fine-Gray Regression
-    # path_to_file<-file.path(path_to_dir,"cmprsk_strata_main.csv")
+    # path_to_file<-file.path(path_to_dir,"cmprsk_strata_main.rda")
     # if(!file.exists(path_to_file)){
     #   result<-c()
     #   for(i in seq_len(nrow(strata))){

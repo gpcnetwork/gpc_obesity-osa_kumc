@@ -43,12 +43,12 @@ path_to_dir<-gsub("/src/R","",getwd())
 path_to_datadir<-file.path(path_to_dir,"data")
 
 endpts<-c(
-   "surv"
-  ,"mace"
-  # ,"mi"
-  # ,"hf"
-  # ,"stroke"
-  # ,"revasc"
+   "ACM"
+  ,"MACE"
+  ,"MI"
+  ,"HF"
+  ,"STROKE"
+  ,"REVASC"
 )
 
 nboots<-1
@@ -61,7 +61,7 @@ N<-nrow(pap_use)
 
 ```{r, KM}
 # unadjusted KM plot - surv
-sfit_obj<-survfit(Surv(DEATH_time,DEATH_status) ~ CPAP_IND, data = cpap_use)
+sfit_obj<-survfit(Surv(DEATH_time,DEATH_status) ~ CPAP_IND, data = pap_use)
 risk_tbl<-summary(sfit_obj,times = 365*c(1:5))
 km_mort_unadj<-ggsurvplot(
   fit = sfit_obj,
@@ -87,7 +87,7 @@ km_mort_unadj2<-km_mort_unadj$plot +
   )
 
 # unadjusted KM plot - MACE
-cpap_use2<-cpap_use %>% filter(MACE_HISTORY==0&MACE_time>0)
+cpap_use2<-pap_use %>% filter(MACE_HIST==0&MACE_time>0)
 sfit_obj2<-survfit(Surv(MACE_time,MACE_status) ~ CPAP_IND, data = cpap_use2)
 risk_tbl<-summary(sfit_obj2, data = cpap_use2,times = 365*c(1:5))
 km_mace_unadj<-ggsurvplot(
@@ -115,9 +115,9 @@ km_mace_unadj2<-km_mace_unadj$plot +
   geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0))
 
 # adjusted KM plot - surv
-fitcox<-readRDS(file.path(path_to_datadir,"surv","boot1","coxph_iptw_main.rda"))
+fitcox<-readRDS(file.path(path_to_datadir,"ACM","boot1","coxph_iptw_main.rda"))$fit_cox
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
-pred_df<-cpap_use %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique 
+pred_df<-pap_use %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique 
 # rep_n<-nrow(pred_df)
 # pred_df %<>%
 #   mutate(rn = 2) %>%
@@ -174,7 +174,7 @@ km_mort_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
   theme_survminer()
 
 # adjusted KM plot - MACE
-fitcox<-readRDS(file.path(path_to_datadir,"results","mace","boot1","coxph_iptw_main.rda"))
+fitcox<-readRDS(file.path(path_to_datadir,"MACE","boot1","coxph_iptw_main.rda"))$fit_cox
 pred_df<-cpap_use2 %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique 
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
 # rep_n<-nrow(pred_df)
@@ -242,10 +242,15 @@ kmplot<-ggarrange(
 )
 # kmplot
 # save figure
-ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_km.pdf"),
-       plot = kmplot,
-       dpi = 300,
-       width = 12, height = 7, units = "in")
+ggsave(
+  file.path(path_to_dir,"res","cpap_expo_on_surv_km.tiff"),
+  plot = kmplot,
+  dpi = 300,
+  width = 12, 
+  height = 7, 
+  units = "in",
+  device = 'tiff'
+)
 ```
 
 
@@ -254,7 +259,7 @@ ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_km.pdf"),
 ```{r, main_effect, include = TRUE}
 dat<-c()
 for(endpt_i in endpts){
-  # endpt_i<-endpts[1]
+  # endpt_i<-endpts[2]
   # boot_i<-1
   adh_df<-c()
   for(boot_i in 1:nboots){
@@ -323,8 +328,10 @@ colnames(dat)<-c("endpt","stratum_var","stratum_val","model","vari","pval","ci_l
 dat %<>%
   # fit forestplot default keys
   dplyr::mutate(
-    pvallabel = case_when(pval < 0.001 ~ "<0.001",
-                          TRUE ~ as.character(round(pval,3))),
+    pvallabel = case_when(
+      pval < 0.001 ~ "<0.001",
+      TRUE ~ as.character(round(pval,3))
+    ),
     mean = exp(coef),
     lower = exp(ci_lb),
     upper = exp(ci_ub)
@@ -355,7 +362,7 @@ dat %<>%
       "ACG" = "16.Anti-coagulant",
       "AHT" = "17.Anti-hypertensive",
       "ALP" = "18.Anti-lipemic",
-      "BGR" = "19.Blood",
+      "BGR" = "19.Blood glucose regulator",
       
     ),
     stratum_val_lbl = recode(
@@ -376,19 +383,16 @@ dat %<>%
       "F" = "Female",
       "M" = "Male"
     ),
-    endpt_lbl = recode(
-      endpt, 
-      "surv" = "ACM",
-      "mace" = "MACE",
-      "mi"= "MI",
-      "hf" = "HF",
-      "revasc" = "REV",
-      "stroke" = "STROKE"
-    )
+    endpt_lbl = endpt
   )
 
 fplt1<-forestplot.HR(
-  df = dat %>% filter(endpt %in% c("surv","mace") & model =="main" & grepl("^(0[1-9])+",stratum_var_lbl)),  # long table
+  df = dat %>% 
+    filter(
+      endpt %in% c("ACM","MACE") & 
+      model =="main" & 
+      grepl("^(0[1-9])+",stratum_var_lbl)
+    ),  # long table
   x_idx1="stratum_var_lbl", # 1st layer index
   x_idx2="stratum_val_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -405,13 +409,23 @@ fplt1<-forestplot.HR(
   idx_display = "Stratification",
 )
 # save figure
-ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p1.pdf"),
-       plot = fplt1,
-       dpi = 300,
-       width = 12, height = 12, units = "in")
+ggsave(
+  file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p1.tiff"),
+  plot = fplt1,
+  dpi = 150,
+  width = 12, 
+  height = 12, 
+  units = "in",
+  device = "tiff"
+)
 
 fplt2<-forestplot.HR(
-  df = dat %>% filter(endpt %in% c("surv","mace") & model =="main" & !grepl("^(0[1-9])+",stratum_var_lbl)),  # long table
+  df = dat %>% 
+    filter(
+      endpt %in% c("ACM","MACE") & 
+      model =="main" & 
+      !grepl("^(0[1-9])+",stratum_var_lbl)
+    ),  # long table
   x_idx1="stratum_var_lbl", # 1st layer index
   x_idx2="stratum_val_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -428,16 +442,25 @@ fplt2<-forestplot.HR(
   idx_display = "Stratification",
 )
 # save figure
-ggsave(file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p2.pdf"),
-       plot = fplt2,
-       dpi = 300,
-       width = 12, height = 12, units = "in")
+ggsave(
+  file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p2.tiff"),
+  plot = fplt2,
+  dpi = 150,
+  width = 12, 
+  height = 12, 
+  units = "in",
+  device = "tiff"
+)
 ```
 
 
 ```{r, viz_whole_dat_adh_effect_mace, fig.width=12, include = TRUE}
-fplt<-forestplot.HR(
-  df = dat %>% filter(!endpt %in% c("surv","mace")),  # long table
+fplt1<-forestplot.HR(
+  df = dat %>% 
+    filter(
+      !endpt %in% c("ACM","MACE") &
+       grepl("^(0[1-9])+",stratum_var_lbl)
+    ),  # long table
   x_idx1="stratum_var_lbl", # 1st layer index
   x_idx2="stratum_val_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -453,12 +476,48 @@ fplt<-forestplot.HR(
   ny = 4, # number of y groups (must be the same as groups of y_idx)
   idx_display = "Stratification",
 )
-fplt
 # save figure
-ggsave(file.path(path_to_dir,"res","cpap_expo_on_mace_events.pdf"),
-       plot = fplt,
-       dpi = 300,
-       width = 20, height = 12, units = "in")
+ggsave(
+  file.path(path_to_dir,"res","cpap_expo_on_mace_events_p1.tiff"),
+  plot = fplt1,
+  dpi = 150,
+  width = 20,
+  height = 12, 
+  units = "in",
+  device = "tiff"
+)
+
+fplt2<-forestplot.HR(
+  df = dat %>% 
+    filter(
+      !endpt %in% c("ACM","MACE") &
+      !grepl("^(0[1-9])+",stratum_var_lbl)
+    ),  # long table
+  x_idx1="stratum_var_lbl", # 1st layer index
+  x_idx2="stratum_val_lbl", # 2nd layer index
+  y_idx="endpt_lbl", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.4)),4),
+    vert_line = rep(list(c(0.3, 1.2)),4),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),4)
+  ), 
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# save figure
+ggsave(
+  file.path(path_to_dir,"res","cpap_expo_on_mace_events_p2.tiff"),
+  plot = fplt2,
+  dpi = 150,
+  width = 20,
+  height = 12, 
+  units = "in",
+  device = "tiff"
+)
 ```
 
 

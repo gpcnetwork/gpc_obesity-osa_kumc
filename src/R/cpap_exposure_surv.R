@@ -173,10 +173,10 @@ boots_iter<-1:2
 for(boot_i in boots_iter){
   #==== create subfolder structure
   #--create subdir
-  path_to_dir<-file.path(path_to_data_folder,"surv")
+  path_to_dir<-file.path(path_to_data_folder,"ACM")
   if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
   #--create subdir/subdir
-  path_to_dir<-file.path(path_to_data_folder,"surv",paste0("boot",boot_i))
+  path_to_dir<-file.path(path_to_data_folder,"ACM",paste0("boot",boot_i))
   if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
   
   #==== construct matching sample
@@ -345,10 +345,10 @@ for(boot_i in boots_iter){
 # for(boot_i in boots_iter){
 #   #==== create subfolder structure
 #   #--create subdir
-#   path_to_dir<-file.path(path_to_data_folder,"surv")
+#   path_to_dir<-file.path(path_to_data_folder,"ACM")
 #   if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
 #   #--create subdir/subdir
-#   path_to_dir<-file.path(path_to_data_folder,"surv",paste0("boot",boot_i))
+#   path_to_dir<-file.path(path_to_data_folder,"ACM",paste0("boot",boot_i))
 #   if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
 #   
 #   #==== construct matching sample

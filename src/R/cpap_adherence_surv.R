@@ -27,14 +27,12 @@ source_url("https://raw.githubusercontent.com/sxinger/utils/master/sample_util.R
 source_url("https://raw.githubusercontent.com/sxinger/utils/master/analysis_util.R")
 source_url("https://raw.githubusercontent.com/sxinger/utils/master/model_util.R")
 
-boots<-5
-
 #==== load data
 path_to_data_folder<-file.path(
   getwd(),
   "data"
 )
-df<-readRDS(file.path(path_to_data_folder,"cpap_dose_response_aset.rda"))
+df<-readRDS(file.path(path_to_data_folder,"cpap_adherence_final.rda"))
 
 var_demo<-c(
   "AGEGRP_agegrp2", "AGEGRP_agegrp3","AGEGRP_agegrp4", #ref=AGEGRP_agegrp1
@@ -68,22 +66,6 @@ var_all<-c(
   var_demo,
   var_comorb,
   var_med
-)
-
-# model formulation
-fit_main_linr<-formula(
-  paste0(
-    "Surv(DEATH_time, DEATH_status) ~ ",
-    paste(c(var_all,"CPAP_IND"),collapse = "+")
-  )
-)
-
-fit_main_spln<-formula(
-  paste0(
-    "Surv(DEATH_time, DEATH_status) ~ ",
-    paste(c(var_demo_lst,var_comorb_lst),collapse = "+"),
-    "+ pspline(",adh,", df = 4)"
-  )
 )
 
 # define strata
@@ -155,7 +137,7 @@ strata<-data.frame(
 
 # repeat experiments over bootstrapped samples
 adh_metric<-c(
-  "cpap_yr1"
+   "CPAP_YR1"
   ,"adherence_yr1_med"
   ,"adherence_yr1_tt"
   ,"adherence_yr1_qt"
@@ -167,14 +149,14 @@ adh_metric<-c(
 boots_iter<-1:1
 for(adh in adh_metric){
   for(boot_i in boots_iter){
-    # adh<-adh_metric[2]
-    # boot_i<-1
+    adh<-adh_metric[1]
+    boot_i<-1
     #==== create subfolder structure
     #--create subdir
-    path_to_dir<-file.path(path_to_data_folder,"adh_surv")
+    path_to_dir<-file.path(path_to_data_folder,"ADHRN_ACM")
     if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
     #--create subdir/subdir
-    path_to_dir<-file.path(path_to_dir,adh)
+    path_to_dir<-file.path(path_to_dir,tolower(adh))
     if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
     #--create subdir/subdir
     path_to_dir<-file.path(path_to_dir,paste0("boot",boot_i))
@@ -187,21 +169,24 @@ for(adh in adh_metric){
         filter(!is.na(get(adh)))
       x<-data.matrix(df_ps[,-1])
       y<-unlist(df_ps[,1]) 
-      if(adh == 'cpap_yr1'){
+      if(adh == 'CPAP_YR1'){
         fit_ps<-cv.glmnet(x=x,y=y,family = "poisson")
         # plot(fit_ps)
         ps_cpap<-predict(fit_ps, newx = x, s = "lambda.min", type="response")
         wt_long<-data.frame(
           PATID=df$PATID,
           lambda=ps_cpap[,1],
-          k = y
+          tgt = y
         ) %>%
           mutate(
             explambda = exp(-lambda),
-            lambdak=lambda^k,
-            kfac=factorial(k),
+            lambdak=(lambda)^tgt,
+            kfac=factorial(tgt),
             wt_den = explambda*lambdak/kfac
-          )
+          ) %>%
+          group_by(tgt) %>%
+          mutate(wt_num = length(unique(PATID))/length(unique(df$PATID))) %>%
+          ungroup
       }else{
         fit_ps<-cv.glmnet(x=x,y=y,family = "multinomial", type.multinomial = "grouped")
         # plot(fit_ps)
@@ -209,21 +194,24 @@ for(adh in adh_metric){
         wt_long<-data.frame(
           PATID=df$PATID,
           lambda=ps_cpap[,,1],
-          actual = y
+          tgt = y
         ) %>%
-          gather(pred,ps,-actual,-PATID) %>%
+          gather(pred,ps,-tgt,-PATID) %>%
           mutate(pred = gsub("lambda\\.","",pred)) %>%
-          filter(pred==actual) %>%
-          mutate(wt_den = as.numeric(ps))
+          filter(pred==tgt) %>%
+          mutate(wt_den = as.numeric(ps)) %>%
+          group_by(tgt) %>%
+          mutate(wt_num = length(unique(PATID))/length(unique(df$PATID))) %>%
+          ungroup
       }
       ipw_df<-ipw.naive(
         wt_long = wt_long %>% 
-          mutate(time=1,wt_num=1),
+          mutate(time=1),
         id_col = 'PATID',
         ot_cols = 'tgt',
         truncate = TRUE,
-        truncate_lower = 0.01,
-        truncate_upper = 0.99
+        truncate_lower = 0.1,
+        truncate_upper = 0.9
       ) %>% ungroup
       
       # save ps model
@@ -242,31 +230,47 @@ for(adh in adh_metric){
     path_to_file<-file.path(path_to_dir,"coxph_iptw_main.rda")
     if(!file.exists(path_to_file)){
       # align
-      df_iptw<-df_adj %>% select(PATID) %>% 
+      df_iptw<-df %>% select(PATID) %>% 
         left_join(
           ipw_df %>% select(PATID,iptw),
           by="PATID")
       
       # fit
-      if(adh == 'cpap_yr1'){
-        fit_cox<-coxph(
-          fit_main_linr,
-          data = df_adj, 
-          weights = df_iptw$iptw,
-          model=TRUE
+      if(adh == 'CPAP_YR1'){
+        fit_frm<-formula(
+          paste0(
+            "Surv(DEATH_time, DEATH_status) ~ ",
+            paste(var_all,collapse = "+"),
+            "+ pspline(",adh,", df = 4)"
+          )
         )
+        fit_cox<-coxph(
+          fit_frm,
+          data = df, 
+          weights = df_iptw$iptw,
+          model = TRUE
+        )
+        tm<-names(fit_cox$pterms)
+        tm_idx<-which(grepl(adh,tm), arr.ind = FALSE)
         tp<-termplot(
           fit_cox, 
-          term=18, 
+          term=tm_idx, 
           se=TRUE, 
           col.term=1, 
           col.se=1,plot=F
         )
         saveRDS(tp,file=file.path(path_to_dir,"pspline_termplot.rda"))
       }else{
+        # model formulation
+        fit_frm<-formula(
+          paste0(
+            "Surv(DEATH_time, DEATH_status) ~ ",
+            paste(c(var_all,adh),collapse = "+")
+          )
+        )
         fit_cox<-coxph(
-          fit_main_spln,
-          data = df_adj, 
+          fit_frm,
+          data = df, 
           weights = df_iptw$iptw,
           model=TRUE
         )
@@ -290,32 +294,36 @@ for(adh in adh_metric){
 
     #==== IPTW-adjusted, Main Effect, Stratified
     result<-c()
-    path_to_file<-file.path(path_to_dir,"coxph_strata_main.csv")
+    path_to_file<-file.path(path_to_dir,"coxph_strata_main.rda")
     if(!file.exists(path_to_file)){
       for(i in seq_len(nrow(strata))){
         # align
-        df_str<-df_adj %>% filter(.data[[strata$var[i]]]==strata$val[i])
+        df_str<-df %>% filter(.data[[strata$var[i]]]==strata$val[i])
         df_iptw_str<-df_str %>% select(PATID) %>% left_join(df_iptw,by="PATID")
         
         #fit
         var_filter<-var_all[!grepl(strata$excld[i],var_all)]
-        if(adh == 'cpap_yr1'){
+        if(adh == 'CPAP_YR1'){
           fit_frm<-formula(
-            paste0("Surv(DEATH_time, DEATH_status) ~ ",
-                   paste(var_filter,collapse = "+"),
-                   "+ pspline(",adh,", df = 4)")
-          )
+            paste0(
+              "Surv(DEATH_time, DEATH_status) ~ ",
+              paste(var_filter,collapse = "+"),
+              "+ pspline(",adh,", df = 4)"
+              )
+            )
         }else{
           fit_frm<-formula(
-            paste0("Surv(DEATH_time, DEATH_status) ~ ",
-                   paste(c(var_filter,adh),collapse = "+"))
-          )
+            paste0(
+              "Surv(DEATH_time, DEATH_status) ~ ",
+              paste(c(var_filter,adh),collapse = "+")
+              )
+            )
         }
         fit_cox_str<-coxph(
           fit_frm,
           data = df_str, 
           weights = df_iptw_str$iptw,
-          model=TRUE
+          model = TRUE
         )
         
         # get all coefficients
