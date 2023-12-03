@@ -149,7 +149,7 @@ adh_metric<-c(
 boots_iter<-1:1
 for(adh in adh_metric){
   for(boot_i in boots_iter){
-    adh<-adh_metric[1]
+    # adh<-adh_metric[1]
     boot_i<-1
     #==== create subfolder structure
     #--create subdir
@@ -289,7 +289,7 @@ for(adh in adh_metric){
       saveRDS(out, file=path_to_file)
       
       #----------------------------------
-      print("coxph: global model")
+      print(paste0(adh,":coxph: global model"))
     }
 
     #==== IPTW-adjusted, Main Effect, Stratified
@@ -338,10 +338,13 @@ for(adh in adh_metric){
                 fit_summ)
         )
         #----------------------------------
-        print(paste0("stratified by:",strata$var[i],":",strata$val[i]))
+        print(paste0(adh,":stratified by:",strata$var[i],":",strata$val[i]))
       }
       # save results
       saveRDS(result,file=path_to_file)
     }
   }
+  
+  #------------------------------------------------
+  print(paste0("finish adherence measure:",adh))
 }
