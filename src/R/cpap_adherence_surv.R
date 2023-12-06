@@ -254,6 +254,7 @@ for(adh in adh_metric){
         tm_idx<-which(grepl(adh,tm), arr.ind = FALSE)
         tp<-termplot(
           fit_cox, 
+          data = df,
           term=tm_idx, 
           se=TRUE, 
           col.term=1, 
