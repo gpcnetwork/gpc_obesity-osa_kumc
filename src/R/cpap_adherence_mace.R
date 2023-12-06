@@ -255,9 +255,11 @@ for(mace_endpt in mace_endpts){
             weights = df_iptw$iptw,
             model=TRUE
           )
+          tm<-names(fit_cox$pterms)
+          tm_idx<-which(grepl(adh,tm), arr.ind = FALSE)
           tp<-termplot(
             fit_cox, 
-            term=18, 
+            term=tm_idx, 
             se=TRUE, 
             col.term=1, 
             col.se=1,plot=F

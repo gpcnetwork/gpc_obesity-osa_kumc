@@ -19,8 +19,7 @@ pacman::p_load(
   scales,
   islasso,
   gtsummary,
-  tableone,
-  tidycmprsk
+  tableone
 )
 
 source_url("https://raw.githubusercontent.com/sxinger/utils/master/sample_util.R")
@@ -232,7 +231,6 @@ for(mace_endpt in mace_endpts){
       ipw_df<-readRDS(path_to_file)$ipw
     }
     
-    gc()
     #===== IPTW-adjusted, Main Effect, Cause-specific
     path_to_file<-file.path(path_to_dir,"coxph_iptw_main.rda")
     if(!file.exists(path_to_file)){
@@ -264,7 +262,6 @@ for(mace_endpt in mace_endpts){
       print("coxph: global model")
     }
     
-    gc()
     #==== IPTW-adjusted, Main Effect, Stratified, Cause-specific
     path_to_file<-file.path(path_to_dir,"coxph_strata_main.rda")
     if(!file.exists(path_to_file)){
@@ -306,86 +303,126 @@ for(mace_endpt in mace_endpts){
       saveRDS(result,file=path_to_file)
     }
     
-    gc()
-    # #===== IPTW-adjusted, Main Effect, Fine-Gray Regression
-    # path_to_file<-file.path(path_to_dir,"cmprsk_iptw_main.rda")
-    # if(!file.exists(path_to_file)){
-    #   # align
-    #   df_iptw<-df_adj %>% 
-    #     select(PATID) %>% 
-    #     left_join(ipw_df,by="PATID")
-    # 
-    #   # fit fine-gray
-    #   fgr_frm<-formula(
-    #     paste0(
-    #       "Surv(",mace_endpt,"_time, ",mace_endpt,"_status_sub) ~ ",
-    #       paste(c(var_all,"CPAP_IND"),collapse = "+"))
-    #   )
-    #   # crr requires status column to be factor
-    #   df_adj %<>% 
-    #     mutate(!!paste0(mace_endpt,"_status_sub"):= as.factor(get(paste0(mace_endpt,"_status_sub"))))
-    #   # https://stats.stackexchange.com/questions/13151/competing-risk-regression-with-crr-slow-on-large-datasets
-    #   fit_fgr<-crr(
-    #     fgr_frm,
-    #     data = df_adj,
-    #     weights = df_iptw$iptw,
-    #     model = TRUE,
-    #     variance = FALSE
-    #   )
-    #   # ggforest(fit_fgr) #quick print
-    #   
-    #   # save model
-    #   out<-list(
-    #     fit_fgr = fit_fgr,
-    #     fgr_res = cox.zph(fit_fgr)
-    #   )
-    #   saveRDS(out, file=path_to_file)
-    #   
-    #   #----------------------------------
-    #   print("fine-gray: global model")
-    # }
-    # 
-    # gc()
-    # #==== IPTW-adjusted, Main Effect, Stratified, Fine-Gray Regression
-    # path_to_file<-file.path(path_to_dir,"cmprsk_strata_main.rda")
-    # if(!file.exists(path_to_file)){
-    #   result<-c()
-    #   for(i in seq_len(nrow(strata))){
-    #     # align 
-    #     df_str<-df_adj %>% filter(.data[[strata$var[i]]]==strata$val[i])
-    #     df_iptw_str<-df_str %>% select(PATID) %>% left_join(df_iptw,by="PATID")
-    #     var_filter<-var_all[!grepl(strata$excld[i],var_all)]
-    #     
-    #     # fit fine-gray
-    #     fgr_frm<-formula(
-    #       paste0(
-    #         "Surv(",mace_endpt,"_time, ",mace_endpt,"_status_sub) ~ ",
-    #         paste(c(var_all,"CPAP_IND"),collapse = "+"))
-    #     )
-    #     fit_fgr_str<-crr(
-    #       fgr_frm,
-    #       data = df_str,
-    #       weights = df_iptw_str$iptw,
-    #       model = TRUE,
-    #       variance = FALSE
-    #     )
-    #     fit_summ<-summary(fit_fgr_str)$coefficients
-    #     fit_var<-rownames(fit_summ)
-    #     rownames(fit_summ)<-NULL
-    #     result<-rbind(
-    #       result,
-    #       cbind(stratum_var=strata$var[i],
-    #             stratum_val=strata$val[i],
-    #             fit_var=fit_var,
-    #             fit_summ)
-    #     )
-    #     
-    #     #----------------------------------
-    #     print(paste0("fine-gray: stratified by:",strata$var[i],":",strata$val[i]))
-    #   }
-    #   
-    #   # save results
-    #   saveRDS(result,file=path_to_file)
-    # }
+    #===== IPTW-adjusted, Main Effect, Fine-Gray Regression
+    path_to_file<-file.path(path_to_dir,"cmprsk_iptw_main.rda")
+    if(!file.exists(path_to_file)){
+      # crr requires status column to be factor
+      df_adj %<>%
+        mutate(!!paste0(mace_endpt,"_status_sub"):= as.factor(get(paste0(mace_endpt,"_status_sub"))))
+      
+      # align
+      df_iptw<-df_adj %>%
+        select(PATID) %>%
+        left_join(ipw_df,by="PATID")
+      
+      out<-list()
+      for(j in seq_len(3)){
+        # generate pseudo sample
+        rewt_idx<-sample(
+          x = seq_len(nrow(df_adj)), 
+          size = nrow(df_adj), 
+          replace = TRUE,
+          prob = rescale(df_iptw$iptw, to=c(0.01,0.99))
+        )
+        df_adj2<-df_adj[rewt_idx,]
+
+        # build crr model
+        # https://stats.stackexchange.com/questions/13151/competing-risk-regression-with-crr-slow-on-large-datasets
+        # Don't use the tidycmsprk wrapper, data preprocessing steps are very inefficient: https://github.com/cran/tidycmprsk/blob/master/R/crr.R 
+        fit_fgr<-cmprsk::crr(
+          ftime = df_adj2 %>% select(!!paste0(mace_endpt,"_time")) %>% pull,
+          fstatus = df_adj2 %>% select(!!paste0(mace_endpt,"_status_sub")) %>% pull,
+          cov1 = df_adj2[,c(var_all,"CPAP_IND")],
+          failcode = 1,
+          cencode = 0,
+          variance = FALSE
+        )
+        
+        fit_cuminc<-cmprsk::cuminc(
+          ftime = df_adj %>% select(!!paste0(mace_endpt,"_time")) %>% pull,
+          fstatus = df_adj %>% select(!!paste0(mace_endpt,"_status_sub")) %>% pull,
+          group = df_adj %>% select(CPAP_IND) %>% pull,
+          cencode = 0
+        )
+        
+        # save model
+        out[[j]]<-list(
+          fit_fgr = fit_fgr,
+          fit_cuminc = fit_cuminc
+        )
+        
+        #----------------------------------
+        print(paste0("fine-gray: global model: round-",j))
+      }
+      
+      saveRDS(out, file=path_to_file)
+    }
+
+    #==== IPTW-adjusted, Main Effect, Stratified, Fine-Gray Regression
+    path_to_file<-file.path(path_to_dir,"cmprsk_strata_main.rda")
+    if(!file.exists(path_to_file)){
+      result<-c()
+      for(i in seq_len(nrow(strata))){
+        # align
+        df_str<-df_adj %>% filter(.data[[strata$var[i]]]==strata$val[i])
+        df_iptw_str<-df_str %>% select(PATID) %>% left_join(ipw_df,by="PATID")
+        var_filter<-var_all[!grepl(strata$excld[i],var_all)]
+        
+        result_j<-c()
+        for(j in seq_len(3)){
+          # generate pseudo sample
+          rewt_idx<-sample(
+            x = seq_len(nrow(df_str)), 
+            size = nrow(df_str), 
+            replace = TRUE,
+            prob = rescale(df_iptw_str$iptw, to=c(0.01,0.99))
+          )
+          df_str2<-df_str[rewt_idx,]
+          gc()
+          
+          # crr modeling
+          fit_fgr<-cmprsk::crr(
+            ftime = df_str2 %>% select(!!paste0(mace_endpt,"_time")) %>% pull,
+            fstatus = df_str2 %>% select(!!paste0(mace_endpt,"_status_sub")) %>% pull,
+            cov1 = df_str2[,c(var_filter,"CPAP_IND")],
+            failcode = 1,
+            cencode = 0,
+            variance = FALSE
+          )
+          result_j %<>%
+            bind_rows(data.frame(
+              var = attr(fit_fgr$coef,"names"),
+              coef = fit_fgr$coef,
+              bt = j
+            ))
+          rownames(result_j)<-NULL
+          
+          #---------------------------------------------------------
+          print(paste0("fine-gray: stratified by:",strata$var[i],"=",strata$val[i],": round-",j))
+        }
+        
+        # gather results
+        result<-rbind(
+          result,
+          cbind(
+            stratum_var=strata$var[i],
+            stratum_val=strata$val[i],
+            result_j %>% group_by(var) %>%
+              summarise(
+                coef_m = mean(coef),
+                coef_sd = sd(coef),
+                coef_med = median(coef),
+                coef_lb = quantile(coef,0.025),
+                coef_up = quantile(coef,0.975),
+                .groups = "drop"
+                
+              )
+            )
+          )
+      }
+
+      # save results
+      saveRDS(result,file=path_to_file)
+    }
   }
 }

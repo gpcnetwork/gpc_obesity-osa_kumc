@@ -440,7 +440,7 @@ for(i in seq_along(endpts)){
   for(boot_i in 1:nboots){
     # spline plot
     tp<-readRDS(
-          file.path(path_to_datadir,paste0("ADHRN_",endpt_i),"cpap_yr1",paste0("boot",boot_i),
+          file.path(path_to_datadir,paste0("ADHRN_",endpt_i),"CPAP_YR1",paste0("boot",boot_i),
                     "pspline_termplot.rda"))     
     whole_dat_raw %<>%
       bind_rows(tp %>% mutate(boot = boot_i,endpt = endpt_i))
@@ -468,13 +468,21 @@ for(i in seq_along(endpts)){
       aes(xintercept=x),
       color = "blue",linetype=2,size=1
     ) + 
+    # annotate(
+    #   geom = "label",
+    #   label = turnpt,
+    #   x = turnpt, 
+    #   y = rep(2,length(turnpt)),
+    #   size=5,
+    #   fontface="bold"
+    # ) +
     annotate(
       geom = "label",
-      label = turnpt,
-      x = turnpt, 
-      y = rep(2,length(turnpt)),
+      label = altpt,
+      x = altpt, 
+      y = rep(2,length(altpt)),
       size=5,
-      face="bold"
+      fontface="bold"
     ) +
     geom_hline(aes(yintercept=1),
                color = "red",linetype=2,size=1) + 
@@ -495,7 +503,7 @@ for(i in seq_along(endpts)){
 grid.arrange(grobs = raw_plt_lst, ncol = 2)
 # save figure
 ggsave(
-  file.path(path_to_dir,"results","cpap_yr1_raw_on_surv_mace.tiff"),
+  file.path(path_to_dir,"res","cpap_yr1_raw_on_surv_mace.tiff"),
   arrangeGrob(grobs = raw_plt_lst, ncol = 2),
   dpi = 150,
   width = 20, 
