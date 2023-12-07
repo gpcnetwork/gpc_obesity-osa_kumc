@@ -468,21 +468,22 @@ for(i in seq_along(endpts)){
       aes(xintercept=x),
       color = "blue",linetype=2,size=1
     ) + 
-    # annotate(
-    #   geom = "label",
-    #   label = turnpt,
-    #   x = turnpt, 
-    #   y = rep(2,length(turnpt)),
-    #   size=5,
-    #   fontface="bold"
-    # ) +
+    annotate(
+      geom = "label",
+      label = turnpt,
+      x = turnpt,
+      y = rep(2,length(turnpt)),
+      size = 5,
+      fontface="bold"
+    ) +
     annotate(
       geom = "label",
       label = altpt,
       x = altpt, 
-      y = rep(2,length(altpt)),
-      size=5,
-      fontface="bold"
+      y = rep(0.5,length(altpt)),
+      size = 5,
+      fontface="bold",
+      color = "red"
     ) +
     geom_hline(aes(yintercept=1),
                color = "red",linetype=2,size=1) + 

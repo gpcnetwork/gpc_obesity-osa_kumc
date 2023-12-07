@@ -367,19 +367,19 @@ for(mace_endpt in mace_endpts){
         df_str<-df_adj %>% filter(.data[[strata$var[i]]]==strata$val[i])
         df_iptw_str<-df_str %>% select(PATID) %>% left_join(ipw_df,by="PATID")
         var_filter<-var_all[!grepl(strata$excld[i],var_all)]
-        
+
         result_j<-c()
         for(j in seq_len(3)){
           # generate pseudo sample
           rewt_idx<-sample(
-            x = seq_len(nrow(df_str)), 
-            size = nrow(df_str), 
+            x = seq_len(nrow(df_str)),
+            size = nrow(df_str),
             replace = TRUE,
             prob = rescale(df_iptw_str$iptw, to=c(0.01,0.99))
           )
           df_str2<-df_str[rewt_idx,]
           gc()
-          
+
           # crr modeling
           fit_fgr<-cmprsk::crr(
             ftime = df_str2 %>% select(!!paste0(mace_endpt,"_time")) %>% pull,
@@ -396,11 +396,11 @@ for(mace_endpt in mace_endpts){
               bt = j
             ))
           rownames(result_j)<-NULL
-          
+
           #---------------------------------------------------------
           print(paste0("fine-gray: stratified by:",strata$var[i],"=",strata$val[i],": round-",j))
         }
-        
+
         # gather results
         result<-rbind(
           result,
@@ -415,7 +415,7 @@ for(mace_endpt in mace_endpts){
                 coef_lb = quantile(coef,0.025),
                 coef_up = quantile(coef,0.975),
                 .groups = "drop"
-                
+
               )
             )
           )
