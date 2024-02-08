@@ -54,6 +54,9 @@ saveRDS(
 )
 rm(km_mort_unadj,km_mort_unadj2,risk_tbl,sfit_obj); gc()
 
+#--median follow-up
+survfit(Surv(DEATH_time,1-DEATH_status) ~ 1, data = pap_use)
+
 #--- ACM, adj
 fitcox<-readRDS(file.path(path_to_datadir,"ACM","boot1","coxph_iptw_main.rda"))$fit_cox
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
@@ -237,10 +240,9 @@ ggsave(
   device = 'tiff'
 )
 
-#==== 
-# forestplots
+#==== forestplots =====
 endpts<-c(
-  "ACM"
+   "ACM"
   ,"MACE"
   ,"MI"
   ,"HF"
@@ -330,24 +332,55 @@ dat %<>%
     upper = exp(ci_ub)
   )
 
+dat_all<-dat %>% filter(stratum_var=="None") %>%
+  mutate(stratum_var=" ")
+fplt1<-forestplot.HR(
+  df = dat_all %>% filter(endpt %in% c("ACM","MACE")),
+  x_idx1="stratum_var", # 1st layer index
+  x_idx2="stratum_val", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.4)),2),
+    vert_line = rep(list(c(0.3, 1.2)),2),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),2)
+  ), 
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Full\nModel"
+)
+# save figure
+ggsave(
+  file.path(path_to_outdir,"pap_expo_on_surv_mace_full.tiff"),
+  plot = fplt1,
+  dpi = 100,
+  width = 8, 
+  height = 4, 
+  units = "in",
+  device = "tiff"
+)
+
 dat %<>%
+  filter(stratum_var!="None") %>% 
   mutate(
     stratum_var_lbl = recode(
       stratum_var,
-      "None" = "01.None",
-      "AGEGRP" = "02.Age",
-      "SEX" = "03.Sex",
-      "RACE_LABEL" = "04.Race",
-      "LIS_DUAL_IND" = "05.Low-income-subsidy/Dual Eligibility",
-      "HYSM" = "06.Hypersomnia",
-      "INSM" = "07.Insomina",
-      "MACE_HIST" = "08.MACE History",
-      "OBES" = "09.Obesity",
-      "COPD" = "10.COPD",
-      "HTN" = "11.Hypertension",
-      "T2DM" = "12.T2DM", 
-      "ND" = "13.Neurodic Disorder",
-      "AFIB" = "14.Atrial Fibrilation",
+      "AGEGRP" = "01.Age",
+      "SEX" = "02.Sex",
+      "RACE_LABEL" = "03.Race",
+      "LIS_DUAL_IND" = "04.Low-income-subsidy/Dual Eligibility",
+      "HYSM" = "05.Hypersomnia",
+      "INSM" = "06.Insomina",
+      "MACE_HIST" = "07.MACE History",
+      "OBES" = "08.Obesity",
+      "COPD" = "09.COPD",
+      "HTN" = "10.Hypertension",
+      "T2DM" = "11.T2DM", 
+      "ND" = "12.Anxiety Disorder",
+      "AFIB" = "13.Atrial Fibrilation",
+      "CKD" = "14.Chronic Kidney Disease",
       "CCI_CLASS" = "15.Charlson Comorbidity Index",
       "ACG" = "16.Anti-coagulant",
       "AHT" = "17.Anti-hypertensive",
@@ -400,7 +433,7 @@ fplt1<-forestplot.HR(
 )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p1.tiff"),
+  file.path(path_to_outdir,"pap_expo_on_surv_mace_str_p1.tiff"),
   plot = fplt1,
   dpi = 150,
   width = 12, 
@@ -433,11 +466,39 @@ fplt2<-forestplot.HR(
 )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_expo_on_surv_mace_p2.tiff"),
+  file.path(path_to_outdir,"pap_expo_on_surv_mace_str_p2.tiff"),
   plot = fplt2,
   dpi = 150,
   width = 12, 
   height = 12, 
+  units = "in",
+  device = "tiff"
+)
+
+fplt1<-forestplot.HR(
+  df = dat_all %>% filter(!endpt %in% c("ACM","MACE")),
+  x_idx1="stratum_var", # 1st layer index
+  x_idx2="stratum_val", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.4)),4),
+    vert_line = rep(list(c(0.3, 1.2)),4),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),4)
+  ), 
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Full\nModel"
+)
+# save figure
+ggsave(
+  file.path(path_to_outdir,"pap_expo_on_mace_events_full.tiff"),
+  plot = fplt1,
+  dpi = 100,
+  width = 18, 
+  height = 5, 
   units = "in",
   device = "tiff"
 )
@@ -465,7 +526,7 @@ fplt1<-forestplot.HR(
 )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_expo_on_mace_events_p1.tiff"),
+  file.path(path_to_outdir,"pap_expo_on_mace_events_str_p1.tiff"),
   plot = fplt1,
   dpi = 150,
   width = 20,
@@ -497,7 +558,7 @@ fplt2<-forestplot.HR(
 )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_expo_on_mace_events_p2.tiff"),
+  file.path(path_to_outdir,"pap_expo_on_mace_events_str_p2.tiff"),
   plot = fplt2,
   dpi = 150,
   width = 20,
@@ -506,21 +567,16 @@ ggsave(
   device = "tiff"
 )
 
-write.csv(dat,file=file.path(path_to_dir,"res","cpap_expo_all_results.csv"))
-
-
 adh_metrics<-c(
-  "CPAP_YR1",
-  "adherence_yr1_med",
-  "adherence_yr1_tt",
-  "adherence_yr1_qt",
-  "adherence_yr1_ww",
-  "adherence_yr1_inc4",
-  "adherence_yr1_inc8",
-  "adherence_yr1_mttree",
-  "adherence_yr1_mctree"
+  "CPAP_YR1"
+  ,"adherence_yr1_med"
+  ,"adherence_yr1_tt"
+  ,"adherence_yr1_qt"
+  ,"adherence_yr1_inc4"
+  ,"adherence_yr1_inc8"
+  ,"adherence_yr1_ww"
+  ,"adherence_yr1_mttree"
 )
-nboots<-1
 
 cpap_yr1_use<-readRDS(file.path(path_to_datadir,"cpap_adherence_final.rda")) %>%
   select(all_of(c("PATID",adh_metrics)))
@@ -540,34 +596,39 @@ ggplot(cpap_yr1_use,aes(x=CPAP_YR1))+
     size = 1.5) +
   stat_bin(
     aes(y = ..density..,
-        label=scales::percent(round(..density..,2))),
+        label=scales::percent(round(..density..,3))),
     geom='text',
     binwidth=1,
-    vjust = 1.5)+
+    vjust = 1.5,
+    fontface = "bold"
+  )+
   scale_x_continuous(
     name = "CPAP Total Charges in Year 1",
     breaks = 1:37,labels = 1:37)+
   scale_y_continuous(
     name = "Percentage (%)",
-    breaks = seq(0,0.2,by=0.02), labels = seq(0,0.2,by=0.02),
-    sec.axis = sec_axis(trans = ~ . * N,
-                        name = "Count",
-                        breaks = seq(0,15000,by=1000),labels = seq(0,15000,by=1000)))+
+    breaks = seq(0,0.2,by=0.02),
+    labels = seq(0,0.2,by=0.02)*100,
+    sec.axis = sec_axis(
+      trans = ~ . * N,
+      name = "Count",
+      breaks = seq(0,40000,by=2000),
+      labels = seq(0,40000,by=2000))
+  )+
   theme(
     panel.background = element_rect(fill = "white", colour = "grey50"),
     panel.grid.major.y = element_line(colour = "grey"),
-    text = element_text(face="bold")
+    text = element_text(face="bold",size=14)
   )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_dist.tiff"),
-  dpi = 150,
-  width = 12, 
-  height = 12, 
+  file.path(path_to_outdir,"pap_yr1_dist.tiff"),
+  dpi = 100,
+  width = 16, 
+  height = 6, 
   units = "in",
-  device = "tiff"
+  device = 'tiff'
 )
-
 
 adh_metrics_label<-c(
   "Raw",
@@ -587,7 +648,7 @@ for(i in seq_along(adh_metrics[-1])){
   adh_m<-adh_metrics[-1][i]
   adh_m_lbl<-adh_metrics_label[-1][i]
   bound<-cpap_yr1_use %>%
-    group_by_(adh_m) %>%
+    group_by_at(vars(adh_m)) %>%
     summarise(lb=min(CPAP_YR1),
               ub=max(CPAP_YR1),
               .groups = "drop")
@@ -612,13 +673,15 @@ for(i in seq_along(adh_metrics[-1])){
       geom = "text",
       label = xlabs,
       x = xlabs, 
-      y = seq(0.01,0.08,length.out = ncut)
+      y = seq(0.01,0.08,length.out = ncut),
+      fontface = "bold"
     ) +
     annotate(
       geom = "label",
       label = annot,
       x = annot_x, 
-      y = rep(0.1,length(annot_x))
+      y = rep(0.1,length(annot_x)),
+      fontface = "bold"
     ) +
     theme(
       panel.background = element_rect(fill = "white", colour = "grey50"),
@@ -632,10 +695,11 @@ for(i in seq_along(adh_metrics[-1])){
 grid.arrange(grobs = plot_lst, ncol = 3)
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_discrete.tiff"),
+  file.path(path_to_outdir,"pap_yr1_discrete.tiff"),
   arrangeGrob(grobs = plot_lst, ncol = 3),
-  width = 12,
-  height = 6,
+  dpi = 100,
+  width = 12, 
+  height = 8, 
   units = "in",
   device = 'tiff'
 )
@@ -761,7 +825,7 @@ fplt<-forestplot.HR(
 )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_discrete_on_surv_mace.tiff"),
+  file.path(path_to_outdir,"pap_yr1_discrete_on_surv_mace.tiff"),
   plot = fplt,
   dpi = 150,
   width = 12, 
@@ -770,10 +834,9 @@ ggsave(
   device = 'tiff'
 )
 
-
 # ggplot(whole_dat %>% filter(endpt %in% c("ACM","mace")),
 #        aes(color=vari,y=vari_cat))+
-#   geom_point(aes(x=coef))+
+#   geom_point(aes(x=coef))+http://127.0.0.1:23643/graphics/plot_zoom_png?width=1920&height=1017
 #   geom_errorbar(aes(xmin=ci_lb,xmax=ci_ub))+
 #   geom_vline(xintercept=1,linetype=2,color = "red") +
 #   theme(
@@ -785,77 +848,77 @@ ggsave(
 #       )+
 #   facet_wrap(~ endpt, ncol = 2)
 
-fplt<-forestplot.HR(
-  df = whole_dat %>% filter(endpt %in% c("ACM","MACE") & proxy=="Quantile_Quartile"),  # long table
-  x_idx1="proxy", # 1st layer index
-  x_idx2="group", # 2nd layer index
-  y_idx="endpt_lbl", # 1st layer y index
-  est="mean", # estimates
-  lower="lower", # 95% CI lower bound
-  upper="upper", # 95% CI upper bound
-  pval="pval", # p value
-  plt_par = list(), # other plotting parameters passed in forest function
-  ny = 2, # number of y groups (must be the same as groups of y_idx)
-  idx_display = "AdherenceProxy",
-)
-# save figure
-ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_quartile_on_surv_mace.tiff"),
-  plot = fplt,
-  dpi = 100,
-  width = 12, 
-  height = 8, 
-  units = "in",
-  device = 'tiff'
-)
-
-fplt<-forestplot.HR(
-  df = whole_dat %>% filter(!endpt %in% c("ACM","MACE")),  # long table
-  x_idx1="proxy", # 1st layer index
-  x_idx2="group", # 2nd layer index
-  y_idx="endpt_lbl", # 1st layer y index
-  est="mean", # estimates
-  lower="lower", # 95% CI lower bound
-  upper="upper", # 95% CI upper bound
-  pval="pval", # p value
-  plt_par = list(), # other plotting parameters passed in forest function
-  ny = 4, # number of y groups (must be the same as groups of y_idx)
-  idx_display = "AdherenceProxy",
-)
-# save figure
-ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_discrete_on_mace_events.tiff"),
-  plot = fplt,
-  dpi = 150,
-  width = 20, 
-  height = 8, 
-  units = "in",
-  device = 'tiff'
-)
-
-fplt<-forestplot.HR(
-  df = whole_dat %>% filter(!endpt %in% c("ACM","MACE") & proxy=="Quantile_Quartile"),  # long table
-  x_idx1="proxy", # 1st layer index
-  x_idx2="group", # 2nd layer index
-  y_idx="endpt_lbl", # 1st layer y index
-  est="mean", # estimates
-  lower="lower", # 95% CI lower bound
-  upper="upper", # 95% CI upper bound
-  pval="pval", # p value
-  plt_par = list(), # other plotting parameters passed in forest function
-  ny = 4, # number of y groups (must be the same as groups of y_idx)
-  idx_display = "AdherenceProxy",
-)
-# save figure
-ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_quartile_on_mace_events.tiff"),
-  plot = fplt,
-  dpi = 100,
-  width = 20, 
-  height = 8, 
-  units = "in",
-  device = 'tiff'
-)
+# fplt<-forestplot.HR(
+#   df = whole_dat %>% filter(endpt %in% c("ACM","MACE") & proxy=="Quantile_Quartile"),  # long table
+#   x_idx1="proxy", # 1st layer index
+#   x_idx2="group", # 2nd layer index
+#   y_idx="endpt_lbl", # 1st layer y index
+#   est="mean", # estimates
+#   lower="lower", # 95% CI lower bound
+#   upper="upper", # 95% CI upper bound
+#   pval="pval", # p value
+#   plt_par = list(), # other plotting parameters passed in forest function
+#   ny = 2, # number of y groups (must be the same as groups of y_idx)
+#   idx_display = "AdherenceProxy",
+# )
+# # save figure
+# ggsave(
+#   file.path(path_to_outdir,"pap_yr1_quartile_on_surv_mace.tiff"),
+#   plot = fplt,
+#   dpi = 100,
+#   width = 12, 
+#   height = 8, 
+#   units = "in",
+#   device = 'tiff'
+# )
+# 
+# fplt<-forestplot.HR(
+#   df = whole_dat %>% filter(!endpt %in% c("ACM","MACE")),  # long table
+#   x_idx1="proxy", # 1st layer index
+#   x_idx2="group", # 2nd layer index
+#   y_idx="endpt_lbl", # 1st layer y index
+#   est="mean", # estimates
+#   lower="lower", # 95% CI lower bound
+#   upper="upper", # 95% CI upper bound
+#   pval="pval", # p value
+#   plt_par = list(), # other plotting parameters passed in forest function
+#   ny = 4, # number of y groups (must be the same as groups of y_idx)
+#   idx_display = "AdherenceProxy",
+# )
+# # save figure
+# ggsave(
+#   file.path(path_to_dir,"res","cpap_yr1_discrete_on_mace_events.tiff"),
+#   plot = fplt,
+#   dpi = 150,
+#   width = 20, 
+#   height = 8, 
+#   units = "in",
+#   device = 'tiff'
+# )
+# 
+# fplt<-forestplot.HR(
+#   df = whole_dat %>% filter(!endpt %in% c("ACM","MACE") & proxy=="Quantile_Quartile"),  # long table
+#   x_idx1="proxy", # 1st layer index
+#   x_idx2="group", # 2nd layer index
+#   y_idx="endpt_lbl", # 1st layer y index
+#   est="mean", # estimates
+#   lower="lower", # 95% CI lower bound
+#   upper="upper", # 95% CI upper bound
+#   pval="pval", # p value
+#   plt_par = list(), # other plotting parameters passed in forest function
+#   ny = 4, # number of y groups (must be the same as groups of y_idx)
+#   idx_display = "AdherenceProxy",
+# )
+# # save figure
+# ggsave(
+#   file.path(path_to_dir,"res","cpap_yr1_quartile_on_mace_events.tiff"),
+#   plot = fplt,
+#   dpi = 100,
+#   width = 20, 
+#   height = 8, 
+#   units = "in",
+#   device = 'tiff'
+# )
 
 endpt_lbl<-c(
   "1.All Cause Mortality",
@@ -939,7 +1002,7 @@ for(i in seq_along(endpts)){
 grid.arrange(grobs = raw_plt_lst, ncol = 2)
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_yr1_raw_on_surv_mace.tiff"),
+  file.path(path_to_outdir,"pap_yr1_raw_on_surv_mace.tiff"),
   arrangeGrob(grobs = raw_plt_lst, ncol = 2),
   dpi = 100,
   width = 10, 
@@ -989,6 +1052,7 @@ for(endpt_i in endpts){
     }
   }
 }
+
 strat_dat %<>%
   # filter(stratum_var != "MACE_HISTORY") %>%
   group_by(stratum_var,stratum_val,fit_var,endpt) %>%
@@ -1008,27 +1072,68 @@ strat_dat %<>%
   )
 
 strat_dat$endpt<-factor(strat_dat$endpt, levels=c("ACM","MACE","MI","HF","STROKE","REVASC"))
-strat_dat %<>% arrange(endpt)
-
-strat_dat2<-strat_dat %>%
+strat_dat %<>% arrange(endpt) %>%
   filter(grepl("adherence_yr1_qtqt",fit_var)) %>%
+  mutate(
+    fit_var_lbl = recode(
+      fit_var,
+      "adherence_yr1_qtqt_2" = "Q2 (8 - 12)",
+      "adherence_yr1_qtqt_3" = "Q3 (13 - 15)",
+      "adherence_yr1_qtqt_4" = "Q4 (> 15)"
+    ),
+  )
+
+strat_dat_full<-strat_dat %>% 
+  filter(stratum_var=="None") %>%
+  mutate(stratum_var="")
+  
+fplt1<-forestplot.HR(
+  df = strat_dat_full %>% filter(endpt %in% c("ACM","MACE")),  # long table
+  x_idx1="stratum_var", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list( # manual adjustment
+    xlim = rep(list(c(0, 1.5)),2),
+    vert_line = rep(list(c(0.3, 1.2)),2),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),2)
+  ), 
+  ny = 2, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Full\nModel",
+)
+# save figure
+ggsave(
+  file.path(path_to_outdir,"pap_adh_on_surv_mace_full.tiff"),
+  plot = fplt1,
+  dpi = 100,
+  width = 12, 
+  height = 6, 
+  units = "in",
+  device = 'tiff'
+)
+
+strat_dat2<-strat_dat %>% 
+  filter(stratum_var!="None") %>%
   mutate(
     stratum_var_lbl = recode(
       stratum_var,
-      "None" = "01.None",
-      "AGEGRP" = "02.Age",
-      "SEX" = "03.Sex",
-      "RACE_LABEL" = "04.Race",
-      "LIS_DUAL_IND" = "05.Low-income-subsidy/Dual Eligibility",
-      "HYSM" = "06.Hypersomnia",
-      "INSM" = "07.Insomina",
-      "MACE_HIST" = "08.MACE History",
-      "OBES" = "09.Obesity",
-      "COPD" = "10.COPD",
-      "HTN" = "11.Hypertension",
-      "T2DM" = "12.T2DM", 
-      "ND" = "13.Neurodic Disorder",
-      "AFIB" = "14.Atrial Fibrilation",
+      "AGEGRP" = "01.Age",
+      "SEX" = "02.Sex",
+      "RACE_LABEL" = "03.Race",
+      "LIS_DUAL_IND" = "04.Low-income-subsidy/Dual Eligibility",
+      "HYSM" = "05.Hypersomnia",
+      "INSM" = "06.Insomina",
+      "MACE_HIST" = "07.MACE History",
+      "OBES" = "08.Obesity",
+      "COPD" = "09.COPD",
+      "HTN" = "10.Hypertension",
+      "T2DM" = "11.T2DM", 
+      "ND" = "12.Anxiety Disorder",
+      "AFIB" = "13.Atrial Fibrilation",
+      "CKD" = "14.Chronic Kidney Disease",
       "CCI_CLASS" = "15.Charlson Comorbidity Index",
       "ACG" = "16.Anti-coagulant",
       "AHT" = "17.Anti-hypertensive",
@@ -1053,12 +1158,6 @@ strat_dat2<-strat_dat %>%
       "F" = "Female",
       "M" = "Male"
     ),
-    fit_var_lbl = recode(
-      fit_var,
-      "adherence_yr1_qtqt_2" = "Q2 (12 - 14)",
-      "adherence_yr1_qtqt_3" = "Q3 (15 - 16)",
-      "adherence_yr1_qtqt_4" = "Q4 (> 16)"
-    ),
     endpt_lbl = endpt
   ) %>%
   mutate(
@@ -1067,7 +1166,7 @@ strat_dat2<-strat_dat %>%
 
 fplt1<-forestplot.HR(
   df = strat_dat2 %>% 
-    filter(endpt %in% c("ACM","MACE") & grepl("^(0[1-6])+",stratum_var_lbl)),  # long table
+    filter(endpt %in% c("ACM","MACE") & grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -1085,7 +1184,7 @@ fplt1<-forestplot.HR(
 )
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_adh_on_surv_mace_p1.tiff"),
+  file.path(path_to_outdir,"pap_adh_on_surv_mace_str_p1.tiff"),
   plot = fplt1,
   dpi = 250,
   width = 12, 
@@ -1094,11 +1193,10 @@ ggsave(
   device = 'tiff'
 )
 
-
 fplt2<-forestplot.HR(
   df = strat_dat2 %>% 
     filter(endpt %in% c("ACM","MACE") & 
-             (grepl("^(0[7-9])+",stratum_var_lbl)|grepl("^(1[0-4])+",stratum_var_lbl))),  # long table
+             (grepl("^(0[6-9])+",stratum_var_lbl)|grepl("^(1[0-3])+",stratum_var_lbl))),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -1117,7 +1215,7 @@ fplt2<-forestplot.HR(
 # fplt2
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_adh_on_surv_mace_p2.tiff"),
+  file.path(path_to_outdir,"pap_adh_on_surv_mace_str_p2.tiff"),
   plot = fplt2,
   dpi = 250,
   width = 12, 
@@ -1129,7 +1227,7 @@ ggsave(
 fplt3<-forestplot.HR(
   df = strat_dat2 %>% 
     filter(endpt %in% c("ACM","MACE") & 
-             (grepl("^(1[5-9])+",stratum_var_lbl)|grepl("^(2[0-3])+",stratum_var_lbl))),  # long table
+             (grepl("^(1[4-9])+",stratum_var_lbl)|grepl("^(2[0-3])+",stratum_var_lbl))),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -1148,7 +1246,7 @@ fplt3<-forestplot.HR(
 # fplt3
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_adh_on_surv_mace_p3.tiff"),
+  file.path(path_to_outdir,"pap_adh_on_surv_mace_str_p3.tiff"),
   plot = fplt3,
   dpi = 250,
   width = 12, 
@@ -1157,6 +1255,33 @@ ggsave(
   device = "tiff"
 )
 
+fplt1<-forestplot.HR(
+  df = strat_dat_full %>% filter(!endpt %in% c("ACM","MACE")),  # long table
+  x_idx1="stratum_var", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list( # manual adjustment
+    xlim = rep(list(c(0, 1.5)),4),
+    vert_line = rep(list(c(0.3, 1.2)),4),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),4)
+  ), 
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Full\nModel",
+)
+# save figure
+ggsave(
+  file.path(path_to_outdir,"pap_adh_on_mace_events_full.tiff"),
+  plot = fplt1,
+  dpi = 100,
+  width = 18, 
+  height = 6, 
+  units = "in",
+  device = 'tiff'
+)
 
 fplt1<-forestplot.HR(
   df = strat_dat2 %>% 
@@ -1180,7 +1305,7 @@ fplt1<-forestplot.HR(
 # fplt1
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_adh_on_mace_event_p1.tiff"),
+  file.path(path_to_outdir,"pap_adh_on_mace_event_str_p1.tiff"),
   plot = fplt1,
   dpi = 250,
   width = 18, 
@@ -1189,11 +1314,10 @@ ggsave(
   device = "tiff"
 )
 
-
 fplt2<-forestplot.HR(
   df = strat_dat2 %>% 
-    filter(stratum_var != "MACE_HIST") %>%
-    filter(!endpt %in% c("ACM","MACE") & !grepl("^(0[1-5])+",stratum_var_lbl)),  # long table
+    filter(stratum_var != "MACE_HIST" & !endpt %in% c("ACM","MACE") &
+            (grepl("^(0[6-9])+",stratum_var_lbl)|grepl("^(1[0-3])+",stratum_var_lbl))),  # long table
   x_idx1="stratum_combine", # 1st layer index
   x_idx2="fit_var_lbl", # 2nd layer index
   y_idx="endpt_lbl", # 1st layer y index
@@ -1212,7 +1336,7 @@ fplt2<-forestplot.HR(
 # fplt2
 # save figure
 ggsave(
-  file.path(path_to_dir,"res","cpap_adh_on_mace_event_p2.tiff"),
+  file.path(path_to_outdir,"pap_adh_on_mace_event_str_p2.tiff"),
   plot = fplt2,
   dpi = 250,
   width = 18, 
@@ -1221,4 +1345,34 @@ ggsave(
   device = "tiff"
 )
 
+fplt3<-forestplot.HR(
+  df = strat_dat2 %>% 
+    filter(stratum_var != "MACE_HIST" & !endpt %in% c("ACM","MACE") & 
+            (grepl("^(1[4-9])+",stratum_var_lbl)|grepl("^(2[0-3])+",stratum_var_lbl))),  # long table
+  x_idx1="stratum_combine", # 1st layer index
+  x_idx2="fit_var_lbl", # 2nd layer index
+  y_idx="endpt_lbl", # 1st layer y index
+  est="mean", # estimates
+  lower="lower", # 95% CI lower bound
+  upper="upper", # 95% CI upper bound
+  pval="pval", # p value
+  plt_par = list(
+    xlim = rep(list(c(0, 1.5)),4),
+    vert_line = rep(list(c(0.3, 1.2)),4),
+    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),4)
+  ), 
+  ny = 4, # number of y groups (must be the same as groups of y_idx)
+  idx_display = "Stratification",
+)
+# fplt2
+# save figure
+ggsave(
+  file.path(path_to_outdir,"pap_adh_on_mace_event_str_p3.tiff"),
+  plot = fplt3,
+  dpi = 250,
+  width = 18, 
+  height = 18, 
+  units = "in",
+  device = "tiff"
+)
 
