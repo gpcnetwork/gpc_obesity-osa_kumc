@@ -577,10 +577,11 @@ adh_metrics<-c(
   ,"adherence_yr1_med"
   ,"adherence_yr1_tt"
   ,"adherence_yr1_qt"
+  ,"adherence_yr1_ww"
   ,"adherence_yr1_inc4"
   ,"adherence_yr1_inc8"
-  ,"adherence_yr1_ww"
   ,"adherence_yr1_mttree"
+  ,"adherence_yr1_mctree"
 )
 
 cpap_yr1_use<-readRDS(file.path(path_to_datadir,"cpap_adherence_final.rda")) %>%

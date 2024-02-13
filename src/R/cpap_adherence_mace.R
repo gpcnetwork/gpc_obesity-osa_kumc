@@ -144,7 +144,7 @@ adh_metric<-c(
 )
 
 mace_endpts<-c(
-  # 'MACE',
+  'MACE',
   'HF',
   'MI',
   'STROKE',
