@@ -142,7 +142,7 @@ mace_endpts<-c(
 #==== MACE models ====
 boots_iter<-1:1
 for(mace_endpt in mace_endpts){
-  # mace_endpt<-'MACE' # only for testing
+  mace_endpt<-'MACE' # only for testing
   #==== matched sampling ====
   boots<-5
   path_to_file<-file.path(
