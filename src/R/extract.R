@@ -31,11 +31,11 @@ sf_conn <- DBI::dbConnect(
 
 # collect cohort for exposure analysis
 dat<-tbl(sf_conn,in_schema("SX_OSA_PAP","PAT_OSA_PAP_EXPOS")) %>% collect()
-saveRDS(dat,file=file.path(path_to_data_folder,"pap_exposure_aset.rds"))
+saveRDS(dat,file=file.path(path_to_data_folder,"pap_exposure_aset.rda"))
 
 # collect cohort for dose-response analysis
 dat<-tbl(sf_conn,in_schema("SX_OSA_PAP","PAT_OSA_PAP_ADHRN")) %>% collect()
-saveRDS(dat,file=file.path(path_to_data_folder,"cpap_adherence_aset.rds"))
+saveRDS(dat,file=file.path(path_to_data_folder,"cpap_adherence_aset.rda"))
 
 # close db connection
 DBI::dbDisconnect(sf_conn)

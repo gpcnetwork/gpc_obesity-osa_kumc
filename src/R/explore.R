@@ -14,10 +14,9 @@ pacman::p_load(
   kableExtra,
   devtools,
   ggrepel,
-  tidycmprsk
+  tidycmprsk,
+  webshot2
 )
-
-# webshot::install_phantomjs()
 
 source_url("https://raw.githubusercontent.com/sxinger/utils/master/analysis_util.R")
 
@@ -77,8 +76,9 @@ desc_cohort<-univar_analysis_mixed(
 
 desc_cohort %>%
   save_kable(
-    file.path(path_to_outdir,"expos_all.pdf")
+    file.path(path_to_outdir,"expos_all.html")
   )
+
 
 # comparison
 desc_case_ctrl<-univar_analysis_mixed(
@@ -91,7 +91,7 @@ desc_case_ctrl<-univar_analysis_mixed(
 )
 desc_case_ctrl %>%
   save_kable(
-    file.path(path_to_outdir,"expos_pap.pdf")
+    file.path(path_to_outdir,"expos_pap.html")
   )
 
 #=== mace ========================================
@@ -117,14 +117,14 @@ desc_case_ctrl2<-univar_analysis_mixed(
 )
 desc_case_ctrl2 %>%
   save_kable(
-    file.path(path_to_outdir,"expos_mace_pap.pdf")
+    file.path(path_to_outdir,"expos_mace_pap.html")
   )
 
 #===== adherence analysis ========================
 #=== surv =======================================
 df<-readRDS(file.path(
   path_to_datadir,
-  "cpap_adherence_final.rda"
+  "cpap_adherence_final2.rda"
 ))
 
 # overview
@@ -138,7 +138,7 @@ desc_cohort<-univar_analysis_mixed(
 )
 desc_cohort %>%
   save_kable(
-    file.path(path_to_outdir,"adhrn_all.pdf")
+    file.path(path_to_outdir,"adhrn_all.html")
   )
 
 # comparison
@@ -152,7 +152,7 @@ desc_case_ctrl<-univar_analysis_mixed(
 )
 desc_case_ctrl %>% 
   save_kable(
-    file.path(path_to_outdir,"adhrn_pap.pdf")
+    file.path(path_to_outdir,"adhrn_pap.html")
   )
 
 #=== mace =======================================
@@ -178,6 +178,6 @@ desc_case_ctrl2<-univar_analysis_mixed(
 )
 desc_case_ctrl2 %>%
   save_kable(
-    file.path(path_to_outdir,"adhrn_mace_pap.pdf")
+    file.path(path_to_outdir,"adhrn_mace_pap.html")
   )
 

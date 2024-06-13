@@ -6,9 +6,6 @@
 #              one patient per row
 #################################################################
 
-rm(list=ls()); gc()
-setwd("C:/repo/gpc-obesity-osa")
-
 # install.packages("pacman")
 pacman::p_load(
   tidyverse,
@@ -16,6 +13,9 @@ pacman::p_load(
   rpart,
   rpart.plot
 )
+
+rm(list=ls()); gc()
+setwd("C:/repo/gpc-obesity-osa")
 
 path_to_data_folder<-file.path(
   getwd(),
@@ -25,7 +25,7 @@ path_to_data_folder<-file.path(
 ##==== preprocess cohort for exposure analysis ========
 # observation window: before osa onset
 # routine data preprocess
-dat_proc<-readRDS(file.path(path_to_data_folder,"pap_exposure_aset.rds")) %>%
+dat_proc<-readRDS(file.path(path_to_data_folder,"pap_exposure_aset.rda")) %>%
   # survival object
   mutate(
     # MACE survival obj
@@ -77,13 +77,15 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"pap_exposure_aset.rds")) %>%
   ) %>%
   # cleanup demographic fields
   mutate(
-    RACE_LABEL = case_when(RACE=='05' ~ 'White',
-                           RACE=='03' ~ 'AA',
-                           RACE=='02' ~ 'Asian',
-                           RACE=='01' ~ 'AI',
-                           RACE=='OT' & HISPANIC=='Y' ~ 'Hispanic',
-                           RACE=='NI' ~ 'Unknown',
-                           TRUE ~ 'Other'),
+    RACE_LABEL = case_when(
+      HISPANIC=='Y' ~ 'Hispanic',
+      RACE=='05' ~ 'White',
+      RACE=='03' ~ 'AA',
+      RACE=='02' ~ 'Asian',
+      RACE=='01' ~ 'AI',
+      RACE=='NI' ~ 'Unknown',
+      TRUE ~ 'Other'
+    ),
     RACE_LABEL = relevel(as.factor(RACE_LABEL),ref="White"),
     RACE_LABEL_fac = paste0("RACE_",relevel(as.factor(RACE_LABEL),ref="White")),race_ind = 1,
     SEXF = as.numeric(SEX=='F'),
@@ -152,7 +154,7 @@ saveRDS(dat_proc,file.path(path_to_data_folder,"cpap_exposure_final.rda"))
 
 ##==== preprocess cohort for dose-response, adherence analysis ==========
 # observation window: before 1-year mark since CPAP initialization
-dat_proc<-readRDS(file.path(path_to_data_folder,"cpap_adherence_aset.rds")) %>%
+dat_proc<-readRDS(file.path(path_to_data_folder,"cpap_adherence_aset.rda")) %>%
   # survival object
   mutate(
     # MACE survival obj
@@ -204,13 +206,15 @@ dat_proc<-readRDS(file.path(path_to_data_folder,"cpap_adherence_aset.rds")) %>%
   ) %>%
   mutate(
     # label demographic fields
-    RACE_LABEL = case_when(RACE=='05' ~ 'White',
-                           RACE=='03' ~ 'AA',
-                           RACE=='02' ~ 'Asian',
-                           RACE=='01' ~ 'AI',
-                           RACE=='OT' & HISPANIC=='Y' ~ 'Hispanic',
-                           RACE=='NI' ~ 'Unknown',
-                           TRUE ~ 'Other'),
+    RACE_LABEL = case_when(
+      HISPANIC=='Y' ~ 'Hispanic',
+      RACE=='05' ~ 'White',
+      RACE=='03' ~ 'AA',
+      RACE=='02' ~ 'Asian',
+      RACE=='01' ~ 'AI',
+      RACE=='NI' ~ 'Unknown',
+      TRUE ~ 'Other'
+    ),
     RACE_LABEL = relevel(as.factor(RACE_LABEL),ref="White"),
     RACE_LABEL_fac = paste0("RACE_",relevel(as.factor(RACE_LABEL),ref="White")),race_ind = 1,
     SEXF = as.numeric(SEX=='F'),
@@ -330,5 +334,6 @@ dat_proc %<>%
   )
 
 # save results
-saveRDS(dat_proc,file.path(path_to_data_folder,"cpap_adherence_final.rda"))
+# saveRDS(dat_proc,file.path(path_to_data_folder,"cpap_adherence_final.rda"))
+saveRDS(dat_proc,file.path(path_to_data_folder,"cpap_adherence_final2.rda"))
 
