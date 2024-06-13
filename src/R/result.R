@@ -37,18 +37,18 @@ km_mort_unadj<-ggsurvplot(
   linetype = "strata",
   break.x.by = 365,
   xlim = c(0, 1825),
-  xlab = "Days", 
+  xlab = "Days since Index Date", 
   ylab = "Unadjusted Survival Probability")
 
 km_mort_unadj2<-km_mort_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
-  geom_label_repel(
-    data=data.frame(
-      x=risk_tbl$time,
-      y=risk_tbl$surv,
-      label=round(risk_tbl$surv,3),
-      label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
-    aes(x=x,y=y,label=label)) +
+  # geom_label_repel(
+  #   data=data.frame(
+  #     x=risk_tbl$time,
+  #     y=risk_tbl$surv,
+  #     label=round(risk_tbl$surv,3),
+  #     label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
+  #   aes(x=x,y=y,label=label)) +
   geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0))
 
 saveRDS(
@@ -98,16 +98,16 @@ rm(sfit1); gc()
 risk_tbl2<-adjkm_df %>%  filter(time %in% c(365,730,1095,1460,1825))
 km_mort_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
   geom_step(aes(group=CPAP_IND,color = CPAP_IND),linewidth=2.5) +
-  geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper)) + 
+  geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper),alpha=0.5) + 
   geom_vline(xintercept=365*c(1:5),linetype=2) +
-  geom_label_repel(
-    data=data.frame(
-      x=risk_tbl2$time,
-      y=risk_tbl2$surv,
-      label=round(risk_tbl2$surv,3),
-      label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
-    aes(x=x,y=y,label=label)
-  ) + 
+  # geom_label_repel(
+  #   data=data.frame(
+  #     x=risk_tbl2$time,
+  #     y=risk_tbl2$surv,
+  #     label=round(risk_tbl2$surv,3),
+  #     label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
+  #   aes(x=x,y=y,label=label)
+  # ) + 
   geom_text(aes(x=170, y=0.2, label = ifelse(pval<0.0001, "p < 0.0001",pval)), fontface=0) +
   scale_x_continuous(
     breaks = c(0,365,730,1095,1460,1825),
@@ -115,13 +115,20 @@ km_mort_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
     limits = c(0, 1825)
   ) +
   ylim(0,1) + 
-  ylab("Adjusted Survival Probability") + xlab("Days") +
+  ylab("Adjusted Survival Probability") + xlab("Days since Index Date") +
   theme_survminer()
 
 saveRDS(
   km_mort_adj,
   file=file.path(path_to_datadir,"output","expos_ACM_adjKM.rda")
 )
+
+ggsave(
+  file=file.path(path_to_outdir,"expos_ACM_adjKM.svg"), 
+  plot=km_mort_adj, 
+  width=8, height=4
+)
+
 rm(km_mort_adj,risk_tbl2,fitcox,pred_df,adjkm_df); gc()
 
 #--- MACE, KM summary
@@ -141,20 +148,20 @@ km_mace_unadj<-ggsurvplot(
   linetype = "strata",
   break.x.by = 365,
   xlim = c(0, 1825),
-  xlab = "Days", 
+  xlab = "Days since Index Date", 
   ylab = "Unadjusted MACE-free Probability")
 
 km_mace_unadj2<-km_mace_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
-  geom_label_repel(
-    data=data.frame(
-      x=risk_tbl$time,
-      y=risk_tbl$surv,
-      label=round(risk_tbl$surv,3),
-      label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")
-    ),
-    aes(x=x,y=y,label=label)
-  ) +
+  # geom_label_repel(
+  #   data=data.frame(
+  #     x=risk_tbl$time,
+  #     y=risk_tbl$surv,
+  #     label=round(risk_tbl$surv,3),
+  #     label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")
+  #   ),
+  #   aes(x=x,y=y,label=label)
+  # ) +
   geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0))
 
 saveRDS(
@@ -201,29 +208,48 @@ rm(sfit1); gc()
 risk_tbl2<-adjkm_df %>% filter(time %in% c(365,730,1095,1460,1825))
 km_mace_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
   geom_step(aes(group=CPAP_IND,color = CPAP_IND),linewidth=2.5) +
-  geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper)) + 
+  geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper),alpha=0.5) + 
   geom_vline(xintercept=365*c(1:5),linetype=2) +
-  geom_label_repel(
-    data=data.frame(
-      x=risk_tbl2$time,
-      y=risk_tbl2$surv,
-      label=round(risk_tbl2$surv,3),
-      label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
-    aes(x=x,y=y,label=label)) + 
+  # geom_label_repel(
+  #   data=data.frame(
+  #     x=risk_tbl2$time,
+  #     y=risk_tbl2$surv,
+  #     label=round(risk_tbl2$surv,3),
+  #     label_int=paste0(round(risk_tbl2$surv,3),"[",round(risk_tbl2$lower,3),",",round(risk_tbl2$upper,3),"]")),
+  #   aes(x=x,y=y,label=label)) + 
   geom_text(aes(x=170, y=0.2, label = ifelse(pval<0.0001, "p < 0.0001",pval)), fontface=0) +
   scale_x_continuous(
     breaks = c(0, 365,730,1095,1460,1825),
     labels = c(0, 365,730,1095,1460,1825),
     limits = c(0, 1825)
   ) +
-  ylim(0,1) +  ylab("Adjusted MACE-free Probability") + xlab("Days") +
+  ylim(0,1) +  ylab("Adjusted MACE-free Probability") + xlab("Days since Index Date") +
   theme_survminer()
 
 saveRDS(
   km_mace_adj,
   file=file.path(path_to_datadir,"output","expos_MACE_adjKM.rda")
 )
+
+ggsave(
+  file=file.path(path_to_outdir,"expos_MACE_adjKM.svg"), 
+  plot=km_mace_adj, 
+  width=8, height=4
+)
+
 rm(km_mace_adj,risk_tbl2,fitcox,pred_df,adjkm_df); gc()
+
+km_adj<-ggarrange(
+  readRDS(file.path(path_to_datadir,"output","expos_ACM_adjKM.rda")),
+  readRDS(file.path(path_to_datadir,"output","expos_MACE_adjKM.rda")),
+  ncol = 2, common.legend = TRUE
+)
+
+ggsave(
+  file=file.path(path_to_outdir,"expos_adjKM.svg"), 
+  plot=km_adj, 
+  width=10, height=4
+)
 
 #--- put the plots together
 kmplot<-ggarrange(
@@ -349,22 +375,23 @@ fplt1<-forestplot.HR(
   upper="upper", # 95% CI upper bound
   pval="pval", # p value
   plt_par = list(
-    xlim = rep(list(c(0, 1.4)),2),
-    vert_line = rep(list(c(0.3, 1.2)),2),
-    ticks_at = rep(list(c(0.1, 0.5, 1, 1.2)),2)
+    ci_column = c(2,4),
+    ref_line = c(0.55,0.95),
+    xlim = list(c(0.45, 0.55),c(0.85,0.95)),
+    ticks_at = list(c(0.45,0.5,0.55),c(0.85,0.9,0.95))
   ), 
   ny = 2, # number of y groups (must be the same as groups of y_idx)
   idx_display = "Full\nModel"
 )
 # save figure
 ggsave(
-  file.path(path_to_outdir,"pap_expo_on_surv_mace_full.tiff"),
+  file.path(path_to_outdir,"pap_expo_on_surv_mace_full.svg"),
   plot = fplt1,
   dpi = 100,
   width = 8, 
   height = 4, 
   units = "in",
-  device = "tiff"
+  device = "svg"
 )
 
 dat %<>%
@@ -825,19 +852,24 @@ fplt<-forestplot.HR(
   lower="lower", # 95% CI lower bound
   upper="upper", # 95% CI upper bound
   pval="pval", # p value
-  plt_par = list(), # other plotting parameters passed in forest function
+  plt_par = list(
+    ci_column = c(2,4),
+    ref_line = c(1,1),
+    xlim = rep(list(c(0.6, 1.1)),2),
+    ticks_at = rep(list(c(0.6,0.8,1)),2)
+  ), 
   ny = 2, # number of y groups (must be the same as groups of y_idx)
   idx_display = "AdherenceProxy",
 )
 # save figure
 ggsave(
-  file.path(path_to_outdir,"pap_yr1_discrete_on_surv_mace.tiff"),
+  file.path(path_to_outdir,"pap_yr1_discrete_on_surv_mace.svg"),
   plot = fplt,
   dpi = 150,
   width = 12, 
   height = 8, 
   units = "in",
-  device = 'tiff'
+  device = 'svg'
 )
 
 # ggplot(whole_dat %>% filter(endpt %in% c("ACM","mace")),
