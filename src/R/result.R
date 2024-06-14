@@ -38,17 +38,18 @@ km_mort_unadj<-ggsurvplot(
   break.x.by = 365,
   xlim = c(0, 1825),
   xlab = "Days since Index Date", 
-  ylab = "Unadjusted Survival Probability")
+  ylab = "Unadjusted Survival Probability"
+)
 
 km_mort_unadj2<-km_mort_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
-  # geom_label_repel(
-  #   data=data.frame(
-  #     x=risk_tbl$time,
-  #     y=risk_tbl$surv,
-  #     label=round(risk_tbl$surv,3),
-  #     label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
-  #   aes(x=x,y=y,label=label)) +
+  geom_label_repel(
+    data=data.frame(
+      x=risk_tbl$time,
+      y=risk_tbl$surv,
+      label=round(risk_tbl$surv,3),
+      label_int=paste0(round(risk_tbl$surv,3),"[",round(risk_tbl$lower,3),",",round(risk_tbl$upper,3),"]")),
+    aes(x=x,y=y,label=label)) +
   geom_text(aes(x=150, y=0.2, label = "p < 0.0001", fontface=0))
 
 saveRDS(
@@ -90,15 +91,22 @@ adjkm_df %<>%
     )
   ) %>%
   filter(time > 0) %>%
-  mutate(CPAP_IND = as.factor(CPAP_IND),
-         lower = surv - 1.96*std,
-         upper = surv + 1.96*std)
+  mutate(
+    lower = surv - 1.96*std,
+    upper = surv + 1.96*std
+  ) %>%
+  mutate(
+    CPAP_IND_lbl = case_when(
+      CPAP_IND==1 ~ 'Evidence of PAP initiation',
+      TRUE ~ 'No Evidence of PAP initiation'
+    )
+  )
 rm(sfit1); gc()
 
 risk_tbl2<-adjkm_df %>%  filter(time %in% c(365,730,1095,1460,1825))
 km_mort_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
-  geom_step(aes(group=CPAP_IND,color = CPAP_IND),linewidth=2.5) +
-  geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper),alpha=0.5) + 
+  geom_step(aes(group=CPAP_IND,color = CPAP_IND_lbl),linewidth=2.5) +
+  geom_ribbon(aes(fill = CPAP_IND_lbl, ymin = lower, ymax = upper),alpha=0.5) + 
   geom_vline(xintercept=365*c(1:5),linetype=2) +
   # geom_label_repel(
   #   data=data.frame(
@@ -115,8 +123,11 @@ km_mort_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
     limits = c(0, 1825)
   ) +
   ylim(0,1) + 
-  ylab("Adjusted Survival Probability") + xlab("Days since Index Date") +
-  theme_survminer()
+  ylab("Adjusted Survival Probability") + 
+  xlab("Days since Index Date") +
+  theme_survminer()+
+  scale_color_discrete(name="")+
+  scale_fill_discrete(name="")
 
 saveRDS(
   km_mort_adj,
@@ -200,15 +211,22 @@ adjkm_df %<>%
     )
   ) %>%
   filter(time > 0) %>%
-  mutate(CPAP_IND = as.factor(CPAP_IND),
-         lower = surv - 1.96*std,
-         upper = surv + 1.96*std)
+  mutate(
+    lower = surv - 1.96*std,
+    upper = surv + 1.96*std
+  ) %>%
+  mutate(
+    CPAP_IND_lbl = case_when(
+      CPAP_IND==1 ~ 'Evidence of PAP initiation',
+      TRUE ~ 'No Evidence of PAP initiation'
+    )
+  )
 rm(sfit1); gc()
 
 risk_tbl2<-adjkm_df %>% filter(time %in% c(365,730,1095,1460,1825))
 km_mace_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
-  geom_step(aes(group=CPAP_IND,color = CPAP_IND),linewidth=2.5) +
-  geom_ribbon(aes(fill = CPAP_IND, ymin = lower, ymax = upper),alpha=0.5) + 
+  geom_step(aes(group=CPAP_IND,color = CPAP_IND_lbl),linewidth=2.5) +
+  geom_ribbon(aes(fill = CPAP_IND_lbl, ymin = lower, ymax = upper),alpha=0.5) + 
   geom_vline(xintercept=365*c(1:5),linetype=2) +
   # geom_label_repel(
   #   data=data.frame(
@@ -223,8 +241,12 @@ km_mace_adj<-ggplot(adjkm_df,aes(x=time,y=surv)) +
     labels = c(0, 365,730,1095,1460,1825),
     limits = c(0, 1825)
   ) +
-  ylim(0,1) +  ylab("Adjusted MACE-free Probability") + xlab("Days since Index Date") +
-  theme_survminer()
+  ylim(0,1) + 
+  ylab("Adjusted MACE-free Probability") + 
+  xlab("Days since Index Date") +
+  theme_survminer()+
+  scale_color_discrete(name="")+
+  scale_fill_discrete(name="")
 
 saveRDS(
   km_mace_adj,
@@ -239,6 +261,7 @@ ggsave(
 
 rm(km_mace_adj,risk_tbl2,fitcox,pred_df,adjkm_df); gc()
 
+#--- put the plots together
 km_adj<-ggarrange(
   readRDS(file.path(path_to_datadir,"output","expos_ACM_adjKM.rda")),
   readRDS(file.path(path_to_datadir,"output","expos_MACE_adjKM.rda")),
@@ -249,26 +272,6 @@ ggsave(
   file=file.path(path_to_outdir,"expos_adjKM.svg"), 
   plot=km_adj, 
   width=10, height=4
-)
-
-#--- put the plots together
-kmplot<-ggarrange(
-   readRDS(file.path(path_to_datadir,"output","expos_ACM_unadjKM.rda"))
-  ,readRDS(file.path(path_to_datadir,"output","expos_ACM_adjKM.rda"))
-  ,readRDS(file.path(path_to_datadir,"output","expos_MACE_unadjKM.rda"))
-  ,readRDS(file.path(path_to_datadir,"output","expos_MACE_adjKM.rda"))
-  ,ncol = 2,nrow = 2
-  ,common.legend = TRUE, legend="bottom"
-)
-# save figure
-ggsave(
-  file.path(path_to_outdir,"cpap_expo_on_surv_km.tiff"),
-  plot = kmplot,
-  dpi = 300,
-  width = 12, 
-  height = 7, 
-  units = "in",
-  device = 'tiff'
 )
 
 #==== forestplots =====
