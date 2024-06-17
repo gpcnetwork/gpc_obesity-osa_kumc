@@ -11,7 +11,8 @@ pacman::p_load(
   grid,
   forestploter,
   ggrepel,
-  ggpubr
+  ggpubr,
+  svglite
   # adjustedCurves
 )
 
@@ -62,7 +63,7 @@ rm(km_mort_unadj,km_mort_unadj2,risk_tbl,sfit_obj); gc()
 survfit(Surv(DEATH_time,1-DEATH_status) ~ 1, data = pap_use)
 
 #--- ACM, adj
-fitcox<-readRDS(file.path(path_to_datadir,"ACM","boot1","coxph_iptw_main.rda"))$fit_cox
+fitcox<-readRDS(file.path(path_to_datadir,".archive","ACM","boot1","coxph_iptw_main.rda"))$fit_cox
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
 pred_df<-pap_use %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique %>% sample_frac(0.1)
 
@@ -267,6 +268,10 @@ km_adj<-ggarrange(
   readRDS(file.path(path_to_datadir,"output","expos_MACE_adjKM.rda")),
   ncol = 2, common.legend = TRUE
 )
+
+svglite(file.path(path_to_outdir,"expos_adjKM2.svg"),width=10, height=4)
+plot(km_adj)
+dev.off()
 
 ggsave(
   file=file.path(path_to_outdir,"expos_adjKM.svg"), 

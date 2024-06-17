@@ -38,7 +38,7 @@ df<-readRDS(file.path(path_to_data_folder,"cpap_exposure_final.rda")) %>%
 var_demo<-c(
   "AGEGRP_agegrp2", "AGEGRP_agegrp3","AGEGRP_agegrp4", #ref=AGEGRP_agegrp1
   "SEXF",
-  "RACE_AA","RACE_AI","RACE_Asian","RACE_Other","RACE_Unknown", #ref=RACE_WH
+  "RACE_AA","RACE_AI","RACE_Asian","RACE_Hispanic","RACE_Other","RACE_Unknown", #ref=RACE_WH
   "LIS_DUAL_IND"  
 )
 
@@ -142,7 +142,7 @@ mace_endpts<-c(
 #==== MACE models ====
 boots_iter<-1:1
 for(mace_endpt in mace_endpts){
-  mace_endpt<-'MACE' # only for testing
+  # mace_endpt<-'MACE' # only for testing
   #==== matched sampling ====
   boots<-5
   path_to_file<-file.path(
@@ -169,10 +169,10 @@ for(mace_endpt in mace_endpts){
   for(boot_i in boots_iter){
     #==== create subfolder structure
     #--create subdir
-    path_to_dir<-file.path(path_to_data_folder,mace_endpt)
+    path_to_dir<-file.path(path_to_data_folder,paste0("EXPOS_",mace_endpt))
     if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
     #--create subdir/subdir
-    path_to_dir<-file.path(path_to_data_folder,mace_endpt,paste0("boot",boot_i))
+    path_to_dir<-file.path(path_to_dir,paste0("boot",boot_i))
     if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
     
     #==== construct matching sample

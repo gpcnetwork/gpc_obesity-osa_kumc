@@ -62,7 +62,7 @@ if(!file.exists(path_to_file)){
 var_demo<-c(
   "AGEGRP_agegrp2", "AGEGRP_agegrp3","AGEGRP_agegrp4", #ref=AGEGRP_agegrp1
   "SEXF",
-  "RACE_AA","RACE_AI","RACE_Asian","RACE_Other","RACE_Unknown", #ref=RACE_WH
+  "RACE_AA","RACE_AI","RACE_Asian","RACE_Hispanic","RACE_Other","RACE_Unknown", #ref=RACE_WH
   "LIS_DUAL_IND"  
 )
 
@@ -173,10 +173,10 @@ boots_iter<-1:2
 for(boot_i in boots_iter){
   #==== create subfolder structure
   #--create subdir
-  path_to_dir<-file.path(path_to_data_folder,"ACM")
+  path_to_dir<-file.path(path_to_data_folder,"EXPOS_ACM")
   if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
   #--create subdir/subdir
-  path_to_dir<-file.path(path_to_data_folder,"ACM",paste0("boot",boot_i))
+  path_to_dir<-file.path(path_to_dir,paste0("boot",boot_i))
   if(!dir.exists(path_to_dir)) dir.create(path_to_dir)
   
   #==== construct matching sample
@@ -269,7 +269,7 @@ for(boot_i in boots_iter){
   
   #==== IPTW-adjusted, Main Effect, Stratified
   result<-c()
-  path_to_file<-file.path(path_to_dir,"coxph_strata_main.csv")
+  path_to_file<-file.path(path_to_dir,"coxph_strata_main.rda")
   if(!file.exists(path_to_file)){
     for(i in seq_len(nrow(strata))){
       # align
