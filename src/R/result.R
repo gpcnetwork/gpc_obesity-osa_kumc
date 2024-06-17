@@ -274,7 +274,7 @@ plot(km_adj)
 dev.off()
 
 ggsave(
-  file=file.path(path_to_outdir,"expos_adjKM.svg"), 
+  file=file.path(path_to_outdir,"expos_adjKM.pdf"), 
   plot=km_adj, 
   width=10, height=4
 )
