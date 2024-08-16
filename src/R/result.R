@@ -24,11 +24,11 @@ path_to_outdir<-file.path(getwd(),"res")
 #==== KM plots ====
 #------ ACM,KM summary
 pap_use<-readRDS(file.path(path_to_datadir,"cpap_exposure_final.rda"))
-summary(survfit(Surv(DEATH_time,DEATH_status) ~ 1, data = pap_use),times = 365*c(1:5))
+summary(survfit(Surv(DEATH_time,DEATH_status) ~ 1, data = pap_use),times = 365*c(0:5))
 
 #--- ACM,unadj
 sfit_obj<-survfit(Surv(DEATH_time,DEATH_status) ~ CPAP_IND, data = pap_use)
-risk_tbl<-summary(sfit_obj,times = 365*c(1:5))
+risk_tbl<-summary(sfit_obj,times = 365*c(0:5))
 km_mort_unadj<-ggsurvplot(
   fit = sfit_obj,
   pval = TRUE,
@@ -147,13 +147,20 @@ ggsave(
 rm(km_mort_adj,risk_tbl2,fitcox,pred_df,adjkm_df); gc()
 
 #--- MACE, KM summary
-pap_use2<-pap_use %>% filter(MACE_HIST==0&MACE_time>0)
+pap_use2<-pap_use %>% 
+  filter(
+    MACE_HIST==0 & 
+      (DAYS_OSA_TO_MACE>DAYS_OSA_TO_CPAP_INIT |
+         is.na(DAYS_OSA_TO_MACE) |
+         is.na(DAYS_OSA_TO_CPAP_INIT)
+      )
+  )
 rm(pap_use);gc()
-summary(survfit(Surv(MACE_time,MACE_status) ~ 1, data = pap_use2),times = 365*c(1:5))
+summary(survfit(Surv(MACE_time,MACE_status) ~ 1, data = pap_use2),times = 365*c(0:5))
 
 #--- MACE, unadj
 sfit_obj2<-survfit(Surv(MACE_time,MACE_status) ~ CPAP_IND, data = pap_use2)
-risk_tbl<-summary(sfit_obj2, data = pap_use2,times = 365*c(1:5))
+risk_tbl<-summary(sfit_obj2, data = pap_use2,times = 365*c(0:5))
 km_mace_unadj<-ggsurvplot(
   fit = sfit_obj2,
   # pval = TRUE,
