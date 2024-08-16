@@ -31,7 +31,7 @@ sfit_obj<-survfit(Surv(DEATH_time,DEATH_status) ~ CPAP_IND, data = pap_use)
 risk_tbl<-summary(sfit_obj,times = 365*c(1:5))
 km_mort_unadj<-ggsurvplot(
   fit = sfit_obj,
-  # pval = TRUE,
+  pval = TRUE,
   conf.int = TRUE,
   legend.labs=c("wo/ PAP", "w/ PAP"),
   # risk.table = TRUE,
@@ -41,6 +41,8 @@ km_mort_unadj<-ggsurvplot(
   xlab = "Days since Index Date", 
   ylab = "Unadjusted Survival Probability"
 )
+# survdiff(Surv(DEATH_time,DEATH_status) ~ CPAP_IND, data = pap_use)
+# Chisq= 13599
 
 km_mort_unadj2<-km_mort_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
@@ -66,6 +68,7 @@ survfit(Surv(DEATH_time,1-DEATH_status) ~ 1, data = pap_use)
 fitcox<-readRDS(file.path(path_to_datadir,".archive","ACM","boot1","coxph_iptw_main.rda"))$fit_cox
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
 pred_df<-pap_use %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique %>% sample_frac(0.1)
+# Score (logrank) test = 247722
 
 sfit0<-summary(survfit(fitcox,newdata=pred_df %>% mutate(CPAP_IND=0),conf.int = T)); gc() # predicted risks
 time_scale<-sfit0$time
@@ -163,6 +166,9 @@ km_mace_unadj<-ggsurvplot(
   xlab = "Days since Index Date", 
   ylab = "Unadjusted MACE-free Probability")
 
+# survdiff(Surv(MACE_time,MACE_status) ~ CPAP_IND, data = pap_use2)
+# Chisq= 821
+
 km_mace_unadj2<-km_mace_unadj$plot +
   geom_vline(xintercept=365*c(1:5),linetype=2)+
   # geom_label_repel(
@@ -183,9 +189,10 @@ saveRDS(
 rm(km_mace_unadj,km_mace_unadj2,risk_tbl,sfit_obj2); gc()
 
 #--- MACE, adj 
-fitcox<-readRDS(file.path(path_to_datadir,"MACE","boot1","coxph_iptw_main.rda"))$fit_cox
+fitcox<-readRDS(file.path(path_to_datadir,".archive","MACE","boot1","coxph_iptw_main.rda"))$fit_cox
 pred_df<-pap_use2 %>% select(attr(fitcox$means,"names")) %>% select(-CPAP_IND) %>% unique %>% sample_frac(0.1)
 pval<-summary(fitcox)$coefficients["CPAP_IND",6]
+# Score (logrank) test = 65134
 
 sfit0<-summary(survfit(fitcox,newdata=pred_df %>% mutate(CPAP_IND=0),conf.int = T)); gc() # predicted risks
 time_scale<-sfit0$time
