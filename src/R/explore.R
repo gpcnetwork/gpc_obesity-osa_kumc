@@ -145,14 +145,14 @@ desc_cohort %>%
 desc_case_ctrl<-univar_analysis_mixed(
   df = df,
   id_col = "PATID",
-  grp = df$adherence_yr1_mttree,
+  grp = df$adherence_yr1_qt,
   var_lst = var_lst,
   facvar_lst = facvar_lst,
-  pretty=F
+  pretty=T
 )
 desc_case_ctrl %>% 
   save_kable(
-    file.path(path_to_outdir,"adhrn_pap.html")
+    file.path(path_to_outdir,"adhrn_qt_pap.html")
   )
 
 #=== mace =======================================
@@ -178,6 +178,6 @@ desc_case_ctrl2<-univar_analysis_mixed(
 )
 desc_case_ctrl2 %>%
   save_kable(
-    file.path(path_to_outdir,"adhrn_mace_pap.html")
+    file.path(path_to_outdir,"adhrn_qt_mace_pap.html")
   )
 
